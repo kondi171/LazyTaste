@@ -1,0 +1,23 @@
+header.header {
+    background-color: $lightPrimaryColor;
+    background-image: url('../../img/food.png');
+    background-blend-mode: hard-light;
+    .admission {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 500%;
+        font-family: $secondaryFont;
+        text-align: center;
+        height: 100vh;
+        z-index: 10;
+        h1 {
+            font-size: 89px;
+            font-weight: bold;
+        }
+    }
+   
+ 
+}
+
