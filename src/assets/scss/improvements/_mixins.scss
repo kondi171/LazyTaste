@@ -1,0 +1,17 @@
+@mixin tooltip ($content, $color) {
+    content: $content;
+    display: block;
+    background-color: $color;
+    width: 6rem;
+    padding: 1rem;
+    font-size: 1.7rem;
+    border-radius: 6px;
+    color: $lightColor;
+    position: absolute;
+    bottom: -80%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: scale(0);
+    transition-duration: .4s;
+}

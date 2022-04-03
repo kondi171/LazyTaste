@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WebTaste from './components/WebTaste';
+import LazyTaste from './components/LazyTaste';
 import './assets/scss/main.scss';
 ReactDOM.render(
   <React.StrictMode>
-    <WebTaste />
+    <LazyTaste />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+    top: 4%;
+    font-family: $decorativeFont;
+    font-size: 24px;
+    &__access {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-basis: 30%;
+        margin: 0 5%;
+        
+        &--sign-in, &--sign-up {
+            padding: 10px 5px;
+            border: 2px solid black;
+            border-radius: 10px
+        }
+    }
+    &__options {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0 5%;
+        flex-basis: 70%;
+        &--option {
+            padding: 5px 30px;
+            border-bottom: 2px solid black;
+        }
+    }
+}

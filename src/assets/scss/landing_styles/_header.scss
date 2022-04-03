@@ -1,7 +1,11 @@
 header.header {
     background-color: $lightPrimaryColor;
-    background-image: url('../../img/food.png');
-    background-blend-mode: hard-light;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('../../img/table-top-with-background.jpg');
+    // background-blend-mode:darken;
+    clip-path: ellipse(100% 50% at 50% 40%);
+    font-size: 2rem;
     .admission {
         display: flex;
         position: relative;
