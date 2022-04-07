@@ -18,7 +18,7 @@ const Introduce = () => {
           unde adipisci inventore, cum optio voluptas non nesciunt voluptatem
           vel saepe recusandae alias. Vero animi saepe molestias et!
         </p>
-        <Link to='/customer' className="check"><span className="visible">Check this out!</span><span className="invisible">Click!</span></Link>
+        <Link to='customer/home' className="check"><span className="visible">Check this out!</span><span className="invisible">Click!</span></Link>
       </div>
     </section>
   );

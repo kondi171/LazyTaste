@@ -1,0 +1,47 @@
+.orders {
+  position: relative;
+  height: 100vh;
+  @extend %searchbar;
+
+  .row-view {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .column-view {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .sort {
+        width: 25vw;
+        height: 58vh;
+        margin-bottom: 2vh;
+        @extend %box;
+
+      }
+
+      .expenses {
+        width: 25vw;
+        height: 20vh;
+        @extend %box;
+
+        span {
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          font-size: 32px;
+        }
+      }
+    }
+
+    .orders__order-list {
+      margin: 2vw;
+      flex-basis: 100vh;
+      height: 80vh;
+      @extend %box;
+    }
+  }
+
+}

@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import CustomerPage from './CustomerPage';
+import Navigation from '../features/Navigation';
 const CustomerOutlet = () => {
   return (
     <>
-      <CustomerPage />
+      <Navigation />
       <Outlet />
     </>
   );

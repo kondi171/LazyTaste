@@ -2,16 +2,16 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
   return (
     <nav className='navigation'>
-      <NavLink className='navlink' to='customer/home'>
+      <NavLink className='navlink' to='/customer/home'>
         <i className='fa fa-home' aria-hidden="true"></i>
       </NavLink>
-      <NavLink className='navlink' to='customer/offer'>
+      <NavLink className='navlink' to='/customer/offer'>
         <i className="fa fa-cutlery" aria-hidden="true"></i>
       </NavLink>
-      <NavLink className='navlink' to='customer/orders'>
+      <NavLink className='navlink' to='/customer/orders'>
         <i className="fa fa-shopping-cart" aria-hidden="true"></i>
       </NavLink>
-      <NavLink className='navlink' to='customer/settings'>
+      <NavLink className='navlink' to='/customer/settings'>
         <i className="fa fa-cog" aria-hidden="true"></i>
       </NavLink>
     </nav>
