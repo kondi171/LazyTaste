@@ -5,10 +5,13 @@
 @import './landing_styles/header';
 @import './landing_styles/nav';
 @import './landing_styles/introduce';
-@import './landing_styles/about';
+@import './landing_styles/join';
+@import './landing_styles/contact';
 @import './landing_styles/footer';
 
-:root { font-size: 10px; }
+:root {
+    font-size: 10px;
+}
 
 * {
     padding: 0;

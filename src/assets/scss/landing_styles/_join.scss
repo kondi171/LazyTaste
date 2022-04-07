@@ -1,0 +1,22 @@
+.join {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    &__title {
+        font-family: $titleFont;
+        text-align: center;
+        font-size: 64px;
+    }
+
+    &__btn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 10%;
+        width: 60%;
+        margin: auto;
+    }
+}
