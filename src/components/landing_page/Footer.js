@@ -5,6 +5,8 @@ const Footer = () => {
         <section className="footer__content--sources">
           <h4 className="subtitle">Sources</h4>
           <ul>
+            {/* Photo by <a href="https://unsplash.com/@briewilly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chad Montano</a> on <a href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
+
             {/* <li><a href="https://www.freepik.com/photos/countertop" target="_blank"><b>Countertop photo created by yingyang</b> - www.freepik.com</a></li> */}
             <li>Photo by <a href="https://unsplash.com/@fabmag?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fabrizio Magoni</a> on <a href="https://unsplash.com/s/photos/gastronomy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
             </li>

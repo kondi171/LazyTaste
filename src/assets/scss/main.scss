@@ -9,6 +9,8 @@
 @import './landing_styles/contact';
 @import './landing_styles/footer';
 
+@import './customer_styles/customer_main';
+
 :root {
     font-size: 10px;
 }
@@ -20,6 +22,8 @@
 }
 
 body {
-    background-image: url('./../img/45degreee_fabric.png');
+    // background-image: url('./../img/45degreee_fabric.png');
+    background-image: url('./../img/chad-montano-MqT0asuoIcU-unsplash.jpg');
+    background-size: cover;
     font-family: $primaryFont;
 }

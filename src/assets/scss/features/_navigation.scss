@@ -1,0 +1,33 @@
+.navigation {
+  position: fixed;
+  right: -5vw;
+  height: 100vh;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  z-index: 1;
+  transition-duration: .4s;
+
+  &:hover {
+    transform: translateX(-5vw);
+    box-shadow: inset -100px 0px 70px -50px $darkColor;
+  }
+
+  .navlink {
+    color: $lightColor;
+    margin-right: 25px;
+    font-size: 64px;
+    transition-duration: .4s;
+
+    &:hover {
+      color: $primaryColor;
+
+    }
+
+    &.active {
+      color: $primaryColor;
+    }
+  }
+}
