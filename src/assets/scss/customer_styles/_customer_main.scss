@@ -1,8 +1,8 @@
-@import './home';
 @import './offer';
 @import './orders';
 @import './settings';
-@import './../features/navigation';
+@import './../common_styles/home';
+@import './../common_styles/navigation';
 
 .customer-wrapper {
   // background-image: url('./../../img/chad-montano-MqT0asuoIcU-unsplash.jpg');
