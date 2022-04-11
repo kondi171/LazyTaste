@@ -1,0 +1,68 @@
+.navigation {
+  position: fixed;
+  right: -5vw;
+  height: 100vh;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  z-index: 1;
+  transition-duration: .4s;
+
+  .fa-angle-double-left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    margin: auto 0;
+    font-size: 84px;
+    color: $lightColor;
+    transition-duration: .4s;
+    animation: infinite 3s scaleArrow linear;
+  }
+
+  &:hover {
+    transform: translateX(-5vw);
+    box-shadow: inset -100px 0px 70px -50px $darkColor;
+  }
+
+  &:hover .fa-angle-double-left {
+    animation: none;
+    transform: rotate(180deg);
+  }
+
+  .navlink {
+    color: $lightColor;
+    margin-right: 25px;
+    font-size: 64px;
+    transition-duration: .4s;
+
+    &:hover {
+      color: $primaryColor;
+
+    }
+
+    &.active {
+      color: $primaryColor;
+    }
+  }
+}
+
+@keyframes scaleArrow {
+  0% {
+    transform: scale(1);
+    color: $lightColor;
+  }
+
+  50% {
+    transform: scale(1.5);
+    color: lighten($lightColor, 30%);
+  }
+
+  100% {
+    transform: scale(1);
+    color: $lightColor;
+  }
+}

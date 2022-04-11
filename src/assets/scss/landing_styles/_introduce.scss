@@ -1,35 +1,41 @@
 .introduce {
     display: flex;
-    margin:  15vh 4vh;
+    margin: 15vh 4vh;
     font-size: 2rem;
+    margin-bottom: 40vh;
+
     &__title {
         display: flex;
         justify-content: center;
         flex-direction: column-reverse;
         flex-basis: 50%;
         padding: 24px;
-        line-height: 250%;
+        line-height: 350%;
         animation-name: floatElement;
         animation-duration: 3s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         margin-left: 30px;
         margin-top: 5px;
+        text-align: center;
+
         &--large-subtitle {
             font-family: $decorativeFont;
             font-size: 84px;
-            text-shadow: 5px 5px 2px $fontColor,
-                         5px -5px 2px $fontColor,
-                         -5px -5px 2px $fontColor,
-                         -5px -5px 2px $fontColor;
-            
+            // text-shadow: 5px 5px 2px $fontColor,
+            //     5px -5px 2px $fontColor,
+            //     -5px -5px 2px $fontColor,
+            //     -5px -5px 2px $fontColor;
+
         }
+
         &--small-subtitle {
             font-size: 26px;
-            font-family: $secondaryFont;
+            font-family: $titleFont;
             color: $primaryColor;
         }
     }
+
     &__content {
         position: relative;
         display: flex;
@@ -39,6 +45,7 @@
         width: 50%;
         padding: 24px;
         position: relative;
+
         &::before {
             content: '';
             display: block;
@@ -47,8 +54,9 @@
             top: 0;
             border: 5px solid $darkColor;
             box-shadow: 10px 0 0 0 $darkColor,
-                        0 10px 0 0 $darkColor;
+                0 10px 0 0 $darkColor;
         }
+
         &::after {
             content: '';
             display: block;
@@ -57,21 +65,29 @@
             bottom: 0;
             border: 5px solid $darkColor;
             box-shadow: -10px 0 0 0 $darkColor,
-                        0 -10px 0 0 $darkColor;
+                0 -10px 0 0 $darkColor;
         }
     }
+
     &__main-title {
         font-family: $decorativeFont;
         margin-bottom: 24px;
         padding: 0 10px;
         font-size: 34px;
-        &::before { content: '⭐ '; }
-        &::after { content: ' ⭐'; }
+
+        &::before {
+            content: '⭐ ';
+        }
+
+        &::after {
+            content: ' ⭐';
+        }
     }
+
     .check {
         position: absolute;
         margin-top: 28px;
-        font-family: $secondaryFont;
+        font-family: $titleFont;
         font-size: 16px;
         color: $darkColor;
         font-weight: bold;
@@ -80,31 +96,49 @@
         border: none;
         padding: 10px;
         box-shadow: 5px 5px 0 0 $darkColor,
-                    -5px -5px 0 0 $darkColor;
+            -5px -5px 0 0 $darkColor;
         transition-duration: .4s;
         bottom: -5vh;
-        span.invisible { display: none; }
-        span.visible { display: block; }
+        text-align: center;
+
+        span.invisible {
+            display: none;
+        }
+
+        span.visible {
+            display: block;
+        }
+
         &:hover {
             cursor: pointer;
             background-color: $darkColor;
             box-shadow: -10px -10px 0 0 $darkColor,
-                    10px 10px 0 0 $darkColor;
-                    border: 5px solid rgb(200, 200, 200);
-                    & span.invisible {
-                        display: block;
-                        color: rgb(200, 200, 200);
-                    }
-                    & span.visible {
-                        display: none;
-                    }
+                10px 10px 0 0 $darkColor;
+            border: 5px solid rgb(200, 200, 200);
+
+            & span.invisible {
+                display: block;
+                color: rgb(200, 200, 200);
+            }
+
+            & span.visible {
+                display: none;
+            }
         }
 
     }
 }
 
 @keyframes floatElement {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%  { transform: translate(0, -0px); }    
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
 }

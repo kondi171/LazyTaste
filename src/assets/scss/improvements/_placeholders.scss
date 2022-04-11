@@ -1,0 +1,95 @@
+%box {
+  border-radius: 10px;
+  color: $primaryColor;
+  box-shadow: 0px 0px 24px 2px $fontColor;
+  @include overlay(10px, $darkColor);
+}
+
+%btn {
+  font-size: 24px;
+  width: 200px;
+  padding: 10px;
+  background-color: $darkColor;
+  border: 5px solid $secondaryColor;
+  box-shadow: 0 0 0 10px $darkColor;
+  font-family: $decorativeFont;
+  color: $primaryColor;
+  border-radius: 5px;
+}
+
+%list {
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 25px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    h4 {
+      font-size: 22px;
+      padding-left: 10px;
+    }
+  }
+}
+
+%searchbar {
+  .searchbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $darkColor;
+    height: 10vh;
+
+    .searchbar {
+      position: relative;
+      display: flex;
+
+      width: 70%;
+      margin: 2vh auto;
+
+      .fa-search {
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        width: 14px;
+        font-size: 24px;
+      }
+
+      .fa-times-circle {
+        position: absolute;
+        top: .7vh;
+        right: 2vh;
+        width: 10px;
+        cursor: pointer;
+        font-size: 24px;
+      }
+
+      .search-input {
+        border: none;
+        border-radius: 10px;
+        height: 4vh;
+        width: 100%;
+        padding: 2px 23px 2px 30px;
+        outline: 0;
+        background-color: $lightColor;
+        text-align: center;
+        transition-duration: .4s;
+
+        &:hover,
+        &:focus {
+          border: 1px solid $additionalColor;
+          box-shadow: 0px 0px 24px 0px $additionalColor;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

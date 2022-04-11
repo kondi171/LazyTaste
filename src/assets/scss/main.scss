@@ -5,10 +5,16 @@
 @import './landing_styles/header';
 @import './landing_styles/nav';
 @import './landing_styles/introduce';
-@import './landing_styles/about';
+@import './landing_styles/join';
+@import './landing_styles/opinions';
 @import './landing_styles/footer';
 
-:root { font-size: 10px; }
+@import './customer_styles/customer_main';
+@import './restaurant_styles/restaurant_main';
+
+:root {
+    font-size: 10px;
+}
 
 * {
     padding: 0;
@@ -16,7 +22,41 @@
     box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: $darkColor;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $darkColor;
+    border-radius: 100vw;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primaryColor;
+    transition-duration: .4s;
+    border-radius: 100vw;
+    border: 3px solid $darkColor;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $secondaryColor;
+}
+
 body {
-    background-image: url('./../img/45degreee_fabric.png');
+    background-image: url('./../img/chad-montano-MqT0asuoIcU-unsplash.jpg');
+    background-size: cover;
     font-family: $primaryFont;
+}
+
+.landing-wrapper {
+    background-image: url('./../img/45degreee_fabric.png');
+}
+
+.layer {
+    background-color: $supportColor;
 }

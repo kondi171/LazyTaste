@@ -1,0 +1,82 @@
+.offer {
+  position: relative;
+  height: 100vh;
+
+  @extend %searchbar;
+
+  .section-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .favourites {
+      flex-basis: 25%;
+      height: 80vh;
+      text-decoration: none;
+      @extend %box;
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+
+        span {
+          padding-left: 10px;
+        }
+      }
+
+      &__list {
+        @extend %list;
+      }
+
+      &__result {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        border-top: 2px solid $primaryColor;
+        text-align: center;
+        font-size: 22px;
+
+        span {
+          font-weight: bold;
+          color: $additionalColor;
+        }
+      }
+    }
+
+    .restaurant-list {
+      overflow-y: scroll;
+      margin: 2vw;
+      flex-basis: 100vh;
+      height: 80vh;
+      text-decoration: none;
+      @extend %box;
+      @extend %list;
+      background-color: $darkColor;
+      opacity: .8;
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+      }
+    }
+  }
+
+  &__result {
+    color: $primaryColor;
+    position: absolute;
+    bottom: 1vh;
+    right: 2vw;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: $decorativeFont;
+
+    span {
+      color: $additionalColor;
+    }
+  }
+}

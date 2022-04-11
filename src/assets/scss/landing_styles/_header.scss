@@ -1,27 +1,31 @@
 header.header {
-    background-color: $lightPrimaryColor;
+    background-color: $primaryColor;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url('../../img/table-top-with-background.jpg');
-    // background-blend-mode:darken;
+    background-image: url('../../img/fabrizio-magoni-boaDpmC-_Xo-unsplash.jpg');
+    // background-blend-mode: overlay;
     clip-path: ellipse(100% 50% at 50% 40%);
     font-size: 2rem;
+
     .admission {
         display: flex;
         position: relative;
         flex-direction: column;
         justify-content: center;
         line-height: 500%;
-        font-family: $secondaryFont;
         text-align: center;
         height: 100vh;
         z-index: 10;
+
         h1 {
-            font-size: 89px;
+            font-family: $titleFont;
+            font-size: 115px;
+            letter-spacing: 10px;
             font-weight: bold;
         }
-    }
-   
- 
-}
 
+        h3 {
+            // color: $secondaryColor;
+        }
+    }
+}
