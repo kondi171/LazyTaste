@@ -2,6 +2,7 @@
     display: flex;
     margin: 15vh 4vh;
     font-size: 2rem;
+    margin-bottom: 40vh;
 
     &__title {
         display: flex;
@@ -9,21 +10,22 @@
         flex-direction: column-reverse;
         flex-basis: 50%;
         padding: 24px;
-        line-height: 250%;
+        line-height: 350%;
         animation-name: floatElement;
         animation-duration: 3s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         margin-left: 30px;
         margin-top: 5px;
+        text-align: center;
 
         &--large-subtitle {
             font-family: $decorativeFont;
             font-size: 84px;
-            text-shadow: 5px 5px 2px $fontColor,
-                5px -5px 2px $fontColor,
-                -5px -5px 2px $fontColor,
-                -5px -5px 2px $fontColor;
+            // text-shadow: 5px 5px 2px $fontColor,
+            //     5px -5px 2px $fontColor,
+            //     -5px -5px 2px $fontColor,
+            //     -5px -5px 2px $fontColor;
 
         }
 

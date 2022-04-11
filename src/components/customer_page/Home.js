@@ -33,8 +33,9 @@ const Home = () => {
         <div className="control-panel__main-box">
           <h2>Smart Assistant</h2>
           <div className="smart-assistant">
-            <div className="smart-assistant__welcome-message">Może masz dzisiaj ochotę na:</div>
-            <div className="smart-assistant__response">Kebsiwo</div>
+            <div className="smart-assistant__welcome-message">Maybe you want to eat today:</div>
+            <div className="smart-assistant__response">Kebsiwo na cienkim</div>
+            {/* <div className="smart-assistant__response">Pizza</div> */}
           </div>
         </div>
         <div className="control-panel__under-boxes">

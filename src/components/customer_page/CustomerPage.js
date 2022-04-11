@@ -4,12 +4,12 @@ import Orders from './Orders';
 import Settings from './Settings';
 const CustomerPage = () => {
   return (
-    <>
+    <div className="customer-wrapper">
       <Home />
       <Offer />
       <Orders />
       <Settings />
-    </>
+    </div>
   );
 }
 

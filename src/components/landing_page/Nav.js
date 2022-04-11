@@ -7,8 +7,8 @@ const Nav = () => {
       </nav>
       <nav className="nav__options">
         <div className="nav__options--option">Introduce</div>
-        <div className="nav__options--option">About</div>
-        <div className="nav__options--option">Contact</div>
+        <div className="nav__options--option">Join</div>
+        <div className="nav__options--option">Opinions</div>
       </nav>
     </nav>
   );

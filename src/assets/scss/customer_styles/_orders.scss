@@ -19,6 +19,24 @@
         margin-bottom: 2vh;
         @extend %box;
 
+        &__title {
+          font-size: 34px;
+          padding: 20px;
+          font-family: $decorativeFont;
+          text-align: center;
+
+          span {
+            padding-left: 10px;
+          }
+        }
+
+        label {
+          margin: 20px 40px;
+          font-size: 21px;
+          width: 40%;
+          display: inline-block;
+        }
+
       }
 
       .expenses {
@@ -32,6 +50,11 @@
           justify-content: center;
           align-items: center;
           font-size: 32px;
+
+          i {
+            color: $additionalColor;
+            padding: 0 10px;
+          }
         }
       }
     }
@@ -41,6 +64,13 @@
       flex-basis: 100vh;
       height: 80vh;
       @extend %box;
+
+      h3 {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+      }
     }
   }
 

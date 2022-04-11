@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
   return (
     <nav className='navigation'>
+      <i className="fa fa-angle-double-left" aria-hidden="true"></i>
+
       <NavLink className='navlink' to='/customer/home'>
         <i className='fa fa-home' aria-hidden="true"></i>
       </NavLink>

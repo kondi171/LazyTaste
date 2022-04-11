@@ -1,0 +1,43 @@
+.opinions {
+  margin-left: 54px;
+  margin-right: 54px;
+  border-top: 1px solid $darkColor;
+  box-shadow: 0px -30px 44px -30px rgba(66, 68, 90, 1);
+
+  &__title {
+    padding: 24px 0;
+    font-family: $decorativeFont;
+    font-size: 84px;
+    text-align: center;
+  }
+
+  &__opinion {
+    font-size: 2rem;
+    width: 80%;
+
+    &:nth-of-type(even) {
+      margin-left: 20%;
+      text-align: right;
+    }
+  }
+
+  &__review {
+    text-align: right;
+    margin-top: 24px;
+    margin-right: 24px;
+
+    .stars {
+      font-size: 64px;
+
+      span {
+        color: yellow;
+      }
+    }
+
+    .author {
+      font-size: 54px;
+    }
+  }
+
+
+}

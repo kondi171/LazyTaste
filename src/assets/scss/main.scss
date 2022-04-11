@@ -6,7 +6,7 @@
 @import './landing_styles/nav';
 @import './landing_styles/introduce';
 @import './landing_styles/join';
-@import './landing_styles/contact';
+@import './landing_styles/opinions';
 @import './landing_styles/footer';
 
 @import './customer_styles/customer_main';
@@ -24,7 +24,7 @@
 /* width */
 ::-webkit-scrollbar {
     width: 15px;
-
+    background-color: $darkColor;
 }
 
 /* Track */
@@ -47,8 +47,15 @@
 }
 
 body {
-    // background-image: url('./../img/45degreee_fabric.png');
     background-image: url('./../img/chad-montano-MqT0asuoIcU-unsplash.jpg');
     background-size: cover;
     font-family: $primaryFont;
+}
+
+.landing-wrapper {
+    background-image: url('./../img/45degreee_fabric.png');
+}
+
+.layer {
+    background-color: $supportColor;
 }

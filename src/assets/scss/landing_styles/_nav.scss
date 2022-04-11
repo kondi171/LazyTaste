@@ -17,8 +17,9 @@
         &--sign-in,
         &--sign-up {
             padding: 10px 5px;
-            border: 2px solid black;
-            border-radius: 10px
+            border: 2px solid $additionalColor;
+            border-radius: 10px;
+            color: $additionalColor;
         }
     }
 
@@ -32,7 +33,16 @@
 
         &--option {
             padding: 5px 30px;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid $primaryColor;
+            transition-duration: .4s;
+
+            &:hover {
+                cursor: pointer;
+                color: $additionalColor;
+                border-color: $additionalColor;
+                transform: scaleX(1.2);
+                transform: translateY(10px);
+            }
         }
     }
 }
