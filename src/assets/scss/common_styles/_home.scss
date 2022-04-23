@@ -48,7 +48,9 @@
       bottom: 0;
       margin: 3vh;
 
-      button {
+      a {
+        text-decoration: none;
+        padding: 5px 35px;
         @extend %btn;
       }
     }
@@ -75,6 +77,13 @@
         width: 60vw;
         height: 30vh;
         @extend %box;
+        transition-duration: .4s;
+        font-family: $decorativeFont;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0px 0px 24px 2px $primaryColor;
+        }
 
         &__title {
           display: flex;
@@ -88,6 +97,13 @@
           .icon {
             padding-right: 15px;
           }
+
+          transition-duration: .4s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+
         }
       }
 
@@ -123,7 +139,12 @@
         text-decoration: none;
         @extend %box;
 
+        .icon:hover {
+          transform: scale(1.2);
+        }
+
         &:hover {
+
           box-shadow: 0px 0px 24px 2px $primaryColor;
         }
 

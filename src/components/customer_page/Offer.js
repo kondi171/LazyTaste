@@ -1,12 +1,12 @@
-import Navigation from "../features/Navigation";
 import blank from "../../assets/img/blank-photo.png";
+import logo from './../../assets/img/LT-logo-transparent.png';
 
 const Offer = () => {
   const clearIcon = document.querySelector(".fa-times-circle");
   const searchBar = document.querySelector(".fa-search");
   const handleChangeVisibility = () => {
 
-    if (searchBar.value && clearIcon.style.visibility != "visible") {
+    if (searchBar.value && clearIcon.style.visibility !== "visible") {
       clearIcon.style.visibility = "visible";
     } else if (!searchBar.value) {
       clearIcon.style.visibility = "hidden";
@@ -18,10 +18,10 @@ const Offer = () => {
   }
   return (
     <>
-      <Navigation />
       <section className="offer">
         <div className="searchbox">
           <div className="searchbar">
+            <img className="logo" src={logo} alt="LazyTaste logo" />
             <i className="fa fa-search" aria-hidden="true"></i>
             <input className="search-input" onClick={handleClickVisibility} onChange={handleChangeVisibility} placeholder="Type to search..." type="text" />
             <i className="fa fa-times-circle" aria-hidden="true"></i>

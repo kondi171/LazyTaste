@@ -1,10 +1,8 @@
 import Konrad from '../../assets/img/Konrad.png';
-import Navigation from '../features/Navigation';
 import { NavLink } from 'react-router-dom';
 const Home = () => {
   return (
     <section className="home">
-      <Navigation />
       <div className="home__account-column">
         <img src={Konrad} alt="Avatar" />
         <h3>Konrad Nowak</h3>
@@ -26,7 +24,7 @@ const Home = () => {
           <span>Leszczyńska 69C/69, 25-325 Kielce</span>
         </div>
         <div className="account-column__logout">
-          <button>Logout</button>
+          <a href="http://localhost:3000">Logout</a>
         </div>
       </div>
       <div className="home__control-panel">
@@ -39,11 +37,11 @@ const Home = () => {
           </div>
         </div>
         <div className="control-panel__under-boxes">
-          <NavLink to='customer/offer' className="under-box">
+          <NavLink to='/customer/offer' className="under-box">
             <h2>Restaurants</h2>
             <i className="fa fa-cutlery icon" aria-hidden="true"></i>
           </NavLink>
-          <NavLink to='customer/orders' className="under-box">
+          <NavLink to='/customer/orders' className="under-box">
             <h2>Orders</h2>
             <i className="fa fa-shopping-cart icon" aria-hidden="true"></i>
           </NavLink>

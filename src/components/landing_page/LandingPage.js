@@ -1,20 +1,20 @@
 import Header from './Header';
 import Nav from './Nav';
-import Introduce from './Introduce';
+import Introduction from './Introduction';
 import Join from './Join';
 import Opinions from './Opinions';
 import Footer from './Footer';
-
+import Login from './Login';
 
 const LandingPage = () => {
   return (
     <div className="landing-wrapper">
       <Header />
       <Nav />
-      <Introduce />
+      <Introduction />
+      <Join />
+      <Login />
       <div className="layer">
-
-        {/* <Join /> */}
         <Opinions />
         <Footer />
       </div>

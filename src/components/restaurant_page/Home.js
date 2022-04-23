@@ -1,10 +1,10 @@
 import Konrad from '../../assets/img/Konrad.png';
-import Navigation from '../features/Navigation';
+// import Navigation from '../features/Navigation';
 import { NavLink } from 'react-router-dom';
 const Home = () => {
   return (
     <section className="home">
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="home__account-column">
         <img src={Konrad} alt="Avatar" />
         <h3>Try This Kebab</h3>
@@ -26,7 +26,7 @@ const Home = () => {
           <span>Leszczyńska 69C/69, 25-325 Kielce</span>
         </div>
         <div className="account-column__logout">
-          <button>Logout</button>
+          <a href="http://localhost:3000">Logout</a>
         </div>
       </div>
       <div className="home__control-panel">
@@ -36,11 +36,11 @@ const Home = () => {
           </div>
         </div>
         <div className="control-panel__under-boxes">
-          <NavLink to='customer/offer' className="under-box">
+          <NavLink to='/restaurant/promotion' className="under-box">
             <h2>Set Promotion</h2>
             <i className="fa fa-product-hunt icon" aria-hidden="true"></i>
           </NavLink>
-          <NavLink to='customer/orders' className="under-box">
+          <NavLink to='/restaurant/orders' className="under-box">
             <h2>Orders</h2>
             <i className="fa fa-shopping-cart icon" aria-hidden="true"></i>
           </NavLink>

@@ -1,6 +1,6 @@
 import Navigation from './Navigation';
 import { Outlet } from 'react-router-dom';
-const CustomerOutlet = () => {
+const RestaurantOutlet = () => {
   return (
     <>
       <Navigation />
@@ -9,4 +9,4 @@ const CustomerOutlet = () => {
   );
 }
 
-export default CustomerOutlet;
+export default RestaurantOutlet;
