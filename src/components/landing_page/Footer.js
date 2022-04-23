@@ -1,3 +1,4 @@
+import logo from './../../assets/img/LT-logo-transparent.png';
 const Footer = () => {
   return (
     <footer className="footer">
@@ -8,9 +9,13 @@ const Footer = () => {
             {/* Photo by <a href="https://unsplash.com/@briewilly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chad Montano</a> on <a href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
 
             {/* <li><a href="https://www.freepik.com/photos/countertop" target="_blank"><b>Countertop photo created by yingyang</b> - www.freepik.com</a></li> */}
-            <li>Photo by <a href="https://unsplash.com/@fabmag?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fabrizio Magoni</a> on <a href="https://unsplash.com/s/photos/gastronomy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            <li>Photo by <a href="https://unsplash.com/@fabmag?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Fabrizio Magoni</a> on <a href="https://unsplash.com/s/photos/gastronomy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a>
             </li>
-            <li><a href='https://www.freepik.com/photos/fresh-vegetables' target="_blank"><b>Fresh vegetables photo created by valeria_aksakova</b> - www.freepik.com</a></li>
+            <li>Photo by <a href="https://unsplash.com/@alexhaney?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Alex Haney</a> on <a href="https://unsplash.com/s/photos/restaurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a>
+            </li>
+            <li>Photo by <a href="https://unsplash.com/@louishansel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Louis Hansel</a> on <a href="https://unsplash.com/s/photos/restaurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a>
+            </li>
+            <li><a href='https://www.freepik.com/photos/fresh-vegetables' target="_blank" rel="noreferrer"><b>Fresh vegetables photo created by valeria_aksakova</b> - www.freepik.com</a></li>
           </ul>
         </section>
         <section className="footer__content--contact">
@@ -30,8 +35,7 @@ const Footer = () => {
         </section>
       </div>
       <section className="footer__logo">
-        {/* <img src={logo} alt="LazyTaste logo" /> */}
-        🍳
+        <img src={logo} alt="LazyTaste logo" />
       </section>
       <section className="footer__socials">
         <a href="#" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a>

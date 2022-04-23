@@ -87,6 +87,13 @@
         }
     }
 
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 7vw;
+    }
+
     &__socials {
         position: absolute;
         display: flex;

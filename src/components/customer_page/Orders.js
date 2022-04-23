@@ -1,10 +1,10 @@
-import Navigation from '../features/Navigation';
+import logo from './../../assets/img/LT-logo-transparent.png';
 const Orders = () => {
   return (
     <section className="orders">
-      <Navigation />
       <div className="searchbox">
         <div className="searchbar">
+          <img className="logo" src={logo} alt="LazyTaste logo" />
           <i className="fa fa-search" aria-hidden="true"></i>
           <input className="search-input" placeholder="Type to search..." type="text" />
           <i className="fa fa-times-circle" aria-hidden="true"></i>
@@ -35,6 +35,7 @@ const Orders = () => {
         </div>
         <div className="orders__order-list">
           <h3>Your Orders:</h3>
+          <p className="empty-orders">You don't have any orders yet!</p>
         </div>
       </div>
     </section>

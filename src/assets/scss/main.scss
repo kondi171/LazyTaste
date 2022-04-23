@@ -2,13 +2,7 @@
 @import './improvements/mixins';
 @import './improvements/placeholders';
 
-@import './landing_styles/header';
-@import './landing_styles/nav';
-@import './landing_styles/introduce';
-@import './landing_styles/join';
-@import './landing_styles/opinions';
-@import './landing_styles/footer';
-
+@import './landing_styles/landing_main';
 @import './customer_styles/customer_main';
 @import './restaurant_styles/restaurant_main';
 
@@ -51,6 +45,7 @@ body {
     background-image: url('./../img/chad-montano-MqT0asuoIcU-unsplash.jpg');
     background-size: cover;
     font-family: $primaryFont;
+    overflow-x: hidden;
 }
 
 .landing-wrapper {

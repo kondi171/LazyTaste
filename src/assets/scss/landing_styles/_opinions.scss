@@ -1,6 +1,4 @@
 .opinions {
-  margin-left: 54px;
-  margin-right: 54px;
   border-top: 1px solid $darkColor;
   box-shadow: 0px -30px 44px -30px rgba(66, 68, 90, 1);
 
@@ -11,33 +9,40 @@
     text-align: center;
   }
 
-  &__opinion {
-    font-size: 2rem;
-    width: 80%;
+  &__container {
+    text-align: left;
+    padding: 50px;
 
     &:nth-of-type(even) {
-      margin-left: 20%;
-      text-align: right;
+      background-color: darken($supportColor, 5%);
     }
-  }
 
-  &__review {
-    text-align: right;
-    margin-top: 24px;
-    margin-right: 24px;
+    .opinions__opinion {
+      font-size: 2rem;
+      color: $lightColor;
+    }
 
-    .stars {
-      font-size: 64px;
+    .opinions__review {
+      text-align: center;
+      font-weight: bold;
 
-      span {
-        color: yellow;
+      .stars {
+        font-size: 64px;
+
+        span {
+          color: yellow;
+        }
+      }
+
+      .author {
+        font-size: 54px;
+        font-family: $titleFont;
       }
     }
 
-    .author {
-      font-size: 54px;
-    }
+
   }
+
 
 
 }
