@@ -65,6 +65,8 @@
     justify-content: space-evenly;
 
     .control-panel__main-box {
+      text-decoration: none;
+
       h2 {
         font-family: $decorativeFont;
         font-size: 48px;
@@ -103,7 +105,6 @@
           &:hover {
             transform: scale(1.2);
           }
-
         }
       }
 

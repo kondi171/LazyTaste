@@ -1,6 +1,30 @@
+import { useState, useEffect } from 'react';
 import Konrad from '../../assets/img/Konrad.png';
 import { NavLink } from 'react-router-dom';
 const Home = () => {
+  let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
+  const promotions = [
+    {
+      name: 'Saray',
+      content: '1Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero error eligendi magni tempore at in debitis, ullam nobis voluptatum facilis.',
+    },
+    {
+      name: 'Alibaba',
+      content: '2Sed harum quod, est, deleniti ut et fugiat dignissimos quam, veritatis porro deserunt asperiores possimus ipsa maiores recusandae.',
+    },
+    {
+      name: 'McDonals',
+      content: '3Sint sed quaerat vel corporis assumenda id, voluptatum a odit. Perspiciatis aperiam adipisci alias, odit, voluptates recusandae nesciunt dicta exercitationem'
+    },
+  ];
+  useEffect(() => {
+    setInterval(() => {
+      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(indexOfPromotions = 0);
+      else changeIndexOfPromotions(indexOfPromotions += 1);
+      console.log(indexOfPromotions);
+    }, 10000);
+  }, []);
+
   return (
     <section className="home">
       <div className="home__account-column">
@@ -46,7 +70,10 @@ const Home = () => {
             <i className="fa fa-shopping-cart icon" aria-hidden="true"></i>
           </NavLink>
         </div>
-        <div className="promotions">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero error eligendi magni tempore at in debitis, ullam nobis voluptatum facilis.</div>
+        <div className="promotions">
+          <strong>{`${promotions[indexOfPromotions].name}: `}</strong>
+          <span>{promotions[indexOfPromotions].content}</span>
+        </div>
       </div>
     </section>
   );

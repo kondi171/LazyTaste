@@ -1,12 +1,33 @@
-import Konrad from '../../assets/img/Konrad.png';
-// import Navigation from '../features/Navigation';
+import logo from '../../assets/img/restaurant-logo.jpg';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 const Home = () => {
+  let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
+  const promotions = [
+    {
+      name: 'Saray',
+      content: '1Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero error eligendi magni tempore at in debitis, ullam nobis voluptatum facilis.',
+    },
+    {
+      name: 'Alibaba',
+      content: '2Sed harum quod, est, deleniti ut et fugiat dignissimos quam, veritatis porro deserunt asperiores possimus ipsa maiores recusandae.',
+    },
+    {
+      name: 'McDonals',
+      content: '3Sint sed quaerat vel corporis assumenda id, voluptatum a odit. Perspiciatis aperiam adipisci alias, odit, voluptates recusandae nesciunt dicta exercitationem'
+    },
+  ];
+  useEffect(() => {
+    setInterval(() => {
+      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(indexOfPromotions = 0);
+      else changeIndexOfPromotions(indexOfPromotions += 1);
+      console.log(indexOfPromotions);
+    }, 10000);
+  }, []);
   return (
     <section className="home">
-      {/* <Navigation /> */}
       <div className="home__account-column">
-        <img src={Konrad} alt="Avatar" />
+        <img src={logo} alt="Avatar" />
         <h3>Try This Kebab</h3>
         <div className="account-column__info">
           <div className='single-info'>
@@ -30,11 +51,11 @@ const Home = () => {
         </div>
       </div>
       <div className="home__control-panel">
-        <div className="control-panel__main-box">
+        <NavLink to='/restaurant/menu' className="control-panel__main-box">
           <div className="menu">
             <div className="menu__title"><i className="fa fa-bars icon" aria-hidden="true"></i>Menu</div>
           </div>
-        </div>
+        </NavLink>
         <div className="control-panel__under-boxes">
           <NavLink to='/restaurant/promotion' className="under-box">
             <h2>Set Promotion</h2>
@@ -47,7 +68,8 @@ const Home = () => {
         </div>
         <div className="promotions">
           <h5>Competitors promotions</h5>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero error eligendi magni tempore at in debitis, ullam nobis voluptatum facilis.
+          <strong>{`${promotions[indexOfPromotions].name}: `}</strong>
+          <span>{promotions[indexOfPromotions].content}</span>
         </div>
       </div>
     </section>

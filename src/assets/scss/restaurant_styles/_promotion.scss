@@ -1,0 +1,73 @@
+.promotion {
+  position: relative;
+  height: 100vh;
+
+  @extend %searchbar;
+
+  .promotion-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .create-promo {
+      flex-basis: 25%;
+      height: 80vh;
+      text-decoration: none;
+      @extend %box;
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+
+        span {
+          padding-left: 10px;
+        }
+      }
+
+      .promo-content {
+        display: block;
+        margin: 0 10%;
+        width: 80%;
+        height: 50%;
+        background-color: $darkColor;
+        color: $lightColor;
+        font-size: 24px;
+        padding: 1vw;
+        resize: none;
+        border-radius: 5px;
+
+        &:focus {
+          box-shadow: 0px 0px 05px 1px $primaryColor;
+        }
+      }
+
+      .set-promotion-btn {
+        display: block;
+        width: 50%;
+        margin: 30% auto;
+        @extend %btn;
+      }
+    }
+
+    .promo-restaurant-list {
+      overflow-y: scroll;
+      margin: 2vw;
+      flex-basis: 100vh;
+      height: 80vh;
+      text-decoration: none;
+      @extend %box;
+      @extend %list;
+      background-color: $darkColor;
+      opacity: .8;
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+      }
+    }
+  }
+}

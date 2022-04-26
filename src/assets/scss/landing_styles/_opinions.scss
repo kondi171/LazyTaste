@@ -9,40 +9,93 @@
     text-align: center;
   }
 
-  &__container {
-    text-align: left;
-    padding: 50px;
+  &__flex {
+    display: flex;
 
-    &:nth-of-type(even) {
-      background-color: darken($supportColor, 5%);
-    }
+    .opinions__container {
+      flex-basis: 60%;
+      text-align: left;
+      padding: 50px;
+      max-height: 40vh;
+      opacity: 1;
+      transition: opacity .4s;
 
-    .opinions__opinion {
-      font-size: 2rem;
-      color: $lightColor;
-    }
+      &.fade {
+        opacity: 0;
+      }
 
-    .opinions__review {
-      text-align: center;
-      font-weight: bold;
+      &:nth-of-type(even) {
+        background-color: darken($supportColor, 5%);
+      }
 
-      .stars {
-        font-size: 64px;
+      .opinions__opinion {
+        font-size: 2rem;
+        color: $lightColor;
+      }
 
-        span {
-          color: yellow;
+      .opinions__review {
+        text-align: center;
+        font-weight: bold;
+
+        .stars {
+          font-size: 64px;
+
+          span {
+            color: yellow;
+          }
+        }
+
+        .author {
+          font-size: 54px;
+          font-family: $titleFont;
         }
       }
-
-      .author {
-        font-size: 54px;
-        font-family: $titleFont;
-      }
     }
 
+    .opinions__rating {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 40%;
+      height: 60vh;
+      background-color: $darkColor;
+      border-radius: 50%;
+      box-shadow: 0px 0px 24px 0px $primaryColor;
+      transform: translateX(100px);
+      font-size: 2rem;
 
+      h4 {
+        font-size: 4rem;
+        color: $primaryColor;
+        text-transform: uppercase;
+      }
+
+      div {
+        color: $lightColor;
+        font-size: 8rem;
+        line-height: 100%;
+      }
+
+      span {
+        font-size: 8rem;
+        color: yellow;
+      }
+    }
   }
 
+  .time {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-align: right;
+    margin: 4vh 4vw -2vh 0;
+    font-family: $decorativeFont;
 
-
+    i {
+      display: inline-block;
+      text-align: center;
+      width: 2vw;
+      color: $secondaryColor;
+    }
+  }
 }
