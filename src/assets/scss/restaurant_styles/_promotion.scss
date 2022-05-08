@@ -1,0 +1,38 @@
+.promotion {
+  position: relative;
+  height: 100vh;
+
+  .searchbox {
+    @extend %searchbar;
+  }
+
+  .promotion-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .create-promo {
+      @extend %area;
+      @include cloud(10px, $darkColor);
+    }
+
+    .promo-restaurant-list {
+      overflow-y: scroll;
+      margin: 2vw;
+      flex-basis: 100vh;
+      height: 80vh;
+      text-decoration: none;
+      @include cloud(10px, $darkColor);
+      @extend %list;
+      background-color: $darkColor;
+      opacity: .8;
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+      }
+    }
+  }
+}

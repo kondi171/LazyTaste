@@ -1,7 +1,10 @@
 .orders {
   position: relative;
   height: 100vh;
-  @extend %searchbar;
+
+  .searchbox {
+    @extend %searchbar;
+  }
 
   .row-view {
     display: flex;
@@ -17,7 +20,7 @@
         width: 25vw;
         height: 58vh;
         margin-bottom: 2vh;
-        @extend %box;
+        @include cloud(10px, $darkColor);
 
         &__title {
           font-size: 34px;
@@ -42,7 +45,7 @@
       .expenses {
         width: 25vw;
         height: 20vh;
-        @extend %box;
+        @include cloud(10px, $darkColor);
 
         span {
           display: flex;
@@ -63,7 +66,7 @@
       margin: 2vw;
       flex-basis: 100vh;
       height: 80vh;
-      @extend %box;
+      @include cloud(10px, $darkColor);
 
       h3 {
         font-size: 34px;

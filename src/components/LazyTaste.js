@@ -1,21 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
 
-import CustomerOutlet from './customer_page/CustomerOutlet';
+import LandingPage from './landing_page/LandingPage';
+
 import CustomerHome from './customer_page/Home';
 import CustomerOffer from './customer_page/Offer';
 import CustomerOrders from './customer_page/Orders';
-import CustomerSettings from './customer_page/Settings';
-
+import CustomerOutlet from './customer_page/CustomerOutlet';
+import CustomerSettings from './features/options/Settings';
 import RestaurantHome from './restaurant_page/Home';
 import RestaurantMenu from './restaurant_page/Menu';
-import RestaurantOrders from './restaurant_page/Orders';
-import RestaurantSettings from './restaurant_page/Settings';
+import RestaurantSettings from './features/options/Settings';
 import RestaurantPromotion from './restaurant_page/Promotion';
-import LandingPage from './landing_page/LandingPage';
 import RestaurantOutlet from './restaurant_page/RestaurantOutlet';
+
+import RestaurantOrdersActive from './restaurant_page/orders/ActiveOrders';
+import RestaurantOrdersCompleted from './restaurant_page/orders/CompletedOrders';
+import RestaurantOrdersArchive from './restaurant_page/orders/ArchiveOrders';
+import OrdersOutlet from './restaurant_page/orders/OrdersOutlet';
+
 const LazyTaste = () => {
   return (
-    <>
+    <nav className="router-navigation">
       <Routes>
         <Route path='/' element={<LandingPage />} />
         {/* Customer */}
@@ -33,13 +38,18 @@ const LazyTaste = () => {
           <Route path='/restaurant/home' element={<RestaurantHome />} />
           <Route path='/restaurant/menu' element={<RestaurantMenu />} />
           <Route path='/restaurant/promotion' element={<RestaurantPromotion />} />
-          <Route path='/restaurant/orders' element={<RestaurantOrders />} />
           <Route path='/restaurant/settings' element={<RestaurantSettings />} />
           <Route path='*' element={<RestaurantHome />} />
         </Route>
-
+        {/* Orders */}
+        <Route path='restaurant/orders' element={<OrdersOutlet />} >
+          <Route path='/restaurant/orders' exact element={<RestaurantOrdersActive />} />
+          <Route path='/restaurant/orders/active' element={<RestaurantOrdersActive />} />
+          <Route path='/restaurant/orders/completed' element={<RestaurantOrdersCompleted />} />
+          <Route path='/restaurant/orders/archive' element={<RestaurantOrdersArchive />} />
+        </Route>
       </Routes>
-    </>
+    </nav>
   );
 }
 

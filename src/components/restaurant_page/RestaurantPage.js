@@ -1,7 +1,7 @@
 import Home from './Home';
 import Orders from './Orders';
 import Menu from './Menu';
-import Settings from './Settings';
+import Settings from '../features/options/Settings';
 
 const RestaurantPage = () => {
   return (

@@ -16,19 +16,20 @@
     box-sizing: border-box;
 }
 
-/* width */
+::selection {
+    background-color: $primaryColor;
+    color: $darkColor;
+}
+
 ::-webkit-scrollbar {
     width: 15px;
     background-color: $darkColor;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: $darkColor;
-    border-radius: 100vw;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: $primaryColor;
     transition-duration: .4s;
@@ -36,7 +37,6 @@
     border: 3px solid $darkColor;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: $secondaryColor;
 }
@@ -46,12 +46,5 @@ body {
     background-size: cover;
     font-family: $primaryFont;
     overflow-x: hidden;
-}
-
-.landing-wrapper {
-    background-image: url('./../img/45degreee_fabric.png');
-}
-
-.layer {
-    background-color: $supportColor;
+    background-attachment: fixed;
 }
