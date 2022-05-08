@@ -1,0 +1,21 @@
+//TODO:
+// --- Landing Page ---
+
+// * Animation for opinions section
+// * Integrate opinions and forms with db
+
+// --- Customer System ---
+
+// * Integrate OfferPage with db
+// * Integrate OrdersPage with db
+// * Implement Smart Assistant
+
+// --- Restaurant System
+
+// * Menu Page
+
+// --- DataBase ---
+
+// * Create db for Customers
+// * Create db for Restaurants
+// * Create db for LazyTaste (opinions)

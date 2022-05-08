@@ -1,0 +1,89 @@
+.scroll {
+    background-color: #444;
+    opacity: .8;
+}
+
+.nav {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    font-family: $decorativeFont;
+    font-size: 24px;
+    z-index: 10;
+    transition-duration: .4s;
+
+    &__logo {
+        width: 6%;
+        height: 6%;
+        transition-duration: .4s;
+        transform: scale(0);
+
+        &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0 0 10px $primaryColor);
+        }
+    }
+
+    &__access {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-basis: 30%;
+        margin: 0 5%;
+
+        &--sign-in,
+        &--sign-up {
+            padding: 10px 5px;
+            border: 2px solid $additionalColor;
+            border-radius: 10px;
+            color: $additionalColor;
+            transition-duration: .4s;
+
+            &:hover {
+                cursor: pointer;
+                border-color: $primaryColor;
+                color: $primaryColor;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__options {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0 5%;
+        flex-basis: 70%;
+        color: $primaryColor;
+
+        &--option {
+            padding: 5px 30px;
+            border-bottom: 2px solid $primaryColor;
+            transition-duration: .4s;
+
+            &:hover {
+                cursor: pointer;
+                color: $additionalColor;
+                border-color: $additionalColor;
+                transform: scaleX(1.2);
+                transform: translateY(10px);
+            }
+        }
+    }
+}
+
+.rolled {
+    background-color: $darkColor;
+    box-shadow: 0px 30px 50px 10px rgba(66, 68, 90, 0.5);
+    border-bottom: 2px solid $additionalColor;
+
+    .nav__logo {
+        margin: 0 2vw;
+    }
+}
+
+.display {
+    transform: scale(1);
+}
