@@ -13,7 +13,7 @@ const LandingPage = () => {
       <Nav />
       <Introduction />
       <Join />
-      <Login />
+      {/* <Login /> */}
       <div className="layer">
         <Opinions />
         <Footer />

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const Opinions = () => {
-  const constantTime = 2;
+  const constantTime = 10;
   let average = 0;
-  let [reviewsIndex, changeReviewsIndex] = useState(0);
-  let [timeToChange, changeTimeToChange] = useState(constantTime);
+  const [reviewsIndex, setReviewsIndex] = useState(0);
+  const [timeToChange, setTimeToChange] = useState(constantTime);
   const reviews = [
     {
       user: 'Ania',
@@ -35,27 +35,30 @@ const Opinions = () => {
     average = sum / reviews.length;
     return average;
   }
-  // const fadeIn = setInterval(() => {
-  // review.classList.remove('fade');
-  // clearInterval(fadeIn);
-  // }, 100);
+
   useEffect(() => {
-    // const review = document.querySelector('.opinions__container');
-    // const fadeOut = setInterval(() => {
-    //   review.classList.add('fade');
-    //   clearInterval(fadeOut);
+    const review = document.querySelector('.opinions__container');
+    const transitionDuration = parseFloat(getComputedStyle(review).transitionDuration) * 1000;
 
-    // }, 100);
-
-    setInterval(() => {
-      if (reviewsIndex === reviews.length - 1) changeReviewsIndex(reviewsIndex = 0);
-      else changeReviewsIndex(reviewsIndex += 1);
+    setTimeout(() => {
+      review.classList.add('fade');
+    }, constantTime * 1000 - transitionDuration);
+    setTimeout(() => {
+      if (reviewsIndex === reviews.length - 1) setReviewsIndex(0);
+      else setReviewsIndex(reviewsIndex + 1);
     }, constantTime * 1000);
-    setInterval(() => {
-      if (timeToChange === 1) changeTimeToChange(timeToChange = constantTime);
-      else changeTimeToChange(timeToChange -= 1);
+    setTimeout(() => {
+      review.classList.remove('fade');
+    }, constantTime * 1000 + transitionDuration);
+  }, [reviewsIndex]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (timeToChange === 1) setTimeToChange(constantTime);
+      else setTimeToChange(timeToChange - 1);
     }, 1000);
-  }, []);
+  }, [timeToChange]);
+
   return (
     <section id="opinions" className="opinions">
       <h3 className="opinions__title">Opinions</h3>

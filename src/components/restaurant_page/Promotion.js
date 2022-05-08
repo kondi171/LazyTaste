@@ -13,12 +13,12 @@ const Promotion = () => {
       </div>
       <div className="promotion-content">
         <div className="create-promo">
-          <h3 className="create-promo__title">
+          <h3 className="create-area__title">
             <i className="fa fa-product-hunt" aria-hidden="true"></i>
             <span>Set Promotion</span>
           </h3>
-          <textarea className="promo-content" name="promo-content" id="promo-content"></textarea>
-          <button className="set-promotion-btn">Set Promotion</button>
+          <textarea className="area-content" placeholder="Write Promotion..." name="area-content" id="area-content"></textarea>
+          <button className="set-area-btn">Set Promotion</button>
         </div>
         <div className="promo-restaurant-list">
           <h3 className="promo-restaurant-list__title">Restaurant List:</h3>

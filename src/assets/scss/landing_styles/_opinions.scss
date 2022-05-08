@@ -18,7 +18,7 @@
       padding: 50px;
       max-height: 40vh;
       opacity: 1;
-      transition: opacity .4s;
+      transition-duration: .4s;
 
       &.fade {
         opacity: 0;

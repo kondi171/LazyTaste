@@ -4,5 +4,13 @@
 @import './join';
 @import './opinions';
 @import './footer';
-@import './login';
+@import './access';
 @import './../common_styles/modal';
+
+.landing-wrapper {
+  background-image: url('../../img/45degreee_fabric.png');
+}
+
+.layer {
+  background-color: $supportColor;
+}

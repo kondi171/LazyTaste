@@ -1,5 +1,4 @@
 .restaurant-orders {
-
   .banner {
     width: 100%;
     height: 20vh;
@@ -10,13 +9,8 @@
     box-shadow: 0px 0px 10px 2px $additionalColor;
 
     img {
-      width: 250px;
-      height: 230px;
-      border-radius: 50%;
-      margin-top: 2vw;
-      border: 2px solid $primaryColor;
+      @extend %img;
     }
-
 
     .title {
       color: $primaryColor;
@@ -39,96 +33,214 @@
     }
   }
 
-  .orders {
+  .orders-navigation {
     display: flex;
-    flex-direction: column;
-    height: 0;
+    justify-content: space-evenly;
+    align-items: center;
 
-    &__title {
-      text-align: right;
-      font-size: 64px;
-      color: $secondaryColor;
+    .navlink {
+      text-decoration: none;
+
+      &.active {
+        div {
+          transform: scale(2);
+
+          &.active {
+            color: $secondaryColor;
+          }
+
+          &.completed {
+            color: $additionalColor;
+          }
+
+          &.archive {
+            color: $supportColor;
+          }
+        }
+      }
+    }
+
+    .orders__title {
+      text-align: center;
+      font-size: 32px;
+      color: $lightColor;
       font-family: $decorativeFont;
       margin: 5vh;
+      margin-bottom: 4vh;
       text-shadow: 3px 3px 10px $darkColor,
         -3px 3px 10px $darkColor,
         3px -3px 10px $darkColor,
         -3px -3px 10px $darkColor;
+      transition-duration: .4s;
 
-      &:last-of-type {
-        text-align: left;
-      }
-    }
-
-    &__active-orders,
-    &__ready-orders {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      align-items: center;
-      text-align: center;
-      padding: 1vw;
-      margin: 2vw;
-      @extend %box;
-    }
-
-    .info {
-      font-size: 34px;
-      font-weight: bold;
-      color: $supportColor;
-      text-shadow: 3px 3px 10px $darkColor,
-        -3px 3px 10px $darkColor,
-        3px -3px 10px $darkColor,
-        -3px -3px 10px $darkColor;
-    }
-
-    .fa-file {
-      position: relative;
-      text-align: center;
-      font-size: 30rem;
-      opacity: .9;
-      transform: scale(-1, 1) rotate(180deg);
-      margin: 20px;
-      text-shadow: 3px 3px 10px $darkColor,
-        -3px 3px 10px $darkColor,
-        3px -3px 10px $darkColor,
-        -3px -3px 10px $darkColor;
-
-      h4,
-      div {
-        color: $lightColor;
-        text-shadow: none;
-        position: absolute;
-        display: block;
-        font-size: 24px;
-        bottom: 2vh;
-        right: 0;
-        left: 0;
-        margin: auto;
-        transform: scale(-1, 1) rotate(180deg);
-      }
-
-      div {
-        bottom: 4vh;
-      }
-    }
-
-    .single-order {
-      width: 20%;
-
-
-      &.single-order--active {
-        color: rgb(168, 34, 34);
-      }
-
-      &.single-order--inactive {
+      .active {
         color: $additionalColor;
       }
 
-      &:last-of-type {
-        // margin-right: auto;
-
+      &:hover {
+        color: $primaryColor;
       }
     }
   }
+}
+
+.orders-section {
+
+  .orders__active-orders,
+  .orders__completed-orders,
+  .orders__archive-orders {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 1vw;
+  }
+
+  .info {
+    font-size: 34px;
+    font-weight: bold;
+    color: $supportColor;
+    text-shadow: 3px 3px 10px $darkColor,
+      -3px 3px 10px $darkColor,
+      3px -3px 10px $darkColor,
+      -3px -3px 10px $darkColor;
+  }
+
+  div {
+    bottom: 4vh;
+  }
+
+  .single-order {
+    display: flex;
+    flex-direction: column;
+    width: 29%;
+    min-height: 250px;
+    border-radius: 10px;
+    color: $primaryColor;
+    background-color: $darkColor;
+    opacity: .9;
+    box-shadow: 0px 0px 24px 2px $fontColor;
+    margin: 2vw;
+
+    .order-header {
+      color: $secondaryColor;
+
+      h4 {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-top: 10px;
+        padding: 4%;
+      }
+
+      h5 {
+        font-size: 1.8rem;
+        color: $primaryColor;
+        font-family: $decorativeFont;
+        display: inline-block;
+      }
+
+      &.order-header--inactive {
+        color: $additionalColor;
+      }
+    }
+
+    .order-item {
+      text-align: left;
+      font-size: 1.8rem;
+      margin: 10px;
+
+      &::before {
+        content: '⚫ ';
+      }
+    }
+
+    .order-info {
+      font-size: 20px;
+      padding: 20px;
+      font-weight: bold;
+      bottom: 1vh;
+      color: $primaryColor;
+      border-top: 2px solid $primaryColor;
+      margin-top: auto;
+      margin-bottom: 0;
+      text-align: left;
+
+      .color {
+        font-size: 24px;
+        font-weight: bold;
+
+        &--info {
+          color: $secondaryColor;
+        }
+
+        &--good {
+          color: $additionalColor;
+        }
+
+        &--bad {
+          color: $redColor;
+        }
+      }
+    }
+
+    &.single-order--active {
+      border: 2px solid $secondaryColor;
+      box-shadow: 0px 0px 24px 2px $secondaryColor;
+      transition-duration: .4s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        border: 2px solid $additionalColor;
+        box-shadow: 0px 0px 24px 2px $additionalColor;
+      }
+    }
+
+    &.single-order--completed {
+      width: 25%;
+      border: 2px solid $additionalColor;
+      box-shadow: 0px 0px 24px 2px $additionalColor;
+    }
+
+    &.single-order--archive {
+      width: 25%;
+      border: 2px solid $supportColor;
+      box-shadow: 0px 0px 24px 2px $supportColor;
+    }
+  }
+
+  .orders__archive-orders,
+  .orders__completed-orders {
+    @include cloud(10px, $darkColor);
+    width: 90%;
+    margin: 5vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: none;
+
+    .searchbox {
+      @extend %searchbar;
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+      background-color: transparent;
+
+      .searchbar {
+        color: $darkColor;
+        margin-top: 14vh;
+      }
+    }
+
+    .info {
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+
+
 }

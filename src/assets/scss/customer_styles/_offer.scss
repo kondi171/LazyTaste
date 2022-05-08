@@ -2,7 +2,9 @@
   position: relative;
   height: 100vh;
 
-  @extend %searchbar;
+  .searchbox {
+    @extend %searchbar;
+  }
 
   .section-content {
     display: flex;
@@ -13,7 +15,7 @@
       flex-basis: 25%;
       height: 80vh;
       text-decoration: none;
-      @extend %box;
+      @include cloud(10px, $darkColor);
 
       &__title {
         font-size: 34px;
@@ -52,7 +54,7 @@
       flex-basis: 100vh;
       height: 80vh;
       text-decoration: none;
-      @extend %box;
+      @include cloud(10px, $darkColor);
       @extend %list;
       background-color: $darkColor;
       opacity: .8;

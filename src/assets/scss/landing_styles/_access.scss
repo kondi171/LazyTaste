@@ -1,0 +1,97 @@
+.access {
+  z-index: 100;
+  color: $primaryColor;
+
+  h3 {
+    font-family: $decorativeFont;
+    text-align: center;
+    font-size: 36px;
+    margin: 24px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    border-radius: 5px;
+    border: 2px solid $primaryColor;
+    padding: 2vh;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-color: #444;
+
+    &.login {
+      margin: 5vw auto;
+    }
+
+    &.register {
+      margin: 1vw auto;
+      width: 70%;
+
+      .data {
+        display: flex;
+
+
+        &__login {
+          width: 50%;
+
+        }
+
+        &__address {
+          width: 50%;
+          margin-left: 4vw;
+        }
+
+        label {
+          font-size: 18px;
+        }
+
+        input {
+          font-size: 18px;
+          height: 4vh;
+        }
+      }
+    }
+
+    label {
+      display: inline-block;
+      width: 100%;
+      padding-left: 20%;
+      font-size: 34px;
+    }
+
+    input {
+      text-align: center;
+      background-color: $lightColor;
+      color: $darkColor;
+      font-size: 24px;
+      padding: 10px;
+      margin: 24px;
+      border-radius: 5px;
+      border: 2px solid $primaryColor;
+      transition-duration: .4s;
+
+      &[type=text],
+      &[type=password],
+      &[type=mail],
+      &[type=date] {
+        opacity: .8;
+
+        &::placeholder {
+          color: $darkColor;
+        }
+      }
+
+      &:focus {
+        outline: none !important;
+        border-color: $primaryColor;
+        box-shadow: 0 0 10px 2px $primaryColor;
+      }
+
+      &[type=submit] {
+        @extend %btn;
+      }
+    }
+  }
+}

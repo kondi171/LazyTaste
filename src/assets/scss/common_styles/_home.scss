@@ -8,12 +8,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @include overlay('none', $secondaryColor);
+    @include cloud(0, $secondaryColor);
+    color: $darkColor;
 
     img {
-      width: 150px;
-      height: 150px;
+      width: 250px;
+      height: 230px;
       border-radius: 50%;
       margin: 5vh;
       border: 5px solid $darkColor;
@@ -30,7 +30,7 @@
 
     .account-column__info {
       display: inline-block;
-      font-size: 16px;
+      font-size: 18px;
       width: 80%;
       margin: 0 auto;
 
@@ -52,6 +52,13 @@
         text-decoration: none;
         padding: 5px 35px;
         @extend %btn;
+        font-size: 26px;
+        border: 2px solid $secondaryColor;
+        box-shadow: 0 0 0 5px $darkColor;
+
+        &:hover {
+          box-shadow: 0 0 10px 2px $darkColor;
+        }
       }
     }
   }
@@ -78,7 +85,7 @@
       .menu {
         width: 60vw;
         height: 30vh;
-        @extend %box;
+        @include cloud(10px, $darkColor);
         transition-duration: .4s;
         font-family: $decorativeFont;
 
@@ -96,7 +103,7 @@
           padding: 25px;
           text-align: center;
 
-          .icon {
+          .menu-icon {
             padding-right: 15px;
           }
 
@@ -111,7 +118,7 @@
       .smart-assistant {
         width: 60vw;
         height: 30vh;
-        @extend %box;
+        @include cloud(10px, $darkColor);
 
         &__welcome-message {
           font-size: 34px;
@@ -138,15 +145,29 @@
         height: 15vw;
         transition-duration: .4s;
         text-decoration: none;
-        @extend %box;
+        @include cloud(10px, $darkColor);
 
         .icon:hover {
           transform: scale(1.2);
         }
 
         &:hover {
-
           box-shadow: 0px 0px 24px 2px $primaryColor;
+        }
+
+        .notifications {
+          font-size: 24px;
+          text-align: center;
+          padding: 5px;
+          margin-top: -2vh;
+
+          i {
+            padding-right: 10px;
+          }
+
+          strong {
+            color: $additionalColor;
+          }
         }
 
         h2 {

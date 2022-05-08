@@ -53,7 +53,7 @@ const Home = () => {
       <div className="home__control-panel">
         <NavLink to='/restaurant/menu' className="control-panel__main-box">
           <div className="menu">
-            <div className="menu__title"><i className="fa fa-bars icon" aria-hidden="true"></i>Menu</div>
+            <div className="menu__title"><i className="fa fa-bars menu-icon" aria-hidden="true"></i>Menu</div>
           </div>
         </NavLink>
         <div className="control-panel__under-boxes">
@@ -61,9 +61,14 @@ const Home = () => {
             <h2>Set Promotion</h2>
             <i className="fa fa-product-hunt icon" aria-hidden="true"></i>
           </NavLink>
-          <NavLink to='/restaurant/orders' className="under-box">
+          <NavLink to='/restaurant/orders/active' className="under-box">
             <h2>Orders</h2>
             <i className="fa fa-shopping-cart icon" aria-hidden="true"></i>
+            <div className="notifications">
+              <i className="fa fa-bell" aria-hidden="true"></i>
+              <span>You have <strong>4</strong> orders</span>
+            </div>
+
           </NavLink>
         </div>
         <div className="promotions">

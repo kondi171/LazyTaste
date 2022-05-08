@@ -2,14 +2,10 @@
 // --- Landing Page ---
 
 // * Animation for opinions section
-// * Follow animation for header in landingPage
-// * Style forms (login, register)
-// * Change forms buttons
 // * Integrate opinions and forms with db
 
 // --- Customer System ---
 
-// * Settings Page
 // * Integrate OfferPage with db
 // * Integrate OrdersPage with db
 // * Implement Smart Assistant
@@ -17,9 +13,6 @@
 // --- Restaurant System
 
 // * Menu Page
-// * Promotion Page
-// * Orders Page
-// * Settings Page
 
 // --- DataBase ---
 

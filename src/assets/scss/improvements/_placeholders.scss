@@ -1,8 +1,45 @@
-%box {
-  border-radius: 10px;
-  color: $primaryColor;
-  box-shadow: 0px 0px 24px 2px $fontColor;
-  @include overlay(10px, $darkColor);
+%tooltip {
+  .tooltip {
+    position: relative;
+    display: inline-block;
+
+    &:hover .tooltip-text {
+      transform: scale(1);
+    }
+
+    & .tooltip-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0);
+      width: 120px;
+      height: 40px;
+      background-color: $darkColor;
+      color: $lightColor;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 2rem;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      right: 120%;
+      transition-duration: .4s;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -7px;
+        border-width: 7px;
+        border-style: solid;
+        border-color: transparent transparent transparent $darkColor;
+      }
+    }
+  }
 }
 
 %btn {
@@ -10,18 +47,17 @@
   width: 200px;
   padding: 10px;
   background-color: $darkColor;
-  border: 5px solid $secondaryColor;
-  box-shadow: 0 0 0 10px $darkColor;
+  border: 2px solid $secondaryColor;
   font-family: $decorativeFont;
-  color: $primaryColor;
+  color: $secondaryColor;
   border-radius: 5px;
   transition-duration: .4s;
 
   &:hover {
     cursor: pointer;
-    border: 5px solid $secondaryColor;
-    box-shadow: 0 0 5px 5px $darkColor;
-    letter-spacing: 2px;
+    color: $primaryColor;
+    border-color: $darkColor;
+    box-shadow: 0 0 10px 2px $primaryColor;
   }
 }
 
@@ -48,64 +84,121 @@
 }
 
 %searchbar {
-  .searchbox {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $darkColor;
+  height: 10vh;
+
+  .logo {
+    position: fixed;
+    top: 1vh;
+    left: 3vw;
+    width: 6%;
+    height: 8%;
+  }
+
+  .searchbar {
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $darkColor;
-    height: 10vh;
 
-    .logo {
-      position: fixed;
-      top: 1vh;
-      left: 3vw;
-      width: 6%;
-      height: 8%;
+    width: 70%;
+    margin: 2vh auto;
+
+    .fa-search {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      width: 14px;
+      font-size: 24px;
     }
 
-    .searchbar {
-      position: relative;
-      display: flex;
+    .fa-times-circle {
+      position: absolute;
+      top: .7vh;
+      right: 2vh;
+      width: 10px;
+      cursor: pointer;
+      font-size: 24px;
+    }
 
-      width: 70%;
-      margin: 2vh auto;
+    .search-input {
+      border: none;
+      border-radius: 10px;
+      height: 4vh;
+      width: 100%;
+      padding: 2px 23px 2px 30px;
+      outline: 0;
+      background-color: $lightColor;
+      text-align: center;
+      transition-duration: .4s;
 
-      .fa-search {
-        position: absolute;
-        top: 6px;
-        left: 8px;
-        width: 14px;
-        font-size: 24px;
-      }
-
-      .fa-times-circle {
-        position: absolute;
-        top: .7vh;
-        right: 2vh;
-        width: 10px;
-        cursor: pointer;
-        font-size: 24px;
-      }
-
-      .search-input {
-        border: none;
-        border-radius: 10px;
-        height: 4vh;
-        width: 100%;
-        padding: 2px 23px 2px 30px;
-        outline: 0;
-        background-color: $lightColor;
-        text-align: center;
-        transition-duration: .4s;
-
-        &:hover,
-        &:focus {
-          border: 1px solid $additionalColor;
-          box-shadow: 0px 0px 24px 0px $additionalColor;
-          background-color: white;
-        }
+      &:hover,
+      &:focus {
+        border: 1px solid $additionalColor;
+        box-shadow: 0px 0px 24px 0px $additionalColor;
+        background-color: white;
       }
     }
+  }
+}
+
+%img {
+  width: 250px;
+  height: 230px;
+  border-radius: 50%;
+  margin-top: 2vw;
+  border: 2px solid $primaryColor;
+  transition-duration: .4s;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px $additionalColor;
+  }
+}
+
+%input {
+  display: block;
+  margin: 0 10%;
+  width: 80%;
+  height: 50%;
+  background-color: $darkColor;
+  color: $lightColor;
+  font-size: 24px;
+  padding: 1vw;
+  border-radius: 5px;
+
+  &:focus {
+    box-shadow: 0px 0px 05px 1px $primaryColor;
+  }
+}
+
+%area {
+  flex-basis: 25%;
+  height: 80vh;
+  text-decoration: none;
+
+  .create-area__title {
+    font-size: 34px;
+    padding: 20px;
+    font-family: $decorativeFont;
+    text-align: center;
+
+    span {
+      padding-left: 10px;
+    }
+  }
+
+  .area-content {
+    @extend %input;
+    resize: none;
+  }
+
+  .set-area-btn {
+    display: block;
+    width: 50%;
+    margin: 30% auto;
+    @extend %btn;
   }
 }
