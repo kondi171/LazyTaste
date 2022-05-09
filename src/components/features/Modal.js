@@ -28,7 +28,7 @@ const Modal = ({ clicked, setIsOpen }) => {
       document.body.style.overflowY = 'visible';
       setIsOpen(false);
     });
-    return () => close.removeEventListener('click');
+  
 
   }, [clicked]);
 

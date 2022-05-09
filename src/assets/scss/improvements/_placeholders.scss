@@ -202,3 +202,63 @@
     @extend %btn;
   }
 }
+
+%info-column {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include cloud(0, $secondaryColor);
+  color: $darkColor;
+
+  img {
+    width: 250px;
+    height: 230px;
+    border-radius: 50%;
+    margin: 5vh;
+    border: 5px solid $darkColor;
+    box-shadow: 0 0 10px 2px $darkColor;
+  }
+
+  h3 {
+    font-size: 34px;
+    color: $lightColor;
+    margin-bottom: 24px;
+    padding: 0 10px;
+    border-bottom: 2px solid $darkColor;
+  }
+
+  .account-column__info {
+    display: inline-block;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 auto;
+
+    .single-info {
+      margin: 10px;
+
+      i {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .account-column__logout {
+    position: absolute;
+    bottom: 0;
+    margin: 3vh;
+
+    a {
+      text-decoration: none;
+      padding: 5px 35px;
+      @extend %btn;
+      font-size: 26px;
+      border: 2px solid $secondaryColor;
+      box-shadow: 0 0 0 5px $darkColor;
+
+      &:hover {
+        box-shadow: 0 0 10px 2px $darkColor;
+      }
+    }
+  }
+}

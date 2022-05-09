@@ -1,6 +1,6 @@
-import logo from '../../assets/img/restaurant-logo.jpg';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import InfoColumn from '../features/InfoColumn';
 const Home = () => {
   let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
   const promotions = [
@@ -27,28 +27,7 @@ const Home = () => {
   return (
     <section className="home">
       <div className="home__account-column">
-        <img src={logo} alt="Avatar" />
-        <h3>Try This Kebab</h3>
-        <div className="account-column__info">
-          <div className='single-info'>
-            <i className="fa fa-envelope" aria-hidden="true"></i>
-            <span>Mail</span>
-          </div>
-          <span>wk.k.nowak@gmail.com</span>
-          <div className='single-info'>
-            <i className="fa fa-phone" aria-hidden="true"></i>
-            <span>Phone</span>
-          </div>
-          <span>+48 690 992 435</span>
-          <div className='single-info'>
-            <i className="fa fa-location-arrow" aria-hidden="true"></i>
-            <span>Adress</span>
-          </div>
-          <span>Leszczyńska 69C/69, 25-325 Kielce</span>
-        </div>
-        <div className="account-column__logout">
-          <a href="http://localhost:3000">Logout</a>
-        </div>
+        <InfoColumn as='restaurant' />
       </div>
       <div className="home__control-panel">
         <NavLink to='/restaurant/menu' className="control-panel__main-box">

@@ -1,0 +1,120 @@
+.menu {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+
+	&__account-column {
+		@extend %info-column;
+	}
+
+	&__control-panel {
+
+		width: 70vw;
+		height: 90vh;
+		margin: 5vh auto;
+
+		h2 {
+
+			font-family: $decorativeFont;
+			font-size: 46px;
+			text-align: center;
+			margin: 2vh;
+			color: $primaryColor;
+		}
+
+		.menu__section {
+			overflow-y: scroll;
+			margin: 2vw;
+			height: 80vh;
+			@include cloud(10px, $fontColor);
+			background-color: $fontColor;
+			opacity: .8;
+
+			.single-section {
+
+				.fa-refresh,
+				.fa-times {
+					transition-duration: .4s;
+
+					&:hover {
+						cursor: pointer;
+						color: $secondaryColor;
+						transform: rotate(90deg);
+					}
+				}
+
+
+				.section__title {
+					display: flex;
+					flex-basis: 70vw;
+					justify-content: space-between;
+					align-items: center;
+					font-size: 44px;
+					border-bottom: 2px solid $primaryColor;
+
+					h3 {
+						font-family: $decorativeFont;
+						padding: 2vh;
+					}
+
+					i {
+						margin-right: 2vw;
+					}
+				}
+
+				ul {
+					list-style: none;
+
+					li {
+						border: 2px solid $additionalColor;
+						padding: 2vw;
+						margin: 1vh;
+						border-radius: 10px;
+						background-color: darken($darkColor, 5%);
+
+						.content {
+							font-size: 28px;
+							font-weight: bold;
+						}
+
+						.price {
+							font-size: 22px;
+							color: $additionalColor;
+						}
+
+						&.add-item {
+							width: 25%;
+							text-align: center;
+							font-size: 44px;
+							transition-duration: .4s;
+
+							&:hover {
+								cursor: pointer;
+								background-color: darken($additionalColor, 10%);
+								box-shadow: 0px 0px 24px 2px $additionalColor;
+							}
+						}
+					}
+				}
+
+				.add-section {
+					// width: 100%;
+					text-align: center;
+					font-size: 44px;
+					border: 2px solid $additionalColor;
+					padding: 2vw;
+					margin: 1vh;
+					border-radius: 10px;
+					background-color: darken($darkColor, 5%);
+					transition-duration: .4s;
+
+					&:hover {
+						cursor: pointer;
+						background-color: darken($additionalColor, 10%);
+						box-shadow: 0px 0px 24px 2px $additionalColor;
+					}
+				}
+			}
+		}
+	}
+}

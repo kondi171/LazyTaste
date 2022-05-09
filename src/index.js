@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
 import LazyTaste from './components/LazyTaste';
 import './assets/scss/main.scss';
-import { BrowserRouter as Router } from 'react-router-dom';
-ReactDOM.render(
-  <React.StrictMode>
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
     <Router>
       <LazyTaste />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
 

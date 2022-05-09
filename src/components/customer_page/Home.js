@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import Konrad from '../../assets/img/Konrad.png';
 import { NavLink } from 'react-router-dom';
+import InfoColumn from '../features/InfoColumn';
+import Konrad from '../../assets/img/Konrad.png';
+
 const Home = () => {
   let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
   const promotions = [
@@ -28,7 +30,8 @@ const Home = () => {
   return (
     <section className="home">
       <div className="home__account-column">
-        <img src={Konrad} alt="Avatar" />
+        <InfoColumn as='customer' />
+        {/* <img src={Konrad} alt="Avatar" />
         <h3>Konrad Nowak</h3>
         <div className="account-column__info">
           <div className='single-info'>
@@ -49,7 +52,7 @@ const Home = () => {
         </div>
         <div className="account-column__logout">
           <a href="http://localhost:3000">Logout</a>
-        </div>
+        </div> */}
       </div>
       <div className="home__control-panel">
         <div className="control-panel__main-box">
