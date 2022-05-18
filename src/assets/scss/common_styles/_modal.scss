@@ -60,4 +60,99 @@
       width: 40%;
     }
   }
+
+  h3 {
+    font-family: $decorativeFont;
+    text-align: center;
+    font-size: 36px;
+    color: $primaryColor;
+    border-bottom: 2px solid $additionalColor;
+    padding: 2vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-radius: 5px;
+    padding: 2vh;
+    background-blend-mode: overlay;
+    background-size: cover;
+
+    margin: 1vh auto;
+
+    input {
+      text-align: center;
+      background-color: $lightColor;
+      color: $darkColor;
+      font-size: 24px;
+      padding: 10px;
+      margin: 24px;
+      border-radius: 5px;
+      border: 2px solid $primaryColor;
+      transition-duration: .4s;
+      width: 100%;
+
+      &[type=text],
+      &[type=password],
+      &[type=mail],
+      &[type=date] {
+        opacity: .8;
+
+        &::placeholder {
+          color: $darkColor;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $primaryColor;
+        box-shadow: 0 0 10px 2px $primaryColor;
+      }
+    }
+  }
+
+  .return-info {
+    text-align: center;
+    font-size: 36px;
+    color: $additionalColor;
+    font-weight: bold;
+  }
+
+  input[type=submit] {
+    display: block;
+    margin: 0 auto;
+    @extend %btn;
+  }
+
+  .product {
+    width: 70%;
+    text-align: center;
+    font-size: 34px;
+    color: $secondaryColor;
+    margin: 6vh auto;
+    border: 2px solid $additionalColor;
+    border-radius: 10px;
+    background-color: darken($darkColor, 2%);
+
+    &__name {
+      color: $secondaryColor;
+    }
+
+    &__price {
+      color: $additionalColor;
+      font-size: 28px;
+    }
+
+    &__to {
+      font-family: $decorativeFont;
+      color: $primaryColor;
+      text-align: center;
+      font-size: 34px;
+      margin-top: 5vh;
+
+    }
+
+  }
 }

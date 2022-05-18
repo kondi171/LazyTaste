@@ -8,7 +8,7 @@ import CustomerOrders from './customer_page/Orders';
 import CustomerOutlet from './customer_page/CustomerOutlet';
 import CustomerSettings from './features/options/Settings';
 import RestaurantHome from './restaurant_page/Home';
-import RestaurantMenu from './restaurant_page/Menu';
+import RestaurantMenu from './restaurant_page/menu/Menu';
 import RestaurantSettings from './features/options/Settings';
 import RestaurantPromotion from './restaurant_page/Promotion';
 import RestaurantOutlet from './restaurant_page/RestaurantOutlet';

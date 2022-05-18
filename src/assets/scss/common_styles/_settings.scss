@@ -99,8 +99,10 @@
         position: absolute;
         right: 25vh;
         border: 2px solid $additionalColor;
+        transition-duration: .4s;
 
         &:focus {
+          outline: $primaryColor;
           border: 2px solid $additionalColor;
           box-shadow: 0 0 5px 5px $additionalColor;
         }
@@ -125,9 +127,104 @@
   .write-opinion {
     @extend %area;
     margin-top: 5vh;
+  }
 
-    .set-area-btn {
-      margin: 10vh auto;
+  .info {
+    display: none;
+    transition-duration: .4s;
+
+    &.success {
+      @include message($additionalColor);
+      display: block;
+    }
+
+    &.error {
+      @include message($redColor);
+      display: block;
+    }
+  }
+
+  .active-opinion {
+    font-size: 24px;
+    text-align: center;
+
+    h4 {
+      font-size: 36px;
+    }
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 30px;
+    transform: scale(1.5);
+
+    h4 {
+      margin-right: 10vh;
+    }
+  }
+
+  .stars input {
+    position: absolute;
+    left: -99999px;
+  }
+
+  label {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    color: transparent;
+  }
+
+  label[for*='star']::before {
+    content: '★';
+    color: #c0c0c0;
+    font-size: 30px;
+    line-height: 30px;
+    margin-right: -100%;
+  }
+
+  label:hover::before,
+  label:hover~label::before,
+  .stars input:checked~label::before {
+    cursor: pointer;
+    color: #ffa500;
+  }
+
+  .opinion__container {
+    flex-basis: 60%;
+    text-align: left;
+    padding: 50px;
+    max-height: 40vh;
+    opacity: 1;
+    transition-duration: .4s;
+    margin-top: -10vh;
+
+    .opinion__opinion {
+      font-size: 2rem;
+      color: $lightColor;
+      text-align: center;
+    }
+
+    .opinion__review {
+      text-align: center;
+      font-weight: bold;
+
+      .stars {
+        font-size: 24px;
+
+        div {
+          color: #c0c0c0;
+          letter-spacing: 10px;
+        }
+
+        span {
+          color: yellow;
+        }
+      }
+
     }
   }
 }

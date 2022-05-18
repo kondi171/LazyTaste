@@ -1,7 +1,10 @@
 import logo from '../../../assets/img/restaurant-logo.jpg';
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react';
+import { AppContext } from '../../contexts/AppContext';
 
 const Orders = () => {
+  const { balance } = useContext(AppContext);
   return (
     <section className="restaurant-orders">
       <div className="banner">
@@ -9,7 +12,7 @@ const Orders = () => {
         <h2 className="title">Try this Kebab!</h2>
         <div className="balance">
           Today's balance:
-          <span>1241.98 PLN</span>
+          <span>{balance} PLN</span>
         </div>
       </div>
       <nav className="orders-navigation">

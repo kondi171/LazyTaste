@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from './../../assets/img/LT-logo-transparent.png';
-import Login from '../landing_page/Login';
-import Register from '../landing_page/Register';
+import logo from './../../../assets/img/LT-logo-transparent.png';
+import Login from '../../landing_page/Login';
+import Register from '../../landing_page/Register';
 const Modal = ({ clicked, setIsOpen }) => {
   const [whatClicked, setWhatClicked] = useState('');
 
@@ -28,7 +28,7 @@ const Modal = ({ clicked, setIsOpen }) => {
       document.body.style.overflowY = 'visible';
       setIsOpen(false);
     });
-  
+
 
   }, [clicked]);
 

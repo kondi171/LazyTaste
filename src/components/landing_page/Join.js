@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal from "../features/Modal";
+import Modal from "../features/modals/Modal";
 const Join = () => {
 	const [whatClicked, setWhatClicked] = useState('');
 	const [isOpen, setIsOpen] = useState(false);

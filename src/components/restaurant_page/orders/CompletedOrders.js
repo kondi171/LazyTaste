@@ -1,7 +1,25 @@
+import { useState, useEffect, useContext } from 'react';
+import { AppContext } from '../../contexts/AppContext';
 import MiniFooter from '../../features/MiniFooter';
 
 const CompletedOrders = () => {
-  let numberOfCompletedOrders = 1;
+
+  const { setBalance } = useContext(AppContext);
+
+  const [numberOfCompletedOrders, setNumberOfCompletedOrders] = useState(0);
+  const [sumOfTodaysOrders, setSumOfTodaysOrders] = useState(0);
+
+  useEffect(() => {
+    let sum = 0;
+    const orders = document.querySelectorAll('.single-order');
+    const orderValues = document.querySelectorAll('.single-order .value');
+    orderValues.forEach(orderValue => {
+      sum += parseFloat(orderValue.textContent);
+      setSumOfTodaysOrders(sum);
+    });
+    setNumberOfCompletedOrders(orders.length);
+    setBalance(sumOfTodaysOrders);
+  }, [numberOfCompletedOrders]);
   return (
     <div className="orders-section">
       <div className="orders__completed-orders">
@@ -21,7 +39,7 @@ const CompletedOrders = () => {
           <div className='order-item'>Kebab XL - 21.99 PLN</div>
           <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
           <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
+            <div className='order-info__value'>Order Value: <span className="color color--info"><span className='value'>61.98</span> PLN</span></div>
             <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
             <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
             <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
@@ -35,7 +53,7 @@ const CompletedOrders = () => {
           <div className='order-item'>Kebab XL - 21.99 PLN</div>
           <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
           <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
+            <div className='order-info__value'>Order Value: <span className="color color--info"><span className='value'>61.98</span> PLN</span></div>
             <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
             <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
             <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
@@ -49,7 +67,7 @@ const CompletedOrders = () => {
           <div className='order-item'>Kebab XL - 21.99 PLN</div>
           <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
           <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
+            <div className='order-info__value'>Order Value: <span className="color color--info"><span className='value'>61.98</span> PLN</span></div>
             <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
             <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
             <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
@@ -63,7 +81,7 @@ const CompletedOrders = () => {
           <div className='order-item'>Kebab XL - 21.99 PLN</div>
           <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
           <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
+            <div className='order-info__value'>Order Value: <span className="color color--info"><span className='value'>61.98</span> PLN</span></div>
             <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
             <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
             <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
@@ -77,7 +95,7 @@ const CompletedOrders = () => {
           <div className='order-item'>Kebab XL - 21.99 PLN</div>
           <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
           <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
+            <div className='order-info__value'>Order Value: <span className="color color--info"><span className='value'>61.98</span> PLN</span></div>
             <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
             <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
             <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
@@ -91,7 +109,7 @@ const CompletedOrders = () => {
           <div className='order-item'>Kebab XL - 21.99 PLN</div>
           <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
           <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
+            <div className='order-info__value'>Order Value: <span className="color color--info"><span className='value'>61.98</span> PLN</span></div>
             <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
             <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
             <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>

@@ -14,6 +14,24 @@
     .create-promo {
       @extend %area;
       @include cloud(10px, $darkColor);
+
+      .active-promo {
+        width: 100%;
+
+        font-size: 2rem;
+
+        h4 {
+          text-align: center;
+        }
+
+        p {
+          width: 100%;
+          display: block;
+          padding: 1rem;
+          hyphens: auto;
+          text-align: center;
+        }
+      }
     }
 
     .promo-restaurant-list {
@@ -33,6 +51,28 @@
         font-family: $decorativeFont;
         text-align: center;
       }
+
+      .content-info {
+        p {
+          font-size: 16px;
+          padding: 10px;
+          // text-align: center;
+        }
+      }
+    }
+  }
+
+  &__result {
+    color: $primaryColor;
+    position: absolute;
+    bottom: 1vh;
+    right: 2vw;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: $decorativeFont;
+
+    span {
+      color: $additionalColor;
     }
   }
 }

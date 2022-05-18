@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AppContext } from '../contexts/AppContext';
 import InfoColumn from '../features/InfoColumn';
 const Home = () => {
+  const { notifications } = useContext(AppContext);
   let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
   const promotions = [
     {
@@ -21,7 +23,6 @@ const Home = () => {
     setInterval(() => {
       if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(indexOfPromotions = 0);
       else changeIndexOfPromotions(indexOfPromotions += 1);
-      console.log(indexOfPromotions);
     }, 10000);
   }, []);
   return (
@@ -45,7 +46,7 @@ const Home = () => {
             <i className="fa fa-shopping-cart icon" aria-hidden="true"></i>
             <div className="notifications">
               <i className="fa fa-bell" aria-hidden="true"></i>
-              <span>You have <strong>4</strong> orders</span>
+              <span>You have <strong>{notifications}</strong> orders</span>
             </div>
 
           </NavLink>

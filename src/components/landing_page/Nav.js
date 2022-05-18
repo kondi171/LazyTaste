@@ -2,7 +2,7 @@ import logo from './../../assets/img/LT-logo-transparent.png';
 import { animateScroll as scroll } from "react-scroll/modules";
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect, useState } from 'react';
-import Modal from '../features/Modal';
+import Modal from '../features/modals/Modal';
 const Nav = () => {
   const [whatClicked, setWhatClicked] = useState('');
   const [isOpen, setIsOpen] = useState(false);

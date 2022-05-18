@@ -1,5 +1,8 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AppContext } from '../contexts/AppContext';
 const Navigation = () => {
+  const { notifications } = useContext(AppContext);
   return (
     <nav className='navigation'>
       <i className="fa fa-angle-double-left" aria-hidden="true"></i>
@@ -13,7 +16,7 @@ const Navigation = () => {
       </NavLink>
       <NavLink className='navlink tooltip' to='/restaurant/orders/active'>
         <i className="fa fa-shopping-cart" aria-hidden="true">
-          <strong>4</strong>
+          <strong>{notifications}</strong>
         </i>
         <span className="tooltip-text">Orders</span>
       </NavLink>
