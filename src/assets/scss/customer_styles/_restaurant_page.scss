@@ -30,6 +30,7 @@
     justify-content: space-evenly;
     align-items: center;
 
+
     .menu {
       @include cloud(10px, $darkColor);
       margin: 2vw;
@@ -39,6 +40,14 @@
       background-color: $darkColor;
       opacity: .9;
       width: 45vw;
+
+      &--competitor {
+        width: 75vw;
+
+        .menu__title {
+          width: 75vw;
+        }
+      }
 
       &__title {
         font-size: 42px;

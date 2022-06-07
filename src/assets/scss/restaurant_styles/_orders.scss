@@ -122,6 +122,22 @@
     box-shadow: 0px 0px 24px 2px $fontColor;
     margin: 2vw;
 
+    .order-customer {
+      font-size: 24px;
+      margin-top: 10px;
+      color: $secondaryColor;
+    }
+
+    .order-image {
+      img {
+        margin-top: 15px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid $primaryColor;
+      }
+    }
+
     .order-header {
       color: $secondaryColor;
 

@@ -83,6 +83,13 @@
       padding-bottom: 2vh;
       border-bottom: 2px dashed $primaryColor;
 
+      &--password {
+        span>strong {
+          letter-spacing: 1px;
+          font-size: 36px;
+        }
+      }
+
       span {
         font-size: 24px;
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Opinions = () => {
-  const constantTime = 4;
+  const constantTime = 9;
   let average = 0;
   const [reviewsIndex, setReviewsIndex] = useState(0);
   const [timeToChange, setTimeToChange] = useState(constantTime);
@@ -14,7 +14,7 @@ const Opinions = () => {
         sum += opinion.rate
       });
       average = sum / opinions.length;
-      return average;
+      return average.toFixed(2);
     }
   }
 
@@ -22,6 +22,7 @@ const Opinions = () => {
     fetch('http://localhost:4000/API/opinions')
       .then(res => res.json())
       .then(opinions => setOpinions(opinions))
+
   }, []);
 
   useEffect(() => {
@@ -43,11 +44,11 @@ const Opinions = () => {
         review.classList.remove('fade');
       }, constantTime * 1000 + transitionDuration);
     }
-    return () => {
-      clearTimeout(fadeTimeout);
-      clearTimeout(unfadeTimeout);
-      clearTimeout(transitionTimeout);
-    }
+    // return () => {
+    //   clearTimeout(fadeTimeout);
+    //   clearTimeout(unfadeTimeout);
+    //   clearTimeout(transitionTimeout);
+    // }
   }, [reviewsIndex, opinions]);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const Opinions = () => {
   }, [timeToChange]);
 
   return (
+
     <section id="opinions" className="opinions">
       <h3 className="opinions__title">Opinions</h3>
       <div className="opinions__flex">

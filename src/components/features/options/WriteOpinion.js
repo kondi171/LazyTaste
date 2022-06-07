@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../../contexts/AppContext";
+import { AppContext } from "../../AppContext";
 
 const WriteOpinion = () => {
   const { loggedUser } = useContext(AppContext);

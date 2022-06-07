@@ -1,7 +1,8 @@
 import logo from '../../../assets/img/restaurant-logo.jpg';
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react';
-import { AppContext } from '../../contexts/AppContext';
+import { AppContext } from '../../AppContext';
+
 
 const Orders = () => {
   const { balance } = useContext(AppContext);

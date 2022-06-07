@@ -1,13 +1,25 @@
-import { useState } from "react";
-
+import { useState, useContext } from "react";
+import { AppContext } from "../../AppContext";
 const ChangeProductNameModal = ({ productName, productPrice, setProductValue }) => {
+  const { productID, loggedUser, isOpen, setIsOpen } = useContext(AppContext);
+
   const [inputValue, setInputValue] = useState('');
-  const [changeInfo, setChangeInfo] = useState(false);
   const handleChangeInputValue = e => setInputValue(e.target.value);
   const handleChange = e => {
+    const testID = `629f15980a8c49d791e1819e`;
+
     e.preventDefault();
     setProductValue(inputValue);
-    setChangeInfo(true);
+    setIsOpen(!isOpen);
+    fetch(`http://localhost:4000/API/restaurant/${testID}/${productID}`, {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'PATCH',
+    })
+      .then(res => res.status)
+      .catch(error => console.log(error));
   }
   return (
     <>
@@ -19,9 +31,8 @@ const ChangeProductNameModal = ({ productName, productPrice, setProductValue }) 
       <div className="product__to">to:</div>
       <form>
         <input onChange={e => handleChangeInputValue(e)} type='text' placeholder='Type new name of product...' />
-        <input onClick={e => handleChange(e)} value="Change" type="submit" />
+        <input onClick={e => handleChange(e)} value="Change" type="button" />
       </form>
-      <div className="return-info">{changeInfo ? 'Changed!' : ''}</div>
     </>
   );
 }

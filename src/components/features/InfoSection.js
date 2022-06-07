@@ -1,6 +1,6 @@
 import logo from '../../assets/img/restaurant-logo.jpg';
 import { useContext } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 const InfoSection = ({ place }) => {
   const { loggedUser } = useContext(AppContext);
   return (
@@ -33,7 +33,6 @@ const InfoSection = ({ place }) => {
           </>}
       </div>
       <div className="account-column__logout">
-        {place === 'menu' && <a href="http://localhost:3000">Public Menu</a>}
         {place === 'home' && <a href="http://localhost:3000">Logout</a>}
         {place === 'customerView' && <a href="http://localhost:3000">Back</a>}
       </div>

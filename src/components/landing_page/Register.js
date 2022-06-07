@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import photoCustomer from './../../assets/img/alex-haney-CAhjZmVk5H4-unsplash.jpg';
 import photoRestaurant from './../../assets/img/louis-hansel-wVoP_Q2Bg_A-unsplash.jpg';
 
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 const Register = ({ name }) => {
   const { setMessageContent, setMessageType, setMessageVisible } = useContext(AppContext);
 

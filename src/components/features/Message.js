@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from "react";
 import '../../assets/scss/common_styles/message.scss';
-import { AppContext } from "../contexts/AppContext";
+import { AppContext } from "../AppContext";
 const Message = () => {
   const { messageContent, messageType, isModalOpen, setMessageContent, messageVisible, setMessageVisible } = useContext(AppContext);
 

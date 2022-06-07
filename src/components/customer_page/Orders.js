@@ -1,6 +1,6 @@
 import blank from "../../assets/img/blank-photo.png";
 import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 import CustomerOrdersSearchbar from '../features/searchbars/CustomerOrdersSearchbar';
 const Orders = () => {
   const { loggedUser } = useContext(AppContext);
@@ -10,17 +10,20 @@ const Orders = () => {
   const [searchType, setSearchType] = useState('searchByName');
   const [ordersValue, setOrdersValue] = useState(0);
   const [isOrdersEmpty, setIsOrdersEmpty] = useState(true);
-  const countStartOverallOrdersValue = (orders) => {
-    let amount = 0;
-    orders.orders.forEach(order => amount += order.paid)
-    setOrdersValue(amount.toFixed(2));
-  }
+
 
   const handleSearchingOptions = e => {
     const radio = document.querySelector('input[name="radio"]:checked');
     const searchType = radio.getAttribute('id');
     setSearchType(searchType);
   }
+
+  const countStartOverallOrdersValue = (orders) => {
+    let amount = 0;
+    orders.orders.forEach(order => amount += order.paid)
+    setOrdersValue(amount.toFixed(2));
+  }
+
   const fetchData = async () => {
     await fetch(`http://localhost:4000/API/customers/${loggedUser._id}`)
       .then(res => res.json())
@@ -29,7 +32,6 @@ const Orders = () => {
         countStartOverallOrdersValue(data)
       });
   }
-
 
   useEffect(() => {
     fetchData();

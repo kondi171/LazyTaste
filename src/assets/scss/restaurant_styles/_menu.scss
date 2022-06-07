@@ -57,7 +57,14 @@
 			color: $primaryColor;
 		}
 
-		.menu__section {
+		h3 {
+			font-size: 44px;
+			padding: 10px;
+			margin-left: 10px;
+			font-family: $decorativeFont;
+		}
+
+		.menu__edit {
 			overflow-y: scroll;
 			margin: 2vw;
 			height: 80vh;
@@ -65,98 +72,64 @@
 			background-color: $darkColor;
 			opacity: .8;
 
-			.single-section {
+			.fa-refresh,
+			.fa-times {
+				transition-duration: .4s;
 
-				.fa-refresh,
-				.fa-times {
-					transition-duration: .4s;
-
-					&:hover {
-						cursor: pointer;
-						color: $secondaryColor;
-						transform: rotate(90deg);
-					}
+				&:hover {
+					cursor: pointer;
+					color: $secondaryColor;
+					transform: rotate(90deg);
 				}
+			}
 
-				.section__title {
-					display: flex;
-					flex-basis: 70vw;
-					justify-content: space-between;
-					align-items: center;
-					font-size: 44px;
-					border-bottom: 2px solid $primaryColor;
 
-					h3 {
-						font-family: $decorativeFont;
-						padding: 2vh;
-					}
+			ul {
+				list-style: none;
 
-					i {
-						margin-right: 2vw;
-					}
-				}
-
-				ul {
-					list-style: none;
-
-					li {
-						position: relative;
-						border: 2px solid $additionalColor;
-						padding: 2vw;
-						margin: 1vh;
-						border-radius: 10px;
-						background-color: darken($darkColor, 5%);
-
-						.content {
-							font-size: 28px;
-							font-weight: bold;
-						}
-
-						.price {
-							font-size: 22px;
-							color: $additionalColor;
-						}
-
-						.fa-times {
-							font-size: 44px;
-							position: absolute;
-							right: 5vw;
-							top: 0;
-							bottom: 0;
-							margin: auto 0;
-							height: 5vh;
-						}
-
-						&.add-item {
-							width: 25%;
-							text-align: center;
-							font-size: 44px;
-							transition-duration: .4s;
-
-							&:hover {
-								cursor: pointer;
-								background-color: darken($additionalColor, 10%);
-								box-shadow: 0px 0px 24px 2px $additionalColor;
-							}
-						}
-					}
-				}
-
-				.add-section {
-					// width: 100%;
-					text-align: center;
-					font-size: 44px;
+				li {
+					position: relative;
 					border: 2px solid $additionalColor;
 					padding: 2vw;
 					margin: 1vh;
 					border-radius: 10px;
 					background-color: darken($darkColor, 5%);
-					transition-duration: .4s;
 
-					&:hover {
-						cursor: pointer;
-						background-color: darken($additionalColor, 10%);
-						box-shadow: 0px 0px 24px 2px $additionalColor;
+					.content {
+						font-size: 28px;
+						font-weight: bold;
+					}
+
+					.price {
+						font-size: 22px;
+						color: $additionalColor;
+					}
+
+					.fa-times {
+						font-size: 44px;
+						position: absolute;
+						right: 5vw;
+						top: 0;
+						bottom: 0;
+						margin: auto 0;
+						height: 5vh;
+					}
+
+					&.add-item {
+						width: 25%;
+						text-align: center;
+						font-size: 44px;
+						transition-duration: .4s;
+
+						.fa-plus {
+							font-size: 84px;
+							transition-duration: .4s;
+
+							&:hover {
+								cursor: pointer;
+								transform: rotate(90deg);
+							}
+						}
 					}
 				}
 			}

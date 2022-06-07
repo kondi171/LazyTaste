@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 const Navigation = () => {
   const { notifications } = useContext(AppContext);
   return (
@@ -20,9 +20,9 @@ const Navigation = () => {
         </i>
         <span className="tooltip-text">Orders</span>
       </NavLink>
-      <NavLink className='navlink tooltip' to='/restaurant/promotion'>
-        <i className="fa fa-product-hunt" aria-hidden="true"></i>
-        <span className="tooltip-text">Promotions</span>
+      <NavLink className='navlink tooltip' to='/restaurant/competitors'>
+        <i className="fa fa-users" aria-hidden="true"></i>
+        <span className="tooltip-text">Competitors</span>
       </NavLink>
       <NavLink className='navlink tooltip' to='/restaurant/settings'>
         <i className="fa fa-cog" aria-hidden="true"></i>

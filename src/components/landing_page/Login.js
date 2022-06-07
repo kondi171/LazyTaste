@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Route, Navigate, Routes } from 'react-router-dom';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 import photoCustomer from './../../assets/img/alex-haney-CAhjZmVk5H4-unsplash.jpg';
 import photoRestaurant from './../../assets/img/louis-hansel-wVoP_Q2Bg_A-unsplash.jpg';
 import LoadingState from '../features/LoadingState';

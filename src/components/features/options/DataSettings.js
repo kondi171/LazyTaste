@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../../contexts/AppContext";
+import { AppContext } from "../../AppContext";
 
 const DataSettings = () => {
   const { loggedUser, setLoggedUser } = useContext(AppContext);
@@ -14,6 +14,7 @@ const DataSettings = () => {
     adress: '',
     NIP: '',
   });
+  const [hashedPassword, setHashedPassword] = useState('');
   const [apiSystem, setApiSystem] = useState('');
 
   const handleChangeName = () => {
@@ -126,8 +127,15 @@ const DataSettings = () => {
       infoDiv.classList.remove('error');
     }, 2000);
   }
+
+  const hashPassword = () => {
+    let hash = '';
+    for (let i = 0; i < loggedUser.password.length; i++) hash += '•';
+    setHashedPassword(hash);
+  }
+
+
   const updateData = (field, fieldValue) => {
-    console.log((loggedUser));
     infoDiv.classList.remove('error');
     infoDiv.classList.add('success')
     const URL = `http://localhost:4000/API/${apiSystem}`;
@@ -146,11 +154,13 @@ const DataSettings = () => {
     })
       .then(res => res.status)
       .catch(error => console.log(error));
+    hashPassword();
   }
 
   useEffect(() => {
     if (loggedUser.NIP !== undefined) setApiSystem('restaurants');
     else setApiSystem('customers');
+    hashPassword();
   }, [loggedUser]);
 
   return (
@@ -174,8 +184,9 @@ const DataSettings = () => {
           <button onClick={handleChangeMail}>Change</button>
         </div>
       }
+      {/* {loggedUser.password.length} */}
       <div className="show-settings show-settings--password">
-        <span>Password: <strong>{loggedUser.password}</strong></span>
+        <span>Password: <strong>{hashedPassword}</strong></span>
         <label htmlFor="mail">New Password:</label>
         <input onChange={e => setData({ ...data, password: e.target.value })} id="password" type='password' name="password" placeholder="Set new mail..." />
         <button onClick={handleChangePassword}>Change</button>

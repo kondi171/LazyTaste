@@ -4,7 +4,7 @@ import { StrictMode } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import LazyTaste from './components/LazyTaste';
 import './assets/scss/main.scss';
-import AppProvider from './components/contexts/AppContext';
+import AppProvider from './components/AppContext';
 
 // const root = createRoot(document.getElementById('root'));
 // root.render(

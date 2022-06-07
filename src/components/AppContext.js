@@ -11,7 +11,8 @@ const AppProvider = ({ children }) => {
   const [loggedUser, setLoggedUser] = useState(null);
   const [chosenRestaurant, setChosenRestaurant] = useState(null);
   const [messageVisible, setMessageVisible] = useState(false);
-
+  const [productID, setProductID] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <AppContext.Provider
       value={{
@@ -29,6 +30,10 @@ const AppProvider = ({ children }) => {
         setMessageType,
         messageVisible,
         setMessageVisible,
+        productID,
+        setProductID,
+        isOpen,
+        setIsOpen,
       }}>
       {children}
     </AppContext.Provider>

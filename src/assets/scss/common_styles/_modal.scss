@@ -108,7 +108,8 @@
       &[type=text],
       &[type=password],
       &[type=mail],
-      &[type=date] {
+      &[type=date],
+      &[type=number] {
         opacity: .8;
 
         &::placeholder {
@@ -165,5 +166,8 @@
 
     }
 
+    label {
+      font-family: $decorativeFont;
+    }
   }
 }

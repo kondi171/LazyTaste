@@ -2,10 +2,10 @@ import { useEffect, useState, useContext } from "react";
 import logo from './../../../assets/img/LT-logo-transparent.png';
 import Login from '../../landing_page/Login';
 import Register from '../../landing_page/Register';
-import { AppContext } from "../../contexts/AppContext";
+import { AppContext } from "../../AppContext";
 
 const Modal = ({ clicked, setIsOpen }) => {
-  const { setMessageVisible, setMessageContent } = useContext(AppContext);
+  const { setMessageVisible, menuModalOpen } = useContext(AppContext);
   const [whatClicked, setWhatClicked] = useState('');
 
   useEffect(() => {
@@ -29,7 +29,17 @@ const Modal = ({ clicked, setIsOpen }) => {
       setIsOpen(false);
       setMessageVisible(false);
     });
-
+    if (!menuModalOpen) {
+      close.addEventListener('click', () => {
+        layer.style.opacity = '0';
+        layer.style.zIndex = '-10';
+        modal.style.transform = 'scale(0)';
+        // allow scroll
+        document.body.style.overflowY = 'visible';
+        setIsOpen(false);
+        setMessageVisible(false);
+      });
+    }
 
   }, [clicked, setIsOpen]);
 

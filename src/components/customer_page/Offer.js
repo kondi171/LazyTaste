@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Route, Navigate, Routes } from 'react-router-dom';
 import blank from "../../assets/img/blank-photo.png";
-import { AppContext } from "../contexts/AppContext";
+import { AppContext } from "../AppContext";
 import Searchbar from "../features/searchbars/Searchbar";
 
 const Offer = () => {

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ChangeSectionNameModal from "./ChangeSectionNameModal";
 import ChangeProductNameModal from "./ChangeProductNameModal";
 import ChangeProductPriceModal from "./ChangeProductPriceModal";
 import RemoveProductModal from "./RemoveProductModal";
+import AddProductModal from "./AddProductModal";
 const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue, setPriceValue, additionalItems }) => {
 
   const [mainChange, setMainChange] = useState('');
@@ -33,10 +33,10 @@ const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue,
     <section id='layer' className="modal">
       <div id="modal" className="modal__content">
         <i id='close' className="fa fa-times" aria-hidden="true"></i>
-        {type === 'section' && <ChangeSectionNameModal sectionName={mainChange} setSectionValue={setSectionValue} />}
         {type === 'product' && <ChangeProductNameModal productName={mainChange} productPrice={additionalItems} setProductValue={setProductValue} />}
         {type === 'price' && <ChangeProductPriceModal productName={additionalItems} productPrice={mainChange} setPriceValue={setPriceValue} />}
         {type === 'removeProduct' && <RemoveProductModal productItems={additionalItems} />}
+        {type === 'addProduct' && <AddProductModal />}
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import logo from '../../assets/img/restaurant-logo.jpg';
 import { useState, useContext, useEffect } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 import { Link } from 'react-router-dom';
 
 const RestaurantPage = () => {
@@ -44,8 +44,9 @@ const RestaurantPage = () => {
     messageDiv.style.transform = 'scale(0)';
   }
   const addOrder = () => {
-    const URL = 'http://localhost:4000/API/addOrder';
-    const body = new URLSearchParams({
+    //Add order to user
+    const customerURL = 'http://localhost:4000/API/customer/add-order';
+    const customerBody = new URLSearchParams({
       id: loggedUser._id,
       order: JSON.stringify({
         restaurantName: chosenRestaurant.name,
@@ -54,13 +55,39 @@ const RestaurantPage = () => {
         products: cartContent
       }),
     });
-    fetch(URL, {
+    fetch(customerURL, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       method: 'PUT',
-      body: body
+      body: customerBody
+    })
+      .then(res => res.status)
+      .catch(error => console.log(error));
+
+    // Add order to restaurant
+    console.log(loggedUser);
+    const restaurantURL = 'http://localhost:4000/API/restaurant/add-order';
+    const restaurantBody = new URLSearchParams({
+      id: chosenRestaurant._id,
+      order: JSON.stringify({
+        customerName: loggedUser.name,
+        customerLastname: loggedUser.lastname,
+        customerAvatar: loggedUser.avatar,
+        customerAdress: loggedUser.adress,
+        message: additionalMessage,
+        paymentMethod: 'Cash',
+        products: cartContent,
+      })
+    });
+    fetch(restaurantURL, {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'PUT',
+      body: restaurantBody
     })
       .then(res => res.status)
       .catch(error => console.log(error));

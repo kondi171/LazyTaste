@@ -1,10 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import { AppContext } from '../../contexts/AppContext';
+import { AppContext } from '../../AppContext';
 import MiniFooter from '../../features/MiniFooter';
 
 const CompletedOrders = () => {
-
-  const { setBalance } = useContext(AppContext);
 
   const [numberOfCompletedOrders, setNumberOfCompletedOrders] = useState(0);
   const [sumOfTodaysOrders, setSumOfTodaysOrders] = useState(0);
@@ -18,7 +16,7 @@ const CompletedOrders = () => {
       setSumOfTodaysOrders(sum);
     });
     setNumberOfCompletedOrders(orders.length);
-    setBalance(sumOfTodaysOrders);
+
   }, [numberOfCompletedOrders]);
   return (
     <div className="orders-section">

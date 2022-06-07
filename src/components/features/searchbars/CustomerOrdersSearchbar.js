@@ -21,7 +21,7 @@ const CustomerOrdersSearchbar = ({ data, setFilter, searchType, setOrdersValue }
     <div className="searchbar">
       <img className="logo" src={logo} alt="LazyTaste logo" />
       <i className="fa fa-search" aria-hidden="true"></i>
-      <input onChange={handleSearch} id="search" className="search-input" placeholder="Type restaurant to search..." type="search" />
+      <input onChange={handleSearch} id="search" className="search-input" placeholder="Search in orders..." type="search" />
     </div>
   );
 }

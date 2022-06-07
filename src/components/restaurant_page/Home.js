@@ -1,32 +1,22 @@
 import { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppContext } from '../contexts/AppContext';
+import { AppContext } from '../AppContext';
 import InfoSection from '../features/InfoSection';
 const Home = () => {
   const { notifications } = useContext(AppContext);
   let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
-  const promotions = [
-    {
-      name: 'Saray',
-      content: '1Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero error eligendi magni tempore at in debitis, ullam nobis voluptatum facilis.',
-    },
-    {
-      name: 'Alibaba',
-      content: '2Sed harum quod, est, deleniti ut et fugiat dignissimos quam, veritatis porro deserunt asperiores possimus ipsa maiores recusandae.',
-    },
-    {
-      name: 'McDonals',
-      content: '3Sint sed quaerat vel corporis assumenda id, voluptatum a odit. Perspiciatis aperiam adipisci alias, odit, voluptates recusandae nesciunt dicta exercitationem'
-    },
-  ];
+  const [promotions, setPromotions] = useState([]);
+
   useEffect(() => {
-    const changePromoTimeout = setInterval(() => {
-      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(indexOfPromotions = 0);
-      else changeIndexOfPromotions(indexOfPromotions += 1);
-    }, 10000);
-    return () => {
-      clearTimeout(changePromoTimeout);
-    }
+    fetch('http://localhost:4000/API/restaurants')
+      .then(res => res.json())
+      .then(data => setPromotions(data))
+      .catch(error => console.log(error));
+    console.log(indexOfPromotions);
+    setInterval(() => {
+      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(0);
+      else changeIndexOfPromotions(indexOfPromotions + 1);
+    }, 1000);
   }, []);
   return (
     <section className="home">
@@ -40,9 +30,9 @@ const Home = () => {
           </div>
         </NavLink>
         <div className="control-panel__under-boxes">
-          <NavLink to='/restaurant/promotion' className="under-box">
-            <h2>Set Promotion</h2>
-            <i className="fa fa-product-hunt icon" aria-hidden="true"></i>
+          <NavLink to='/restaurant/competitors' className="under-box">
+            <h2>Competitors</h2>
+            <i className="fa fa-users icon" aria-hidden="true"></i>
           </NavLink>
           <NavLink to='/restaurant/orders/active' className="under-box">
             <h2>Orders</h2>
@@ -56,8 +46,12 @@ const Home = () => {
         </div>
         <div className="promotions">
           <h5>Competitors promotions</h5>
-          <strong>{`${promotions[indexOfPromotions].name}: `}</strong>
-          <span>{promotions[indexOfPromotions].content}</span>
+          {Object.keys(promotions).length !== 0 &&
+            <>
+              <strong>{`${promotions[indexOfPromotions].name}: `}</strong>
+              <span>{promotions[indexOfPromotions].promotion}</span>
+            </>
+          }
         </div>
       </div>
     </section>

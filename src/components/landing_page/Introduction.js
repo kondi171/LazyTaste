@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Introduction = () => {
   return (
@@ -16,8 +16,7 @@ const Introduction = () => {
           thanks to which you can order anything what you want without leaving your home! For customers, we offer
           an smart assistant who will help you choose your today's meal! Join us and take adventage of our services!
         </p>
-        <Link to='customer/home' className="check"><span className="visible">Check this out!</span><span className="invisible">Click!</span></Link>
-        {/* <Link to='restaurant/home' className="check"><span className="visible">Check this out!</span><span className="invisible">Click!</span></Link> */}
+        <ScrollLink to="join" smooth={true} duration={400} offset={-100} className="check"><span className="visible">Check this out!</span><span className="invisible">Click!</span></ScrollLink>
       </div>
     </section>
   );

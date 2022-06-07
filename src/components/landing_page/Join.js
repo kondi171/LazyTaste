@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../contexts/AppContext";
+import { AppContext } from "../AppContext";
 import Modal from "../features/modals/Modal";
 const Join = () => {
 	const [whatClicked, setWhatClicked] = useState('');

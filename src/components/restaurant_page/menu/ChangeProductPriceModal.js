@@ -20,7 +20,7 @@ const ChangeProductPriceModal = ({ productName, productPrice, setPriceValue }) =
       <div className="product__to">to:</div>
       <form>
         <input onChange={e => handleChangeInputValue(e)} type='number' placeholder='Type new price of product...' />
-        <input onClick={e => handleChange(e)} value="Change" type="submit" />
+        <input onClick={e => handleChange(e)} value="Change" type="button" />
       </form>
       <div className="return-info">{changeInfo ? 'Changed!' : ''}</div>
     </>
