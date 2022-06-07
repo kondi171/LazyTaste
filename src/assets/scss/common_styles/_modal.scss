@@ -58,6 +58,17 @@
     button {
       @extend %btn;
       width: 40%;
+
+      &:first-of-type {
+        color: $primaryColor;
+        border-color: $primaryColor;
+
+        &:hover {
+          color: $secondaryColor;
+          border-color: $secondaryColor;
+          box-shadow: 0 0 10px 2px $secondaryColor;
+        }
+      }
     }
   }
 
@@ -120,7 +131,7 @@
     font-weight: bold;
   }
 
-  input[type=submit] {
+  input[type=button] {
     display: block;
     margin: 0 auto;
     @extend %btn;

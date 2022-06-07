@@ -1,0 +1,74 @@
+@import '../improvements/variables';
+
+.save-data__overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  transform: translate(-20%, -10%);
+
+  .save-data__overlay--text {
+    width: 50vw;
+    display: block;
+    color: $primaryColor;
+    font-size: 42px;
+    text-align: center;
+    padding: 24px;
+
+    span {
+      text-align: left;
+      display: inline-block;
+      width: 1vw;
+      margin-left: 2px;
+    }
+  }
+
+  .save-data__overlay--progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-top: 3px solid $primaryColor;
+    border-left: 3px solid $primaryColor;
+    margin: 24px;
+    animation: loading infinite 1s linear;
+  }
+
+  @keyframes loading {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes hoverEffect {
+    0% {
+      transform: skewX(0deg);
+    }
+
+    25% {
+      transform: skewX(10deg);
+    }
+
+    50% {
+      transform: skewX(0deg);
+    }
+
+    75% {
+      transform: skewX(-10deg);
+    }
+
+    100% {
+      transform: skewX(0deg);
+    }
+  }
+}

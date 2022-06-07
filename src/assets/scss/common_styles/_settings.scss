@@ -5,6 +5,7 @@
   width: 90%;
   height: 100vh;
   margin: 0 auto;
+  @extend %no-select;
 
   &__options {
     display: flex;
@@ -46,6 +47,10 @@
     @include cloud(10px, $darkColor);
     height: 94vh;
     width: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: $darkColor;
+    opacity: .9;
 
     h3 {
       text-align: center;
@@ -130,17 +135,28 @@
   }
 
   .info {
-    display: none;
+    transform: scale(0);
+    transition-duration: .4s;
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+    margin: 2vh;
+    background-color: $darkColor;
     transition-duration: .4s;
 
     &.success {
       @include message($additionalColor);
-      display: block;
+      transform: scale(1);
     }
 
     &.error {
       @include message($redColor);
-      display: block;
+      transform: scale(1);
     }
   }
 

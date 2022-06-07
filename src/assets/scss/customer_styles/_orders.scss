@@ -16,7 +16,8 @@
       flex-direction: column;
       justify-content: center;
 
-      .sort {
+      .searching-options {
+
         width: 25vw;
         height: 58vh;
         margin-bottom: 2vh;
@@ -39,7 +40,6 @@
           width: 40%;
           display: inline-block;
         }
-
       }
 
       .expenses {
@@ -62,11 +62,16 @@
       }
     }
 
+
     .orders__order-list {
       margin: 2vw;
       flex-basis: 100vh;
       height: 80vh;
       @include cloud(10px, $darkColor);
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background-color: $darkColor;
+      opacity: .9;
 
       h3 {
         font-size: 34px;
@@ -84,7 +89,117 @@
         font-size: 3rem;
         text-align: center;
       }
+
+      .orders__single-order {
+        display: flex;
+        justify-content: space-between;
+        margin: 25px;
+        padding: 25px;
+        background-color: darken($fontColor, 20%);
+        border: 2px solid $primaryColor;
+        box-shadow: 0 0 8px 0 $primaryColor;
+        border-radius: 5px;
+        opacity: 1;
+
+        .logo-part {
+          width: 20%;
+
+          img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+          }
+        }
+
+        .items-part {
+          width: 30%;
+
+          h4 {
+            font-family: $decorativeFont;
+            font-size: 36px;
+          }
+
+          ul {
+            margin-left: 25px;
+
+            li {
+              font-size: 24px;
+              color: $secondaryColor;
+            }
+          }
+        }
+
+        .info-part {
+          width: 30%;
+          font-size: 24px;
+
+          .order-paid,
+          .order-message,
+          .order-date {
+            strong {
+              color: $additionalColor;
+            }
+          }
+        }
+      }
     }
   }
 
+  .radio-container {
+    .radio {
+      margin: 0.5rem;
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+
+        +.radio-label {
+          &:before {
+            content: '';
+            background: lighten($fontColor, 40%);
+            border-radius: 100%;
+            border: 1px solid $darkColor;
+            display: inline-block;
+            width: 1.4em;
+            height: 1.4em;
+            position: relative;
+            top: -0.2em;
+            margin-right: 1em;
+            vertical-align: top;
+            cursor: pointer;
+            text-align: center;
+            transition: all 250ms ease;
+          }
+        }
+
+        &:checked {
+          +.radio-label {
+            &:before {
+              background-color: $primaryColor;
+              box-shadow: inset 0 0 0 4px $darkColor;
+            }
+          }
+        }
+
+        &:focus {
+          +.radio-label {
+            &:before {
+              outline: none;
+              border-color: $primaryColor;
+            }
+          }
+        }
+
+        +.radio-label {
+          width: 80%;
+
+          &:empty {
+            &:before {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }

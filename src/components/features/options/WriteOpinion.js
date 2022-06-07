@@ -1,29 +1,46 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../../contexts/AppContext";
 
 const WriteOpinion = () => {
-  const constantTime = 2000;
-  let variousTime = constantTime;
-  //DB
-  const [rate, setRate] = useState(4);
-  const [opinion, setOpinion] = useState('lorem ipsum dolor sit amet, dispatch strine vesion of veruas kwe quoraz libiere.');
+  const { loggedUser } = useContext(AppContext);
+
+  const [rate, setRate] = useState(0);
+  const [opinion, setOpinion] = useState("You haven't rated our app yet!");
+
   const [newRate, setNewRate] = useState(0);
-  // Current inputs
   const [textareaValue, setTextAreaValue] = useState('');
   const [infoContent, setInfoContent] = useState('');
+  const sendOpinion = async () => {
+    const URL = 'http://localhost:4000/API/opinions';
+    const body = new URLSearchParams({
+      user: `${loggedUser.name}`,
+      rate: newRate,
+      content: textareaValue,
+    });
+    fetch(URL, {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'PUT',
+      body: body
+    })
+      .then(res => res.status)
+      .catch(error => console.log(error));
+  }
 
   const handleSubmitOpinion = () => {
-    // clearTimeout(clearInfoTimeout);
-    variousTime += constantTime;
     const infoDiv = document.querySelector('.info');
+
     if (textareaValue === '') {
       infoDiv.classList.add('error');
       infoDiv.classList.remove('success');
       setInfoContent('Opinion is empty!');
     }
-    else if (textareaValue.length >= 100) {
+    else if (textareaValue.length >= 500) {
       infoDiv.classList.add('error');
       infoDiv.classList.remove('success');
-      setInfoContent('Opinion is too long! Max 100 characters');
+      setInfoContent('Opinion is too long! Max 500 characters');
     }
     else if (textareaValue.length <= 5) {
       infoDiv.classList.add('error');
@@ -35,25 +52,39 @@ const WriteOpinion = () => {
       infoDiv.classList.remove('success');
       setInfoContent('You not rated our app!');
     }
+    else if (opinion !== "You haven't rated our app yet!") {
+      infoDiv.classList.add('error');
+      infoDiv.classList.remove('success');
+      setInfoContent('You have already rated our application');
+    }
     else {
       infoDiv.classList.add('success');
       infoDiv.classList.remove('error');
       setInfoContent('Your opinion has been added!');
       setRate(newRate);
       setOpinion(textareaValue);
-      // send to db *** HERE ***
-
+      sendOpinion();
     }
-    var clearInfoTimeout = setTimeout(() => {
+    setTimeout(() => {
       infoDiv.classList.remove('success');
       infoDiv.classList.remove('error');
-    }, variousTime);
+    }, 2000);
   }
 
   const handleTextArea = () => {
     const textarea = document.getElementById('area-content');
     setTextAreaValue(textarea.value);
   }
+  useEffect(() => {
+    fetch('http://localhost:4000/API/opinions')
+      .then(res => res.json())
+      .then(data => data.forEach(element => {
+        if (element.user === `${loggedUser.name} ${loggedUser.lastname}`) {
+          setRate(element.rate);
+          setOpinion(element.content);
+        }
+      }));
+  }, [loggedUser.name, loggedUser.lastname]);
 
   return (
     <section className="write-opinion">
@@ -84,7 +115,7 @@ const WriteOpinion = () => {
           </div>
         </div>
         <div className="opinion__opinion">
-          {opinion ? opinion : "You haven't rated our app yet!"}
+          {opinion}
         </div>
       </div>
       <div className="info">{infoContent}</div>

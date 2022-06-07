@@ -27,7 +27,7 @@ const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue,
       document.body.style.overflowY = 'visible';
       setIsOpen(false);
     });
-  }, [clicked]);
+  }, [clicked, setIsOpen]);
 
   return (
     <section id='layer' className="modal">

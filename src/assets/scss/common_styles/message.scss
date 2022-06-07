@@ -1,0 +1,38 @@
+@import './../improvements/variables';
+@import './../improvements/mixins';
+
+.message {
+  position: fixed;
+  text-align: center;
+  padding: 4px;
+  bottom: 0;
+  right: 0;
+  display: block;
+  transition-duration: .4s;
+  margin: 2vh;
+  z-index: 10;
+  background-color: $darkColor;
+  border: 2px solid $primaryColor;
+  box-shadow: 0px 0px 10px 2px $primaryColor;
+  color: $primaryColor;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1vh;
+  transition-duration: .4s;
+
+  .fa {
+    margin-right: 10px;
+  }
+
+  &--success {
+    @include message($additionalColor);
+    display: block;
+  }
+
+  &--error {
+    @include message($redColor);
+    display: block;
+  }
+}

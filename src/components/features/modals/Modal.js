@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import logo from './../../../assets/img/LT-logo-transparent.png';
 import Login from '../../landing_page/Login';
 import Register from '../../landing_page/Register';
+import { AppContext } from "../../contexts/AppContext";
+
 const Modal = ({ clicked, setIsOpen }) => {
+  const { setMessageVisible, setMessageContent } = useContext(AppContext);
   const [whatClicked, setWhatClicked] = useState('');
-
-
 
   useEffect(() => {
     const layer = document.getElementById('layer');
@@ -18,7 +19,6 @@ const Modal = ({ clicked, setIsOpen }) => {
       modal.style.transform = 'scale(1)';
       // disallow scroll
       document.body.style.overflowY = 'hidden';
-
     }
     close.addEventListener('click', () => {
       layer.style.opacity = '0';
@@ -27,10 +27,11 @@ const Modal = ({ clicked, setIsOpen }) => {
       // allow scroll
       document.body.style.overflowY = 'visible';
       setIsOpen(false);
+      setMessageVisible(false);
     });
 
 
-  }, [clicked]);
+  }, [clicked, setIsOpen]);
 
   return (
     <section id='layer' className="modal">

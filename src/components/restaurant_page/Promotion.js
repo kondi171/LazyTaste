@@ -1,6 +1,6 @@
 import { useState } from "react";
 import blank from "../../assets/img/blank-photo.png";
-import logo from './../../assets/img/LT-logo-transparent.png';
+import Searchbar from "../features/searchbars/Searchbar";
 const Promotion = () => {
   const competitors = [
     {
@@ -53,20 +53,10 @@ const Promotion = () => {
     newPromotion.value = '';
   }
 
-  const handleSearch = () => {
-    const search = document.getElementById('search').value.toLowerCase();
-    const result = competitors.filter(competitor => competitor.title.toLowerCase().includes(search));
-    setFilter(result);
-  }
-
   return (
     <section className="promotion">
       <div className="searchbox">
-        <div className="searchbar">
-          <img className="logo" src={logo} alt="LazyTaste logo" />
-          <i className="fa fa-search" aria-hidden="true"></i>
-          <input onChange={handleSearch} id="search" className="search-input" placeholder="Type restaurant to search..." type="search" />
-        </div>
+        <Searchbar data={competitors} setFilter={setFilter} />
       </div>
       <div className="promotion-content">
         <div className="create-promo">
@@ -91,7 +81,7 @@ const Promotion = () => {
                   <img src={competitor.img} alt={`${competitor.title} logo`} />
                   <div className="content-info">
                     <h4>{competitor.title}</h4>
-                    <p>{competitor.content}</p>
+                    <p><b>Promotion: </b>{competitor.content}</p>
                   </div>
                 </li>
               );

@@ -1,0 +1,193 @@
+.restaurant-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  .restaurant-info {
+    @extend %info-column;
+  }
+
+  .message-info {
+    position: fixed;
+    top: 2vh;
+    right: 2vw;
+    font-size: 24px;
+    min-width: 3vw;
+    min-height: 2vh;
+    color: $primaryColor;
+    border: 2px solid $primaryColor;
+    background-color: $darkColor;
+    padding: .8vh;
+    box-shadow: 0 0 5px 2px $primaryColor;
+    text-align: center;
+    border-radius: 10px;
+    transform: scale(0);
+    transition-duration: .4s;
+  }
+
+  .access-system {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .menu {
+      @include cloud(10px, $darkColor);
+      margin: 2vw;
+      height: 80vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background-color: $darkColor;
+      opacity: .9;
+      width: 45vw;
+
+      &__title {
+        font-size: 42px;
+        height: 10%;
+        width: 45vw;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+      }
+
+      &__list {
+        list-style: none;
+        font-size: 24px;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 1vh 2vw;
+          height: 7vh;
+          padding: 2vh;
+          border-radius: 10px;
+          background: #000;
+          font-size: 28px;
+          border: 2px solid $supportColor;
+          box-shadow: 0 0 5px 2px $supportColor;
+
+          strong {
+            color: $secondaryColor;
+          }
+
+          i {
+            color: $additionalColor;
+            transition-duration: .3s;
+            font-size: 32px;
+
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.4);
+            }
+          }
+        }
+      }
+    }
+
+    .cart {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .cart-items {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: $darkColor;
+        opacity: .9;
+        width: 25vw;
+        height: 38vh;
+        margin-bottom: 2vh;
+        @include cloud(10px, $darkColor);
+
+        .empty-cart {
+          display: flex;
+          width: 100%;
+          height: 70%;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+          text-align: center;
+          padding: 1rem;
+        }
+
+        &__title {
+
+          font-size: 34px;
+          padding: 20px;
+          font-family: $decorativeFont;
+          text-align: center;
+
+          span {
+            padding-left: 10px;
+          }
+        }
+
+        &__list {
+          list-style: none;
+          font-size: 24px;
+
+          li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1vh 2vw;
+
+            strong {
+              color: $secondaryColor;
+            }
+
+            i {
+              color: $redColor;
+              transition-duration: .3s;
+              font-size: 32px;
+
+              &:hover {
+                cursor: pointer;
+                transform: scale(1.4);
+              }
+            }
+          }
+        }
+      }
+
+      .order-summary {
+        width: 25vw;
+        height: 40vh;
+        @include cloud(10px, $darkColor);
+
+        &__title {
+          font-size: 34px;
+          padding: 20px;
+          font-family: $decorativeFont;
+          text-align: center;
+          border-bottom: 2px solid $primaryColor;
+        }
+
+        &__value {
+          font-size: 24px;
+          text-align: center;
+          margin-top: 5px;
+        }
+
+        &__area {
+          @extend %input;
+          height: 30%;
+          resize: none;
+          border: 1px solid $primaryColor;
+          transition-duration: .4s;
+          margin-top: 15px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        &__btn {
+          @extend %btn;
+          width: 50%;
+          margin: 15px 25%;
+        }
+      }
+    }
+  }
+}

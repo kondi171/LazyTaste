@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MenuContext } from "../../contexts/MenuContext";
-import InfoColumn from "../../features/InfoColumn";
+import InfoSection from "../../features/InfoSection";
 import MenuModal from './MenuModal';
 const Menu = () => {
 
@@ -70,7 +70,7 @@ const Menu = () => {
     <MenuContext.Provider value={{ removeProduct, setRemoveProduct, isOpen, setIsOpen }}>
       <section className="menu">
         <div className="menu__account-column">
-          <InfoColumn as='restaurant' place='menu' />
+          <InfoSection as='restaurant' place='menu' />
         </div>
         <div className="menu__control-panel">
           <h2>Menu</h2>

@@ -2,6 +2,14 @@
   z-index: 100;
   color: $primaryColor;
 
+  &.restaurant {
+    color: $secondaryColor;
+
+    h3 {
+      color: $secondaryColor;
+    }
+  }
+
   h3 {
     font-family: $decorativeFont;
     text-align: center;
@@ -26,20 +34,19 @@
     }
 
     &.register {
-      margin: 1vw auto;
-      width: 70%;
+      width: 80%;
 
       .data {
         display: flex;
-
+        width: 90%;
 
         &__login {
-          width: 50%;
+          width: 40%;
 
         }
 
         &__address {
-          width: 50%;
+          width: 40%;
           margin-left: 4vw;
         }
 
@@ -75,7 +82,8 @@
       &[type=text],
       &[type=password],
       &[type=mail],
-      &[type=date] {
+      &[type=date],
+      &[type=number] {
         opacity: .8;
 
         &::placeholder {

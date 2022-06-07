@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppContext } from '../contexts/AppContext';
-import InfoColumn from '../features/InfoColumn';
+import InfoSection from '../features/InfoSection';
 const Home = () => {
   const { notifications } = useContext(AppContext);
   let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
@@ -20,15 +20,18 @@ const Home = () => {
     },
   ];
   useEffect(() => {
-    setInterval(() => {
+    const changePromoTimeout = setInterval(() => {
       if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(indexOfPromotions = 0);
       else changeIndexOfPromotions(indexOfPromotions += 1);
     }, 10000);
+    return () => {
+      clearTimeout(changePromoTimeout);
+    }
   }, []);
   return (
     <section className="home">
       <div className="home__account-column">
-        <InfoColumn as='restaurant' />
+        <InfoSection as='restaurant' place="home" />
       </div>
       <div className="home__control-panel">
         <NavLink to='/restaurant/menu' className="control-panel__main-box">

@@ -1,9 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
-
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from './contexts/AppContext';
 import LandingPage from './landing_page/LandingPage';
 
 import CustomerHome from './customer_page/Home';
 import CustomerOffer from './customer_page/Offer';
+import RestaurantPage from './customer_page/RestaurantPage';
 import CustomerOrders from './customer_page/Orders';
 import CustomerOutlet from './customer_page/CustomerOutlet';
 import CustomerSettings from './features/options/Settings';
@@ -19,19 +21,23 @@ import RestaurantOrdersArchive from './restaurant_page/orders/ArchiveOrders';
 import OrdersOutlet from './restaurant_page/orders/OrdersOutlet';
 
 const LazyTaste = () => {
+  const { loggedUser, restaurantPage } = useContext(AppContext);
   return (
     <nav className="router-navigation">
       <Routes>
-        <Route path='/' element={<LandingPage />} />
-        {/* Customer */}
+        <Route path='*' element={<LandingPage />} />
+
+        {/* {loggedUser ? ( */}
         <Route path='customer' element={<CustomerOutlet />}>
           <Route path='/customer' exact element={<CustomerHome />} />
           <Route path='/customer/home' element={<CustomerHome />} />
-          <Route path='/customer/offer' element={<CustomerOffer />} />
+          <Route path='/customer/offer/*' element={<CustomerOffer />} />
+          <Route path='/customer/offer/restaurant' element={<RestaurantPage />} />
           <Route path='/customer/orders' element={<CustomerOrders />} />
           <Route path='/customer/settings' element={<CustomerSettings />} />
           <Route path='*' element={<CustomerHome />} />
         </Route>
+        {/* ) : <Route path='/*' exact element={<Navigate to='/' />} />} */}
         {/* Restaurant */}
         <Route path='restaurant' element={<RestaurantOutlet />}>
           <Route path='/restaurant' exact element={<RestaurantHome />} />

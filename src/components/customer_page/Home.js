@@ -1,58 +1,68 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import InfoColumn from '../features/InfoColumn';
-import Konrad from '../../assets/img/Konrad.png';
+import InfoSection from '../features/InfoSection';
+import blank from '../../assets/img/blank-photo.png';
 
 const Home = () => {
-  let [indexOfPromotions, changeIndexOfPromotions] = useState(0);
+
+  const [indexOfPromotions, changeIndexOfPromotions] = useState(0);
   const promotions = [
     {
-      name: 'Saray',
-      content: '1Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero error eligendi magni tempore at in debitis, ullam nobis voluptatum facilis.',
+      img: blank,
+      title: 'Saray Kebab',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
     },
     {
-      name: 'Alibaba',
-      content: '2Sed harum quod, est, deleniti ut et fugiat dignissimos quam, veritatis porro deserunt asperiores possimus ipsa maiores recusandae.',
+      img: blank,
+      title: 'Alibaba Kebab',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
     },
     {
-      name: 'McDonals',
-      content: '3Sint sed quaerat vel corporis assumenda id, voluptatum a odit. Perspiciatis aperiam adipisci alias, odit, voluptates recusandae nesciunt dicta exercitationem'
+      img: blank,
+      title: 'Maxi Pizza',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
+    },
+    {
+      img: blank,
+      title: 'Pizza Adriano',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
+    },
+    {
+      img: blank,
+      title: 'McDonalds',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
+    },
+    {
+      img: blank,
+      title: 'KFC',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
+    },
+    {
+      img: blank,
+      title: 'Wieś Pizza',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
+    },
+    {
+      img: blank,
+      title: 'North Fish',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi sapiente inventore aperiam, architecto ducimus quaerat vitae temporibus eius iste.'
     },
   ];
+
   useEffect(() => {
-    setInterval(() => {
-      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(indexOfPromotions = 0);
-      else changeIndexOfPromotions(indexOfPromotions += 1);
-      console.log(indexOfPromotions);
+    const changePromoTimeout = setTimeout(() => {
+      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(0);
+      else changeIndexOfPromotions(indexOfPromotions + 1);
     }, 10000);
-  }, []);
+    return () => {
+      clearTimeout(changePromoTimeout);
+    }
+  }, [indexOfPromotions, promotions.length]);
 
   return (
     <section className="home">
       <div className="home__account-column">
-        <InfoColumn as='customer' />
-        {/* <img src={Konrad} alt="Avatar" />
-        <h3>Konrad Nowak</h3>
-        <div className="account-column__info">
-          <div className='single-info'>
-            <i className="fa fa-envelope" aria-hidden="true"></i>
-            <span>Mail</span>
-          </div>
-          <span>wk.k.nowak@gmail.com</span>
-          <div className='single-info'>
-            <i className="fa fa-phone" aria-hidden="true"></i>
-            <span>Phone</span>
-          </div>
-          <span>+48 690 992 435</span>
-          <div className='single-info'>
-            <i className="fa fa-location-arrow" aria-hidden="true"></i>
-            <span>Adress</span>
-          </div>
-          <span>Leszczyńska 69C/69, 25-325 Kielce</span>
-        </div>
-        <div className="account-column__logout">
-          <a href="http://localhost:3000">Logout</a>
-        </div> */}
+        <InfoSection as='customer' place="home" />
       </div>
       <div className="home__control-panel">
         <div className="control-panel__main-box">
@@ -74,7 +84,8 @@ const Home = () => {
           </NavLink>
         </div>
         <div className="promotions">
-          <strong>{`${promotions[indexOfPromotions].name}: `}</strong>
+          {/* <img src={promotions[indexOfPromotions].img} alt={`${promotions[indexOfPromotions].title} Promotion`} /> */}
+          <strong>{`${promotions[indexOfPromotions].title}: `}</strong>
           <span>{promotions[indexOfPromotions].content}</span>
         </div>
       </div>
