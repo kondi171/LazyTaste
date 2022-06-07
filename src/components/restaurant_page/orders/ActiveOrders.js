@@ -1,97 +1,75 @@
 import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../contexts/AppContext';
+import { AppContext } from '../../AppContext';
 import MiniFooter from '../../features/MiniFooter';
-
+import blank from '../../../assets/img/blank-photo.png';
 const ActiveOrders = () => {
-  const { setNotifications } = useContext(AppContext);
-
+  const { setNotifications, loggedUser, setBalance } = useContext(AppContext);
   const [numberOfActiveOrders, setNumberOfActiveOrders] = useState(0);
+  const [orders, setOrders] = useState([]);
+  const [reverse, setReverse] = useState([]);
+  const [ordersValue, setOrdersValue] = useState(0);
 
   const handleCompleteOrder = () => {
-    console.log(this);
+    // fetch
+  }
+  const countStartOverallOrdersValue = (orders) => {
+    let amount = 0;
+    orders.orders.forEach(order => { if (order.active) amount += order.paid });
+    setOrdersValue(amount.toFixed(2));
+    setBalance(amount);
+    console.log(amount);
+  }
+
+  const fetchData = async () => {
+    await fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`)
+      .then(res => res.json())
+      .then(data => {
+        setOrders(data)
+      });
   }
 
   useEffect(() => {
     const orderValues = document.querySelectorAll('.order-info__value');
     setNumberOfActiveOrders(orderValues.length);
     setNotifications(orderValues.length);
-  }, [numberOfActiveOrders]);
+  }, [numberOfActiveOrders, setNotifications]);
 
+  useEffect(() => {
+    fetchData();
+    document.body.style.overflowY = 'visible';
+  }, [loggedUser]);
+
+  useEffect(() => {
+    if (Object.keys(orders).length !== 0) setReverse(orders.orders.reverse());
+  }, [orders]);
   return (
     <div className="orders-section">
       <div className="orders__active-orders">
-        {numberOfActiveOrders <= 0 ? <span className='info'>Orders list is empty</span> : null}
-        <div className="single-order single-order--active">
-          <div className="order-header">
-            <h4>Order #001</h4>
-            <h5>12:24 22-04-2022</h5>
-          </div>
-          <div className='order-item'>Kebab XL - 21.99 PLN</div>
-          <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
-          <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">62.98 PLN</span></div>
-            <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
-            <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
-            <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
-          </div>
-        </div>
-        <div onClick={handleCompleteOrder.bind(this)} className="single-order single-order--active">
-          <div className="order-header">
-            <h4>Order #002</h4>
-            <h5>13:21 22-04-2022</h5>
-          </div>
-          <div className='order-item'>Sałatka - 11.99PLN</div>
-          <div className='order-item'>Woda Mineralna 0.5l - 4.50 PLN</div>
-          <div className='order-item'>Ciastko Owsiane - 3.00 PLN</div>
-          <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">21.98 PLN</span></div>
-            <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
-            <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
-            <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
-          </div>
-        </div>
-        <div className="single-order single-order--active">
-          <div className="order-header">
-            <h4>Order #003</h4>
-            <h5>13:39 22-04-2022</h5>
-          </div>
-          <div className='order-item'>Kebab XXL - 24.99 PLN</div>
-          <div className='order-item'>Coca-Cola 0.85l - 9.99 PLN</div>
-          <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">31.98 PLN</span></div>
-            <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
-            <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
-            <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
-          </div>
-        </div>
-        <div className="single-order single-order--active">
-          <div className="order-header">
-            <h4>Order #004</h4>
-            <h5>15:01 22-04-2022</h5>
-          </div>
-          <div className='order-item'>Kebab XXL - 24.99 PLN</div>
-          <div className='order-item'>Coca-Cola 0.85l - 9.99 PLN</div>
-          <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
-            <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
-            <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
-            <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
-          </div>
-        </div>
-        <div className="single-order single-order--active">
-          <div className="order-header">
-            <h4>Order #005</h4>
-            <h5>16:15 22-04-2022</h5>
-          </div>
-          <div className='order-item'>Kebab XL - 21.99 PLN</div>
-          <div className='order-item'>Pizza 45cm - 39.99 PLN</div>
-          <div className='order-info'>
-            <div className='order-info__value'>Order Value: <span className="color color--info">61.98 PLN</span></div>
-            <div className='order-info__adress'>Adress: <span className="color color--info">Warszawska 145, Kielce 25-324</span></div>
-            <div className='order-info__payment'>Payment: <span className='color color--bad'>Cash</span></div>
-            <div className='order-info__message'>Customer message: <span className='color color--good'>Empty</span> </div>
-          </div>
-        </div>
+        {Object.keys(orders).length !== 0 ? orders.orders.map(order => {
+          const { _id, customerName, customerLastname, customerAdress, customerAvatar, date, message, paid, paymentMethod, products } = order;
+          return (
+            <div data-id={_id} onClick={handleCompleteOrder} key={_id} className="single-order single-order--active">
+              <div className="order-header">
+                <h4>Order #000</h4>
+                <h5>{date}</h5>
+              </div>
+              <div className="order-image">
+                {customerAvatar !== 'blank' ? <img src={customerAvatar} alt={`${customerName} ${customerLastname}`} /> :
+                  <img src={blank} alt={`${customerName} ${customerLastname}`} />}
+              </div>
+              <div className="order-customer">
+                <strong>{customerName} {customerLastname}</strong>
+              </div>
+              {products.map(product => <div className='order-item'>{product.productName} - {product.productPrice} PLN</div>)}
+              <div className='order-info'>
+                <div className='order-info__value'>Order Value: <span className="color color--info">{paid} PLN</span></div>
+                <div className='order-info__adress'>Adress: <span className="color color--info">{customerAdress}</span></div>
+                <div className='order-info__payment'>Payment: <span className='color color--bad'>{paymentMethod}</span></div>
+                <div className='order-info__message'>Customer message: <span className='color color--good'>{message}</span> </div>
+              </div>
+            </div>
+          )
+        }) : <span className='info'>Orders list is empty</span>}
       </div>
       <MiniFooter />
     </div>
