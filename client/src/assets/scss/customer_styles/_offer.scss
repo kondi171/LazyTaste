@@ -1,0 +1,193 @@
+.offer {
+  position: relative;
+  height: 100vh;
+
+  .searchbox {
+    @extend %searchbar;
+  }
+
+  .restaurant-type {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: 2vh auto;
+    margin-top: 4vh;
+
+    .type {
+      width: 7%;
+      text-align: center;
+      font-size: 16px;
+      padding: 5px;
+      border-radius: 20px;
+      border: 2px solid $primaryColor;
+      color: $primaryColor;
+      background-color: $darkColor;
+      font-family: $decorativeFont;
+      transition-duration: .4s;
+
+      &.active {
+        transform: scale(1.3);
+        color: $secondaryColor;
+        border-color: $secondaryColor;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+        color: $secondaryColor;
+        border-color: $secondaryColor;
+      }
+    }
+  }
+
+  .section-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .favourites {
+      width: 25vw;
+      height: 60vh;
+      text-decoration: none;
+      @include cloud(10px, $darkColor);
+      @extend %list;
+      background-color: $darkColor;
+      opacity: .95;
+      overflow-y: scroll;
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+
+        span {
+          padding-left: 10px;
+        }
+      }
+
+      &__list {
+        @extend %list;
+      }
+
+      .empty-favourites {
+        display: flex;
+        width: 100%;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-align: center;
+        padding: 20px;
+      }
+
+      &__result {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        font-size: 22px;
+        z-index: 10;
+        @include cloud(10px, $darkColor);
+        height: 8vh;
+        margin-top: 2vh;
+        opacity: .95;
+        background-color: $darkColor;
+
+        span {
+          font-weight: bold;
+          color: $additionalColor;
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .restaurant-list {
+      overflow-y: scroll;
+      margin: 2vw;
+      flex-basis: 100vh;
+      height: 70vh;
+      text-decoration: none;
+      @include cloud(10px, $darkColor);
+      @extend %list;
+      background-color: $darkColor;
+      opacity: .95;
+
+      & .empty-restaurant {
+        display: flex;
+        width: 100%;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-align: center;
+        padding: 20px;
+      }
+
+      & .list-item {
+        position: relative;
+        padding: 10px;
+        border-radius: 5px;
+        transition-duration: .4s;
+
+        .restaurant {
+          display: flex;
+          flex-basis: 90%;
+          align-items: center;
+        }
+
+        img {
+          margin-right: 20px;
+        }
+
+        i {
+          position: absolute;
+          right: 1vw;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: $additionalColor;
+        }
+      }
+
+
+
+      &__title {
+        font-size: 34px;
+        padding: 20px;
+        font-family: $decorativeFont;
+        text-align: center;
+      }
+
+      .content-info {
+        p {
+          font-size: 16px;
+          padding: 10px;
+          // text-align: center;
+        }
+      }
+
+      .fa-heart,
+      .fa-heart-o {
+        font-size: 34px;
+      }
+    }
+  }
+
+  &__result {
+    color: $primaryColor;
+    position: absolute;
+    bottom: 1vh;
+    right: 2vw;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: $decorativeFont;
+
+    span {
+      color: $additionalColor;
+    }
+  }
+}

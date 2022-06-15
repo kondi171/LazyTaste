@@ -1,0 +1,239 @@
+.footer {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    clip-path: ellipse(100% 50% at 50% 65%);
+    background-image: url('./../../img/landing_images/vegetables-set-left-black-slate.jpg');
+    background-color: #101010;
+    background-blend-mode: soft-light;
+    background-size: cover;
+    font-size: 2rem;
+
+    &__content {
+        position: absolute;
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 25vh;
+        left: 10vh;
+
+        &--sources {
+            width: 30%;
+
+            ul {
+                display: flex;
+                margin: 20px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-size: 14px;
+
+                li {
+                    color: $lightColor;
+                    transition-duration: .4s;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $lightColor;
+                    transition-duration: .4s;
+                }
+            }
+        }
+
+        &--contact {
+            width: 30%;
+            color: $lightColor;
+
+            span {
+                display: block;
+
+                &:first-of-type {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &--documents {
+            width: 30%;
+            color: $lightColor;
+
+            ul {
+                margin: 20px;
+                transition-duration: .4s;
+
+                li {
+                    transition-duration: .4s;
+                }
+
+                a {
+                    color: $lightColor;
+                    text-decoration: none;
+                    transition-duration: .4s;
+                }
+            }
+        }
+
+        &--sources li:hover a,
+        &--documents li:hover a,
+        &--sources li:hover,
+        &--documents li:hover {
+            color: $primaryColor;
+        }
+
+        h4.subtitle {
+            color: $lightColor;
+            border-bottom: 2px solid $lightColor;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 7vw;
+    }
+
+    &__socials {
+        position: absolute;
+        display: flex;
+        justify-content: space-evenly;
+        width: 20%;
+        bottom: 15vh;
+        right: 15%;
+        color: $lightColor;
+        font-size: 48px;
+
+        a {
+            text-decoration: none;
+        }
+
+        .fa {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
+            height: 6rem;
+            text-align: center;
+            color: $lightColor;
+            transition-duration: .4s;
+            padding: 4rem;
+            z-index: 1;
+
+            &:hover {
+                cursor: pointer;
+                border-radius: 50%;
+            }
+
+            &-github::after {
+                @include info('Github', #333333, -80%);
+            }
+
+            &-github:hover {
+                color: #333333;
+                box-shadow: inset 0px 0px 10px 10px #333333;
+
+                &::after {
+                    transform: scale(1);
+                }
+            }
+
+            &-linkedin-square::after {
+                @include info('LinkedIn', #0077b5, -80%);
+            }
+
+            &-linkedin-square:hover {
+                color: #0077b5;
+                box-shadow: inset 0px 0px 10px 10px #0077b5;
+
+                &::after {
+                    transform: scale(1);
+                }
+            }
+
+            &-id-card::after {
+                @include info('Portfolio', #ff7b00, -80%);
+            }
+
+            &-id-card:hover {
+                color: #ff7b00;
+                box-shadow: inset 0px 0px 10px 10px #ff7b00;
+
+                &::after {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        width: 20%;
+        bottom: 30vh;
+        right: 15vh;
+        font-size: 100px;
+    }
+
+    &__author {
+        text-align: center;
+        position: absolute;
+        bottom: 2vh;
+        font-size: 24px;
+        width: 100%;
+        color: $lightColor;
+    }
+
+    &__mini-footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        box-shadow: 0px 0px 24px 2px $fontColor;
+        background-color: $darkColor;
+
+        .mini-footer__logo {
+            width: 25%;
+
+            img {
+                width: 100px;
+                margin: 10px;
+            }
+        }
+
+        .text-container {
+            width: 25%;
+
+            .author {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 24px;
+                color: $lightColor;
+                margin-bottom: 0;
+                margin-top: auto;
+            }
+        }
+
+        .footer__socials {
+            position: static;
+            width: 25%;
+
+            .fa {
+                &-github::after {
+                    @include info('Github', #333333, 0);
+                }
+
+                &-linkedin-square::after {
+                    @include info('LinkedIn', #0077b5, 0);
+                }
+
+                &-id-card::after {
+                    @include info('Portfolio', #ff7b00, 0);
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+import { useState, useEffect, useContext } from 'react';
+import { AppContext } from '../../AppContext';
+import MiniFooter from '../../features/MiniFooter';
+import blank from '../../../assets/img/logo/blank.png';
+const CompletedOrders = () => {
+  const { loggedUser } = useContext(AppContext);
+  const [numberOfCompletedOrders, setNumberOfCompletedOrders] = useState(0);
+  const [sumOfTodaysOrders, setSumOfTodaysOrders] = useState(0);
+  const [orders, setOrders] = useState([]);
+  const [reverse, setReverse] = useState([]);
+  const [completedOrdersAmount, setCompletedOrdersAmount] = useState(0);
+  useEffect(() => {
+    let sum = 0;
+    const orders = document.querySelectorAll('.single-order');
+    const orderValues = document.querySelectorAll('.single-order .value');
+    orderValues.forEach(orderValue => {
+      sum += parseFloat(orderValue.textContent);
+      setSumOfTodaysOrders(sum);
+    });
+    setNumberOfCompletedOrders(orders.length);
+
+  }, [numberOfCompletedOrders]);
+  const fetchData = async () => {
+    await fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`)
+      .then(res => res.json())
+      .then(data => {
+        setOrders(data);
+        const completedOrders = data.orders.filter(order => {
+          const today = new Date();
+          const currentDate = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()}`;
+          if (order.active === false && currentDate === order.date.slice(0, 10)) return order;
+        })
+        setCompletedOrdersAmount(completedOrders.length);
+      });
+  }
+
+  useEffect(() => {
+    fetchData();
+    document.body.style.overflowY = 'visible';
+  }, []);
+
+  useEffect(() => {
+    if (Object.keys(orders).length !== 0) setReverse(orders.orders.reverse());
+  }, [orders]);
+  return (
+    <div className="orders-section">
+      <div className="orders__completed-orders">
+        {Object.keys(orders).length !== 0 && orders.orders.map(order => {
+          const { _id, customerName, customerLastname, customerAdress, customerAvatar, date, message, paid, paymentMethod, products, active, deliveryCost } = order;
+          const today = new Date();
+          const currentDate = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()}`;
+          if (active === false && currentDate === date.slice(0, 10)) {
+            return (
+              <div data-id={_id} key={_id} className="single-order single-order--completed">
+                <div className="order-header">
+                  <h4>Order #000</h4>
+                  <h5>{date}</h5>
+                </div>
+                <div className="order-image">
+                  {customerAvatar !== 'blank' ? <img src={customerAvatar} alt={`${customerName} ${customerLastname}`} /> :
+                    <img src={blank} alt={`${customerName} ${customerLastname}`} />}
+                </div>
+                <div className="order-customer">
+                  <strong>{customerName} {customerLastname}</strong>
+                </div>
+                {products.map(product => <div className='order-item'>{product.productName} - {product.productPrice} PLN</div>)}
+                <div key="delivery" className='order-item'>Delivery - {deliveryCost} PLN</div>
+                <div className='order-info'>
+                  <div className='order-info__value'>Order Value: <span className="color color--info">{paid} PLN</span></div>
+                  <div className='order-info__adress'>Adress: <span className="color color--info">{customerAdress}</span></div>
+                  <div className='order-info__payment'>Payment: <span className='color color--bad'>{paymentMethod}</span></div>
+                  <div className='order-info__message'>Customer message: <span className='color color--good'>{message}</span> </div>
+                </div>
+              </div>
+            )
+          }
+        })}
+        {completedOrdersAmount === 0 && <span className='info info--completed'>Completed orders list is empty</span>}
+      </div>
+      <MiniFooter />
+    </div>
+  );
+}
+export default CompletedOrders;

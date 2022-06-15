@@ -1,0 +1,42 @@
+[
+  {
+    "text": "Kebab ",
+    "category": "Kebab"
+  },
+  {
+    "text": "Burgers",
+    "category": "Burgers"
+  },
+  {
+    "text": "Chinease",
+    "category": "Chinease"
+  },
+  {
+    "text": "Italian",
+    "category": "Italian"
+  },
+  {
+    "text": "Polish",
+    "category": "Polish"
+  },
+  {
+    "text": "Pizza",
+    "category": "Pizza"
+  },
+  {
+    "text": "Thai",
+    "category": "Thai"
+  },
+  {
+    "text": "Vege",
+    "category": "Vege"
+  },
+  {
+    "text": "Sushi",
+    "category": "Sushi"
+  },
+  {
+    "text": "Other",
+    "category": "Other"
+  }
+]

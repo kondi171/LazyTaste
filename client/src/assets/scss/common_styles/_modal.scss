@@ -1,0 +1,183 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: -10;
+  transition-duration: .4s;
+  opacity: 0;
+
+  &__content {
+    position: absolute;
+    top: 10vh;
+    bottom: 10vh;
+    left: 10vw;
+    right: 10vw;
+    width: 60vw;
+    height: 80vh;
+    margin: auto;
+    border-radius: 5px;
+    background-color: $darkColor;
+    box-shadow: 8px 8px 24px 0px $darkColor;
+    transition-duration: .4s;
+    transform: scale(0);
+
+    .fa-times {
+      position: absolute;
+      right: -2vw;
+      top: -2vw;
+      font-size: 42px;
+      color: $primaryColor;
+      transition-duration: .2s;
+
+      &:hover {
+        cursor: pointer;
+        color: $secondaryColor;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 10vh auto;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 10vh auto;
+
+    button {
+      @extend %btn;
+      width: 40%;
+
+      &:first-of-type {
+        color: $primaryColor;
+        border-color: $primaryColor;
+
+        &:hover {
+          color: $secondaryColor;
+          border-color: $secondaryColor;
+          box-shadow: 0 0 10px 2px $secondaryColor;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-family: $decorativeFont;
+    text-align: center;
+    font-size: 36px;
+    color: $primaryColor;
+    border-bottom: 2px solid $additionalColor;
+    padding: 2vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-radius: 5px;
+    padding: 2vh;
+    background-blend-mode: overlay;
+    background-size: cover;
+
+    margin: 1vh auto;
+
+    input {
+      text-align: center;
+      background-color: $lightColor;
+      color: $darkColor;
+      font-size: 24px;
+      padding: 10px;
+      margin: 24px;
+      border-radius: 5px;
+      border: 2px solid $primaryColor;
+      transition-duration: .4s;
+      width: 100%;
+
+      &[type=text],
+      &[type=password],
+      &[type=mail],
+      &[type=date],
+      &[type=number] {
+        opacity: .8;
+
+        &::placeholder {
+          color: $darkColor;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $primaryColor;
+        box-shadow: 0 0 10px 2px $primaryColor;
+      }
+    }
+  }
+
+  .return-info {
+    text-align: center;
+    font-size: 36px;
+    color: $additionalColor;
+    font-weight: bold;
+  }
+
+  input[type=button] {
+    display: block;
+    margin: 0 auto;
+    @extend %btn;
+  }
+
+  .product {
+    width: 70%;
+    text-align: center;
+    font-size: 34px;
+    color: $secondaryColor;
+    margin: 6vh auto;
+    border: 2px solid $additionalColor;
+    border-radius: 10px;
+    background-color: darken($darkColor, 2%);
+
+    .current-delivery-cost {
+      font-size: 24px;
+      color: $primaryColor;
+      margin-bottom: 10px;
+
+      strong {
+        color: $additionalColor;
+      }
+    }
+
+    &__name {
+      color: $secondaryColor;
+    }
+
+    &__price {
+      color: $additionalColor;
+      font-size: 28px;
+    }
+
+    &__to {
+      font-family: $decorativeFont;
+      color: $primaryColor;
+      text-align: center;
+      font-size: 34px;
+      margin-top: 5vh;
+
+    }
+
+    label {
+      font-family: $decorativeFont;
+    }
+  }
+}

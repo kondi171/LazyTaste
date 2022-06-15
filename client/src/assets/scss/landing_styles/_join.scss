@@ -1,0 +1,92 @@
+.join {
+    position: relative;
+    width: 100%;
+
+    &__title {
+        font-family: $decorativeFont;
+        text-align: center;
+        font-size: 84px;
+        margin-bottom: 24px;
+    }
+
+    &__container {
+        border-top: 1px solid $darkColor;
+        box-shadow: 0px -30px 44px -30px rgba(66, 68, 90, 1);
+        display: flex;
+        width: 100%;
+        font-family: $decorativeFont;
+        height: 80vh;
+
+        .customer {
+            position: relative;
+            background-image: url('./../../img/landing_images/alex-haney-CAhjZmVk5H4-unsplash.jpg');
+            background-blend-mode: overlay;
+            background-color: #222;
+            background-size: cover;
+            flex-basis: 50%;
+            color: $primaryColor;
+        }
+
+        .restaurant {
+            position: relative;
+            background-image: url('./../../img/landing_images/louis-hansel-wVoP_Q2Bg_A-unsplash.jpg');
+            background-blend-mode: overlay;
+            background-color: #222;
+            background-size: cover;
+            flex-basis: 50%;
+            color: $secondaryColor;
+
+            .btns-wrapper {
+                button {
+                    box-shadow: 0 0 5px 5px $secondaryColor;
+                    color: $secondaryColor;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 42px;
+            text-align: center;
+            margin: 24px;
+        }
+
+        .btns-wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 60%;
+            margin: auto;
+            text-align: center;
+
+            span {
+                font-size: 24px;
+                padding: 10px;
+            }
+
+            button {
+                width: 50%;
+                margin: 10px;
+                transition-duration: .4s;
+                background-color: transparent;
+                border: none;
+                padding: 10px;
+                box-shadow: 0 0 5px 5px $primaryColor;
+                color: $primaryColor;
+                font-size: 26px;
+                font-weight: bold;
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $additionalColor;
+                    box-shadow: 0 0 5px 5px $additionalColor;
+                }
+            }
+        }
+    }
+}
