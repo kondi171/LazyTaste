@@ -22,12 +22,35 @@ const Home = () => {
       })
       .catch(error => console.log(error));
   }, [loggedUser, notifications, setNotifications]);
+
+  useEffect(() => {
+    let products = '';
+    loggedUser.menu.map(product => products += `${product.productName}, `);
+    const body = new URLSearchParams({
+      restaurantType: loggedUser.type,
+      products: products
+    });
+    fetch('http://localhost:4000/API/lazy-assistant', {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'PATCH',
+      body: body
+    })
+      .then(res => res.status)
+      .catch(error => console.log(error));
+  }, [loggedUser]);
+
   useEffect(() => {
     setTimeout(() => {
-      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(0);
-      else changeIndexOfPromotions(indexOfPromotions + 1);
+      const index = Math.floor(Math.random() * (promotions.length));
+      if (index === indexOfPromotions && index === promotions.length - 1) changeIndexOfPromotions(index - 1);
+      else if (index === indexOfPromotions && index === 0) changeIndexOfPromotions(index + 1);
+      else if (index === indexOfPromotions) changeIndexOfPromotions(index + 1);
+      else changeIndexOfPromotions(index);
     }, 4000);
-  }, [promotions, indexOfPromotions]);
+  }, [indexOfPromotions]);
 
   return (
     <section className="home">

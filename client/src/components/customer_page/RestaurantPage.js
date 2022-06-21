@@ -59,6 +59,7 @@ const RestaurantPage = () => {
           restaurantAvatar: chosenRestaurant.avatar,
           restaurantType: chosenRestaurant.type,
           message: additionalMessage,
+          paymentMethod: 'Cash',
           products: cartContent
         }),
       });

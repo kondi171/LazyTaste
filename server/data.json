@@ -1,42 +1,42 @@
 [
   {
-    "text": "Kebab ",
-    "category": "Kebab"
+    "products": "Kebab",
+    "type": "0"
   },
   {
-    "text": "Burgers",
-    "category": "Burgers"
+    "products": "King Burger, Family Burger, Main Burger, Casual Burger, Double Cheese Burger, Best Burger, ",
+    "type": "1"
   },
   {
-    "text": "Chinease",
-    "category": "Chinease"
+    "products": "Sweet-sour chicken, Chinese pork with mango, Coconut chicken in sweet chili sauce, Stir-fry with chicken, broccoli and carrots, Chow mein with chicken and vegetables, Chinese style pork with pineapple, General Tso's Chicken, Chicken in sweet and sour sauce, Tenderloin with mushrooms and leek, Chinese style chicken with broccoli, ",
+    "type": "2"
   },
   {
-    "text": "Italian",
-    "category": "Italian"
+    "products": "Arancini, Spaghetti with asparagus, Caponata, Ragù in Bologna style, Tagliatelle with kale pesto, ",
+    "type": "3"
   },
   {
-    "text": "Polish",
-    "category": "Polish"
+    "products": "Potato pancakes, Pork chop with potatoes, Pea soup, Chicken soup, Doves, ",
+    "type": "4"
   },
   {
-    "text": "Pizza",
-    "category": "Pizza"
+    "products": "Capriciossa 30cm, Capriciossa 45cm, Happy Pizza, Sausage Pizza, Salami Pizza, Falafel Pizza, Own Pizza, Special Pizza, Routine Pizza, ",
+    "type": "5"
   },
   {
-    "text": "Thai",
-    "category": "Thai"
+    "products": "Pad thai with chicken, Thai Chicken, Pad thai, Sweet-sour chicken, ",
+    "type": "6"
   },
   {
-    "text": "Vege",
-    "category": "Vege"
+    "products": "Falafel, Rice with tofu, Tagliatelle with green pesto, Curry with a Thai twist, Chilli with black beans and sweet potatoes, Cucumber rolls, Bob with sage, ",
+    "type": "7"
   },
   {
-    "text": "Sushi",
-    "category": "Sushi"
+    "products": "Nigiri, Maki sushi, Hosomaki, Kappa maki, ",
+    "type": "8"
   },
   {
-    "text": "Other",
-    "category": "Other"
+    "products": "Mushroom crème brûlé, Asparagus with gribiche dressing, Quiche lorraine, ",
+    "type": "9"
   }
 ]

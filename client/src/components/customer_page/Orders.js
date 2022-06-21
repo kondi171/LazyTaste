@@ -2,8 +2,9 @@ import blank from "../../assets/img/logo/blank.png";
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../AppContext';
 import CustomerOrdersSearchbar from '../features/searchbars/CustomerOrdersSearchbar';
+import LoadingLazyAssistant from "../features/LoadingLazyAssistant";
 const Orders = () => {
-  const { loggedUser } = useContext(AppContext);
+  const { loggedUser, predictedRestaurant, activateLazyAssistant } = useContext(AppContext);
   const [orders, setOrders] = useState([]);
   const [filterOrders, setFilterOrders] = useState([]);
   const [searchType, setSearchType] = useState('searchByName');
@@ -32,15 +33,24 @@ const Orders = () => {
   }
   const filteredOrders = () => {
     const array = filterOrders.map(order => {
-      const { _id, restaurantName, restaurantAvatar, paid, message, date, products, deliveryCost } = order;
+      const { _id, restaurantName, restaurantAvatar, paid, message, date, products, deliveryCost, paymentMethod } = order;
       return (
         <div className="orders__single-order" key={_id}>
-          <div className="logo-part">
-            {restaurantAvatar !== 'blank' ?
-              <img src={restaurantAvatar} alt={`Logo of ${restaurantName} restaurant`} /> :
-              <img src={blank} alt={`Logo of ${restaurantName} restaurant`} />
-            }
+          <div className="single-order__information">
+            <div className="logo-part">
+              {restaurantAvatar !== 'blank' ?
+                <img src={restaurantAvatar} alt={`Logo of ${restaurantName} restaurant`} /> :
+                <img src={blank} alt={`Logo of ${restaurantName} restaurant`} />
+              }
+            </div>
+            <div className="info-part">
+              <div className="order-date">Date: <strong>{date}</strong></div>
+              <div className="order-paid">Paid: <strong>{paid} PLN</strong></div>
+              <div className="order-paid">Payment: <strong>{paymentMethod}</strong></div>
+              <div className="order-message">Message: <strong>{message}</strong></div>
+            </div>
           </div>
+
           <div className="items-part">
             <h4>{restaurantName}</h4>
             <ul>
@@ -48,15 +58,11 @@ const Orders = () => {
               <li key="delivery">Delivery - {deliveryCost} PLN</li>
             </ul>
           </div>
-          <div className="info-part">
-            <div className="order-date">Date: <strong>{date}</strong></div>
-            <div className="order-paid">Paid: <strong>{paid} PLN</strong></div>
-            <div className="order-message">Message: <strong>{message}</strong></div>
-          </div>
+
         </div>
       )
     });
-    if (array.length === 0) return <p className="empty-orders">No result!</p>
+    if (array.length === 0) return <p className="empty-orders">No orders!</p>
     else return array.reverse();
   }
 
@@ -99,12 +105,18 @@ const Orders = () => {
             </form>
           </div>
           <div className="expenses">
-            <span>You spent<i> {ordersValue}</i>PLN</span>
+            {activateLazyAssistant ? <>
+              {(Object.keys(orders).length) === 0 ? <div className="loading-message"> Lazy Assistant is predicting restaurants, please be patient</div> :
+                <span>You spent<i> {ordersValue}</i>PLN</span>
+              }
+            </> : <span>You spent<i> {ordersValue}</i>PLN</span>}
           </div>
         </div>
         <div className="orders__order-list">
           <h3>Your Orders:</h3>
-          {filteredOrders()}
+          {activateLazyAssistant ? <>
+            {(Object.keys(orders).length) === 0 ? <div className="lazy-assistant" style={{ marginTop: '15vh' }}><LoadingLazyAssistant /></div> : filteredOrders()}
+          </> : filteredOrders()}
         </div>
       </div>
       <br />

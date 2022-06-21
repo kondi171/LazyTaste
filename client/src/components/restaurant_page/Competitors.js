@@ -7,22 +7,19 @@ import Searchbar from "../features/searchbars/Searchbar";
 const Competitors = () => {
 
   const { loggedUser, setChosenRestaurant, chosenRestaurant } = useContext(AppContext);
-  const [restaurants, setRestaurants] = useState([]);
-  const [favourites, setFavourites] = useState([]);
-  const [filterRestaurants, setFilterRestaurants] = useState([]);
-  const [activePromotion, setActivePromotion] = useState('None');
-  const [promotion, setPromotion] = useState('');
 
-  const handleRedirectToRestaurant = restaurantID => {
-    fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
-      .then(res => res.json())
-      .then(data => setChosenRestaurant(data));
-  }
+  const [promotion, setPromotion] = useState('');
+  const [activePromotion, setActivePromotion] = useState('None');
+  const [restaurants, setRestaurants] = useState([]);
+  const [filterRestaurants, setFilterRestaurants] = useState([]);
+  const [disablePromotion, setDisablePromotion] = useState(true);
+
   const handleSetPromotion = () => {
     const newPromotion = document.querySelector('.area-content');
     setActivePromotion(newPromotion.value);
     newPromotion.value = '';
-
+    setPromotion('None');
+    setDisablePromotion(false);
     const body = new URLSearchParams({
       id: loggedUser._id,
       promotion: promotion,
@@ -36,6 +33,31 @@ const Competitors = () => {
       body: body
     });
   }
+
+  const handleDisablePromotion = () => {
+    const body = new URLSearchParams({
+      id: loggedUser._id,
+      promotion: 'None',
+    });
+    fetch('http://localhost:4000/API/restaurant/add-promotion', {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'PUT',
+      body: body
+    });
+    setActivePromotion('None');
+    const newPromotion = document.querySelector('.area-content');
+    newPromotion.value = '';
+  }
+
+  const handleRedirectToRestaurant = restaurantID => {
+    fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
+      .then(res => res.json())
+      .then(data => setChosenRestaurant(data));
+  }
+
   const handleType = e => {
     const activeElement = e.currentTarget;
     const types = document.getElementsByClassName('type');
@@ -67,11 +89,9 @@ const Competitors = () => {
 
   useEffect(() => {
     fetchData();
-    const restaurantContent = document.getElementsByClassName('restaurant');
-    const arrayContent = [...restaurantContent];
-    arrayContent.forEach(content => {
-      if (content.lastChild.firstChild.textContent === loggedUser.name) content.classList.add('current');
-    });
+  }, []);
+
+  useEffect(() => {
     const restaurantTypes = document.getElementsByClassName('type');
     const arrayTypes = [...restaurantTypes];
     arrayTypes.forEach(type => {
@@ -79,7 +99,7 @@ const Competitors = () => {
         type.classList.add('current');
       }
     });
-  }, [loggedUser, restaurants]);
+  }, [restaurants, loggedUser]);
 
   useEffect(() => {
     setFilterRestaurants(restaurants);
@@ -94,8 +114,13 @@ const Competitors = () => {
         });
       })
       .catch(error => console.log(error));
+  }, [loggedUser]);
 
-  }, [])
+  useEffect(() => {
+    if (promotion === '' || promotion === 'None') setDisablePromotion(true);
+    else setDisablePromotion(false);
+  }, [promotion, disablePromotion]);
+
   return (
     <section className="competitors">
       <div className="searchbox">
@@ -121,10 +146,11 @@ const Competitors = () => {
             <span>Set Promotion</span>
           </h3>
           <textarea onChange={(e) => setPromotion(e.target.value)} className="area-content" placeholder="Write Promotion..." required minLength="5" maxLength="100" name="area-content" id="area-content"></textarea>
-          <button onClick={handleSetPromotion} className="set-area-btn">Set Promotion</button>
+          {disablePromotion ? <button onClick={handleDisablePromotion} className="set-area-btn">Disable Promotion</button> : <button onClick={handleSetPromotion} className="set-area-btn">Set Promotion</button>}
+
           <div className="active-promo">
             <h4>* Active Promotion *</h4>
-            <p>{activePromotion === "None" ? loggedUser.promotion : activePromotion}</p>
+            <p>{activePromotion}</p>
           </div>
         </div>
         <div className="competitors-list">
@@ -134,11 +160,11 @@ const Competitors = () => {
             {filterRestaurants.map(restaurant => {
               return (
                 <li className="list-item" data-id={restaurant._id} key={restaurant._id}>
-                  <div className="restaurant" onClick={() => handleRedirectToRestaurant(restaurant._id)} >
+                  <div className={`restaurant ${restaurant._id === loggedUser._id && 'current'}`} onClick={() => handleRedirectToRestaurant(restaurant._id)} >
                     {restaurant.avatar !== 'blank' ? <img src={restaurant.avatar} alt={`${restaurant.name} logo`} /> : <img src={blank} alt={`${restaurant.name} logo`} />}
                     <div className="content-info">
                       <h4>{restaurant.name}</h4>
-                      <p><b>Promotion: </b>{restaurant.promotion}</p>
+                      <p><b>Promotion: </b>{restaurant._id === loggedUser._id ? activePromotion : restaurant.promotion}</p>
                     </div>
                   </div>
                 </li>

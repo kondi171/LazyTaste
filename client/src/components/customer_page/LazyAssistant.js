@@ -1,13 +1,22 @@
 import { useState, useEffect, useContext } from 'react';
 import { Route, Navigate, Routes } from 'react-router-dom';
+import useStateWithCallbackLazy from 'use-state-with-callback';
 import LoadingLazyAssistant from '../features/LoadingLazyAssistant';
 import blank from "../../assets/img/logo/blank.png";
 import { AppContext } from '../AppContext';
 const LazyAssistant = () => {
-  const { loggedUser, setChosenRestaurant, chosenRestaurant } = useContext(AppContext);
+  const { loggedUser, setChosenRestaurant, chosenRestaurant, predictedRestaurant, setPredictedRestaurant, activateLazyAssistant, setActivateLazyAssistant } = useContext(AppContext);
   const [restaurants, setRestaurants] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [predictedRestaurant, setPredictedRestaurant] = useState({});
+  const [preparedMessageIndex, setPreparedMessageIndex] = useState(0);
+
+  const preparedMessage = [
+    'I think, today yo want to eat in this restaurant',
+    'I prepare to you this restaurant',
+    'It is a good day to order in this restaurant',
+    'Maybe you want to eat in this restaurant?',
+    'Good time for food from this restaurant'
+  ];
 
   useEffect(() => {
     fetch('http://localhost:4000/API/restaurants')
@@ -20,26 +29,33 @@ const LazyAssistant = () => {
       .catch(error => console.log(error))
   }, []);
 
-  useEffect(() => {
-    const URL = 'http://localhost:4000/API/lazy-assistant';
-    const body = new URLSearchParams({
-      customerID: loggedUser._id,
-      customerOrders: JSON.stringify(orders),
-      restaurants: JSON.stringify(restaurants),
-    });
-    fetch(URL, {
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      method: 'PUT',
-      body: body
-    })
-      .then(res => res.json())
-      .then(data => setPredictedRestaurant(data))
-      .catch(error => console.log(error));
+  const handlePredictRestaurant = () => {
+    if (Object.keys(restaurants).length !== 0 && Object.keys(orders).length !== 0) attachLazyAssistant();
+    setActivateLazyAssistant(true);
+  }
 
-  }, [restaurants, orders]);
+  const attachLazyAssistant = () => {
+
+    if (Object.keys(predictedRestaurant).length <= 1) {
+      const URL = 'http://localhost:4000/API/lazy-assistant';
+      const body = new URLSearchParams({
+        customerOrders: JSON.stringify(orders),
+        restaurants: JSON.stringify(restaurants),
+      });
+      fetch(URL, {
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        method: 'POST',
+        body: body
+      })
+        .then(res => res.json())
+        .then(data => setPredictedRestaurant(data))
+        .catch(error => console.log(error));
+      setPreparedMessageIndex(Math.floor(Math.random() * preparedMessage.length));
+    }
+  }
 
   const handleRedirectToRestaurant = restaurantID => {
     fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
@@ -47,23 +63,48 @@ const LazyAssistant = () => {
       .then(data => setChosenRestaurant(data));
   }
 
+  const handleHover = () => {
+    if (!activateLazyAssistant) {
+      const lazyAssistant = document.querySelector('.lazy-assistant');
+      const text = document.querySelector('.predict')
+      lazyAssistant.style.opacity = '0.9';
+      lazyAssistant.style.boxShadow = '0 0 20px 3px #fdab07';
+      text.style.transform = 'scale(1.2)';
+    }
+  }
+
+  const handleUnHover = () => {
+    if (!activateLazyAssistant) {
+      const lazyAssistant = document.querySelector('.lazy-assistant');
+      const text = document.querySelector('.predict')
+      lazyAssistant.style.opacity = '1';
+      lazyAssistant.style.boxShadow = 'none';
+      text.style.transform = 'scale(1)';
+    }
+  }
+
   useEffect(() => {
-    console.log(predictedRestaurant);
+    // console.log(Object.keys(predictedRestaurant).length);
   }, [predictedRestaurant]);
 
   return (
-    <div className="smart-assistant">
-      <h2>I prepare to you this restaurant</h2>
-      {predictedRestaurant.error === 'Array is empty!' ? <LoadingLazyAssistant /> :
-        <div className="restaurant" onClick={() => handleRedirectToRestaurant(predictedRestaurant._id)} >
-          {predictedRestaurant.avatar !== 'blank' ? <img src={predictedRestaurant.avatar} alt={`${predictedRestaurant.name} logo`} /> : <img src={blank} alt={`${predictedRestaurant.name} logo`} />}
-          <div className="content-info">
-            <h4>{predictedRestaurant.name}</h4>
-          </div>
-        </div>
-      }
+    <div onClick={handlePredictRestaurant} onMouseEnter={handleHover} onMouseLeave={handleUnHover} className="lazy-assistant">
+      <div className="main-box">
+        {activateLazyAssistant ? <>
+          {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <LoadingLazyAssistant /> : <>
+            <h5 className="welcome-message">{preparedMessage[preparedMessageIndex]}</h5>
+            <div className="restaurant" onClick={() => handleRedirectToRestaurant(predictedRestaurant._id)} >
+              {predictedRestaurant.avatar !== 'blank' ? <img src={predictedRestaurant.avatar} alt={`${predictedRestaurant.name} logo`} /> : <img src={blank} alt={`${predictedRestaurant.name} logo`} />}
+              <div className="content-info">
+                <h4>{predictedRestaurant.name}</h4>
+              </div>
+            </div>
+          </>
+          }</> : <div className='predict'>Activate Lazy Assistant</div>}
+      </div>
+
       {chosenRestaurant !== null && <Routes><Route path='/' exact element={<Navigate to='/customer/offer/restaurant' />} /></Routes>}
-    </div>
+    </div >
   );
 }
 export default LazyAssistant;

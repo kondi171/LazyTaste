@@ -6,8 +6,7 @@ import photoRestaurant from './../../assets/img/landing_images/louis-hansel-wVoP
 import LoadingState from '../features/LoadingState';
 
 const Login = ({ name }) => {
-  const { setLoggedUser, setMessageVisible } = useContext(AppContext);
-  const { setMessageContent, setMessageType } = useContext(AppContext);
+  const { setLoggedUser, setMessageVisible, setMessageContent, setMessageType } = useContext(AppContext);
   const [loginData, setLoginData] = useState({
     NIP: '',
     mail: '',

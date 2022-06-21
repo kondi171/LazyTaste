@@ -17,6 +17,7 @@ app.patch("/API/customers", customerController.updateCustomer);
 
 // AddOrder
 app.put("/API/customer/add-order", customerController.addOrder);
+app.delete('/API/customer/clear-orders', customerController.clearOrders);
 
 // Manage favourites
 app.put("/API/customers/:id", customerController.addFavourite);

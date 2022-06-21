@@ -105,6 +105,7 @@ exports.addOrder = async (req, res) => {
   const restaurantAvatar = JSON.parse(body.order).restaurantAvatar;
   const restaurantType = JSON.parse(body.order).restaurantType;
   const message = JSON.parse(body.order).message;
+  const paymentMethod = JSON.parse(body.order).paymentMethod;
   const parsedMessage = message === '' ? 'none' : message;
   const today = new Date();
   const date = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()} ${today.getHours() > 10 ? today.getHours() : '0' + today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0' + today.getMinutes()}`;
@@ -127,6 +128,7 @@ exports.addOrder = async (req, res) => {
           restaurantType: restaurantType,
           message: parsedMessage,
           paid: overallPaid.toFixed(2),
+          paymentMethod: paymentMethod,
           date: date,
           deliveryCost: Number(deliveryCost),
           products: productsArray,
@@ -136,6 +138,16 @@ exports.addOrder = async (req, res) => {
   );
   try {
     res.send(customerOrder);
+  } catch (error) {
+    res.status(500).send('error');
+  }
+}
+
+exports.clearOrders = async (req, res) => {
+  const id = '62a89165c52922b12a46e565';
+  await customerModel.updateOne({ _id: id }, { orders: [] })
+  try {
+    res.send('orders cleared');
   } catch (error) {
     res.status(500).send('error');
   }

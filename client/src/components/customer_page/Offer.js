@@ -3,12 +3,12 @@ import { Route, Navigate, Routes } from 'react-router-dom';
 import blank from "../../assets/img/logo/blank.png";
 import { AppContext } from "../AppContext";
 import Searchbar from "../features/searchbars/Searchbar";
-
+import LoadingLazyAssistant from "../features/LoadingLazyAssistant";
 const Offer = () => {
 
-  const { loggedUser, setChosenRestaurant, chosenRestaurant } = useContext(AppContext);
-  const [restaurants, setRestaurants] = useState([]);
+  const { loggedUser, setChosenRestaurant, chosenRestaurant, predictedRestaurant, activateLazyAssistant } = useContext(AppContext);
   const [favourites, setFavourites] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
 
   const handleFavourite = e => {
@@ -96,6 +96,7 @@ const Offer = () => {
 
   useEffect(() => {
     setFilterRestaurants(restaurants);
+    console.log(activateLazyAssistant);
   }, [restaurants]);
 
   return (
@@ -123,7 +124,23 @@ const Offer = () => {
               <i className="fa fa-heart" aria-hidden="true"></i>
               <span>Favourites</span>
             </h3>
-            <ul className="favourites__list">
+            {activateLazyAssistant ? <>
+              {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <div className="lazy-assistant"><LoadingLazyAssistant /></div> :
+                <ul className="favourites__list">
+
+                  {Object.keys(favourites).length === 0 ? <p className="empty-favourites">You don't have any favourites yet!</p> : null}
+                  {favourites.map(favourite => {
+                    return (
+                      <li key={favourite.restaurantID}>
+                        {favourite.restaurantAvatar !== 'blank' ? <img src={favourite.restaurantAvatar} alt={`${favourite.restaurantName} logo`} /> : <img src={blank} alt={`${favourite.restaurantName} logo`} />}
+                        <h4>{favourite.restaurantName}</h4>
+                      </li>
+                    );
+                  })}
+                </ul>
+              }
+            </> : <ul className="favourites__list">
+
               {Object.keys(favourites).length === 0 ? <p className="empty-favourites">You don't have any favourites yet!</p> : null}
               {favourites.map(favourite => {
                 return (
@@ -133,18 +150,40 @@ const Offer = () => {
                   </li>
                 );
               })}
-            </ul>
-
+            </ul>}
           </div>
           <div className="favourites__result">
-            You have <span>{favourites.length}</span> favourites restaurants.
+
+            {activateLazyAssistant ? <>
+              {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <div style={{ fontSize: '13px' }}> Lazy Assistant is predicting restaurants, please be patient</div> :
+                <>You have <span>{favourites.length}</span> favourites restaurants.</>
+              }
+            </> : <>You have <span>{favourites.length}</span> favourites restaurants.</>}
           </div>
         </div>
-
-
         <div className="restaurant-list">
           <h3 className="restaurant-list__title">Restaurant List:</h3>
-          <ul className="restaurant-list__list">
+          {activateLazyAssistant ? <>
+            {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <div className="lazy-assistant" style={{ marginTop: '10vh' }}><LoadingLazyAssistant /></div> :
+              <ul className="restaurant-list__list">
+                {filterRestaurants.map(restaurant => {
+                  const isFavourite = favourites.findIndex(favourite => favourite.restaurantID === restaurant._id);
+                  return (
+                    <li className="list-item" data-id={restaurant._id} key={restaurant._id}>
+                      <div className="restaurant" onClick={() => handleRedirectToRestaurant(restaurant._id)} >
+                        {restaurant.avatar !== 'blank' ? <img src={restaurant.avatar} alt={`${restaurant.name} logo`} /> : <img src={blank} alt={`${restaurant.name} logo`} />}
+                        <div className="content-info">
+                          <h4>{restaurant.name}</h4>
+                          <p><b>Promotion: </b>{restaurant.promotion}</p>
+                        </div>
+                      </div>
+                      {isFavourite >= 0 ? <i onClick={(e) => handleFavourite(e)} className="fa fa-heart" aria-hidden="true"></i> : <i onClick={(e) => handleFavourite(e)} className="fa fa-heart-o" aria-hidden="true"></i>}
+                    </li>
+                  );
+                })}
+                {filterRestaurants.length === 0 && <p className="empty-restaurant">No restaurant found</p>}
+              </ul>
+            } </> : <ul className="restaurant-list__list">
             {filterRestaurants.map(restaurant => {
               const isFavourite = favourites.findIndex(favourite => favourite.restaurantID === restaurant._id);
               return (
@@ -161,14 +200,14 @@ const Offer = () => {
               );
             })}
             {filterRestaurants.length === 0 && <p className="empty-restaurant">No restaurant found</p>}
-          </ul>
+          </ul>}
         </div>
       </div>
       {chosenRestaurant !== null && <Routes><Route path='/' exact element={<Navigate to='/customer/offer/restaurant' />} /></Routes>}
       <div className="offer__result">
         Result: <span>{filterRestaurants.length}</span>
       </div>
-    </section>
+    </section >
   );
 }
 

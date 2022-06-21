@@ -184,6 +184,11 @@
       @include message($redColor);
       transform: scale(1);
     }
+
+    &.information {
+      @include message($primaryColor);
+      transform: scale(1);
+    }
   }
 
   .active-opinion {

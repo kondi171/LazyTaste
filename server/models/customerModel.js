@@ -46,6 +46,10 @@ const CustomerSchema = new mongoose.Schema({
       message: String,
       date: String,
       deliveryCost: Number,
+      paymentMethod: {
+        type: String,
+        default: 'Cash',
+      },
       products: [
         {
           productName: String,

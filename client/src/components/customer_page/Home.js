@@ -20,10 +20,13 @@ const Home = () => {
   }, []);
   useEffect(() => {
     setTimeout(() => {
-      if (indexOfPromotions >= promotions.length - 1) changeIndexOfPromotions(0);
-      else changeIndexOfPromotions(indexOfPromotions + 1);
+      const index = Math.floor(Math.random() * (promotions.length));
+      if (index === indexOfPromotions && index === promotions.length - 1) changeIndexOfPromotions(index - 1);
+      else if (index === indexOfPromotions && index === 0) changeIndexOfPromotions(index + 1);
+      else if (index === indexOfPromotions) changeIndexOfPromotions(index + 1);
+      else changeIndexOfPromotions(index);
     }, 4000);
-  }, [promotions, indexOfPromotions]);
+  }, [indexOfPromotions]);
 
   return (
     <section className="home">
@@ -31,9 +34,9 @@ const Home = () => {
         <InfoSection as='customer' place="home" />
       </div>
       <div className="home__control-panel">
-        <div className="control-panel__main-box">
+        <div className="control-panel__lazy-assistant">
           <h2>Lazy Assistant</h2>
-          {/* <LazyAssistant /> */}
+          <LazyAssistant />
         </div>
         <div className="control-panel__under-boxes">
           <NavLink to='/customer/offer' className="under-box">

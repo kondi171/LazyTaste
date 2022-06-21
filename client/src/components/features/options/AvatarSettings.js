@@ -13,8 +13,7 @@ const AvatarSettings = () => {
     const inputValue = document.getElementById('avatar').value;
     if (inputValue.length < 15) {
       setInfoContent('URL is too short!');
-      infoDiv.classList.add('error');
-      infoDiv.classList.remove('success');
+      infoDiv.classList.add('information');
     } else {
       setAvatar(inputValue);
       setInfoContent('Avatar has been updated!');
@@ -22,14 +21,15 @@ const AvatarSettings = () => {
       setLoggedUser({ ...loggedUser, avatar: inputValue });
     }
     setTimeout(() => {
-      infoDiv.classList.remove('success');
-      infoDiv.classList.remove('error');
+      infoDiv.classList.remove('information');
+
     }, 2000);
   }
 
   const updateData = (field, fieldValue) => {
-    infoDiv.classList.remove('error');
-    infoDiv.classList.add('success')
+    // infoDiv.classList.remove('error');
+    // infoDiv.classList.add('succes');
+    infoDiv.classList.add('information')
     const URL = `http://localhost:4000/API/${apiSystem}`;
     const body = new URLSearchParams({
       id: loggedUser._id,
@@ -50,8 +50,8 @@ const AvatarSettings = () => {
   const handleNotFoundImage = () => {
     setLoggedUser({ ...loggedUser, avatar: 'blank' });
     setInfoContent('Image was not found!');
-    infoDiv.classList.add('error');
-    infoDiv.classList.remove('success');
+    infoDiv.classList.add('information');
+
     updateData('avatar', 'blank');
   }
   useEffect(() => {

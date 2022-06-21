@@ -13,6 +13,8 @@ const AppProvider = ({ children }) => {
   const [messageVisible, setMessageVisible] = useState(false);
   const [productID, setProductID] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [activateLazyAssistant, setActivateLazyAssistant] = useState(false);
+  const [predictedRestaurant, setPredictedRestaurant] = useState({});
   return (
     <AppContext.Provider
       value={{
@@ -34,6 +36,10 @@ const AppProvider = ({ children }) => {
         setProductID,
         isOpen,
         setIsOpen,
+        activateLazyAssistant,
+        setActivateLazyAssistant,
+        predictedRestaurant,
+        setPredictedRestaurant,
       }}>
       {children}
     </AppContext.Provider>

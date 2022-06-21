@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
 
 const LazyAssistantSchema = new mongoose.Schema({
-  customerID: String,
-  restaurantID: String,
-  restaurantName: String,
-  restaurantType: String,
-  restaurantAvatar: String,
+  input: String,
+  output: Number,
 });
 
 const LazyAssistant = mongoose.model("lazyAssistant", LazyAssistantSchema, 'lazyAssistant');
