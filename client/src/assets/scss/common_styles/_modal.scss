@@ -148,6 +148,40 @@
     border-radius: 10px;
     background-color: darken($darkColor, 2%);
 
+    .delivery-status {
+      .btn-group {
+        display: flex;
+
+        button:first-of-type {
+          border-top-left-radius: 30px;
+          border-bottom-left-radius: 30px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          @extend %btn;
+
+          &.active {
+            color: $primaryColor;
+            border: 2px solid $primaryColor;
+            box-shadow: 0 0 4px 1px $primaryColor;
+          }
+        }
+
+        button:last-of-type {
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          @extend %btn;
+
+          &.active {
+            color: $primaryColor;
+            border: 2px solid $primaryColor;
+            box-shadow: 0 0 4px 1px $primaryColor;
+          }
+        }
+      }
+    }
+
     .current-delivery-cost {
       font-size: 24px;
       color: $primaryColor;
@@ -156,6 +190,12 @@
       strong {
         color: $additionalColor;
       }
+
+      .red {
+        color: $redColor;
+      }
+
+
     }
 
     &__name {
@@ -178,6 +218,39 @@
 
     label {
       font-family: $decorativeFont;
+    }
+  }
+
+  .delivery-modal {
+    .delivery-settings {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      color: $primaryColor;
+      margin: 20px 10px;
+
+      &__element {
+        width: 23%;
+        font-size: 24px;
+        padding: 15px;
+        text-align: center;
+        border: 2px solid $primaryColor;
+        border-radius: 5px;
+        box-shadow: 0 0 4px 1px $primaryColor;
+        transition-duration: .4s;
+
+        .fa {
+          font-size: 46px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $additionalColor;
+          border-color: $additionalColor;
+          border-radius: 5px;
+          box-shadow: 0 0 4px 1px $additionalColor;
+        }
+      }
     }
   }
 }

@@ -39,13 +39,13 @@ const Menu = () => {
     else if (type === 'editDeliveryCost') {
       handleClick(type);
     }
-    else if (type === 'product') {
+    else if (type === 'editName') {
       const name = e.target.previousSibling.textContent;
       const productID = e.target.parentElement.parentElement.dataset.id;
       const price = e.target.parentElement.nextSibling.firstChild.textContent;
       handleClick(type, name, price);
       setProductID(productID);
-    } else if (type === 'price') {
+    } else if (type === 'editPrice') {
       const price = e.target.previousSibling.textContent
       const name = e.target.parentElement.previousSibling.firstChild.textContent;
       handleClick(type, price, name);
@@ -58,9 +58,13 @@ const Menu = () => {
         <li data-id={product._id} key={product._id}>
           <div className="notification-parent">
             <span className="content">{product.productName}</span>
+            <i onClick={(e) => handleChangeMenu(e, 'editName')} className="fa fa-refresh notification-dependant-hover" aria-hidden="true"></i>
+            <span className="notification-info">Edit Name</span>
           </div>
           <div className="notification-parent">
             <span className="price">{product.productPrice} PLN</span>
+            <i onClick={(e) => handleChangeMenu(e, 'editPrice')} className="fa fa-refresh fa-refresh--green notification-dependant-hover" aria-hidden="true"></i>
+            <span className="notification-info">Edit Price</span>
           </div>
           <div className="notification-parent">
             <i onClick={(e) => handleChangeMenu(e, 'removeProduct')} className="fa fa-times notification-dependant-hover" aria-hidden="true"></i>
@@ -103,8 +107,8 @@ const Menu = () => {
           <div className="menu__title">
             <h3>Edit Assortment</h3>
             <div className="notification-parent">
-              <i onClick={(e) => handleChangeMenu(e, 'editDeliveryCost')} className="fa fa-money notification-dependant-hover" aria-hidden="true"></i>
-              <span className="notification-info">Edit delivery cost</span>
+              <i onClick={(e) => handleChangeMenu(e, 'editDeliveryCost')} className="fa fa-truck notification-dependant-hover" aria-hidden="true"></i>
+              <span className="notification-info">Edit delivery</span>
             </div>
           </div>
           <ul>

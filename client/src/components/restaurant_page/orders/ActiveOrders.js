@@ -55,7 +55,7 @@ const ActiveOrders = () => {
 
   const initOrders = () => {
     const array = orders.map(order => {
-      const { _id, customerName, customerLastname, customerAdress, customerAvatar, date, message, paid, paymentMethod, products, active, deliveryCost } = order;
+      const { _id, customerName, customerLastname, customerAdress, customerAvatar, date, message, paid, paymentMethod, products, active } = order;
       if (active === true) {
         return (
           <div data-id={_id} onClick={handleCompleteOrder} key={_id} className="single-order single-order--active">
@@ -71,7 +71,8 @@ const ActiveOrders = () => {
               <strong>{customerName} {customerLastname}</strong>
             </div>
             {products.map(product => <div key={product._id} className='order-item'>{product.productName} - {product.productPrice} PLN</div>)}
-            <div key="delivery" className='order-item'>Delivery - {deliveryCost} PLN</div>
+            <div key="delivery" className='order-item'>
+              Delivery - {paid - loggedUser.delivery.deliveryCost >= loggedUser.delivery.orderValueToFreeDelivery ? <span className='free'>Free!</span> : loggedUser.delivery.deliveryCost + " PLN"}</div>
             <div className='order-info'>
               <div className='order-info__value'>Order Value: <span className="color color--info">{paid} PLN</span></div>
               <div className='order-info__adress'>Adress: <span className="color color--info">{customerAdress}</span></div>

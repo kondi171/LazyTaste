@@ -94,6 +94,10 @@
     flex-wrap: wrap;
     text-align: center;
     padding: 1vw;
+
+    .free {
+      color: $redColor;
+    }
   }
 
   .info {
@@ -141,6 +145,8 @@
     opacity: .9;
     box-shadow: 0px 0px 24px 2px $fontColor;
     margin: 2vw;
+
+
 
     .order-customer {
       font-size: 24px;

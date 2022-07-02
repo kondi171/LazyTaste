@@ -2,6 +2,7 @@ import { useState } from "react";
 import AvatarSettings from "./AvatarSettings";
 import DataSettings from "./DataSettings";
 import WriteOpinion from "./WriteOpinion";
+import DeleteAccount from "./DeleteAccount";
 const Settings = () => {
 
   const [activeSetting, setActiveSetting] = useState(<AvatarSettings />);
@@ -22,6 +23,10 @@ const Settings = () => {
         <div onClick={() => handleChangeSetting(<WriteOpinion />)} className="options__opinion">
           <i className="fa fa-commenting" aria-hidden="true"></i>
           <div>Write Opinion</div>
+        </div>
+        <div onClick={() => handleChangeSetting(<DeleteAccount />)} className="options__opinion">
+          <i className="fa fa-ban" aria-hidden="true"></i>
+          <div>Delete Account</div>
         </div>
       </div>
       <div className="settings__view">

@@ -15,6 +15,9 @@ app.post("/API/restaurants", restaurantController.loginRestaurant);
 // Update 
 app.patch("/API/restaurants", restaurantController.updateRestaurant);
 
+// Delete
+app.delete("/API/restaurants/:id", restaurantController.deleteRestaurant);
+
 // Add Promotion
 app.put("/API/restaurant/add-promotion", restaurantController.addPromotion);
 

@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../AppContext";
 const ChangeProductPriceModal = ({ productName, productPrice, setPriceValue }) => {
+  const { productID, loggedUser, isOpen, setIsOpen } = useContext(AppContext);
+
   const [inputValue, setInputValue] = useState('');
-  const [changeInfo, setChangeInfo] = useState(false);
   const handleChangeInputValue = e => setInputValue(e.target.value);
   const handleChange = e => {
     e.preventDefault();
     setPriceValue(inputValue);
-    setChangeInfo(true);
-    console.log(productPrice);
-
+    setIsOpen(!isOpen);;
+    const body = new URLSearchParams({
+      value: inputValue,
+      type: 'price',
+    });
+    fetch(`http://localhost:4000/API/restaurant/${loggedUser._id}/${productID}`, {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'PATCH',
+      body: body,
+    })
+      .then(res => res.status)
+      .catch(error => console.log(error));
   }
   return (
     <>
@@ -22,7 +36,6 @@ const ChangeProductPriceModal = ({ productName, productPrice, setPriceValue }) =
         <input onChange={e => handleChangeInputValue(e)} type='number' placeholder='Type new price of product...' />
         <input onClick={e => handleChange(e)} value="Change" type="button" />
       </form>
-      <div className="return-info">{changeInfo ? 'Changed!' : ''}</div>
     </>
   );
 }

@@ -4,32 +4,25 @@ const RestaurantSchema = new mongoose.Schema({
   mail: {
     type: String,
     required: true,
-    default: 'none',
   },
   password: {
     type: String,
     required: true,
-    default: 0,
   },
   name: {
     type: String,
-    required: true,
-    default: 'none',
   },
   NIP: {
     type: String,
     required: true,
-    default: 'none',
   },
   phone: {
     type: String,
     required: true,
-    default: 'none',
   },
   adress: {
     type: String,
     required: true,
-    default: 'none',
   },
   avatar: {
     type: String,
@@ -41,10 +34,27 @@ const RestaurantSchema = new mongoose.Schema({
     required: false,
     default: 'None',
   },
-  deliveryCost: {
-    type: Number,
-    required: false,
-    default: 10,
+  delivery: {
+    deliveryCost: {
+      type: Number,
+      default: 10,
+      required: false
+    },
+    deliveryActive: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+    orderMinValue: {
+      type: Number,
+      default: 50,
+      required: false,
+    },
+    orderValueToFreeDelivery: {
+      type: Number,
+      default: 100,
+      required: false,
+    },
   },
   menu: [
     {

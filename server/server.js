@@ -1,12 +1,41 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const vhost = require('vhost');
 const OpinionRouter = require("./routes/opinionsRoute");
 const CustomerRouter = require("./routes/customersRoute");
 const RestaurantRouter = require("./routes/restaurantsRoute");
 const LazyAssistantRouter = require("./routes/lazyAssistantRoute");
 const cors = require('cors');
-const app = express();
 const PORT = 4000;
+
+const main = express();
+
+main.get('/', function (req, res) {
+  res.send('Hello from main app!');
+});
+
+main.get('/:sub', function (req, res) {
+  res.send('requested ' + req.params.sub);
+});
+
+const redirect = express();
+
+redirect.use((req, res) => {
+  if (!module.parent) console.log(req.vhost);
+  res.redirect('http://lazytaste.com:3000' + req.vhost[0]);
+});
+
+const app = module.exports = express();
+
+app.use(vhost('*.lazytaste.com', redirect));
+app.use(vhost('lazytaste.com', app));
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
+});
+
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({
@@ -22,11 +51,7 @@ mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}.mongodb.net/$
     useUnifiedTopology: true
   }
 );
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
-  console.log("Connected successfully");
-});
+
 app.use(CustomerRouter);
 app.use(RestaurantRouter);
 app.use(OpinionRouter);

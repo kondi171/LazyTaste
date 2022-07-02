@@ -144,10 +144,12 @@
           }
         }
 
-
-
         .items-part {
           width: 60%;
+
+          .free {
+            color: $additionalColor;
+          }
 
           h4 {
             font-family: $decorativeFont;

@@ -17,7 +17,7 @@
 }
 
 @mixin cloud($radius, $color) {
-    border-radius: 10px;
+    border-radius: $radius;
     color: $primaryColor;
     box-shadow: 0px 0px 24px 2px $fontColor;
     position: relative;

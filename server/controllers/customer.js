@@ -101,6 +101,8 @@ exports.addOrder = async (req, res) => {
   const body = req.body;
   const customerID = body.id;
   const deliveryCost = body.deliveryCost;
+  const deliveryFree = body.deliveryFree;
+  const paid = JSON.parse(body.order).paid;
   const restaurantName = JSON.parse(body.order).restaurantName;
   const restaurantAvatar = JSON.parse(body.order).restaurantAvatar;
   const restaurantType = JSON.parse(body.order).restaurantType;
@@ -110,14 +112,14 @@ exports.addOrder = async (req, res) => {
   const today = new Date();
   const date = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()} ${today.getHours() > 10 ? today.getHours() : '0' + today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0' + today.getMinutes()}`;
   const products = JSON.parse(body.order).products;
-  let overallPaid = Number(deliveryCost);
-  products.forEach(product => overallPaid += product.productPrice);
+
   const productsArray = products.map(product => JSON.parse(
     `{
       "productName": "${product.productName}",
       "productPrice": "${product.productPrice}"
     }`
   ));
+  const isDeliveryFree = (Number(paid - deliveryCost) >= Number(deliveryFree)) ? 0 : deliveryCost;
   const customerOrder = await customerModel.updateOne(
     { _id: customerID },
     {
@@ -127,10 +129,10 @@ exports.addOrder = async (req, res) => {
           restaurantAvatar: restaurantAvatar,
           restaurantType: restaurantType,
           message: parsedMessage,
-          paid: overallPaid.toFixed(2),
+          paid: paid,
           paymentMethod: paymentMethod,
           date: date,
-          deliveryCost: Number(deliveryCost),
+          deliveryCost: isDeliveryFree,
           products: productsArray,
         }
       }
@@ -148,6 +150,16 @@ exports.clearOrders = async (req, res) => {
   await customerModel.updateOne({ _id: id }, { orders: [] })
   try {
     res.send('orders cleared');
+  } catch (error) {
+    res.status(500).send('error');
+  }
+}
+
+exports.deleteCustomer = async (req, res) => {
+  const id = req.params.id;
+  await customerModel.deleteOne({ _id: id });
+  try {
+    res.send();
   } catch (error) {
     res.status(500).send('error');
   }

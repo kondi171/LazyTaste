@@ -48,14 +48,54 @@ exports.getOneRestaurant = async (req, res) => {
 exports.updateRestaurant = async (req, res) => {
   const { id, field, value } = req.body;
   let updatedField = null;
-
+  const restaurant = await restaurantModel.findOne({ _id: id });
+  const { deliveryCost, deliveryActive, orderMinValue, orderValueToFreeDelivery } = restaurant.delivery;
   if (field === 'name') updatedField = await restaurantModel.updateOne({ _id: id }, { name: value });
   else if (field === 'mail') updatedField = await restaurantModel.updateOne({ _id: id }, { mail: value });
   else if (field === 'password') updatedField = await restaurantModel.updateOne({ _id: id }, { password: value });
   else if (field === 'phone') updatedField = await restaurantModel.updateOne({ _id: id }, { phone: value });
   else if (field === 'adress') updatedField = await restaurantModel.updateOne({ _id: id }, { adress: value });
   else if (field === 'avatar') updatedField = await restaurantModel.updateOne({ _id: id }, { avatar: value });
-  else if (field === 'deliveryCost') updatedField = await restaurantModel.updateOne({ _id: id }, { deliveryCost: value });
+  else if (field === 'deliveryCost') updatedField = await restaurantModel.updateOne(
+    { _id: id },
+    {
+      delivery: {
+        deliveryCost: value,
+        deliveryActive: deliveryActive,
+        orderMinValue: orderMinValue,
+        orderValueToFreeDelivery: orderValueToFreeDelivery
+      }
+    });
+  else if (field === 'orderMinValue') updatedField = await restaurantModel.updateOne(
+    { _id: id },
+    {
+      delivery: {
+        deliveryCost: deliveryCost,
+        deliveryActive: deliveryActive,
+        orderMinValue: value,
+        orderValueToFreeDelivery: orderValueToFreeDelivery
+      }
+    });
+  else if (field === 'orderValueToFreeDelivery') updatedField = await restaurantModel.updateOne(
+    { _id: id },
+    {
+      delivery: {
+        deliveryCost: deliveryCost,
+        deliveryActive: deliveryActive,
+        orderMinValue: orderMinValue,
+        orderValueToFreeDelivery: value
+      }
+    });
+  else if (field === 'deliveryActive') updatedField = await restaurantModel.updateOne(
+    { _id: id },
+    {
+      delivery: {
+        deliveryCost: deliveryCost,
+        deliveryActive: value,
+        orderMinValue: orderMinValue,
+        orderValueToFreeDelivery: orderValueToFreeDelivery
+      }
+    });
   try {
     res.send(updatedField);
   } catch (error) {
@@ -119,11 +159,22 @@ exports.deleteProduct = async (req, res) => {
 
 exports.updateProduct = async (req, res) => {
   const { restaurantID, productID } = req.params;
-  // const restaurantProduct = await restaurantModel.updateOne(
-  //   { _id: restuarantID },
-  //   { $pull: { menu: { _ } } }
-  // );
-  console.log(restaurantID);
+  const inputValue = req.body.value;
+  const type = req.body.type;
+  const restaurant = await restaurantModel.findOne({ _id: restaurantID });
+  const productToChange = restaurant.menu.filter(product => String(product._id) === productID);
+  if (type === 'name') {
+    productToChange[0].productName = inputValue;
+  }
+  if (type === 'price') {
+    productToChange[0].productPrice = inputValue;
+  }
+
+  await restaurantModel.updateOne(
+    { _id: restaurantID },
+    { menu: restaurant.menu }
+  );
+  console.log(restaurant.menu);
   try {
     res.send('restaurantProduct');
   } catch (error) {
@@ -145,6 +196,7 @@ exports.addOrder = async (req, res) => {
   const body = req.body;
   const id = body.id;
   const deliveryCost = body.deliveryCost;
+  const paid = JSON.parse(body.order).paid;
   const customerName = JSON.parse(body.order).customerName;
   const customerLastname = JSON.parse(body.order).customerLastname;
   const customerAvatar = JSON.parse(body.order).customerAvatar;
@@ -155,8 +207,6 @@ exports.addOrder = async (req, res) => {
   const products = JSON.parse(body.order).products;
   const today = new Date();
   const date = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()} ${today.getHours() > 10 ? today.getHours() : '0' + today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0' + today.getMinutes()}`;
-  let overallPaid = Number(deliveryCost);
-  products.forEach(product => overallPaid += product.productPrice);
   const productsArray = products.map(product => JSON.parse(
     `{
       "productName": "${product.productName}",
@@ -173,7 +223,7 @@ exports.addOrder = async (req, res) => {
           customerAvatar: customerAvatar,
           customerAdress: customerAdress,
           message: parsedMessage,
-          paid: overallPaid.toFixed(2),
+          paid: paid,
           paymentMethod: paymentMethod,
           deliveryCost: Number(deliveryCost),
           date: date,
@@ -197,7 +247,6 @@ exports.completeOrder = async (req, res) => {
   const clickedOrder = restaurant.orders.filter(order => String(order._id) === orderID);
   const oldOrders = restaurant.orders;
   clickedOrder[0].active = false;
-  console.log(oldOrders);
   const newOrders = await restaurantModel.updateOne(
     { _id: restaurantID },
     { orders: oldOrders }
@@ -207,5 +256,15 @@ exports.completeOrder = async (req, res) => {
     res.send('');
   } catch (error) {
     res.status(500).send(error);
+  }
+}
+
+exports.deleteRestaurant = async (req, res) => {
+  const id = req.params.id;
+  await restaurantModel.deleteOne({ _id: id });
+  try {
+    res.send();
+  } catch (error) {
+    res.status(500).send('error');
   }
 }

@@ -15,6 +15,9 @@ app.post("/API/customers", customerController.loginCustomer);
 // Update 
 app.patch("/API/customers", customerController.updateCustomer);
 
+// Delete
+app.delete("/API/customers/:id", customerController.deleteCustomer);
+
 // AddOrder
 app.put("/API/customer/add-order", customerController.addOrder);
 app.delete('/API/customer/clear-orders', customerController.clearOrders);

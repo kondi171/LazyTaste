@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
-import logo from './../../../assets/img/logo/LT-logo-transparent.png';
-import Login from '../../landing_page/Login';
-import Register from '../../landing_page/Register';
-import { AppContext } from "../../AppContext";
+import logo from './../../assets/img/logo/LT-logo-transparent.png';
+import Login from '../landing_page/Login';
+import Register from '../landing_page/Register';
+import { AppContext } from "../AppContext";
 
 const Modal = ({ clicked, setIsOpen }) => {
   const { setMessageVisible, menuModalOpen } = useContext(AppContext);

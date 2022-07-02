@@ -1,12 +1,14 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from './AppContext';
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import LandingPage from './landing_page/LandingPage';
 
 import CustomerHome from './customer_page/Home';
 import CustomerOffer from './customer_page/Offer';
 import RestaurantPage from './customer_page/RestaurantPage';
 import CustomerOrders from './customer_page/Orders';
+import CustomerSuccessOrder from './customer_page/SuccessOrder';
 import CustomerOutlet from './customer_page/CustomerOutlet';
 import CustomerSettings from './features/options/Settings';
 import RestaurantHome from './restaurant_page/Home';
@@ -35,44 +37,47 @@ const LazyTaste = () => {
   }, [loggedUser]);
 
   return (
-    <nav className="router-navigation">
-      <Routes>
-        <Route path='*' element={<LandingPage />} />
-        <Route path='/smart' element={<LazyAssistant />} />
-        {loggedCustomer ? (
-          <Route path='customer' element={<CustomerOutlet />}>
-            <Route path='/customer' exact element={<CustomerHome />} />
-            <Route path='/customer/home' element={<CustomerHome />} />
-            <Route path='/customer/offer/*' element={<CustomerOffer />} />
-            <Route path='/customer/offer/restaurant' element={<RestaurantPage />} />
-            <Route path='/customer/orders' element={<CustomerOrders />} />
-            <Route path='/customer/settings' element={<CustomerSettings />} />
-            <Route path='*' element={<CustomerHome />} />
-          </Route>
-        ) : <Route path='/*' exact element={<Navigate to='/' />} />}
-        {/* Restaurant */}
-        {loggedRestaurant ? (
-          <Route path='restaurant' element={<RestaurantOutlet />}>
-            <Route path='/restaurant' exact element={<RestaurantHome />} />
-            <Route path='/restaurant/home' element={<RestaurantHome />} />
-            <Route path='/restaurant/menu' element={<RestaurantMenu />} />
-            <Route path='/restaurant/competitors/*' element={<RestaurantCompetitors />} />
-            <Route path='/restaurant/competitors/competitor' element={<CompetitorPage />} />
-            <Route path='/restaurant/settings' element={<RestaurantSettings />} />
-            <Route path='*' element={<RestaurantHome />} />
-          </Route>
-        ) : <Route path='/*' exact element={<Navigate to='/' />} />}
-        {/* Orders */}
-        {loggedRestaurant ? (
-          <Route path='restaurant/orders' element={<OrdersOutlet />} >
-            <Route path='/restaurant/orders' exact element={<RestaurantOrdersActive />} />
-            <Route path='/restaurant/orders/active' element={<RestaurantOrdersActive />} />
-            <Route path='/restaurant/orders/completed' element={<RestaurantOrdersCompleted />} />
-            <Route path='/restaurant/orders/archive' element={<RestaurantOrdersArchive />} />
-          </Route>
-        ) : <Route path='/*' exact element={<Navigate to='/' />} />}
-      </Routes>
-    </nav>
+    <PayPalScriptProvider options={{ "client-id": "AdMI9voJyavKO47Apc8IXuFz70qwfwwJTHgcNKvaZ4PUos-KKHHp562bXQ4VFJJl67iJnSSh-y3T7x4S" }}>
+      <nav className="router-navigation">
+        <Routes>
+          <Route path='*' element={<LandingPage />} />
+          <Route path='/smart' element={<LazyAssistant />} />
+          {loggedCustomer ? (
+            <Route path='customer' element={<CustomerOutlet />}>
+              <Route path='/customer' exact element={<CustomerHome />} />
+              <Route path='/customer/home' element={<CustomerHome />} />
+              <Route path='/customer/offer/*' element={<CustomerOffer />} />
+              <Route path='/customer/offer/restaurant' element={<RestaurantPage />} />
+              <Route path='/customer/orders' element={<CustomerOrders />} />
+              <Route path='/customer/orders/success' element={<CustomerSuccessOrder />} />
+              <Route path='/customer/settings' element={<CustomerSettings />} />
+              <Route path='*' element={<CustomerHome />} />
+            </Route>
+          ) : <Route path='/*' exact element={<Navigate to='/' />} />}
+          {/* Restaurant */}
+          {loggedRestaurant ? (
+            <Route path='restaurant' element={<RestaurantOutlet />}>
+              <Route path='/restaurant' exact element={<RestaurantHome />} />
+              <Route path='/restaurant/home' element={<RestaurantHome />} />
+              <Route path='/restaurant/menu' element={<RestaurantMenu />} />
+              <Route path='/restaurant/competitors/*' element={<RestaurantCompetitors />} />
+              <Route path='/restaurant/competitors/competitor' element={<CompetitorPage />} />
+              <Route path='/restaurant/settings' element={<RestaurantSettings />} />
+              <Route path='*' element={<RestaurantHome />} />
+            </Route>
+          ) : <Route path='/*' exact element={<Navigate to='/' />} />}
+          {/* Orders */}
+          {loggedRestaurant ? (
+            <Route path='restaurant/orders' element={<OrdersOutlet />} >
+              <Route path='/restaurant/orders' exact element={<RestaurantOrdersActive />} />
+              <Route path='/restaurant/orders/active' element={<RestaurantOrdersActive />} />
+              <Route path='/restaurant/orders/completed' element={<RestaurantOrdersCompleted />} />
+              <Route path='/restaurant/orders/archive' element={<RestaurantOrdersArchive />} />
+            </Route>
+          ) : <Route path='/*' exact element={<Navigate to='/' />} />}
+        </Routes>
+      </nav>
+    </PayPalScriptProvider>
   );
 }
 

@@ -104,6 +104,10 @@
 			.fa-times {
 				transition-duration: .4s;
 
+				&--green {
+					color: $additionalColor;
+				}
+
 				&:hover {
 					cursor: pointer;
 					color: $secondaryColor;

@@ -3,7 +3,7 @@ import ChangeProductNameModal from "./ChangeProductNameModal";
 import ChangeProductPriceModal from "./ChangeProductPriceModal";
 import RemoveProductModal from "./RemoveProductModal";
 import AddProductModal from "./AddProductModal";
-import EditDeliveryCostModal from "./EditDeliveryCostModal";
+import EditDeliveryModal from "./EditDeliveryModal";
 const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue, setPriceValue, additionalItems }) => {
 
   const [mainChange, setMainChange] = useState('');
@@ -34,11 +34,11 @@ const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue,
     <section id='layer' className="modal">
       <div id="modal" className="modal__content">
         <i id='close' className="fa fa-times" aria-hidden="true"></i>
-        {type === 'product' && <ChangeProductNameModal productName={mainChange} productPrice={additionalItems} setProductValue={setProductValue} />}
-        {type === 'price' && <ChangeProductPriceModal productName={additionalItems} productPrice={mainChange} setPriceValue={setPriceValue} />}
+        {type === 'editName' && <ChangeProductNameModal productName={mainChange} productPrice={additionalItems} setProductValue={setProductValue} />}
+        {type === 'editPrice' && <ChangeProductPriceModal productName={additionalItems} productPrice={mainChange} setPriceValue={setPriceValue} />}
         {type === 'removeProduct' && <RemoveProductModal productItems={additionalItems} />}
         {type === 'addProduct' && <AddProductModal />}
-        {type === 'editDeliveryCost' && <EditDeliveryCostModal />}
+        {type === 'editDeliveryCost' && <EditDeliveryModal />}
       </div>
     </section>
   );

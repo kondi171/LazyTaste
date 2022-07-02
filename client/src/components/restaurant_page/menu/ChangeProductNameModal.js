@@ -6,17 +6,20 @@ const ChangeProductNameModal = ({ productName, productPrice, setProductValue }) 
   const [inputValue, setInputValue] = useState('');
   const handleChangeInputValue = e => setInputValue(e.target.value);
   const handleChange = e => {
-    const testID = `629f15980a8c49d791e1819e`;
-
     e.preventDefault();
     setProductValue(inputValue);
     setIsOpen(!isOpen);
-    fetch(`http://localhost:4000/API/restaurant/${testID}/${productID}`, {
+    const body = new URLSearchParams({
+      value: inputValue,
+      type: 'name',
+    });
+    fetch(`http://localhost:4000/API/restaurant/${loggedUser._id}/${productID}`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       method: 'PATCH',
+      body: body,
     })
       .then(res => res.status)
       .catch(error => console.log(error));

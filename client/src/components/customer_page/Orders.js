@@ -55,7 +55,7 @@ const Orders = () => {
             <h4>{restaurantName}</h4>
             <ul>
               {products.map(product => <li key={product._id}>{product.productName} - {product.productPrice} PLN</li>)}
-              <li key="delivery">Delivery - {deliveryCost} PLN</li>
+              <li key="delivery">Delivery - {deliveryCost === 0 ? <span className='free'>Free!</span> : deliveryCost + "PLN"} </li>
             </ul>
           </div>
 
