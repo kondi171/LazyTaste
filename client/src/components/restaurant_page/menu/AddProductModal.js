@@ -4,6 +4,7 @@ const AddProductModal = ({ productItems }) => {
   const { loggedUser, isOpen, setIsOpen } = useContext(AppContext);
   const [nameProduct, setNameProduct] = useState('');
   const [priceProduct, setPriceProduct] = useState('');
+  const [descriptionProduct, setDescriptionProduct] = useState('');
 
   const handleAdd = e => {
     e.preventDefault();
@@ -15,8 +16,8 @@ const AddProductModal = ({ productItems }) => {
         {
           productName: nameProduct,
           productPrice: priceProduct,
+          productDescription: descriptionProduct,
         },
-
       )
     });
     fetch(`http://localhost:4000/API/restaurant/menu/add-product`, {
@@ -38,6 +39,8 @@ const AddProductModal = ({ productItems }) => {
           <input onChange={e => setNameProduct(e.target.value)} type='text' name='name' placeholder='Type product name' />
           <label htmlFor="price">Product Price</label>
           <input onChange={e => setPriceProduct(e.target.value)} type='number' name='price' placeholder='Type product price...' />
+          <label htmlFor="description">Product Description</label>
+          <textarea onChange={e => setDescriptionProduct(e.target.value)} name='description' placeholder='Type product description...' />
           <input onClick={e => handleAdd(e)} value="Add" type="button" />
         </form>
       </div>

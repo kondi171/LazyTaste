@@ -165,7 +165,10 @@ const RestaurantPage = () => {
                 {chosenRestaurant.menu.map((product) => {
                   return (
                     <li data-id={product._id} key={product._id}>
-                      <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
+                      <div className='info'>
+                        <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
+                        <div className='cyan'>{product.productDescription}</div>
+                      </div>
                       <i onClick={handleAddToCart} onMouseEnter={() => handleShowMessage('Add to Cart')} onMouseLeave={handleHideMessage} className="fa fa-plus" aria-hidden="true"></i>
                     </li>
                   )

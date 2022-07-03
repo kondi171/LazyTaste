@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import ChangeProductNameModal from "./ChangeProductNameModal";
 import ChangeProductPriceModal from "./ChangeProductPriceModal";
+import ChangeProductDescriptionModal from "./ChangeProductDescriptionModal";
 import RemoveProductModal from "./RemoveProductModal";
 import AddProductModal from "./AddProductModal";
 import EditDeliveryModal from "./EditDeliveryModal";
-const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue, setPriceValue, additionalItems }) => {
+const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductName, setProductPrice, setProductDescription, additionalItems }) => {
 
   const [mainChange, setMainChange] = useState('');
 
@@ -28,14 +29,16 @@ const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductValue,
       document.body.style.overflowY = 'visible';
       setIsOpen(false);
     });
+    console.log(additionalItems);
   }, [clicked, setIsOpen]);
 
   return (
     <section id='layer' className="modal">
       <div id="modal" className="modal__content">
         <i id='close' className="fa fa-times" aria-hidden="true"></i>
-        {type === 'editName' && <ChangeProductNameModal productName={mainChange} productPrice={additionalItems} setProductValue={setProductValue} />}
-        {type === 'editPrice' && <ChangeProductPriceModal productName={additionalItems} productPrice={mainChange} setPriceValue={setPriceValue} />}
+        {type === 'editName' && <ChangeProductNameModal productName={mainChange} productPrice={additionalItems[0]} productDescription={additionalItems[1]} setProductName={setProductName} />}
+        {type === 'editPrice' && <ChangeProductPriceModal productName={additionalItems[0]} productPrice={mainChange} productDescription={additionalItems[1]} setProductPrice={setProductPrice} />}
+        {type === 'editDescription' && <ChangeProductDescriptionModal productName={additionalItems[0]} productPrice={additionalItems[1]} productDescription={mainChange} setProductDescription={setProductDescription} />}
         {type === 'removeProduct' && <RemoveProductModal productItems={additionalItems} />}
         {type === 'addProduct' && <AddProductModal />}
         {type === 'editDeliveryCost' && <EditDeliveryModal />}

@@ -48,17 +48,12 @@ const CompetitorPage = () => {
             <span>Promotion</span>
           </div>
           <span>{chosenRestaurant.promotion}</span>
-          <div className='single-info'>
-            <i className="fa fa-money" aria-hidden="true"></i>
-            <span>Delivery Cost</span>
-          </div>
-          <span>{chosenRestaurant.deliveryCost} PLN</span>
         </div>
         <div className="account-column__logout">
           <Link onClick={() => setChosenRestaurant(null)} to="/restaurant/competitors" onMouseEnter={() => handleShowMessage('Back to Competitors')} onMouseLeave={handleHideMessage}>Back</Link>
         </div>
       </div>
-      <div className="access-system">
+      <div className="access-system access-system--competitor">
         <div className="menu menu--competitor">
           <div className="menu-items">
             <h3 className="menu__title">Menu</h3>
@@ -67,6 +62,7 @@ const CompetitorPage = () => {
                 return (
                   <li data-id={product._id} key={product._id}>
                     <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
+                    <div className='cyan'>{product.productDescription}</div>
                   </li>
                 )
               })}
@@ -74,8 +70,16 @@ const CompetitorPage = () => {
             <br />
           </div>
         </div>
+        <div className="delivery">
+          {chosenRestaurant.delivery.deliveryActive ? <>
+            <p><b>Delivery Cost: </b>{chosenRestaurant.delivery.deliveryCost} PLN</p>
+            <p><b>Min Order Value: </b>{chosenRestaurant.delivery.orderMinValue} PLN</p>
+            <p><b>Free delivery from: </b>{chosenRestaurant.delivery.orderValueToFreeDelivery} PLN</p>
+          </> : <span>Restaurant is not open to delivery!</span>}
+        </div>
         <div className="message-info">{message.content}</div>
       </div>
+
     </section >
   );
 }

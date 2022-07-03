@@ -6,15 +6,15 @@ const Menu = () => {
   const { setProductID, isOpen, setIsOpen, loggedUser } = useContext(AppContext);
   const [whatClicked, setWhatClicked] = useState('');
   const [typeClick, setTypeClick] = useState('');
-  const [productValue, setProductValue] = useState('');
-  const [priceValue, setPriceValue] = useState('');
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
+  const [productDescription, setProductDescription] = useState('');
   const [additionalItems, setAdditionalItems] = useState('');
   const [removeProduct, setRemoveProduct] = useState(false);
   const [removedProduct, setRemovedProduct] = useState(null);
   const [products, setProducts] = useState([]);
   const [menuLoaded, setMenuLoaded] = useState(false);
+
   const handleClick = (type, click, additionalItems = []) => {
     setTypeClick(type);
     setWhatClicked(click);
@@ -26,10 +26,10 @@ const Menu = () => {
     if (type === 'removeProduct') {
       const product = e.target.parentElement.parentElement;
       const productID = product.dataset.id;
-      // const product = e.target.parentElement.parentElement.remove();
-      const name = e.target.parentElement.previousSibling.previousSibling.firstChild.textContent;
-      const price = e.target.parentElement.previousSibling.firstChild.textContent;
-      handleClick(type, product, [name, price]);
+      const name = e.target.parentElement.previousSibling.previousSibling.previousSibling.firstChild.textContent;
+      const price = e.target.parentElement.previousSibling.previousSibling.firstChild.textContent;
+      const description = e.target.parentElement.previousSibling.firstChild.textContent;
+      handleClick(type, product, [name, price, description]);
       setRemovedProduct(product);
       setProductID(productID);
     }
@@ -40,20 +40,32 @@ const Menu = () => {
       handleClick(type);
     }
     else if (type === 'editName') {
-      const name = e.target.previousSibling.textContent;
       const productID = e.target.parentElement.parentElement.dataset.id;
+      const name = e.target.previousSibling.textContent;
       const price = e.target.parentElement.nextSibling.firstChild.textContent;
-      handleClick(type, name, price);
+      const description = e.target.parentElement.nextSibling.nextSibling.firstChild.textContent;
+      handleClick(type, name, [price, description]);
       setProductID(productID);
     } else if (type === 'editPrice') {
+      const productID = e.target.parentElement.parentElement.dataset.id;
       const price = e.target.previousSibling.textContent
       const name = e.target.parentElement.previousSibling.firstChild.textContent;
-      handleClick(type, price, name);
+      const description = e.target.parentElement.nextSibling.firstChild.textContent;
+      handleClick(type, price, [name, description]);
+      setProductID(productID);
+    } else if (type === 'editDescription') {
+      const productID = e.target.parentElement.parentElement.dataset.id;
+      const name = e.target.parentElement.previousSibling.previousSibling.firstChild.textContent
+      const price = e.target.parentElement.previousSibling.firstChild.textContent;
+      const description = e.target.previousSibling.textContent;
+      handleClick(type, description, [name, price]);
+      setProductID(productID);
     }
   }
 
   const initMenu = () => {
     const array = products.menu.map(product => {
+
       return (
         <li data-id={product._id} key={product._id}>
           <div className="notification-parent">
@@ -67,6 +79,11 @@ const Menu = () => {
             <span className="notification-info">Edit Price</span>
           </div>
           <div className="notification-parent">
+            <span className="description">{product.productDescription}</span>
+            <i onClick={(e) => handleChangeMenu(e, 'editDescription')} className="fa fa-refresh fa-refresh--cyan notification-dependant-hover" aria-hidden="true"></i>
+            <span className="notification-info">Edit Description</span>
+          </div>
+          <div className="notification-parent">
             <i onClick={(e) => handleChangeMenu(e, 'removeProduct')} className="fa fa-times notification-dependant-hover" aria-hidden="true"></i>
             <span className="notification-info">Delete product</span>
           </div>
@@ -78,13 +95,14 @@ const Menu = () => {
   }
 
   useEffect(() => {
-    setProductName(productValue);
-    setProductPrice(priceValue);
+    setProductName(productName);
+    setProductPrice(productPrice);
+    setProductDescription(productDescription);
     if (removeProduct) {
       removedProduct.remove();
-      setRemovedProduct(null);
+      setRemoveProduct(null);
     }
-  }, [whatClicked, productValue, priceValue, removeProduct, isOpen]);
+  }, [whatClicked, productName, productPrice, productDescription, removeProduct, removedProduct, isOpen]);
 
   useEffect(() => {
     const URL = `http://localhost:4000/API/restaurants/${loggedUser._id}`;
@@ -124,8 +142,9 @@ const Menu = () => {
       </div >
       {isOpen &&
         <MenuModal clicked={whatClicked}
-          setProductValue={setProductValue}
-          setPriceValue={setPriceValue}
+          setProductName={setProductName}
+          setProductPrice={setProductPrice}
+          setProductDescription={setProductDescription}
           additionalItems={additionalItems}
           type={typeClick}
           setIsOpen={setIsOpen}

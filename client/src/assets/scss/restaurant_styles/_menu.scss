@@ -108,6 +108,10 @@
 					color: $additionalColor;
 				}
 
+				&--cyan {
+					color: lighten($supportColor, 15%);
+				}
+
 				&:hover {
 					cursor: pointer;
 					color: $secondaryColor;
@@ -135,6 +139,12 @@
 					.price {
 						font-size: 22px;
 						color: $additionalColor;
+					}
+
+					.description {
+						font-size: 20px;
+						color: lighten($supportColor, 15%);
+
 					}
 
 					.fa-times {

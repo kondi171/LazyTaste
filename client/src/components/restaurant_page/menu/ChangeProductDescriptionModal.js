@@ -1,17 +1,17 @@
-import { useContext, useState } from "react";
+import { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
-const ChangeProductPriceModal = ({ productName, productPrice, productDescription, setProductPrice }) => {
+const ChangeProductDescriptionModal = ({ productName, productPrice, productDescription, setProductDescription }) => {
   const { productID, loggedUser, isOpen, setIsOpen } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState('');
   const handleChangeInputValue = e => setInputValue(e.target.value);
   const handleChange = e => {
     e.preventDefault();
-    setProductPrice(inputValue);
-    setIsOpen(!isOpen);;
+    setProductDescription(inputValue);
+    setIsOpen(!isOpen);
     const body = new URLSearchParams({
       value: inputValue,
-      type: 'price',
+      type: 'description',
     });
     fetch(`http://localhost:4000/API/restaurant/${loggedUser._id}/${productID}`, {
       mode: 'cors',
@@ -26,7 +26,7 @@ const ChangeProductPriceModal = ({ productName, productPrice, productDescription
   }
   return (
     <>
-      <h3>Change price of: {productName}</h3>
+      <h3>Change product description of: {productName}</h3>
       <div className="product">
         <div className="product__name">{productName}</div>
         <div className="product__price">{productPrice}</div>
@@ -34,10 +34,10 @@ const ChangeProductPriceModal = ({ productName, productPrice, productDescription
       </div>
       <div className="product__to">to:</div>
       <form>
-        <input onChange={e => handleChangeInputValue(e)} type='number' placeholder='Type new price of product...' />
+        <textarea onChange={e => handleChangeInputValue(e)} name='description' placeholder='Type new product description...' />
         <input onClick={e => handleChange(e)} value="Change" type="button" />
       </form>
     </>
   );
 }
-export default ChangeProductPriceModal;
+export default ChangeProductDescriptionModal;

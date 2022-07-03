@@ -22,6 +22,7 @@ const RemoveProductModal = ({ productItems }) => {
       <div className="product">
         <div className="product__name">{productItems[0]}</div>
         <div className="product__price">{productItems[1]}</div>
+        <div className="product__description">{productItems[2]}</div>
       </div>
       <input onClick={handleRemove} value="Remove" type="button" />
     </>

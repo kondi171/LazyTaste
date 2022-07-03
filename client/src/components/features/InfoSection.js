@@ -39,11 +39,6 @@ const InfoSection = ({ place }) => {
               <span>Promotion</span>
             </div>
             <span>{loggedUser.promotion}</span>
-            <div className='single-info'>
-              <i className="fa fa-money" aria-hidden="true"></i>
-              <span>Delivery Cost</span>
-            </div>
-            <span>{loggedUser.deliveryCost} PLN</span>
           </>
         }
       </div>

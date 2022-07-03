@@ -59,6 +59,11 @@ const RestaurantSchema = new mongoose.Schema({
   menu: [
     {
       productName: String,
+      productDescription: {
+        type: String,
+        required: true,
+        default: 'Lack of information',
+      },
       productPrice: Number,
     },
   ],

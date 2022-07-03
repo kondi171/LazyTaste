@@ -133,6 +133,7 @@ exports.addProduct = async (req, res) => {
         menu: {
           productName: JSONproduct.productName,
           productPrice: JSONproduct.productPrice,
+          productDescription: JSONproduct.productDescription,
         }
       }
     });
@@ -163,12 +164,10 @@ exports.updateProduct = async (req, res) => {
   const type = req.body.type;
   const restaurant = await restaurantModel.findOne({ _id: restaurantID });
   const productToChange = restaurant.menu.filter(product => String(product._id) === productID);
-  if (type === 'name') {
-    productToChange[0].productName = inputValue;
-  }
-  if (type === 'price') {
-    productToChange[0].productPrice = inputValue;
-  }
+
+  if (type === 'name') productToChange[0].productName = inputValue;
+  if (type === 'price') productToChange[0].productPrice = inputValue;
+  if (type === 'description') productToChange[0].productDescription = inputValue;
 
   await restaurantModel.updateOne(
     { _id: restaurantID },

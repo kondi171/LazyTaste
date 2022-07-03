@@ -1,13 +1,13 @@
 import { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
-const ChangeProductNameModal = ({ productName, productPrice, setProductValue }) => {
+const ChangeProductNameModal = ({ productName, productPrice, productDescription, setProductName }) => {
   const { productID, loggedUser, isOpen, setIsOpen } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState('');
   const handleChangeInputValue = e => setInputValue(e.target.value);
   const handleChange = e => {
     e.preventDefault();
-    setProductValue(inputValue);
+    setProductName(inputValue);
     setIsOpen(!isOpen);
     const body = new URLSearchParams({
       value: inputValue,
@@ -23,6 +23,7 @@ const ChangeProductNameModal = ({ productName, productPrice, setProductValue }) 
     })
       .then(res => res.status)
       .catch(error => console.log(error));
+    console.log(inputValue);
   }
   return (
     <>
@@ -30,6 +31,7 @@ const ChangeProductNameModal = ({ productName, productPrice, setProductValue }) 
       <div className="product">
         <div className="product__name">{productName}</div>
         <div className="product__price">{productPrice}</div>
+        <div className="product__description">{productDescription}</div>
       </div>
       <div className="product__to">to:</div>
       <form>
