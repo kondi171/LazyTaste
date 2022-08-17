@@ -37,7 +37,7 @@ const RestaurantSchema = new mongoose.Schema({
   delivery: {
     deliveryCost: {
       type: Number,
-      default: 10,
+      default: 0,
       required: false
     },
     deliveryActive: {
@@ -56,8 +56,22 @@ const RestaurantSchema = new mongoose.Schema({
       required: false,
     },
   },
+  productsSections: [
+    {
+      sectionName: {
+        type: String,
+        required: false,
+        default: 'Main Courses',
+      }
+    },
+  ],
   menu: [
     {
+      sectionID: {
+        type: String,
+        required: false,
+        default: '0',
+      },
       productName: String,
       productDescription: {
         type: String,

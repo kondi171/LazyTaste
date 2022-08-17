@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../../../AppContext";
 const RemoveProductModal = ({ productItems }) => {
   const { productID, loggedUser, isOpen, setIsOpen } = useContext(AppContext);
 
   const handleRemove = () => {
     setIsOpen(!isOpen);
-    fetch(`http://localhost:4000/API/restaurant/${loggedUser._id}/${productID}`, {
+    fetch(`http://localhost:4000/API/restaurant/menu/${loggedUser._id}/${productID}`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

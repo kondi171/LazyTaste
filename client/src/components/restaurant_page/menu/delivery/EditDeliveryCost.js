@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../../../AppContext";
 const EditDeliveryCostModal = () => {
   const { loggedUser, setLoggedUser } = useContext(AppContext);
   const [deliveryCost, setDeliveryCost] = useState(0);

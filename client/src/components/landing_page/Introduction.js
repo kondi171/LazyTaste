@@ -12,7 +12,7 @@ const Introduction = () => {
         <p>
           Do you want to explore a world where all of your favourites dishes ale in one place?
           Or maybe you are the owner or represantative of a restaurant and you want to expand your ranges?
-          You've come to the right place! Our system offers safe cooperation between the client and the restaurant,
+          You have come to the right place! Our system offers safe cooperation between the client and the restaurant,
           thanks to which you can order anything what you want without leaving your home! For customers, we offer
           an smart assistant who will help you choose your today's meal! Join us and take adventage of our services!
         </p>

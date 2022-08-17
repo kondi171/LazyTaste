@@ -39,6 +39,7 @@ const CustomerSchema = new mongoose.Schema({
       message: String,
       date: String,
       deliveryCost: Number,
+      adress: String,
       paymentMethod: {
         type: String,
         default: 'Cash',
@@ -47,6 +48,7 @@ const CustomerSchema = new mongoose.Schema({
         {
           productName: String,
           productPrice: Number,
+          productDescription: String,
         }
       ],
     }

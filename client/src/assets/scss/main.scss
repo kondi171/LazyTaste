@@ -24,10 +24,15 @@
 ::-webkit-scrollbar {
     width: 15px;
     background-color: $darkColor;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
     background: $darkColor;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 }
 
 ::-webkit-scrollbar-thumb {

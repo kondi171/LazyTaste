@@ -30,15 +30,15 @@ const LazyAssistant = () => {
   }, []);
 
   const handlePredictRestaurant = () => {
-    if (Object.keys(restaurants).length !== 0 && Object.keys(orders).length !== 0) attachLazyAssistant();
+    if (Object.keys(restaurants).length !== 0) attachLazyAssistant();
     setActivateLazyAssistant(true);
   }
 
   const attachLazyAssistant = () => {
-
     if (Object.keys(predictedRestaurant).length <= 1) {
       const URL = 'http://localhost:4000/API/lazy-assistant';
       const body = new URLSearchParams({
+        id: loggedUser._id,
         customerOrders: JSON.stringify(orders),
         restaurants: JSON.stringify(restaurants),
       });
@@ -83,9 +83,9 @@ const LazyAssistant = () => {
     }
   }
 
-  useEffect(() => {
-    // console.log(Object.keys(predictedRestaurant).length);
-  }, [predictedRestaurant]);
+  // useEffect(() => {
+  //   console.log(predictedRestaurant.predictedRestaurant[0]);
+  // }, [predictedRestaurant]);
 
   return (
     <div onClick={handlePredictRestaurant} onMouseEnter={handleHover} onMouseLeave={handleUnHover} className="lazy-assistant">
@@ -93,12 +93,13 @@ const LazyAssistant = () => {
         {activateLazyAssistant ? <>
           {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <LoadingLazyAssistant /> : <>
             <h5 className="welcome-message">{preparedMessage[preparedMessageIndex]}</h5>
-            <div className="restaurant" onClick={() => handleRedirectToRestaurant(predictedRestaurant._id)} >
+            <div className="restaurant" onClick={() => handleRedirectToRestaurant(predictedRestaurant.id)} >
               {predictedRestaurant.avatar !== 'blank' ? <img src={predictedRestaurant.avatar} alt={`${predictedRestaurant.name} logo`} /> : <img src={blank} alt={`${predictedRestaurant.name} logo`} />}
               <div className="content-info">
                 <h4>{predictedRestaurant.name}</h4>
               </div>
             </div>
+            <div className="accuracy">Accuracy: {predictedRestaurant.accuracy}</div>
           </>
           }</> : <div className='predict'>Activate Lazy Assistant</div>}
       </div>

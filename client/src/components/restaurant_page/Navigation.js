@@ -11,7 +11,7 @@ const Navigation = () => {
         <span className="tooltip-text">Home</span>
       </NavLink>
       <NavLink className='navlink tooltip' to='/restaurant/menu'>
-        <i className="fa fa-bars icon" aria-hidden="true"></i>
+        <i className="fa fa-cutlery icon" aria-hidden="true"></i>
         <span className="tooltip-text">Menu</span>
       </NavLink>
       <NavLink className='navlink tooltip' to='/restaurant/orders/active'>

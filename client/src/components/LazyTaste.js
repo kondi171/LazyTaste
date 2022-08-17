@@ -37,7 +37,7 @@ const LazyTaste = () => {
   }, [loggedUser]);
 
   return (
-    <PayPalScriptProvider options={{ "client-id": "AdMI9voJyavKO47Apc8IXuFz70qwfwwJTHgcNKvaZ4PUos-KKHHp562bXQ4VFJJl67iJnSSh-y3T7x4S" }}>
+    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID, currency: "PLN" }}>
       <nav className="router-navigation">
         <Routes>
           <Route path='*' element={<LandingPage />} />

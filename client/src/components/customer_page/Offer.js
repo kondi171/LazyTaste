@@ -5,7 +5,6 @@ import { AppContext } from "../AppContext";
 import Searchbar from "../features/searchbars/Searchbar";
 import LoadingLazyAssistant from "../features/LoadingLazyAssistant";
 const Offer = () => {
-  let clicker = 0;
   const { loggedUser, setChosenRestaurant, chosenRestaurant, predictedRestaurant, activateLazyAssistant } = useContext(AppContext);
   const [favourites, setFavourites] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
@@ -53,11 +52,9 @@ const Offer = () => {
     fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
       .then(res => res.json())
       .then(data => setChosenRestaurant(data));
-    console.log(restaurantID);
   }
 
   const handleType = e => {
-    // simulate db click
     const activeElement = e.currentTarget;
     const types = document.getElementsByClassName('type');
     const arrayTypes = [...types];
@@ -71,9 +68,11 @@ const Offer = () => {
           const typeFilter = data.filter(restaurant => restaurant.type === activeElement.textContent);
           const emptyFilter = typeFilter.filter(menu => menu.menu.length !== 0);
           setRestaurants(emptyFilter);
+          setDeliveryFilter(emptyFilter);
         })
         .catch(error => console.log(error));
     }
+    setDeliveryStatus("All");
   }
 
   const fetchData = () => {
@@ -82,7 +81,7 @@ const Offer = () => {
       .then(data => {
         const filter = data.filter(menu => menu.menu.length !== 0);
         setRestaurants(filter);
-
+        setDeliveryFilter(filter);
       })
       .catch(error => console.log(error));
   }
@@ -98,7 +97,7 @@ const Offer = () => {
       }
       else return restaurant;
     });
-
+    setDeliveryStatus(status);
     setDeliveryFilter(delivery);
   }
 
@@ -113,18 +112,17 @@ const Offer = () => {
   }, [loggedUser, favourites]);
 
   useEffect(() => {
-    changeStatus(deliveryStatus)
     setFilterRestaurants(restaurants);
   }, [restaurants]);
 
   return (
     <section className="offer">
       <div className="searchbox">
-        <Searchbar data={restaurants} setFilter={setFilterRestaurants} />
+        <Searchbar data={deliveryFilter} setFilter={setFilterRestaurants} />
         <div className="btn-group">
-          <button onClick={e => changeStatus(e.target.value)} value="Delivery" type="button">Delivery</button>
-          <button onClick={e => changeStatus(e.target.value)} value="All" type="button">All</button>
-          <button onClick={e => changeStatus(e.target.value)} value="Pickup" type="button">Pickup</button>
+          <button className={deliveryStatus === 'Delivery' ? `active` : false} onClick={e => changeStatus(e.target.value)} value="Delivery" type="button">Delivery</button>
+          <button className={deliveryStatus === 'All' ? `active` : false} onClick={e => changeStatus(e.target.value)} value="All" type="button">All</button>
+          <button className={deliveryStatus === 'Pickup' ? `active` : false} onClick={e => changeStatus(e.target.value)} value="Pickup" type="button">Pickup</button>
         </div>
       </div>
       <div className="restaurant-type">
@@ -154,7 +152,7 @@ const Offer = () => {
                   {Object.keys(favourites).length === 0 ? <p className="empty-favourites">You don't have any favourites yet!</p> : null}
                   {favourites.map(favourite => {
                     return (
-                      <li key={favourite.restaurantID}>
+                      <li key={favourite.restaurantID} onClick={() => handleRedirectToRestaurant(favourite.restaurantID)}>
                         {favourite.restaurantAvatar !== 'blank' ? <img src={favourite.restaurantAvatar} alt={`${favourite.restaurantName} logo`} /> : <img src={blank} alt={`${favourite.restaurantName} logo`} />}
                         <h4>{favourite.restaurantName}</h4>
                       </li>
@@ -176,7 +174,6 @@ const Offer = () => {
             </ul>}
           </div>
           <div className="favourites__result">
-
             {activateLazyAssistant ? <>
               {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <div style={{ fontSize: '13px' }}> Lazy Assistant is predicting restaurants, please be patient</div> :
                 <>You have <span>{favourites.length}</span> favourites restaurants.</>
@@ -190,27 +187,50 @@ const Offer = () => {
             {predictedRestaurant.error === 'Array is empty!' || Object.keys(predictedRestaurant).length <= 0 ? <div className="lazy-assistant" style={{ marginTop: '10vh' }}><LoadingLazyAssistant /></div> :
               <ul className="restaurant-list__list">
                 {filterRestaurants.map(restaurant => {
+                  const { _id, promotion, avatar, name, delivery } = restaurant;
                   const isFavourite = favourites.findIndex(favourite => favourite.restaurantID === restaurant._id);
-                  return (
-                    <li className="list-item" data-id={restaurant._id} key={restaurant._id}>
-                      <div className="restaurant" onClick={() => handleRedirectToRestaurant(restaurant._id)} >
-                        {restaurant.avatar !== 'blank' ? <img src={restaurant.avatar} alt={`${restaurant.name} logo`} /> : <img src={blank} alt={`${restaurant.name} logo`} />}
+                  const returnElement = (
+                    <li className="list-item" data-id={_id} key={_id}>
+                      <div className="restaurant" onClick={() => handleRedirectToRestaurant(_id)} >
+                        {avatar !== 'blank' ? <img src={avatar} alt={`${name} logo`} /> : <img src={blank} alt={`${name} logo`} />}
                         <div className="content-info">
-                          <h4>{restaurant.name}</h4>
+                          <h4>{name}</h4>
+                          <p><b>Promotion: </b>{promotion}</p>
+                          {delivery.deliveryActive ?
+                            <div className="delivery">
+                              <p><b>Delivery Cost: </b>{delivery.deliveryCost} PLN</p>
+                              <p><b>Min Order Value: </b>{delivery.orderMinValue} PLN</p>
+                              <p><b>Free delivery from: </b>{delivery.orderValueToFreeDelivery} PLN</p>
+                            </div> : <p><b>Delivery: </b><span className="red-color">Restaurant is not open to delivery!</span></p>}
                         </div>
                       </div>
                       {isFavourite >= 0 ? <i onClick={(e) => handleFavourite(e)} className="fa fa-heart" aria-hidden="true"></i> : <i onClick={(e) => handleFavourite(e)} className="fa fa-heart-o" aria-hidden="true"></i>}
                     </li>
                   );
+
+                  if (deliveryStatus === 'Delivery') {
+                    for (let i = 0; i < deliveryFilter.length; i++) {
+                      if (restaurant._id === deliveryFilter[i]._id) {
+                        return returnElement;
+                      }
+                    }
+                  } else if (deliveryStatus === 'Pickup') {
+                    for (let i = 0; i < deliveryFilter.length; i++) {
+                      if (restaurant._id === deliveryFilter[i]._id) {
+                        return returnElement;
+                      }
+                    }
+                  }
+                  else return returnElement;
                 })}
                 {filterRestaurants.length === 0 && <p className="empty-restaurant">No restaurant found</p>}
+                {(deliveryFilter.length === 0 && filterRestaurants.length !== 0) && <p className="empty-restaurant">No restaurant found</p>}
               </ul>
             } </> : <ul className="restaurant-list__list">
             {filterRestaurants.map(restaurant => {
-              const isFavourite = favourites.findIndex(favourite => favourite.restaurantID === restaurant._id);
               const { _id, promotion, avatar, name, delivery } = restaurant;
-
-              return (
+              const isFavourite = favourites.findIndex(favourite => favourite.restaurantID === restaurant._id);
+              const returnElement = (
                 <li className="list-item" data-id={_id} key={_id}>
                   <div className="restaurant" onClick={() => handleRedirectToRestaurant(_id)} >
                     {avatar !== 'blank' ? <img src={avatar} alt={`${name} logo`} /> : <img src={blank} alt={`${name} logo`} />}
@@ -228,8 +248,24 @@ const Offer = () => {
                   {isFavourite >= 0 ? <i onClick={(e) => handleFavourite(e)} className="fa fa-heart" aria-hidden="true"></i> : <i onClick={(e) => handleFavourite(e)} className="fa fa-heart-o" aria-hidden="true"></i>}
                 </li>
               );
+
+              if (deliveryStatus === 'Delivery') {
+                for (let i = 0; i < deliveryFilter.length; i++) {
+                  if (restaurant._id === deliveryFilter[i]._id) {
+                    return returnElement;
+                  }
+                }
+              } else if (deliveryStatus === 'Pickup') {
+                for (let i = 0; i < deliveryFilter.length; i++) {
+                  if (restaurant._id === deliveryFilter[i]._id) {
+                    return returnElement;
+                  }
+                }
+              }
+              else return returnElement;
             })}
             {filterRestaurants.length === 0 && <p className="empty-restaurant">No restaurant found</p>}
+            {(deliveryFilter.length === 0 && filterRestaurants.length !== 0) && <p className="empty-restaurant">No restaurant found</p>}
           </ul>}
         </div>
       </div >

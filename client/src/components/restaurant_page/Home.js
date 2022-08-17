@@ -23,24 +23,24 @@ const Home = () => {
       .catch(error => console.log(error));
   }, [loggedUser, notifications, setNotifications]);
 
-  useEffect(() => {
-    let products = '';
-    loggedUser.menu.map(product => products += `${product.productName}, `);
-    const body = new URLSearchParams({
-      restaurantType: loggedUser.type,
-      products: products
-    });
-    fetch('http://localhost:4000/API/lazy-assistant', {
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      method: 'PATCH',
-      body: body
-    })
-      .then(res => res.status)
-      .catch(error => console.log(error));
-  }, [loggedUser]);
+  // useEffect(() => {
+  //   let products = '';
+  //   loggedUser.menu.map(product => products += `${product.productName}, `);
+  //   const body = new URLSearchParams({
+  //     restaurantType: loggedUser.type,
+  //     products: products
+  //   });
+  //   fetch('http://localhost:4000/API/lazy-assistant', {
+  //     mode: 'cors',
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded',
+  //     },
+  //     method: 'PATCH',
+  //     body: body
+  //   })
+  //     .then(res => res.status)
+  //     .catch(error => console.log(error));
+  // }, [loggedUser]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -60,7 +60,7 @@ const Home = () => {
       <div className="home__control-panel">
         <NavLink to='/restaurant/menu' className="control-panel__main-box">
           <div className="menu">
-            <div className="menu__title"><i className="fa fa-bars menu-icon" aria-hidden="true"></i>Menu</div>
+            <div className="menu__title"><i className="fa fa-cutlery menu-icon" aria-hidden="true"></i>Menu</div>
           </div>
         </NavLink>
         <div className="control-panel__under-boxes">

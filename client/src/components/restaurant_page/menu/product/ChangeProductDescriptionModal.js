@@ -1,19 +1,19 @@
 import { useState, useContext } from "react";
-import { AppContext } from "../../AppContext";
-const ChangeProductNameModal = ({ productName, productPrice, productDescription, setProductName }) => {
+import { AppContext } from "../../../AppContext";
+const ChangeProductDescriptionModal = ({ productName, productPrice, productDescription, setProductDescription }) => {
   const { productID, loggedUser, isOpen, setIsOpen } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState('');
   const handleChangeInputValue = e => setInputValue(e.target.value);
   const handleChange = e => {
     e.preventDefault();
-    setProductName(inputValue);
+    setProductDescription(inputValue);
     setIsOpen(!isOpen);
     const body = new URLSearchParams({
       value: inputValue,
-      type: 'name',
+      type: 'description',
     });
-    fetch(`http://localhost:4000/API/restaurant/${loggedUser._id}/${productID}`, {
+    fetch(`http://localhost:4000/API/restaurant/menu/${loggedUser._id}/${productID}`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -23,11 +23,10 @@ const ChangeProductNameModal = ({ productName, productPrice, productDescription,
     })
       .then(res => res.status)
       .catch(error => console.log(error));
-    console.log(inputValue);
   }
   return (
     <>
-      <h3>Change product name of: {productName}</h3>
+      <h3>Change product description of: {productName}</h3>
       <div className="product">
         <div className="product__name">{productName}</div>
         <div className="product__price">{productPrice}</div>
@@ -35,10 +34,10 @@ const ChangeProductNameModal = ({ productName, productPrice, productDescription,
       </div>
       <div className="product__to">to:</div>
       <form>
-        <input onChange={e => handleChangeInputValue(e)} type='text' placeholder='Type new name of product...' />
+        <textarea onChange={e => handleChangeInputValue(e)} name='description' placeholder='Type new product description...' />
         <input onClick={e => handleChange(e)} value="Change" type="button" />
       </form>
     </>
   );
 }
-export default ChangeProductNameModal;
+export default ChangeProductDescriptionModal;

@@ -22,7 +22,6 @@
         &.active {
           color: $primaryColor;
           border: 2px solid $primaryColor;
-          box-shadow: 0 0 4px 1px $primaryColor;
         }
       }
 
@@ -30,6 +29,11 @@
         @extend %btn;
         width: 30%;
         border-radius: 0;
+
+        &.active {
+          color: $primaryColor;
+          border: 2px solid $primaryColor;
+        }
       }
 
       button:last-of-type {

@@ -4,6 +4,54 @@
 
   .searchbox {
     @extend %searchbar;
+
+    .btn-group {
+      position: absolute;
+      right: 1.5vw;
+      display: flex;
+
+      button:first-of-type {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        @extend %btn;
+        width: 60%;
+        font-size: 2rem;
+
+        &.active {
+          color: $primaryColor;
+          border: 2px solid $primaryColor;
+        }
+      }
+
+      button:nth-last-of-type(2) {
+        @extend %btn;
+        width: 30%;
+        border-radius: 0;
+
+        &.active {
+          color: $primaryColor;
+          border: 2px solid $primaryColor;
+        }
+      }
+
+      button:last-of-type {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        @extend %btn;
+        width: 60%;
+        font-size: 2rem;
+
+        &.active {
+          color: $primaryColor;
+          border: 2px solid $primaryColor;
+          box-shadow: 0 0 4px 1px $primaryColor;
+        }
+      }
+    }
   }
 
   .restaurant-type {
@@ -110,11 +158,31 @@
           flex-basis: 90%;
           align-items: center;
 
-          &.current {
-            color: $secondaryColor;
-
+          .red-color {
+            color: $redColor;
           }
 
+          .delivery {
+            display: flex;
+            color: $secondaryColor;
+
+            p {
+              margin: 0 10px;
+              width: 180px;
+              text-align: center;
+              font-size: 20px;
+              font-family: $decorativeFont;
+
+              span {
+                color: $redColor  !important;
+              }
+
+              b {
+                display: block;
+                color: $supportColor;
+              }
+            }
+          }
         }
 
         img {
@@ -147,6 +215,11 @@
           padding: 10px;
           // text-align: center;
         }
+      }
+
+      .fa-heart,
+      .fa-heart-o {
+        font-size: 34px;
       }
     }
   }

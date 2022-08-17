@@ -9,6 +9,102 @@
   transition-duration: .4s;
   opacity: 0;
 
+  .summary-content {
+    .delivery {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: 2vh auto;
+
+      .active {
+        border-color: $primaryColor;
+        color: $primaryColor;
+        box-shadow: 0 0 5px 2px $primaryColor;
+      }
+
+      .inactive {
+        border-color: $fontColor;
+        color: $fontColor;
+
+        &:hover {
+          cursor: auto;
+          color: $fontColor;
+          border-color: $fontColor;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .adress {
+      .delivery-info {
+        font-size: 2rem;
+        font-family: $decorativeFont;
+        text-align: center;
+        color: $primaryColor;
+
+        strong {
+          font-size: 2.5rem;
+          letter-spacing: 1px;
+          color: $additionalColor;
+        }
+
+        input {
+          text-align: center;
+          background-color: $lightColor;
+          color: $darkColor;
+          font-size: 24px;
+          padding: 10px;
+          margin: 24px;
+          border-radius: 5px;
+          border: 2px solid $primaryColor;
+          transition-duration: .4s;
+          width: 80%;
+
+          &[type=text] {
+            opacity: .8;
+
+            &::placeholder {
+              color: $darkColor;
+            }
+          }
+
+          &:focus {
+            outline: none;
+            border-color: $primaryColor;
+            box-shadow: 0 0 10px 2px $primaryColor;
+          }
+        }
+      }
+    }
+
+    .order {
+
+      .paypal-button-container {
+        width: 30%;
+        margin: 1vh auto;
+        margin-top: 3vh;
+      }
+
+      .cash-button-container {
+        width: 100%;
+
+        .order-with-cash {
+          @extend %btn;
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          width: 30%;
+          margin: 2vh 35%;
+        }
+      }
+    }
+
+    button {
+      @extend %btn;
+      margin: 0 auto;
+    }
+  }
+
   &__content {
     position: absolute;
     top: 10vh;
@@ -105,6 +201,7 @@
       transition-duration: .4s;
       width: 100%;
       opacity: 0.8;
+      resize: none;
 
       &:focus {
         outline: none;
@@ -222,6 +319,15 @@
       }
 
 
+    }
+
+    &__section {
+      font-family: $decorativeFont;
+      margin: 20px;
+
+      &+input {
+        margin-bottom: 20px;
+      }
     }
 
     &__name {

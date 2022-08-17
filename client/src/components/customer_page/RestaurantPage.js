@@ -2,21 +2,19 @@ import blank from '../../assets/img/logo/blank.png';
 import { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../AppContext';
 import { Link } from 'react-router-dom';
-import PaypalCheckoutButton from '../features/PaypalCheckoutButton';
+import SummaryModal from './SummaryModal';
+import Message from '../features/Message';
+import { Routes, Route, Navigate } from 'react-router-dom';
 const RestaurantPage = () => {
-  const { loggedUser, chosenRestaurant, setChosenRestaurant } = useContext(AppContext);
+  const { loggedUser, chosenRestaurant, setChosenRestaurant, isOpen, setIsOpen } = useContext(AppContext);
   const [cartContent, setCartContent] = useState([]);
   const [additionalMessage, setAdditionalMessage] = useState('');
   const [cartValue, setCartValue] = useState(0);
+  const [redirect, setRedirect] = useState(false);
   const [message, setMessage] = useState({
     content: '',
     visible: false,
   });
-
-  const product = {
-    description: "Design + Code React Hooks Course",
-    price: 19,
-  };
 
   const handleAddToCart = e => {
     const clickedProduct = e.target.parentElement.dataset.id;
@@ -26,6 +24,7 @@ const RestaurantPage = () => {
       id: Date.now(),
       productName: filterArray[0].productName,
       productPrice: filterArray[0].productPrice,
+      productDescription: filterArray[0].productDescription,
     }
     setCartContent(cart => [...cart, filterObject]);
   }
@@ -52,64 +51,11 @@ const RestaurantPage = () => {
     setMessage({ content: message.content, visible: false });
     messageDiv.style.transform = 'scale(0)';
   }
-
-  const addOrder = () => {
+  const handleShowSummary = () => {
     if (cartContent.length === 0) {
       handleShowMessage("Your cart is empty!");
     } else {
-      //Add order to user
-      const customerURL = 'http://localhost:4000/API/customer/add-order';
-      const customerBody = new URLSearchParams({
-        id: loggedUser._id,
-        deliveryCost: chosenRestaurant.delivery.deliveryCost,
-        deliveryFree: chosenRestaurant.delivery.orderValueToFreeDelivery,
-        order: JSON.stringify({
-          restaurantName: chosenRestaurant.name,
-          restaurantAvatar: chosenRestaurant.avatar,
-          restaurantType: chosenRestaurant.type,
-          message: additionalMessage,
-          paymentMethod: 'Cash',
-          paid: cartValue,
-          products: cartContent
-        }),
-      });
-      fetch(customerURL, {
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        method: 'PUT',
-        body: customerBody
-      })
-        .then(res => res.status)
-        .catch(error => console.log(error));
-
-      // Add order to restaurant
-      const restaurantURL = 'http://localhost:4000/API/restaurant/add-order';
-      const restaurantBody = new URLSearchParams({
-        id: chosenRestaurant._id,
-        deliveryCost: chosenRestaurant.delivery.deliveryCost,
-        order: JSON.stringify({
-          customerName: loggedUser.name,
-          customerLastname: loggedUser.lastname,
-          customerAvatar: loggedUser.avatar,
-          customerAdress: loggedUser.adress,
-          message: additionalMessage,
-          paymentMethod: 'Cash',
-          paid: cartValue,
-          products: cartContent,
-        })
-      });
-      fetch(restaurantURL, {
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        method: 'PUT',
-        body: restaurantBody
-      })
-        .then(res => res.status)
-        .catch(error => console.log(error));
+      setIsOpen(!isOpen);
     }
   }
 
@@ -162,15 +108,29 @@ const RestaurantPage = () => {
             <div className="menu-items">
               <h3 className="menu__title">Menu</h3>
               <ul className="menu__list">
-                {chosenRestaurant.menu.map((product) => {
+                {chosenRestaurant.productsSections.map(section => {
                   return (
-                    <li data-id={product._id} key={product._id}>
-                      <div className='info'>
-                        <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
-                        <div className='cyan'>{product.productDescription}</div>
+                    <div key={section._id}>
+                      <div className="section__title">
+                        <h3 data-id={section._id}>{section.sectionName}</h3>
                       </div>
-                      <i onClick={handleAddToCart} onMouseEnter={() => handleShowMessage('Add to Cart')} onMouseLeave={handleHideMessage} className="fa fa-plus" aria-hidden="true"></i>
-                    </li>
+                      <ul>
+                        {chosenRestaurant.menu.map(product => {
+                          if (product.sectionID === section._id) {
+                            return (
+                              <li data-id={product._id} key={product._id}>
+                                <div className='info'>
+                                  <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
+                                  <div className='cyan'>{product.productDescription}</div>
+                                </div>
+                                <i onClick={handleAddToCart} onMouseEnter={() => handleShowMessage('Add to Cart')} onMouseLeave={handleHideMessage} className="fa fa-plus" aria-hidden="true"></i>
+                              </li>
+                            );
+                          }
+                          else return null;
+                        })}
+                      </ul>
+                    </div>
                   )
                 })}
               </ul>
@@ -216,10 +176,8 @@ const RestaurantPage = () => {
             <h3 className="order-summary__title">Order Summary:</h3>
             <div className="order-summary__value">You have to pay: <strong>{cartValue} PLN</strong></div>
             <textarea onChange={handleAdditionalMessage} className="order-summary__area" placeholder="Write message... (optional)" name="area-content" id="area-content"></textarea>
-            <button onClick={addOrder} onMouseEnter={() => handleShowMessage('Submit Order!')} onMouseLeave={handleHideMessage} className="order-summary__btn">Order</button>
-            <div className='paypal-button-container'>
-              <PaypalCheckoutButton product={product} />
-            </div>
+            <button onClick={handleShowSummary} onMouseEnter={() => handleShowMessage('Submit Order!')} onMouseLeave={handleHideMessage} className="order-summary__btn">Order</button>
+
 
             {/* <form method="POST" action="https://secure.snd.payu.com/api/v2_1">
               <input type="hidden" name="customerIp" value="123.123.123.123" />
@@ -239,6 +197,15 @@ const RestaurantPage = () => {
 
         </div>
         <div className="message-info">{message.content}</div>
+        {isOpen && <SummaryModal
+          cartContent={cartContent}
+          cartValue={cartValue}
+          additionalMessage={additionalMessage}
+          setIsOpen={setIsOpen}
+          setRedirect={setRedirect}
+        />}
+        {redirect && <Routes><Route path='/' exact element={<Navigate to='/customer/orders/success' />} /></Routes>}
+        <Message />
       </div>
     </section >
   );

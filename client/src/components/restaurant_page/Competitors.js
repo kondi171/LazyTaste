@@ -13,7 +13,8 @@ const Competitors = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
   const [disablePromotion, setDisablePromotion] = useState(true);
-
+  const [deliveryStatus, setDeliveryStatus] = useState('All');
+  const [deliveryFilter, setDeliveryFilter] = useState([]);
   const handleSetPromotion = () => {
     const newPromotion = document.querySelector('.area-content');
     setActivePromotion(newPromotion.value);
@@ -72,9 +73,11 @@ const Competitors = () => {
           const typeFilter = data.filter(restaurant => restaurant.type === activeElement.textContent);
           const emptyFilter = typeFilter.filter(menu => menu.menu.length !== 0);
           setRestaurants(emptyFilter);
+          setDeliveryFilter(emptyFilter);
         })
         .catch(error => console.log(error));
     }
+    setDeliveryStatus("All");
   }
 
   const fetchData = () => {
@@ -83,8 +86,25 @@ const Competitors = () => {
       .then(data => {
         const filter = data.filter(menu => menu.menu.length !== 0);
         setRestaurants(filter);
+        setDeliveryFilter(filter);
       })
       .catch(error => console.log(error));
+  }
+
+  const changeStatus = (status) => {
+    const delivery = filterRestaurants.filter(restaurant => {
+      if (status === 'Delivery') {
+        if (restaurant.delivery.deliveryActive) return restaurant;
+        else return null;
+      }
+      else if (status === 'Pickup') {
+        if (!restaurant.delivery.deliveryActive) return restaurant;
+        else return null;
+      }
+      else return restaurant;
+    });
+    setDeliveryStatus(status);
+    setDeliveryFilter(delivery);
   }
 
   useEffect(() => {
@@ -125,6 +145,11 @@ const Competitors = () => {
     <section className="competitors">
       <div className="searchbox">
         <Searchbar data={restaurants} setFilter={setFilterRestaurants} />
+        <div className="btn-group">
+          <button className={deliveryStatus === 'Delivery' ? `active` : false} onClick={e => changeStatus(e.target.value)} value="Delivery" type="button">Delivery</button>
+          <button className={deliveryStatus === 'All' ? `active` : false} onClick={e => changeStatus(e.target.value)} value="All" type="button">All</button>
+          <button className={deliveryStatus === 'Pickup' ? `active` : false} onClick={e => changeStatus(e.target.value)} value="Pickup" type="button">Pickup</button>
+        </div>
       </div>
       <div className="restaurant-type">
         <div onClick={handleType} className="type active">All</div>
@@ -137,7 +162,7 @@ const Competitors = () => {
         <div onClick={handleType} className="type">Thai</div>
         <div onClick={handleType} className="type">Vege</div>
         <div onClick={handleType} className="type">Sushi</div>
-        <div onClick={handleType} className="type">Others</div>
+        <div onClick={handleType} className="type">Other</div>
       </div>
       <div className="promotion-content">
         <div className="create-promo">
@@ -156,21 +181,45 @@ const Competitors = () => {
         <div className="competitors-list">
           <h3 className="competitors-list__title">Competitors:</h3>
           <ul className="competitors-list__list">
-
             {filterRestaurants.map(restaurant => {
-              return (
-                <li className="list-item" data-id={restaurant._id} key={restaurant._id}>
-                  <div className={`restaurant ${restaurant._id === loggedUser._id && 'current'}`} onClick={() => handleRedirectToRestaurant(restaurant._id)} >
-                    {restaurant.avatar !== 'blank' ? <img src={restaurant.avatar} alt={`${restaurant.name} logo`} /> : <img src={blank} alt={`${restaurant.name} logo`} />}
+              const { _id, promotion, avatar, name, delivery } = restaurant;
+              const returnElement = (
+                <li className="list-item" data-id={_id} key={_id}>
+                  <div className="restaurant" onClick={() => handleRedirectToRestaurant(_id)} >
+                    {avatar !== 'blank' ? <img src={avatar} alt={`${name} logo`} /> : <img src={blank} alt={`${name} logo`} />}
                     <div className="content-info">
-                      <h4>{restaurant.name}</h4>
-                      <p><b>Promotion: </b>{restaurant._id === loggedUser._id ? activePromotion : restaurant.promotion}</p>
+                      <h4>{name}</h4>
+                      <p><b>Promotion: </b>{promotion}</p>
+                      {delivery.deliveryActive ?
+                        <div className="delivery">
+                          <p><b>Delivery Cost: </b>{delivery.deliveryCost} PLN</p>
+                          <p><b>Min Order Value: </b>{delivery.orderMinValue} PLN</p>
+                          <p><b>Free delivery from: </b>{delivery.orderValueToFreeDelivery} PLN</p>
+                        </div> : <p><b>Delivery: </b><span className="red-color">Restaurant is not open to delivery!</span></p>}
                     </div>
                   </div>
+
                 </li>
               );
+
+              if (deliveryStatus === 'Delivery') {
+                for (let i = 0; i < deliveryFilter.length; i++) {
+                  if (restaurant._id === deliveryFilter[i]._id) {
+                    return returnElement;
+                  }
+                }
+              } else if (deliveryStatus === 'Pickup') {
+                for (let i = 0; i < deliveryFilter.length; i++) {
+                  if (restaurant._id === deliveryFilter[i]._id) {
+                    return returnElement;
+                  }
+                }
+              }
+              else return returnElement;
             })}
             {filterRestaurants.length === 0 && <p className="empty-restaurant">No restaurant found</p>}
+            {(deliveryFilter.length === 0 && filterRestaurants.length !== 0) && <p className="empty-restaurant">No restaurant found</p>}
+
           </ul>
         </div>
       </div>

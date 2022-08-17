@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState, useContext } from "react";
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../../../AppContext";
 
 const EditDeliveryStatus = () => {
   const { loggedUser, setLoggedUser } = useContext(AppContext);

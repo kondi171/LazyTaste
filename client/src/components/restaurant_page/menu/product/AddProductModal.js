@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../../../AppContext";
 const AddProductModal = ({ productItems }) => {
-  const { loggedUser, isOpen, setIsOpen } = useContext(AppContext);
+  const { loggedUser, isOpen, setIsOpen, sectionID } = useContext(AppContext);
   const [nameProduct, setNameProduct] = useState('');
   const [priceProduct, setPriceProduct] = useState('');
   const [descriptionProduct, setDescriptionProduct] = useState('');
@@ -17,6 +17,7 @@ const AddProductModal = ({ productItems }) => {
           productName: nameProduct,
           productPrice: priceProduct,
           productDescription: descriptionProduct,
+          sectionID: sectionID,
         },
       )
     });

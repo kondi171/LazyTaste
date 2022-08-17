@@ -6,8 +6,8 @@ const CustomerRouter = require("./routes/customersRoute");
 const RestaurantRouter = require("./routes/restaurantsRoute");
 const LazyAssistantRouter = require("./routes/lazyAssistantRoute");
 const cors = require('cors');
-const PORT = 4000;
 
+const PORT = 4000;
 const main = express();
 
 main.get('/', function (req, res) {
@@ -35,11 +35,11 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
 });
-
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 app.use(express.urlencoded({
   extended: true,
+  limit: '50mb',
 }));
 const username = "Webking";
 const password = "QnYdG0yiMlzJ5rua";

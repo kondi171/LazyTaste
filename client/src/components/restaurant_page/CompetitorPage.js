@@ -58,12 +58,26 @@ const CompetitorPage = () => {
           <div className="menu-items">
             <h3 className="menu__title">Menu</h3>
             <ul className="menu__list">
-              {chosenRestaurant.menu.map((product) => {
+              {chosenRestaurant.productsSections.map(section => {
                 return (
-                  <li data-id={product._id} key={product._id}>
-                    <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
-                    <div className='cyan'>{product.productDescription}</div>
-                  </li>
+                  <div key={section._id}>
+                    <div className="section__title">
+                      <h3 data-id={section._id}>{section.sectionName}</h3>
+                    </div>
+                    <ul>
+                      {chosenRestaurant.menu.map(product => {
+                        if (product.sectionID === section._id) {
+                          return (
+                            <li data-id={product._id} key={product._id}>
+                              <span>{product.productName} - <strong>{product.productPrice} PLN</strong></span>
+                              <div className='cyan'>{product.productDescription}</div>
+                            </li>
+                          );
+                        }
+                        else return null;
+                      })}
+                    </ul>
+                  </div>
                 )
               })}
             </ul>

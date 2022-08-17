@@ -67,7 +67,22 @@
 			color: $primaryColor;
 		}
 
-		.menu__title {
+		.section__title {
+			.manipulate-section {
+				display: flex;
+			}
+
+			.fa-plus {
+				&:hover {
+					cursor: pointer;
+					transform: rotate(90deg);
+					color: $additionalColor;
+				}
+			}
+		}
+
+		.menu__title,
+		.section__title {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -170,6 +185,7 @@
 							&:hover {
 								cursor: pointer;
 								transform: rotate(90deg);
+								color: $additionalColor;
 							}
 						}
 					}

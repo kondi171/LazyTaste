@@ -108,6 +108,7 @@ exports.addOrder = async (req, res) => {
   const restaurantType = JSON.parse(body.order).restaurantType;
   const message = JSON.parse(body.order).message;
   const paymentMethod = JSON.parse(body.order).paymentMethod;
+  const adress = JSON.parse(body.order).adress;
   const parsedMessage = message === '' ? 'none' : message;
   const today = new Date();
   const date = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()} ${today.getHours() > 10 ? today.getHours() : '0' + today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0' + today.getMinutes()}`;
@@ -116,7 +117,8 @@ exports.addOrder = async (req, res) => {
   const productsArray = products.map(product => JSON.parse(
     `{
       "productName": "${product.productName}",
-      "productPrice": "${product.productPrice}"
+      "productPrice": "${product.productPrice}",
+      "productDescription": "${product.productDescription}"
     }`
   ));
   const isDeliveryFree = (Number(paid - deliveryCost) >= Number(deliveryFree)) ? 0 : deliveryCost;
@@ -134,19 +136,20 @@ exports.addOrder = async (req, res) => {
           date: date,
           deliveryCost: isDeliveryFree,
           products: productsArray,
+          adress: adress,
         }
       }
     }
   );
   try {
-    res.send(customerOrder);
+    res.send('customerOrder');
   } catch (error) {
     res.status(500).send('error');
   }
 }
 
 exports.clearOrders = async (req, res) => {
-  const id = '62a89165c52922b12a46e565';
+  const id = '62b898242f0866acee718f28';
   await customerModel.updateOne({ _id: id }, { orders: [] })
   try {
     res.send('orders cleared');

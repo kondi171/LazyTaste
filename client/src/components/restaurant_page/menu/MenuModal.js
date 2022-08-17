@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import ChangeProductNameModal from "./ChangeProductNameModal";
-import ChangeProductPriceModal from "./ChangeProductPriceModal";
-import ChangeProductDescriptionModal from "./ChangeProductDescriptionModal";
-import RemoveProductModal from "./RemoveProductModal";
-import AddProductModal from "./AddProductModal";
-import EditDeliveryModal from "./EditDeliveryModal";
-const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductName, setProductPrice, setProductDescription, additionalItems }) => {
+import ChangeProductNameModal from "./product/ChangeProductNameModal";
+import ChangeProductPriceModal from "./product/ChangeProductPriceModal";
+import ChangeProductDescriptionModal from "./product/ChangeProductDescriptionModal";
+import RemoveProductModal from "./product/RemoveProductModal";
+import AddProductModal from "./product/AddProductModal";
+import EditDeliveryModal from "./delivery/EditDeliveryModal";
+import AddSectionModal from "./section/AddSectionModal";
+import EditSectionModal from "./section/EditSectionModal";
+import RemoveSectionModal from "./section/RemoveSectionModal";
+const MenuModal = ({ clicked, setIsOpen, type, setSectionName, setProductName, setProductPrice, setProductDescription, additionalItems }) => {
 
   const [mainChange, setMainChange] = useState('');
 
@@ -29,7 +32,6 @@ const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductName, 
       document.body.style.overflowY = 'visible';
       setIsOpen(false);
     });
-    console.log(additionalItems);
   }, [clicked, setIsOpen]);
 
   return (
@@ -42,6 +44,9 @@ const MenuModal = ({ clicked, setIsOpen, type, setSectionValue, setProductName, 
         {type === 'removeProduct' && <RemoveProductModal productItems={additionalItems} />}
         {type === 'addProduct' && <AddProductModal />}
         {type === 'editDeliveryCost' && <EditDeliveryModal />}
+        {type === 'addSection' && <AddSectionModal />}
+        {type === 'editSection' && <EditSectionModal sectionName={mainChange} setSectionName={setSectionName} />}
+        {type === 'removeSection' && <RemoveSectionModal sectionName={clicked} />}
       </div>
     </section>
   );

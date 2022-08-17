@@ -33,7 +33,7 @@ const Orders = () => {
   }
   const filteredOrders = () => {
     const array = filterOrders.map(order => {
-      const { _id, restaurantName, restaurantAvatar, paid, message, date, products, deliveryCost, paymentMethod } = order;
+      const { _id, restaurantName, restaurantAvatar, paid, message, date, products, deliveryCost, paymentMethod, adress } = order;
       return (
         <div className="orders__single-order" key={_id}>
           <div className="single-order__information">
@@ -47,6 +47,7 @@ const Orders = () => {
               <div className="order-date">Date: <strong>{date}</strong></div>
               <div className="order-paid">Paid: <strong>{paid} PLN</strong></div>
               <div className="order-paid">Payment: <strong>{paymentMethod}</strong></div>
+              <div className="order-paid">Adress: <strong>{adress}</strong></div>
               <div className="order-message">Message: <strong>{message}</strong></div>
             </div>
           </div>

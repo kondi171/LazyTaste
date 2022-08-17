@@ -75,9 +75,9 @@ const ActiveOrders = () => {
               Delivery - {paid - loggedUser.delivery.deliveryCost >= loggedUser.delivery.orderValueToFreeDelivery ? <span className='free'>Free!</span> : loggedUser.delivery.deliveryCost + " PLN"}</div>
             <div className='order-info'>
               <div className='order-info__value'>Order Value: <span className="color color--info">{paid} PLN</span></div>
-              <div className='order-info__adress'>Adress: <span className="color color--info">{customerAdress}</span></div>
-              <div className='order-info__payment'>Payment: <span className='color color--bad'>{paymentMethod}</span></div>
-              <div className='order-info__message'>Customer message: <span className='color color--good'>{message}</span> </div>
+              <div className='order-info__adress'>Adress: {customerAdress === "Pickup" ? <span className='color color--good'>{customerAdress}</span> : <span className="color color--info">{customerAdress}</span>}</div>
+              <div className='order-info__payment'>Payment: {paymentMethod === 'Cash' ? <span className='color color--bad'>{paymentMethod}</span> : <span className='color color--good'>{paymentMethod}</span>}</div>
+              <div className='order-info__message'>Customer message: {message === 'none' ? <span className='color color--good'>{message}</span> : <span className='color color--info'>{message}</span>} </div>
             </div>
           </div>
         )

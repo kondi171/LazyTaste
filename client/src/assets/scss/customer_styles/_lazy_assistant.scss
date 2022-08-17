@@ -4,6 +4,7 @@
 
   .main-box {
     @include cloud(10px, $darkColor);
+    position: relative;
     background-color: $darkColor;
     opacity: .8;
     width: 45vw;
@@ -14,6 +15,16 @@
       text-align: center;
       font-family: $decorativeFont;
       padding: 10px 0 20px 0;
+    }
+
+    .accuracy {
+      color: $additionalColor;
+      font-weight: bold;
+      font-size: 4vh;
+      font-family: $titleFont;
+      position: absolute;
+      right: 1vw;
+      bottom: 1vw;
     }
   }
 

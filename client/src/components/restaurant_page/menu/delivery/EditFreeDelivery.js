@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { AppContext } from '../../AppContext';
+import { AppContext } from '../../../AppContext';
 
 const EditFreeDelivery = () => {
   const { loggedUser, setLoggedUser } = useContext(AppContext);

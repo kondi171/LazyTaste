@@ -105,6 +105,8 @@ const Login = ({ name }) => {
     if (isLogged) {
       loadingTimeout = setTimeout(() => {
         setAccess(true);
+        setMessageContent('');
+        setMessageVisible(false);
       }, 1000);
     }
     return () => {

@@ -96,6 +96,7 @@ exports.updateRestaurant = async (req, res) => {
         orderValueToFreeDelivery: orderValueToFreeDelivery
       }
     });
+
   try {
     res.send(updatedField);
   } catch (error) {
@@ -103,23 +104,25 @@ exports.updateRestaurant = async (req, res) => {
   }
 }
 
-// exports.addSection = async (req, res) => {
-//   const { id, sectionName } = req.body;
-//   const newSection = await restaurantModel.updateOne(
-//     { _id: id },
-//     {
-//       $push: {
-//         menu: {
-//           sectionName: sectionName
-//         }
-//       }
-//     });
-//   try {
-//     res.send(newSection);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// }
+exports.addSection = async (req, res) => {
+  const { id, sectionName } = req.body;
+  const newSection = await restaurantModel.updateOne(
+    { _id: id },
+    {
+      $push: {
+        productsSections: {
+          sectionName: sectionName,
+        }
+      }
+    }
+  );
+
+  try {
+    res.send('newSection');
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
 
 exports.addProduct = async (req, res) => {
   const { id, product } = req.body;
@@ -134,6 +137,7 @@ exports.addProduct = async (req, res) => {
           productName: JSONproduct.productName,
           productPrice: JSONproduct.productPrice,
           productDescription: JSONproduct.productDescription,
+          sectionID: JSONproduct.sectionID,
         }
       }
     });
@@ -173,9 +177,47 @@ exports.updateProduct = async (req, res) => {
     { _id: restaurantID },
     { menu: restaurant.menu }
   );
-  console.log(restaurant.menu);
   try {
     res.send('restaurantProduct');
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
+
+exports.updateSection = async (req, res) => {
+  const { id, sectionID, value } = req.body;
+  const restaurant = await restaurantModel.findOne({ _id: id });
+  const sectionToChange = restaurant.productsSections.filter(section => String(section._id) === sectionID);
+  sectionToChange[0].sectionName = value;
+  await restaurantModel.updateOne(
+    { _id: id },
+    { productsSections: restaurant.productsSections }
+  );
+
+  try {
+    res.send('restaurantSection');
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
+
+exports.removeSection = async (req, res) => {
+  const { id, sectionID } = req.body;
+
+  const restaurant = await restaurantModel.findOne({ _id: id });
+  const productsToRemove = restaurant.menu.filter(product => product.sectionID === sectionID);
+  for (let i = 0; i < productsToRemove.length; i++) {
+    await restaurantModel.updateOne(
+      { _id: id },
+      { $pull: { menu: { _id: String(productsToRemove[i]._id) } } }
+    )
+  }
+  const sectionToRemove = await restaurantModel.updateOne(
+    { _id: id },
+    { $pull: { productsSections: { _id: sectionID } } }
+  );
+  try {
+    res.send('restaurantSection');
   } catch (error) {
     res.status(500).send(error);
   }
@@ -233,7 +275,7 @@ exports.addOrder = async (req, res) => {
     }
   );
   try {
-    res.send(restaurantOrder);
+    res.send('restaurantOrder');
   } catch (error) {
     res.status(500).send(error);
   }

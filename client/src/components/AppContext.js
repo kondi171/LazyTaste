@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
   const [activateLazyAssistant, setActivateLazyAssistant] = useState(false);
   const [predictedRestaurant, setPredictedRestaurant] = useState({});
   const [currentOrder, setCurrentOrder] = useState({});
+  const [sectionID, setSectionID] = useState(null);
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +44,8 @@ const AppProvider = ({ children }) => {
         setPredictedRestaurant,
         currentOrder,
         setCurrentOrder,
+        sectionID,
+        setSectionID,
       }}>
       {children}
     </AppContext.Provider>

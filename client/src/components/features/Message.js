@@ -5,6 +5,10 @@ const Message = () => {
   const { messageContent, messageType, isModalOpen, setMessageContent, messageVisible, setMessageVisible } = useContext(AppContext);
 
 
+  useEffect(() => {
+    const message = document.querySelector('.message');
+    message.style.display = 'none';
+  }, []);
 
   useEffect(() => {
     const message = document.querySelector('.message');
