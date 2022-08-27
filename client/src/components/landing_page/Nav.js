@@ -1,4 +1,4 @@
-import logo from './../../assets/img/logo/LT-logo-transparent.png';
+import logo from '../../assets/img/logo/LT-logo-transparent.png';
 import { animateScroll as scroll } from "react-scroll/modules";
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect, useState } from 'react';

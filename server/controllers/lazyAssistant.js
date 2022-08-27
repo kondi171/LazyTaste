@@ -44,9 +44,11 @@ exports.predictRestaurant = async (req, res) => {
   for (let i = 0; i < parseRestaurantData.length; i++) {
     for (let j = 0; j < uniqueTypes.length; j++) {
       if (parseRestaurantData[i].type === uniqueTypes[j]) {
+        let inputs = [];
         for (let k = 0; k < parseRestaurantData[i].menu.length; k++) {
-          trainingData.push({ input: parseRestaurantData[i].menu[k].productName, output: parseRestaurantData[i].id });
+          inputs.push(parseRestaurantData[i].menu[k].productName);
         }
+        if (inputs.length !== 0) trainingData.push({ input: inputs, output: parseRestaurantData[i].id });
       }
     }
   }
@@ -54,7 +56,6 @@ exports.predictRestaurant = async (req, res) => {
     console.log(err);
     lastError = 100 - (Number(err.slice(32, err.length)) * 1000);
   }
-
   const trainNeuralNetwork = () => {
     const network = new brain.recurrent.LSTM();
     network.train(trainingData,

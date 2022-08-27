@@ -82,7 +82,6 @@ const LazyAssistant = () => {
       text.style.transform = 'scale(1)';
     }
   }
-
   // useEffect(() => {
   //   console.log(predictedRestaurant.predictedRestaurant[0]);
   // }, [predictedRestaurant]);
@@ -102,6 +101,7 @@ const LazyAssistant = () => {
             <div className="accuracy">Accuracy: {predictedRestaurant.accuracy}</div>
           </>
           }</> : <div className='predict'>Activate Lazy Assistant</div>}
+
       </div>
 
       {chosenRestaurant !== null && <Routes><Route path='/' exact element={<Navigate to='/customer/offer/restaurant' />} /></Routes>}

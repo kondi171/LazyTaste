@@ -1,4 +1,4 @@
-import logo from './../../assets/img/logo/LT-logo-transparent.png';
+import logo from '../../assets/img/logo/LT-logo-transparent.png';
 const Footer = () => {
   return (
     <footer className="footer">

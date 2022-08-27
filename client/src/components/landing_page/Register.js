@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import photoCustomer from './../../assets/img/landing_images/alex-haney-CAhjZmVk5H4-unsplash.jpg';
-import photoRestaurant from './../../assets/img/landing_images/louis-hansel-wVoP_Q2Bg_A-unsplash.jpg';
+import photoCustomer from '../../assets/img/landing_images/alex-haney-CAhjZmVk5H4-unsplash.jpg';
+import photoRestaurant from '../../assets/img/landing_images/louis-hansel-wVoP_Q2Bg_A-unsplash.jpg';
 
 import { AppContext } from '../AppContext';
 const Register = ({ name }) => {
