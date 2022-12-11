@@ -154,7 +154,7 @@ const Register = ({ name }) => {
         setMessageContent('Your Customer account has been created! You can  sign in now!');
         setMessageType('success');
         setMessageVisible(true);
-        const URL = 'http://localhost:4000/API/customers';
+        const URL = process.env.REACT_APP_DB_CONNECT + 'API/customers';
         const body = new URLSearchParams({
           mail: data.mail,
           password: data.password2,
@@ -191,7 +191,7 @@ const Register = ({ name }) => {
         setMessageContent('Your Restaurant account has been created! You can sign in now!');
         setMessageType('success');
         setMessageVisible(true);
-        const URL = 'http://localhost:4000/API/restaurants';
+        const URL = process.env.REACT_APP_DB_CONNECT + 'API/restaurants';
         const body = new URLSearchParams({
           mail: data.mail,
           NIP: data.NIP,

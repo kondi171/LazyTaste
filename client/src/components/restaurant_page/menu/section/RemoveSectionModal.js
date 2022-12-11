@@ -10,7 +10,7 @@ const RemoveSectionModal = ({ sectionName, setSectionName }) => {
       id: loggedUser._id,
       sectionID: sectionID,
     });
-    fetch(`http://localhost:4000/API/restaurant/menu/remove-section`, {
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurant/menu/remove-section`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

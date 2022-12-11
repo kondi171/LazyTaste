@@ -25,7 +25,7 @@ const Competitors = () => {
       id: loggedUser._id,
       promotion: promotion,
     });
-    fetch('http://localhost:4000/API/restaurant/add-promotion', {
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurant/add-promotion', {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -40,7 +40,7 @@ const Competitors = () => {
       id: loggedUser._id,
       promotion: 'None',
     });
-    fetch('http://localhost:4000/API/restaurant/add-promotion', {
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurant/add-promotion', {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -54,7 +54,7 @@ const Competitors = () => {
   }
 
   const handleRedirectToRestaurant = restaurantID => {
-    fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${restaurantID}`)
       .then(res => res.json())
       .then(data => setChosenRestaurant(data));
   }
@@ -67,7 +67,7 @@ const Competitors = () => {
     activeElement.classList.add('active');
     if (activeElement.textContent === 'All') fetchData();
     else {
-      fetch('http://localhost:4000/API/restaurants')
+      fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
         .then(res => res.json())
         .then(data => {
           const typeFilter = data.filter(restaurant => restaurant.type === activeElement.textContent);
@@ -81,7 +81,7 @@ const Competitors = () => {
   }
 
   const fetchData = () => {
-    fetch('http://localhost:4000/API/restaurants')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
       .then(res => res.json())
       .then(data => {
         const filter = data.filter(menu => menu.menu.length !== 0);
@@ -126,7 +126,7 @@ const Competitors = () => {
   }, [restaurants]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/API/restaurants')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
       .then(res => res.json())
       .then(data => {
         data.forEach(promotion => {

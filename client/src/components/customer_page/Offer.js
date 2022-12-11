@@ -23,7 +23,7 @@ const Offer = () => {
         restaurantAvatar: img,
         restaurantName: title,
       });
-      fetch(`http://localhost:4000/API/customers/${loggedUser._id}`, {
+      fetch(process.env.REACT_APP_DB_CONNECT + `API/customers/${loggedUser._id}`, {
         mode: 'cors',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -36,7 +36,7 @@ const Offer = () => {
     } else if (e.target.classList.contains('fa-heart')) {
       e.target.classList.remove('fa-heart');
       e.target.classList.add('fa-heart-o');
-      fetch(`http://localhost:4000/API/customers/${loggedUser._id}/${restaurantID}`, {
+      fetch(process.env.REACT_APP_DB_CONNECT + `API/customers/${loggedUser._id}/${restaurantID}`, {
 
         mode: 'cors',
         headers: {
@@ -49,7 +49,7 @@ const Offer = () => {
     }
   }
   const handleRedirectToRestaurant = restaurantID => {
-    fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${restaurantID}`)
       .then(res => res.json())
       .then(data => setChosenRestaurant(data));
   }
@@ -62,7 +62,7 @@ const Offer = () => {
     activeElement.classList.add('active');
     if (activeElement.textContent === 'All') fetchData();
     else {
-      fetch('http://localhost:4000/API/restaurants')
+      fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
         .then(res => res.json())
         .then(data => {
           const typeFilter = data.filter(restaurant => restaurant.type === activeElement.textContent);
@@ -76,7 +76,7 @@ const Offer = () => {
   }
 
   const fetchData = () => {
-    fetch('http://localhost:4000/API/restaurants')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
       .then(res => res.json())
       .then(data => {
         const filter = data.filter(menu => menu.menu.length !== 0);
@@ -106,7 +106,7 @@ const Offer = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/API/customers/${loggedUser._id}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/customers/${loggedUser._id}`)
       .then(res => res.json())
       .then(data => setFavourites(data.favourites));
   }, [loggedUser, favourites]);

@@ -11,7 +11,7 @@ const WriteOpinion = () => {
   const [textareaValue, setTextAreaValue] = useState('');
   const [infoContent, setInfoContent] = useState('');
   const sendOpinion = async () => {
-    const URL = 'http://localhost:4000/API/opinions';
+    const URL = process.env.REACT_APP_DB_CONNECT + 'API/opinions';
     const body = new URLSearchParams({
       user: `${loggedUser.name}`,
       rate: newRate,
@@ -76,7 +76,7 @@ const WriteOpinion = () => {
     setTextAreaValue(textarea.value);
   }
   useEffect(() => {
-    fetch('http://localhost:4000/API/opinions')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/opinions')
       .then(res => res.json())
       .then(data => data.forEach(element => {
         if (element.user === `${loggedUser.name} ${loggedUser.lastname}`) {

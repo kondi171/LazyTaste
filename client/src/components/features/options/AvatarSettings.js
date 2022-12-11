@@ -30,7 +30,7 @@ const AvatarSettings = () => {
     // infoDiv.classList.remove('error');
     // infoDiv.classList.add('succes');
     infoDiv.classList.add('information')
-    const URL = `http://localhost:4000/API/${apiSystem}`;
+    const URL = process.env.REACT_APP_DB_CONNECT + `API/${apiSystem}`;
     const body = new URLSearchParams({
       id: loggedUser._id,
       value: fieldValue,

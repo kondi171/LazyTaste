@@ -21,7 +21,7 @@ const AddProductModal = ({ productItems }) => {
         },
       )
     });
-    fetch(`http://localhost:4000/API/restaurant/menu/add-product`, {
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurant/menu/add-product`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

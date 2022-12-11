@@ -7,14 +7,14 @@ const Home = () => {
   const [indexOfPromotions, changeIndexOfPromotions] = useState(0);
   const [promotions, setPromotions] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:4000/API/restaurants')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
       .then(res => res.json())
       .then(data => {
         const filterPromotions = data.filter(promotion => promotion.promotion !== 'None');
         setPromotions(filterPromotions);
       })
       .catch(error => console.log(error));
-    fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${loggedUser._id}`)
       .then(res => res.json())
       .then(data => {
         const filterActiveOrders = data.orders.filter(order => order.active === true);
@@ -30,7 +30,7 @@ const Home = () => {
   //     restaurantType: loggedUser.type,
   //     products: products
   //   });
-  //   fetch('http://localhost:4000/API/lazy-assistant', {
+  //   fetch(process.env.REACT_APP_DB_CONNECT+'API/lazy-assistant', {
   //     mode: 'cors',
   //     headers: {
   //       'Content-Type': 'application/x-www-form-urlencoded',

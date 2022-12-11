@@ -155,7 +155,7 @@ const Menu = () => {
   }, [whatClicked, productName, productPrice, productDescription, sectionName, removeProduct, removedProduct, isOpen]);
 
   useEffect(() => {
-    const URL = `http://localhost:4000/API/restaurants/${loggedUser._id}`;
+    const URL = process.env.REACT_APP_DB_CONNECT + `API/restaurants/${loggedUser._id}`;
     fetch(URL)
       .then(res => res.json())
       .then(data => {

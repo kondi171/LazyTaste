@@ -10,7 +10,7 @@ const ArchiveOrders = () => {
   const [archiveOrdersAmount, setArchiveOrdersAmount] = useState(0);
 
   const fetchData = async () => {
-    await fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`)
+    await fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${loggedUser._id}`)
       .then(res => res.json())
       .then(data => {
         setOrders(data);

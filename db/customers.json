@@ -1,0 +1,490 @@
+// 20220827225945
+// https://lazytaste.herokuapp.com/API/customers
+
+[
+  {
+    "_id": "62a7471b0d6ce45c56fda7aa",
+    "mail": "dana.jacobs@example.com",
+    "password": "lazytaste",
+    "name": "Dana",
+    "lastname": "Jacobs",
+    "phone": "538664746",
+    "adress": "3399 Prospect Roads 21",
+    "avatar": "https://fakedetail.com/userface_image/female/female20171026045591217.png",
+    "orders": [
+      {
+        "paymentMethod": "Cash",
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "paid": 134.96,
+        "message": "none",
+        "date": "13.06.2022 17:14",
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62a754710d6ce45c56fdd3a3"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62a754710d6ce45c56fdd3a4"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62a754710d6ce45c56fdd3a5"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62a754710d6ce45c56fdd3a6"
+          }
+        ],
+        "_id": "62a754710d6ce45c56fdd3a2"
+      },
+      {
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "restaurantType": "Burgers",
+        "paid": 104.97,
+        "message": "none",
+        "date": "25.06.2022 15:09",
+        "deliveryCost": 10,
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62b708fd366b911f036ae2af"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62b708fd366b911f036ae2b0"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62b708fd366b911f036ae2b1"
+          }
+        ],
+        "_id": "62b708fd366b911f036ae2ae"
+      },
+      {
+        "restaurantName": "Fresh & Tasty Pizza",
+        "restaurantAvatar": "https://image.shutterstock.com/image-vector/pizza-hand-written-lettering-logo-260nw-543555367.jpg",
+        "restaurantType": "Pizza",
+        "paid": 39.99,
+        "message": "none",
+        "date": "19.07.2022 21:55",
+        "deliveryCost": 0,
+        "adress": "Pickup",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d70c3eb8b3ae5a9eccdc22"
+          }
+        ],
+        "_id": "62d70c3eb8b3ae5a9eccdc21"
+      },
+      {
+        "restaurantName": "Platzki",
+        "restaurantAvatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5rpJtr3il4aF6j6ZoQt4guJzGn29FVSr5KqI-V6mubtTbW7Dnlbqda-25lLI2W7oBYDo&usqp=CAU",
+        "restaurantType": "Polish",
+        "paid": 59.98,
+        "message": "Szanowny Panie jadłopodawco poproszę te placuszki. XOXO :*",
+        "date": "26.08.2022 18:38",
+        "deliveryCost": 0,
+        "adress": "Pickup",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "productDescription": "Lack of information",
+            "_id": "6309133809ab65101fed034d"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "productDescription": "Lack of information",
+            "_id": "6309133809ab65101fed034e"
+          }
+        ],
+        "_id": "6309133809ab65101fed034c"
+      }
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62a749e30d6ce45c56fda7b9",
+    "mail": "lorraine.fowler@example.com",
+    "password": "lazytaste",
+    "name": "Lorraine",
+    "lastname": "Fowler",
+    "phone": "685183608",
+    "adress": "4375 Mockingbird Lines",
+    "avatar": "https://fakedetail.com/userface_image/female/female20161025798721832.png",
+    "orders": [
+      {
+        "restaurantName": "Family Cuisine Pizza",
+        "restaurantAvatar": "https://us.123rf.com/450wm/morys/morys1705/morys170500021/78766962-pizzeria-emblem-design-with-smiling-chef-pizzeria-vector-logo-template-on-black-background-vector-em.jpg?ver=6",
+        "restaurantType": "Pizza",
+        "paid": 137.76,
+        "message": "none",
+        "date": "16.07.2022 16:34",
+        "deliveryCost": 0,
+        "adress": "Pickup",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Falafel Pizza",
+            "productPrice": 23.99,
+            "_id": "62d2cc8fb5dbb7cc79636637"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d2cc8fb5dbb7cc79636638"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62d2cc8fb5dbb7cc79636639"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d2cc8fb5dbb7cc7963663a"
+          }
+        ],
+        "_id": "62d2cc8fb5dbb7cc79636636"
+      }
+    ],
+    "favourites": [
+      {
+        "restaurantID": "62a77ff40d6ce45c56ff0e0c",
+        "restaurantName": "Family Cuisine Pizza",
+        "restaurantAvatar": "https://us.123rf.com/450wm/morys/morys1705/morys170500021/78766962-pizzeria-emblem-design-with-smiling-chef-pizzeria-vector-logo-template-on-black-background-vector-em.jpg?ver=6",
+        "_id": "62b4c0ce5740564a7bf521b0"
+      },
+      {
+        "restaurantID": "62a74d510d6ce45c56fda7d3",
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "_id": "62b4c0cf5740564a7bf521c6"
+      },
+      {
+        "restaurantID": "62a780660d6ce45c56ff0e0f",
+        "restaurantName": "Pizza Logo",
+        "restaurantAvatar": "https://cms-assets.tutsplus.com/cdn-cgi/image/width=630/uploads/users/2659/posts/32688/image/Pizza%20Logo%20Maker.jpg",
+        "_id": "62b4c0d05740564a7bf521e8"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62a74a8c0d6ce45c56fda7be",
+    "mail": "jackson.gilbert@example.com",
+    "password": "lazytaste",
+    "name": "Jackson",
+    "lastname": "Gilbert",
+    "phone": "445779090",
+    "adress": "8882 Westheimer Roads",
+    "avatar": "https://fakedetail.com/userface_image/male/male20171084101124939.png",
+    "orders": [
+      {
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "restaurantType": "Burgers",
+        "paid": 127.47,
+        "message": "none",
+        "date": "25.06.2022 15:09",
+        "deliveryCost": 10,
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62b70921366b911f036ae2fd"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62b70921366b911f036ae2fe"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62b70921366b911f036ae2ff"
+          }
+        ],
+        "_id": "62b70921366b911f036ae2fc"
+      }
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62a74acc0d6ce45c56fda7c1",
+    "mail": "aaron.davis@example.com",
+    "password": "lazytaste",
+    "name": "Aaron",
+    "lastname": "Davis",
+    "phone": "998710708",
+    "adress": "2606 Hickory Creek Dr",
+    "avatar": "https://fakedetail.com/userface_image/male/male108427080262.png",
+    "orders": [
+      {
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "restaurantType": "Burgers",
+        "paid": 89.67,
+        "message": "none",
+        "date": "25.06.2022 15:010",
+        "deliveryCost": 10,
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62b70937366b911f036ae345"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62b70937366b911f036ae346"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62b70937366b911f036ae347"
+          }
+        ],
+        "_id": "62b70937366b911f036ae344"
+      }
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62a74b0e0d6ce45c56fda7c4",
+    "mail": "gertrude.hale@example.com",
+    "password": "lazytaste",
+    "name": "Gertrude",
+    "lastname": "Hale",
+    "phone": "888809247",
+    "adress": "9215 Camden Avenue 11",
+    "avatar": "https://fakedetail.com/userface_image/female/female20161024936385101.png",
+    "orders": [
+      
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62a74b9d0d6ce45c56fda7c7",
+    "mail": "leonard.bowman@example.com",
+    "password": "lazytaste",
+    "name": "Leonard",
+    "lastname": "Bowman",
+    "phone": "718711020",
+    "adress": "5162 Lakeshore Roads",
+    "avatar": "https://fakedetail.com/userface_image/male/male20151086209121399.png",
+    "orders": [
+      
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62b898242f0866acee718f28",
+    "mail": "wk.k.nowak@gmail.com",
+    "password": "lazytaste",
+    "name": "Konrad",
+    "lastname": "Nowak",
+    "phone": "690992435",
+    "adress": "Leszczyńska 69C/69, 25-326 Kielce",
+    "avatar": "blank",
+    "orders": [
+      {
+        "restaurantName": "Coffe Premium Hause",
+        "restaurantAvatar": "https://media.istockphoto.com/vectors/coffee-stamp-black-vector-id849418084?b=1&k=20&m=849418084&s=612x612&w=0&h=8N27c10h3bFCWiGN9_tHMd5Sp6_0huhPPVxk1GdJgG8=",
+        "restaurantType": "Other",
+        "paid": 44.96,
+        "message": "none",
+        "date": "28.07.2022 23:33",
+        "deliveryCost": 5,
+        "adress": "Pickup",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "productDescription": "Coffee with chocolate",
+            "_id": "62e300971cfd21618c2110ae"
+          },
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "productDescription": "Coffee with chocolate",
+            "_id": "62e300971cfd21618c2110af"
+          },
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "productDescription": "Coffee with chocolate",
+            "_id": "62e300971cfd21618c2110b0"
+          },
+          {
+            "productName": "Caffe Latte",
+            "productPrice": 9.99,
+            "productDescription": "Coffee with frothed milk",
+            "_id": "62e300971cfd21618c2110b1"
+          }
+        ],
+        "_id": "62e300971cfd21618c2110ad"
+      },
+      {
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "restaurantType": "Burgers",
+        "paid": 164.96,
+        "message": "none",
+        "date": "26.08.2022 20:41",
+        "deliveryCost": 0,
+        "adress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "productDescription": "Lack of information",
+            "_id": "63092ffbe688f8b8ddf83f0a"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "productDescription": "Lack of information",
+            "_id": "63092ffbe688f8b8ddf83f0b"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "productDescription": "Lack of information",
+            "_id": "63092ffbe688f8b8ddf83f0c"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "productDescription": "Lack of information",
+            "_id": "63092ffbe688f8b8ddf83f0d"
+          }
+        ],
+        "_id": "63092ffbe688f8b8ddf83f09"
+      },
+      {
+        "restaurantName": "Fresh Meat Kebab",
+        "restaurantAvatar": "https://t4.ftcdn.net/jpg/03/12/53/11/360_F_312531183_KfRukPyRMe2d8tW2wUucbTYgDW3AVoNg.jpg",
+        "restaurantType": "Kebab",
+        "paid": 22.49,
+        "message": "none",
+        "date": "27.08.2022 20:29",
+        "deliveryCost": 0,
+        "adress": "Pickup",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Kebab with Fries",
+            "productPrice": 22.49,
+            "productDescription": "Lack of information",
+            "_id": "630a7eb45d7cd8a83428dede"
+          }
+        ],
+        "_id": "630a7eb45d7cd8a83428dedd"
+      }
+    ],
+    "favourites": [
+      {
+        "restaurantID": "62a74d510d6ce45c56fda7d3",
+        "restaurantName": "Cooper Burgers",
+        "restaurantAvatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+        "_id": "62bef4cb5ff4efad82137002"
+      },
+      {
+        "restaurantID": "62b89991a237d6aa929fb4b6",
+        "restaurantName": "Try It Kebab",
+        "restaurantAvatar": "/static/media/blank.6832516fa88cd60daf5b.png",
+        "_id": "62bef4db5ff4efad821371bd"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "62c352888bef0d2b8276ed79",
+    "mail": "Katarzyna.Jasinska@example.com",
+    "password": "lazytaste",
+    "name": "Katarzyna",
+    "lastname": "Jasińska",
+    "phone": "678654321",
+    "adress": "Witosa 64k, 25-526 Kielce",
+    "avatar": "blank",
+    "orders": [
+      
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "6309177b5eeac186d93715c2",
+    "mail": "helloworld@wp.pl",
+    "password": "lazytaste",
+    "name": "Rafał",
+    "lastname": "Tak",
+    "phone": "123456789",
+    "adress": "Kielce, Kościelna 42",
+    "avatar": "blank",
+    "orders": [
+      {
+        "restaurantName": "Dolce Ristorante",
+        "restaurantAvatar": "https://i.pinimg.com/originals/8b/f3/0f/8bf30fb1c97587cee359f52cb4e5e008.jpg",
+        "restaurantType": "Italian",
+        "paid": 19.99,
+        "message": "none",
+        "date": "26.08.2022 18:58",
+        "deliveryCost": 0,
+        "adress": "Pickup",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Ragù in Bologna style",
+            "productPrice": 19.99,
+            "productDescription": "Lack of information",
+            "_id": "630917c35eeac186d93715d1"
+          }
+        ],
+        "_id": "630917c35eeac186d93715d0"
+      }
+    ],
+    "favourites": [
+      
+    ],
+    "__v": 0
+  }
+]

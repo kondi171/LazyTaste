@@ -1,0 +1,5885 @@
+// 20220827230029
+// https://lazytaste.herokuapp.com/API/restaurants
+
+[
+  {
+    "delivery": {
+      "deliveryCost": 10,
+      "deliveryActive": true,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a74d510d6ce45c56fda7d3",
+    "mail": "cooper.burgers@example.com",
+    "password": "lazytaste",
+    "name": "Cooper Burgers",
+    "NIP": "5467654567",
+    "phone": "763457654",
+    "adress": "6613 Photinia Aveline",
+    "avatar": "https://i.pinimg.com/originals/c3/f7/f6/c3f7f666efcd0f1a77b23170fe6b579a.jpg",
+    "promotion": "Burgers for freee!",
+    "type": "Burgers",
+    "menu": [
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "King Burger",
+        "productDescription": "Lack of information",
+        "productPrice": 39.99,
+        "_id": "62a74f770d6ce45c56fdc2f5"
+      },
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "Family Burger",
+        "productDescription": "Lack of information",
+        "productPrice": 49.99,
+        "_id": "62a74fc60d6ce45c56fdcb37"
+      },
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "Main Burger",
+        "productDescription": "Lack of information",
+        "productPrice": 24.99,
+        "_id": "62a74fd50d6ce45c56fdccd6"
+      },
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "Casual Burger",
+        "productDescription": "Lack of information",
+        "productPrice": 19.99,
+        "_id": "62a74fe10d6ce45c56fdce2a"
+      },
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "Double Cheese Burger",
+        "productDescription": "Lack of information",
+        "productPrice": 27.49,
+        "_id": "62a74ff30d6ce45c56fdd002"
+      },
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "Best Burger",
+        "productDescription": "Lack of information",
+        "productPrice": 32.19,
+        "_id": "62a750080d6ce45c56fdd262"
+      },
+      {
+        "sectionID": "62c41d729a3528597297cdd0",
+        "productName": "Deep fried Burger",
+        "productDescription": "Steak fried on deep oil",
+        "productPrice": 41.29,
+        "_id": "62c42af2d47000fa2b4f52a1"
+      },
+      {
+        "sectionID": "62c42b62d47000fa2b4f5c51",
+        "productName": "Coca - Cola 0.5l",
+        "productDescription": "Cold cola",
+        "productPrice": 9.99,
+        "_id": "62c42b7bd47000fa2b4f5e7a"
+      },
+      {
+        "sectionID": "62c42b62d47000fa2b4f5c51",
+        "productName": "Fanta 0.4l",
+        "productDescription": "Cold Fanta",
+        "productPrice": 8.99,
+        "_id": "62c44d8865c568692ea0dcff"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Dana",
+        "customerLastname": "Jacobs",
+        "customerAvatar": "https://fakedetail.com/userface_image/female/female20171026045591217.png",
+        "customerAdress": "3399 Prospect Roads 21",
+        "paid": 134.96,
+        "message": "none",
+        "date": "13.06.2022 17:14",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62a754710d6ce45c56fdd3a9"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62a754710d6ce45c56fdd3aa"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62a754710d6ce45c56fdd3ab"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62a754710d6ce45c56fdd3ac"
+          }
+        ],
+        "active": false,
+        "_id": "62a754710d6ce45c56fdd3a8"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 89.98,
+        "message": "none",
+        "date": "15.06.2022 08:46",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62a98033baba29cf4d1ea5e3"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62a98033baba29cf4d1ea5e4"
+          }
+        ],
+        "active": false,
+        "_id": "62a98033baba29cf4d1ea5e2"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 79.67,
+        "message": "none",
+        "date": "15.06.2022 08:46",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62a98052baba29cf4d1ea639"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62a98052baba29cf4d1ea63a"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62a98052baba29cf4d1ea63b"
+          }
+        ],
+        "active": false,
+        "_id": "62a98052baba29cf4d1ea638"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 79.67,
+        "message": "none",
+        "date": "15.06.2022 08:47",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62a98075baba29cf4d1ea681"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62a98075baba29cf4d1ea682"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62a98075baba29cf4d1ea683"
+          }
+        ],
+        "active": false,
+        "_id": "62a98075baba29cf4d1ea680"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 59.68,
+        "message": "none",
+        "date": "15.06.2022 08:47",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62a98093baba29cf4d1ea6c9"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62a98093baba29cf4d1ea6ca"
+          }
+        ],
+        "active": false,
+        "_id": "62a98093baba29cf4d1ea6c8"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 124.97,
+        "message": "none",
+        "date": "16.06.2022 15:50",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62ab3512f2493c20930a4a7f"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62ab3512f2493c20930a4a80"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62ab3512f2493c20930a4a81"
+          }
+        ],
+        "active": false,
+        "_id": "62ab3512f2493c20930a4a7e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 204.64,
+        "message": "none",
+        "date": "16.06.2022 21:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62ab88cacdc68608966444fe"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62ab88cacdc68608966444ff"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62ab88cacdc6860896644500"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62ab88cacdc6860896644501"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62ab88cacdc6860896644502"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62ab88cacdc6860896644503"
+          }
+        ],
+        "active": false,
+        "_id": "62ab88cacdc68608966444fd"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-2379004.jpg&fm=jpg",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 49.99,
+        "message": "none",
+        "date": "21.06.2022 18:46",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62b1f5dd1388a15bccbfa3d2"
+          }
+        ],
+        "active": false,
+        "_id": "62b1f5dd1388a15bccbfa3d1"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 204.64,
+        "message": "none",
+        "date": "25.06.2022 12:09",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62b6dec6f0e5a2510b549541"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62b6dec6f0e5a2510b549542"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62b6dec6f0e5a2510b549543"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62b6dec6f0e5a2510b549544"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62b6dec6f0e5a2510b549545"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62b6dec6f0e5a2510b549546"
+          }
+        ],
+        "active": false,
+        "_id": "62b6dec6f0e5a2510b549540"
+      },
+      {
+        "customerName": "Dana",
+        "customerLastname": "Jacobs",
+        "customerAvatar": "https://fakedetail.com/userface_image/female/female20171026045591217.png",
+        "customerAdress": "3399 Prospect Roads 21",
+        "paid": 104.97,
+        "message": "none",
+        "date": "25.06.2022 15:09",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62b708fd366b911f036ae2b4"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62b708fd366b911f036ae2b5"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62b708fd366b911f036ae2b6"
+          }
+        ],
+        "active": true,
+        "_id": "62b708fd366b911f036ae2b3"
+      },
+      {
+        "customerName": "Jackson",
+        "customerLastname": "Gilbert",
+        "customerAvatar": "https://fakedetail.com/userface_image/male/male20171084101124939.png",
+        "customerAdress": "8882 Westheimer Roads",
+        "paid": 127.47,
+        "message": "none",
+        "date": "25.06.2022 15:09",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62b70921366b911f036ae302"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62b70921366b911f036ae303"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62b70921366b911f036ae304"
+          }
+        ],
+        "active": false,
+        "_id": "62b70921366b911f036ae301"
+      },
+      {
+        "customerName": "Aaron",
+        "customerLastname": "Davis",
+        "customerAvatar": "https://fakedetail.com/userface_image/male/male108427080262.png",
+        "customerAdress": "2606 Hickory Creek Dr",
+        "paid": 89.67,
+        "message": "none",
+        "date": "25.06.2022 15:010",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62b70937366b911f036ae34a"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62b70937366b911f036ae34b"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62b70937366b911f036ae34c"
+          }
+        ],
+        "active": true,
+        "_id": "62b70937366b911f036ae349"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 89.98,
+        "message": "none",
+        "date": "02.07.2022 15:07",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0430306d10195921441ba"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0430306d10195921441bb"
+          }
+        ],
+        "active": true,
+        "_id": "62c0430306d10195921441b9"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 159.97,
+        "message": "none",
+        "date": "02.07.2022 15:07",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c0431306d10195921441ff"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c0431306d1019592144200"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c0431306d1019592144201"
+          }
+        ],
+        "active": true,
+        "_id": "62c0431306d10195921441fe"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 249.94,
+        "message": "none",
+        "date": "02.07.2022 15:22",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046a7989730873b6e2f74"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046a7989730873b6e2f75"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046a7989730873b6e2f76"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046a7989730873b6e2f77"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046a7989730873b6e2f78"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046a7989730873b6e2f79"
+          }
+        ],
+        "active": true,
+        "_id": "62c046a7989730873b6e2f73"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 249.94,
+        "message": "none",
+        "date": "02.07.2022 15:23",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046be785e61e1873fcf4f"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046be785e61e1873fcf50"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046be785e61e1873fcf51"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046be785e61e1873fcf52"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046be785e61e1873fcf53"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046be785e61e1873fcf54"
+          }
+        ],
+        "active": true,
+        "_id": "62c046be785e61e1873fcf4e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 169.96,
+        "message": "none",
+        "date": "02.07.2022 15:23",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046c8785e61e1873fcf57"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046c8785e61e1873fcf58"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046c8785e61e1873fcf59"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046c8785e61e1873fcf5a"
+          }
+        ],
+        "active": true,
+        "_id": "62c046c8785e61e1873fcf56"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 89.98,
+        "message": "none",
+        "date": "02.07.2022 15:23",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046cc785e61e1873fcf5d"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c046cc785e61e1873fcf5e"
+          }
+        ],
+        "active": true,
+        "_id": "62c046cc785e61e1873fcf5c"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 89.98,
+        "message": "none",
+        "date": "02.07.2022 15:26",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04775785e61e1873fcf61"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04775785e61e1873fcf62"
+          }
+        ],
+        "active": true,
+        "_id": "62c04775785e61e1873fcf60"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 189.96,
+        "message": "none",
+        "date": "02.07.2022 15:26",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04778785e61e1873fcf65"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04778785e61e1873fcf66"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04778785e61e1873fcf67"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04778785e61e1873fcf68"
+          }
+        ],
+        "active": true,
+        "_id": "62c04778785e61e1873fcf64"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 104.97,
+        "message": "none",
+        "date": "02.07.2022 15:26",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c0478ce510c4b7f08ba45a"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62c0478ce510c4b7f08ba45b"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c0478ce510c4b7f08ba45c"
+          }
+        ],
+        "active": true,
+        "_id": "62c0478ce510c4b7f08ba459"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 124.96,
+        "message": "none",
+        "date": "02.07.2022 15:26",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c0478ee510c4b7f08ba465"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62c0478ee510c4b7f08ba466"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c0478ee510c4b7f08ba467"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c0478ee510c4b7f08ba468"
+          }
+        ],
+        "active": true,
+        "_id": "62c0478ee510c4b7f08ba464"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 49.99,
+        "message": "none",
+        "date": "02.07.2022 15:27",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c047afe510c4b7f08ba49c"
+          }
+        ],
+        "active": true,
+        "_id": "62c047afe510c4b7f08ba49b"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 49.99,
+        "message": "none",
+        "date": "02.07.2022 15:53",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04de01c95af0e4d2b6d58"
+          }
+        ],
+        "active": true,
+        "_id": "62c04de01c95af0e4d2b6d57"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 49.99,
+        "message": "none",
+        "date": "02.07.2022 15:54",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04e0d0781c09c5c24c6d2"
+          }
+        ],
+        "active": true,
+        "_id": "62c04e0d0781c09c5c24c6d1"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.97,
+        "message": "none",
+        "date": "02.07.2022 15:59",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04f2e0781c09c5c24c6da"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04f2e0781c09c5c24c6db"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04f2e0781c09c5c24c6dc"
+          }
+        ],
+        "active": true,
+        "_id": "62c04f2e0781c09c5c24c6d9"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.97,
+        "message": "none",
+        "date": "02.07.2022 15:59",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04f47eeba70dced84355c"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04f47eeba70dced84355d"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04f47eeba70dced84355e"
+          }
+        ],
+        "active": true,
+        "_id": "62c04f47eeba70dced84355b"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.97,
+        "message": "none",
+        "date": "02.07.2022 16:01",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04f9e881e20206e9192f1"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04f9e881e20206e9192f2"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04f9e881e20206e9192f3"
+          }
+        ],
+        "active": true,
+        "_id": "62c04f9e881e20206e9192f0"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "02.07.2022 16:01",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04fa2881e20206e9192fa"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04fa2881e20206e9192fb"
+          }
+        ],
+        "active": true,
+        "_id": "62c04fa2881e20206e9192f9"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "02.07.2022 16:01",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04fcca751700a62c7fd43"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04fcca751700a62c7fd44"
+          }
+        ],
+        "active": true,
+        "_id": "62c04fcca751700a62c7fd42"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "02.07.2022 16:02",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04fe7c76482d281ffd0a3"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04fe7c76482d281ffd0a4"
+          }
+        ],
+        "active": false,
+        "_id": "62c04fe7c76482d281ffd0a2"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "02.07.2022 16:02",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c04ff6fc0a0bcce6e6277e"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c04ff6fc0a0bcce6e6277f"
+          }
+        ],
+        "active": true,
+        "_id": "62c04ff6fc0a0bcce6e6277d"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "02.07.2022 16:02",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c05008d9ac65f1b51e9225"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c05008d9ac65f1b51e9226"
+          }
+        ],
+        "active": true,
+        "_id": "62c05008d9ac65f1b51e9224"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "02.07.2022 16:03",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c050175c98cab627e6c093"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c050175c98cab627e6c094"
+          }
+        ],
+        "active": true,
+        "_id": "62c050175c98cab627e6c092"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 29.99,
+        "message": "none",
+        "date": "02.07.2022 16:05",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c050b5deff75e4efcc74e5"
+          }
+        ],
+        "active": true,
+        "_id": "62c050b5deff75e4efcc74e4"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 29.99,
+        "message": "none",
+        "date": "02.07.2022 16:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c050f52c78c61bc535b905"
+          }
+        ],
+        "active": true,
+        "_id": "62c050f52c78c61bc535b904"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 29.99,
+        "message": "none",
+        "date": "02.07.2022 16:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c051010e1cc90ee32b7503"
+          }
+        ],
+        "active": true,
+        "_id": "62c051010e1cc90ee32b7502"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.96,
+        "message": "none",
+        "date": "02.07.2022 16:07",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c051170e1cc90ee32b7506"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051170e1cc90ee32b7507"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051170e1cc90ee32b7508"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051170e1cc90ee32b7509"
+          }
+        ],
+        "active": true,
+        "_id": "62c051170e1cc90ee32b7505"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.96,
+        "message": "none",
+        "date": "02.07.2022 16:07",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c05134a935d02dca05e1c2"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c05134a935d02dca05e1c3"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c05134a935d02dca05e1c4"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c05134a935d02dca05e1c5"
+          }
+        ],
+        "active": true,
+        "_id": "62c05134a935d02dca05e1c1"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:07",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c0513aa935d02dca05e1c8"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0513aa935d02dca05e1c9"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0513aa935d02dca05e1ca"
+          }
+        ],
+        "active": true,
+        "_id": "62c0513aa935d02dca05e1c7"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:09",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c051b589765cfe48efaa5b"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051b589765cfe48efaa5c"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051b589765cfe48efaa5d"
+          }
+        ],
+        "active": true,
+        "_id": "62c051b589765cfe48efaa5a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:010",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c051bf10033458aaaec449"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051bf10033458aaaec44a"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051bf10033458aaaec44b"
+          }
+        ],
+        "active": true,
+        "_id": "62c051bf10033458aaaec448"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:11",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c051fc6b3454e645207916"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051fc6b3454e645207917"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c051fc6b3454e645207918"
+          }
+        ],
+        "active": true,
+        "_id": "62c051fc6b3454e645207915"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:11",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c052249de722718f335d80"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052249de722718f335d81"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052249de722718f335d82"
+          }
+        ],
+        "active": true,
+        "_id": "62c052249de722718f335d7f"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:11",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c052269de722718f335d8a"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052269de722718f335d8b"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052269de722718f335d8c"
+          }
+        ],
+        "active": true,
+        "_id": "62c052269de722718f335d89"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:12",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c05232f50fa79b7f5d4fe2"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c05232f50fa79b7f5d4fe3"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c05232f50fa79b7f5d4fe4"
+          }
+        ],
+        "active": true,
+        "_id": "62c05232f50fa79b7f5d4fe1"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:12",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c0524371f5b62e601d89df"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0524371f5b62e601d89e0"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0524371f5b62e601d89e1"
+          }
+        ],
+        "active": true,
+        "_id": "62c0524371f5b62e601d89de"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.96,
+        "message": "none",
+        "date": "02.07.2022 16:12",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c0524d71f5b62e601d89e4"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0524d71f5b62e601d89e5"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0524d71f5b62e601d89e6"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c0524d71f5b62e601d89e7"
+          }
+        ],
+        "active": true,
+        "_id": "62c0524d71f5b62e601d89e3"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 149.96,
+        "message": "none",
+        "date": "02.07.2022 16:14",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c052bc6e2b62df77fff1b4"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052bc6e2b62df77fff1b5"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052bc6e2b62df77fff1b6"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052bc6e2b62df77fff1b7"
+          }
+        ],
+        "active": true,
+        "_id": "62c052bc6e2b62df77fff1b3"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 109.97,
+        "message": "none",
+        "date": "02.07.2022 16:14",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c052c06e2b62df77fff1bf"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052c06e2b62df77fff1c0"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c052c06e2b62df77fff1c1"
+          }
+        ],
+        "active": true,
+        "_id": "62c052c06e2b62df77fff1be"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 134.96,
+        "message": "none",
+        "date": "07.07.2022 17:01",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c6f5365aea2adc0f5b76a1"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c6f5365aea2adc0f5b76a2"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62c6f5365aea2adc0f5b76a3"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c6f5365aea2adc0f5b76a4"
+          }
+        ],
+        "active": true,
+        "_id": "62c6f5365aea2adc0f5b76a0"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 59.99,
+        "message": "none",
+        "date": "07.07.2022 17:12",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62c6f7db5aea2adc0f5b7899"
+          }
+        ],
+        "active": true,
+        "_id": "62c6f7db5aea2adc0f5b7898"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.97,
+        "message": "none",
+        "date": "08.07.2022 17:05",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c847a72cb3d9237c5af906"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c847a72cb3d9237c5af907"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c847a72cb3d9237c5af908"
+          }
+        ],
+        "active": true,
+        "_id": "62c847a72cb3d9237c5af905"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 89.98,
+        "message": "none",
+        "date": "09.07.2022 17:04",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c9990a06d425c21bce6acb"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62c9990a06d425c21bce6acc"
+          }
+        ],
+        "active": true,
+        "_id": "62c9990a06d425c21bce6aca"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 54.98,
+        "message": "none",
+        "date": "09.07.2022 17:17",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62c99c0406d425c21bce6afa"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62c99c0406d425c21bce6afb"
+          }
+        ],
+        "active": true,
+        "_id": "62c99c0406d425c21bce6af9"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 129.97,
+        "message": "tasty",
+        "date": "12.07.2022 19:13",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdabcbb2b6d01124b6fa2f"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdabcbb2b6d01124b6fa30"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62cdabcbb2b6d01124b6fa31"
+          }
+        ],
+        "active": false,
+        "_id": "62cdabcbb2b6d01124b6fa2e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 100.97,
+        "message": "none",
+        "date": "12.07.2022 19:32",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Deep fried Burger",
+            "productPrice": 41.29,
+            "_id": "62cdb031b2b6d01124b701c6"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62cdb031b2b6d01124b701c7"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62cdb031b2b6d01124b701c8"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb031b2b6d01124b701c5"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.95,
+        "message": "none",
+        "date": "12.07.2022 19:42",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Deep fried Burger",
+            "productPrice": 41.29,
+            "_id": "62cdb26fb2b6d01124b7022b"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62cdb26fb2b6d01124b7022c"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62cdb26fb2b6d01124b7022d"
+          },
+          {
+            "productName": "Coca - Cola 0.5l",
+            "productPrice": 9.99,
+            "_id": "62cdb26fb2b6d01124b7022e"
+          },
+          {
+            "productName": "Fanta 0.4l",
+            "productPrice": 8.99,
+            "_id": "62cdb26fb2b6d01124b7022f"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb26fb2b6d01124b7022a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.95,
+        "message": "none",
+        "date": "12.07.2022 19:43",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Deep fried Burger",
+            "productPrice": 41.29,
+            "_id": "62cdb2b1b2b6d01124b70239"
+          },
+          {
+            "productName": "Best Burger",
+            "productPrice": 32.19,
+            "_id": "62cdb2b1b2b6d01124b7023a"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62cdb2b1b2b6d01124b7023b"
+          },
+          {
+            "productName": "Coca - Cola 0.5l",
+            "productPrice": 9.99,
+            "_id": "62cdb2b1b2b6d01124b7023c"
+          },
+          {
+            "productName": "Fanta 0.4l",
+            "productPrice": 8.99,
+            "_id": "62cdb2b1b2b6d01124b7023d"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb2b1b2b6d01124b70238"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "12.07.2022 19:54",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62cdb55bb2b6d01124b702ff"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb55bb2b6d01124b70300"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb55bb2b6d01124b702fe"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.97,
+        "message": "none",
+        "date": "12.07.2022 19:58",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb654b2b6d01124b70361"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb654b2b6d01124b70362"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb654b2b6d01124b70363"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb654b2b6d01124b70360"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.97,
+        "message": "none",
+        "date": "12.07.2022 20:00",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb6a1b2b6d01124b7036b"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb6a1b2b6d01124b7036c"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb6a1b2b6d01124b7036d"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb6a1b2b6d01124b7036a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.97,
+        "message": "none",
+        "date": "12.07.2022 20:02",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb73bb2b6d01124b70375"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb73bb2b6d01124b70376"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb73bb2b6d01124b70377"
+          }
+        ],
+        "active": true,
+        "_id": "62cdb73bb2b6d01124b70374"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.97,
+        "message": "none",
+        "date": "12.07.2022 20:03",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb77ab2b6d01124b7037f"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb77ab2b6d01124b70380"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb77ab2b6d01124b70381"
+          }
+        ],
+        "active": false,
+        "_id": "62cdb77ab2b6d01124b7037e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 119.97,
+        "message": "none",
+        "date": "12.07.2022 20:04",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb795b2b6d01124b70389"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb795b2b6d01124b7038a"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb795b2b6d01124b7038b"
+          }
+        ],
+        "active": false,
+        "_id": "62cdb795b2b6d01124b70388"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 114.97,
+        "message": "none",
+        "date": "12.07.2022 20:06",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb83fb2b6d01124b70393"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62cdb83fb2b6d01124b70394"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62cdb83fb2b6d01124b70395"
+          }
+        ],
+        "active": false,
+        "_id": "62cdb83fb2b6d01124b70392"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 166.25,
+        "message": "none",
+        "date": "12.07.2022 20:09",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62cdb8deb2b6d01124b703a5"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62cdb8deb2b6d01124b703a6"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62cdb8deb2b6d01124b703a7"
+          },
+          {
+            "productName": "Deep fried Burger",
+            "productPrice": 41.29,
+            "_id": "62cdb8deb2b6d01124b703a8"
+          },
+          {
+            "productName": "Coca - Cola 0.5l",
+            "productPrice": 9.99,
+            "_id": "62cdb8deb2b6d01124b703a9"
+          }
+        ],
+        "active": false,
+        "_id": "62cdb8deb2b6d01124b703a4"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 199.95,
+        "message": "none",
+        "date": "20.07.2022 21:16",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d854abda46af03c4062ff6"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d854abda46af03c4062ff7"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d854abda46af03c4062ff8"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d854abda46af03c4062ff9"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d854abda46af03c4062ffa"
+          }
+        ],
+        "active": true,
+        "_id": "62d854abda46af03c4062ff5"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 29.99,
+        "message": "none",
+        "date": "20.07.2022 21:23",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62d85646ef0c68ffcedc6341"
+          }
+        ],
+        "active": true,
+        "_id": "62d85646ef0c68ffcedc6340"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Kopernika 25, Warszawa 01-001",
+        "paid": 162.45,
+        "message": "none",
+        "date": "20.07.2022 21:31",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d8580def0c68ffcedc655b"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62d8580def0c68ffcedc655c"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62d8580def0c68ffcedc655d"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62d8580def0c68ffcedc655e"
+          },
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62d8580def0c68ffcedc655f"
+          }
+        ],
+        "active": true,
+        "_id": "62d8580def0c68ffcedc655a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 199.95,
+        "message": "none",
+        "date": "20.07.2022 21:34",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d858b6ef0c68ffcedc672d"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d858b6ef0c68ffcedc672e"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d858b6ef0c68ffcedc672f"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d858b6ef0c68ffcedc6730"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d858b6ef0c68ffcedc6731"
+          }
+        ],
+        "active": true,
+        "_id": "62d858b6ef0c68ffcedc672c"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 134.96,
+        "message": "none",
+        "date": "20.07.2022 21:38",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d859cfef0c68ffcedc6a78"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62d859cfef0c68ffcedc6a79"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62d859cfef0c68ffcedc6a7a"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62d859cfef0c68ffcedc6a7b"
+          }
+        ],
+        "active": true,
+        "_id": "62d859cfef0c68ffcedc6a77"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 139.96,
+        "message": "none",
+        "date": "20.07.2022 21:45",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62d85b55ef0c68ffcedc6d56"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62d85b55ef0c68ffcedc6d57"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62d85b55ef0c68ffcedc6d58"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62d85b55ef0c68ffcedc6d59"
+          }
+        ],
+        "active": true,
+        "_id": "62d85b55ef0c68ffcedc6d55"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 82.47,
+        "message": "none",
+        "date": "20.07.2022 21:48",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Double Cheese Burger",
+            "productPrice": 27.49,
+            "_id": "62d85bf2ef0c68ffcedc6db8"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62d85bf2ef0c68ffcedc6db9"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62d85bf2ef0c68ffcedc6dba"
+          }
+        ],
+        "active": true,
+        "_id": "62d85bf2ef0c68ffcedc6db7"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 104.97,
+        "message": "none",
+        "date": "27.07.2022 20:42",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62e18727c668c72d2c27abdb"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62e18727c668c72d2c27abdc"
+          },
+          {
+            "productName": "Casual Burger",
+            "productPrice": 19.99,
+            "_id": "62e18727c668c72d2c27abdd"
+          }
+        ],
+        "active": true,
+        "_id": "62e18727c668c72d2c27abda"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 84.97,
+        "message": "none",
+        "date": "28.07.2022 18:15",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62e2b62fe685ec872b4b5499"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62e2b62fe685ec872b4b549a"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "62e2b62fe685ec872b4b549b"
+          }
+        ],
+        "active": true,
+        "_id": "62e2b62fe685ec872b4b5498"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "28.07.2022 23:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62e2fa462726b06535fef09b"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "62e2fa462726b06535fef09c"
+          }
+        ],
+        "active": true,
+        "_id": "62e2fa462726b06535fef09a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 89.98,
+        "message": "none",
+        "date": "28.07.2022 23:17",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62e2fcde2bad67fcf32fefb9"
+          },
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "62e2fcde2bad67fcf32fefba"
+          }
+        ],
+        "active": false,
+        "_id": "62e2fcde2bad67fcf32fefb8"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 164.96,
+        "message": "none",
+        "date": "26.08.2022 20:41",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "63092ffbe688f8b8ddf83f10"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "63092ffbe688f8b8ddf83f11"
+          },
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "63092ffbe688f8b8ddf83f12"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "63092ffbe688f8b8ddf83f13"
+          }
+        ],
+        "active": true,
+        "_id": "63092ffbe688f8b8ddf83f0f"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Sandomierska 146K, 26-045 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "27.08.2022 20:05",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "630a79165d7cd8a83428dd38"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "630a79165d7cd8a83428dd39"
+          }
+        ],
+        "active": true,
+        "_id": "630a79165d7cd8a83428dd37"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Sandomierska 146K, 26-045 Kielce",
+        "paid": 99.98,
+        "message": "none",
+        "date": "27.08.2022 20:08",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "King Burger",
+            "productPrice": 39.99,
+            "_id": "630a79b65d7cd8a83428dd56"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "630a79b65d7cd8a83428dd57"
+          }
+        ],
+        "active": true,
+        "_id": "630a79b65d7cd8a83428dd55"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Sandomierska 146K, 26-045 Kielce",
+        "paid": 109.98,
+        "message": "none",
+        "date": "27.08.2022 20:13",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "630a7ad75d7cd8a83428de7b"
+          },
+          {
+            "productName": "Family Burger",
+            "productPrice": 49.99,
+            "_id": "630a7ad75d7cd8a83428de7c"
+          }
+        ],
+        "active": true,
+        "_id": "630a7ad75d7cd8a83428de7a"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 34.99,
+        "message": "none",
+        "date": "27.08.2022 20:44",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Main Burger",
+            "productPrice": 24.99,
+            "_id": "630a82485d7cd8a83428e014"
+          }
+        ],
+        "active": true,
+        "_id": "630a82485d7cd8a83428e013"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Burgers",
+        "_id": "62c41d729a3528597297cdd0"
+      },
+      {
+        "sectionName": "Drinks",
+        "_id": "62c42b62d47000fa2b4f5c51"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a76d690d6ce45c56fdd851",
+    "mail": "fresh&tasty@example.com",
+    "password": "lazytaste",
+    "name": "Fresh & Tasty Pizza",
+    "NIP": "5676567783",
+    "phone": "657873123",
+    "adress": "2390 Smokey Lines 90",
+    "avatar": "https://image.shutterstock.com/image-vector/pizza-hand-written-lettering-logo-260nw-543555367.jpg",
+    "promotion": "Only Today, all pizza's has 10% discount!",
+    "type": "Pizza",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Capriciossa 30cm",
+        "productPrice": 29.99,
+        "sectionID": "62c45a41f483560bf5e072d5",
+        "_id": "62a774be0d6ce45c56fe1f10"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Capriciossa 45cm",
+        "productPrice": 39.99,
+        "sectionID": "62c45a41f483560bf5e072d5",
+        "_id": "62a774d60d6ce45c56fe214e"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Happy Pizza",
+        "productPrice": 24.99,
+        "sectionID": "62c45a41f483560bf5e072d5",
+        "_id": "62a774ea0d6ce45c56fe233c"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 39.99,
+        "message": "none",
+        "date": "14.06.2022 15:50",
+        "paymentMethod": "Cash",
+        "products": [
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62a8924022fc09fac42ba414"
+          }
+        ],
+        "active": true,
+        "_id": "62a8924022fc09fac42ba413"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 104.97,
+        "message": "none",
+        "date": "17.07.2022 23:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d479c8893257d86ab85d75"
+          },
+          {
+            "productName": "Happy Pizza",
+            "productPrice": 24.99,
+            "_id": "62d479c8893257d86ab85d76"
+          },
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d479c8893257d86ab85d77"
+          }
+        ],
+        "active": true,
+        "_id": "62d479c8893257d86ab85d74"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 104.97,
+        "message": "none",
+        "date": "17.07.2022 23:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d479ca893257d86ab85d7f"
+          },
+          {
+            "productName": "Happy Pizza",
+            "productPrice": 24.99,
+            "_id": "62d479ca893257d86ab85d80"
+          },
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d479ca893257d86ab85d81"
+          }
+        ],
+        "active": true,
+        "_id": "62d479ca893257d86ab85d7e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 69.98,
+        "message": "none",
+        "date": "19.07.2022 21:54",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d70c0fb8b3ae5a9eccdbb4"
+          },
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d70c0fb8b3ae5a9eccdbb5"
+          }
+        ],
+        "active": true,
+        "_id": "62d70c0fb8b3ae5a9eccdbb3"
+      },
+      {
+        "customerName": "Dana",
+        "customerLastname": "Jacobs",
+        "customerAvatar": "https://fakedetail.com/userface_image/female/female20171026045591217.png",
+        "customerAdress": "Pickup",
+        "paid": 39.99,
+        "message": "none",
+        "date": "19.07.2022 21:55",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d70c3eb8b3ae5a9eccdc25"
+          }
+        ],
+        "active": true,
+        "_id": "62d70c3eb8b3ae5a9eccdc24"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 129.96,
+        "message": "none",
+        "date": "20.07.2022 19:30",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d83ba2f74d26e85e24d80f"
+          },
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d83ba2f74d26e85e24d810"
+          },
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d83ba2f74d26e85e24d811"
+          },
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d83ba2f74d26e85e24d812"
+          }
+        ],
+        "active": true,
+        "_id": "62d83ba2f74d26e85e24d80e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 94.97,
+        "message": "none",
+        "date": "20.07.2022 21:16",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Happy Pizza",
+            "productPrice": 24.99,
+            "_id": "62d854a3da46af03c4062fca"
+          },
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d854a3da46af03c4062fcb"
+          },
+          {
+            "productName": "Capriciossa 30cm",
+            "productPrice": 29.99,
+            "_id": "62d854a3da46af03c4062fcc"
+          }
+        ],
+        "active": true,
+        "_id": "62d854a3da46af03c4062fc9"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 64.98,
+        "message": "none",
+        "date": "20.07.2022 21:48",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Happy Pizza",
+            "productPrice": 24.99,
+            "_id": "62d85bfbef0c68ffcedc6dfb"
+          },
+          {
+            "productName": "Capriciossa 45cm",
+            "productPrice": 39.99,
+            "_id": "62d85bfbef0c68ffcedc6dfc"
+          }
+        ],
+        "active": true,
+        "_id": "62d85bfbef0c68ffcedc6dfa"
+      }
+    ],
+    "__v": 0,
+    "deliveryCost": 12.99,
+    "productsSections": [
+      {
+        "sectionName": "Fresh Pizza",
+        "_id": "62c45a41f483560bf5e072d5"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a77ff40d6ce45c56ff0e0c",
+    "mail": "Family.cuisine@example.com",
+    "password": "lazytaste",
+    "name": "Family Cuisine Pizza",
+    "NIP": "5654567895",
+    "phone": "567432345",
+    "adress": "9888 Cackson Street 11",
+    "avatar": "https://us.123rf.com/450wm/morys/morys1705/morys170500021/78766962-pizzeria-emblem-design-with-smiling-chef-pizzeria-vector-logo-template-on-black-background-vector-em.jpg?ver=6",
+    "promotion": "Best restaurant in town offer 15% discount to all products!",
+    "type": "Pizza",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Sausage Pizza",
+        "productPrice": 34.99,
+        "sectionID": "62c45b39f483560bf5e0838d",
+        "_id": "62a780cb0d6ce45c56ff11ee"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Salami Pizza",
+        "productPrice": 39.39,
+        "sectionID": "62c45b39f483560bf5e0838d",
+        "_id": "62a780da0d6ce45c56ff1362"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Falafel Pizza",
+        "productPrice": 23.99,
+        "sectionID": "62c45b39f483560bf5e0838d",
+        "_id": "62a780ed0d6ce45c56ff153a"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 104.36,
+        "message": "none",
+        "date": "16.06.2022 18:19",
+        "paymentMethod": "Cash",
+        "deliveryCost": 5.99,
+        "products": [
+          {
+            "productName": "Falafel Pizza",
+            "productPrice": 23.99,
+            "_id": "62ab580c7aedc83753c73fc3"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62ab580c7aedc83753c73fc4"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62ab580c7aedc83753c73fc5"
+          }
+        ],
+        "active": true,
+        "_id": "62ab580c7aedc83753c73fc2"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-2379004.jpg&fm=jpg",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 80.37,
+        "message": "Good food :)",
+        "date": "23.06.2022 21:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 5.99,
+        "products": [
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62b4c34e5740564a7bf55c13"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62b4c34e5740564a7bf55c14"
+          }
+        ],
+        "active": true,
+        "_id": "62b4c34e5740564a7bf55c12"
+      },
+      {
+        "customerName": "Lorraine",
+        "customerLastname": "Fowler",
+        "customerAvatar": "https://fakedetail.com/userface_image/female/female20161025798721832.png",
+        "customerAdress": "Pickup",
+        "paid": 137.76,
+        "message": "none",
+        "date": "16.07.2022 16:34",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Falafel Pizza",
+            "productPrice": 23.99,
+            "_id": "62d2cc8fb5dbb7cc7963663d"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d2cc8fb5dbb7cc7963663e"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62d2cc8fb5dbb7cc7963663f"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d2cc8fb5dbb7cc79636640"
+          }
+        ],
+        "active": true,
+        "_id": "62d2cc8fb5dbb7cc7963663c"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 98.37,
+        "message": "none",
+        "date": "20.07.2022 19:29",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d83b8ef74d26e85e24d773"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62d83b8ef74d26e85e24d774"
+          },
+          {
+            "productName": "Falafel Pizza",
+            "productPrice": 23.99,
+            "_id": "62d83b8ef74d26e85e24d775"
+          }
+        ],
+        "active": true,
+        "_id": "62d83b8ef74d26e85e24d772"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 58.98,
+        "message": "none",
+        "date": "20.07.2022 19:30",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62d83b98f74d26e85e24d7cd"
+          },
+          {
+            "productName": "Falafel Pizza",
+            "productPrice": 23.99,
+            "_id": "62d83b98f74d26e85e24d7ce"
+          }
+        ],
+        "active": true,
+        "_id": "62d83b98f74d26e85e24d7cc"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 74.38,
+        "message": "none",
+        "date": "20.07.2022 21:23",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62d85617ef0c68ffcedc6314"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d85617ef0c68ffcedc6315"
+          }
+        ],
+        "active": true,
+        "_id": "62d85617ef0c68ffcedc6313"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 74.38,
+        "message": "none",
+        "date": "20.07.2022 21:24",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62d85666ef0c68ffcedc63c8"
+          },
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62d85666ef0c68ffcedc63c9"
+          }
+        ],
+        "active": true,
+        "_id": "62d85666ef0c68ffcedc63c7"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 98.37,
+        "message": "none",
+        "date": "28.07.2022 23:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "62e2fa572726b06535fef0f3"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "62e2fa572726b06535fef0f4"
+          },
+          {
+            "productName": "Falafel Pizza",
+            "productPrice": 23.99,
+            "_id": "62e2fa572726b06535fef0f5"
+          }
+        ],
+        "active": true,
+        "_id": "62e2fa572726b06535fef0f2"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 74.38,
+        "message": "none",
+        "date": "27.08.2022 20:08",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Salami Pizza",
+            "productPrice": 39.39,
+            "_id": "630a79c35d7cd8a83428dd77"
+          },
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "630a79c35d7cd8a83428dd78"
+          }
+        ],
+        "active": true,
+        "_id": "630a79c35d7cd8a83428dd76"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 34.99,
+        "message": "none",
+        "date": "27.08.2022 20:09",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Sausage Pizza",
+            "productPrice": 34.99,
+            "_id": "630a7a005d7cd8a83428dd85"
+          }
+        ],
+        "active": true,
+        "_id": "630a7a005d7cd8a83428dd84"
+      }
+    ],
+    "__v": 0,
+    "deliveryCost": 5.99,
+    "productsSections": [
+      {
+        "sectionName": "Family Set",
+        "_id": "62c45b39f483560bf5e0838d"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a780660d6ce45c56ff0e0f",
+    "mail": "pizza.logo@example.com",
+    "password": "lazytaste",
+    "name": "Pizza Logo",
+    "NIP": "6540009876",
+    "phone": "623456782",
+    "adress": "1554 Spring Street 789",
+    "avatar": "https://cms-assets.tutsplus.com/cdn-cgi/image/width=630/uploads/users/2659/posts/32688/image/Pizza%20Logo%20Maker.jpg",
+    "promotion": "Order family set, then we will give you 5% discount for this set.",
+    "type": "Pizza",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Own Pizza",
+        "productPrice": 28.92,
+        "sectionID": "62c45c3cf483560bf5e09ac7",
+        "_id": "62a781170d6ce45c56ff16cb"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Special Pizza",
+        "productPrice": 34.81,
+        "sectionID": "62c45c3cf483560bf5e09ac7",
+        "_id": "62a781270d6ce45c56ff185c"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Routine Pizza",
+        "productPrice": 41.84,
+        "sectionID": "62c45c3cf483560bf5e09ac7",
+        "_id": "62a781340d6ce45c56ff19b7"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 175.19,
+        "message": "none",
+        "date": "28.07.2022 23:11",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Own Pizza",
+            "productPrice": 28.92,
+            "_id": "62e2fb7352f80d566d0fbd5c"
+          },
+          {
+            "productName": "Special Pizza",
+            "productPrice": 34.81,
+            "_id": "62e2fb7352f80d566d0fbd5d"
+          },
+          {
+            "productName": "Special Pizza",
+            "productPrice": 34.81,
+            "_id": "62e2fb7352f80d566d0fbd5e"
+          },
+          {
+            "productName": "Special Pizza",
+            "productPrice": 34.81,
+            "_id": "62e2fb7352f80d566d0fbd5f"
+          },
+          {
+            "productName": "Routine Pizza",
+            "productPrice": 41.84,
+            "_id": "62e2fb7352f80d566d0fbd60"
+          }
+        ],
+        "active": true,
+        "_id": "62e2fb7352f80d566d0fbd5b"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 34.81,
+        "message": "none",
+        "date": "27.08.2022 20:39",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Special Pizza",
+            "productPrice": 34.81,
+            "_id": "630a80fd5d7cd8a83428df85"
+          }
+        ],
+        "active": true,
+        "_id": "630a80fd5d7cd8a83428df84"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 28.92,
+        "message": "none",
+        "date": "27.08.2022 20:39",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Own Pizza",
+            "productPrice": 28.92,
+            "_id": "630a81095d7cd8a83428df91"
+          }
+        ],
+        "active": true,
+        "_id": "630a81095d7cd8a83428df90"
+      }
+    ],
+    "__v": 0,
+    "deliveryCost": 8.99,
+    "productsSections": [
+      {
+        "sectionName": "Pizza's",
+        "_id": "62c45c3cf483560bf5e09ac7"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a98535f42fecb50af7139f",
+    "mail": "woknroll@example.com",
+    "password": "lazytaste",
+    "name": "Wok' n' Roll",
+    "NIP": "5604321345",
+    "phone": "543535499",
+    "adress": "7256 Spring Street 11",
+    "avatar": "https://images-platform.99static.com//Q16QwHpM_ATKda7QNBbjvjmWtPY=/0x0:1000x1000/fit-in/500x500/99designs-contests-attachments/108/108624/attachment_108624230",
+    "promotion": "Carrots were free today, so your orders will be cheaper!",
+    "type": "Chinease",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Sweet-sour chicken",
+        "productPrice": 29.99,
+        "sectionID": "62c45cfdf483560bf5e0acbd",
+        "_id": "62a9c6def12e5b44bc0dfc5d"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chinese pork with mango",
+        "productPrice": 27.99,
+        "sectionID": "62c45cfdf483560bf5e0acbd",
+        "_id": "62a9c6f0f12e5b44bc0dfe0b"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Coconut chicken in sweet chili sauce",
+        "productPrice": 18.99,
+        "sectionID": "62c45cfdf483560bf5e0acbd",
+        "_id": "62a9c704f12e5b44bc0dfff6"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Stir-fry with chicken, broccoli and carrots",
+        "productPrice": 34.99,
+        "sectionID": "62c45cfdf483560bf5e0acbd",
+        "_id": "62a9c728f12e5b44bc0e0342"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 81.97,
+        "message": "none",
+        "date": "20.07.2022 21:13",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Chinese pork with mango",
+            "productPrice": 27.99,
+            "_id": "62d853dbda46af03c4062e55"
+          },
+          {
+            "productName": "Coconut chicken in sweet chili sauce",
+            "productPrice": 18.99,
+            "_id": "62d853dbda46af03c4062e56"
+          },
+          {
+            "productName": "Stir-fry with chicken, broccoli and carrots",
+            "productPrice": 34.99,
+            "_id": "62d853dbda46af03c4062e57"
+          }
+        ],
+        "active": true,
+        "_id": "62d853dbda46af03c4062e54"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 27.99,
+        "message": "none",
+        "date": "27.08.2022 20:42",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Chinese pork with mango",
+            "productPrice": 27.99,
+            "_id": "630a81b75d7cd8a83428dff6"
+          }
+        ],
+        "active": true,
+        "_id": "630a81b75d7cd8a83428dff5"
+      }
+    ],
+    "__v": 0,
+    "deliveryCost": 14.49,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45cfdf483560bf5e0acbd"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9868ef42fecb50af713a2",
+    "mail": "lam.anh@example.com",
+    "password": "lazytaste",
+    "name": "Lam Anh",
+    "NIP": "1234922222",
+    "phone": "911718797",
+    "adress": "934 Harrison City 66",
+    "avatar": "https://images-platform.99static.com//lUVr-wJZIgJeR2K04Y72nZmKfcM=/0x0:2000x2000/fit-in/500x500/99designs-contests-attachments/127/127155/attachment_127155060",
+    "promotion": "In our restaurant you will always eat healthy and fresh!",
+    "type": "Chinease",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chow mein with chicken and vegetables",
+        "productPrice": 28.99,
+        "sectionID": "62c45d18f483560bf5e0ad91",
+        "_id": "62a9c77ef12e5b44bc0e093c"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chinese style pork with pineapple",
+        "productPrice": 29.49,
+        "sectionID": "62c45d18f483560bf5e0ad91",
+        "_id": "62a9c7a4f12e5b44bc0e0cd0"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "General Tso's Chicken",
+        "productPrice": 40.09,
+        "sectionID": "62c45d18f483560bf5e0ad91",
+        "_id": "62a9c7baf12e5b44bc0e0edb"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chicken in sweet and sour sauce",
+        "productPrice": 34.79,
+        "sectionID": "62c45d18f483560bf5e0ad91",
+        "_id": "62a9c7ccf12e5b44bc0e109d"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 69.58,
+        "message": "none",
+        "date": "20.07.2022 21:06",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "General Tso's Chicken",
+            "productPrice": 40.09,
+            "_id": "62d85221da46af03c406289b"
+          },
+          {
+            "productName": "Chinese style pork with pineapple",
+            "productPrice": 29.49,
+            "_id": "62d85221da46af03c406289c"
+          }
+        ],
+        "active": true,
+        "_id": "62d85221da46af03c406289a"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 58.98,
+        "message": "none",
+        "date": "27.08.2022 20:39",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Chinese style pork with pineapple",
+            "productPrice": 29.49,
+            "_id": "630a81175d7cd8a83428dfb6"
+          },
+          {
+            "productName": "Chinese style pork with pineapple",
+            "productPrice": 29.49,
+            "_id": "630a81175d7cd8a83428dfb7"
+          }
+        ],
+        "active": true,
+        "_id": "630a81175d7cd8a83428dfb5"
+      }
+    ],
+    "__v": 0,
+    "deliveryCost": 12.99,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45d18f483560bf5e0ad91"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9a08ef6ae35e5f5ba2014",
+    "mail": "szechuan@example.com",
+    "password": "lazytaste",
+    "name": "Szechuan",
+    "NIP": "7630091111",
+    "phone": "515009324",
+    "adress": "9108 Harrison City 115",
+    "avatar": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/chinese-restaurant-logo-design-template-bcbe11c45c2a26aa079638e290efad5c_screen.jpg?ts=1561473692",
+    "promotion": "None",
+    "type": "Chinease",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tenderloin with mushrooms and leek",
+        "productPrice": 29,
+        "sectionID": "62c45d32f483560bf5e0ae57",
+        "_id": "62a9c85af12e5b44bc0e157b"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chinese style chicken with broccoli",
+        "productPrice": 26.99,
+        "sectionID": "62c45d32f483560bf5e0ae57",
+        "_id": "62a9c877f12e5b44bc0e1829"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 55.99,
+        "message": "none",
+        "date": "20.07.2022 21:00",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Tenderloin with mushrooms and leek",
+            "productPrice": 29,
+            "_id": "62d850c94339cc31e066bfde"
+          },
+          {
+            "productName": "Chinese style chicken with broccoli",
+            "productPrice": 26.99,
+            "_id": "62d850c94339cc31e066bfdf"
+          }
+        ],
+        "active": true,
+        "_id": "62d850c94339cc31e066bfdd"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 55.99,
+        "message": "none",
+        "date": "27.08.2022 20:03",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Chinese style chicken with broccoli",
+            "productPrice": 26.99,
+            "_id": "630a789f5d7cd8a83428dd16"
+          },
+          {
+            "productName": "Tenderloin with mushrooms and leek",
+            "productPrice": 29,
+            "_id": "630a789f5d7cd8a83428dd17"
+          }
+        ],
+        "active": true,
+        "_id": "630a789f5d7cd8a83428dd15"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45d32f483560bf5e0ae57"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9c05af12e5b44bc0da52a",
+    "mail": "italian.restaurant@example.com",
+    "password": "lazytaste",
+    "name": "Italian Restaurant",
+    "NIP": "6571234561",
+    "phone": "846359961",
+    "adress": "5181 Lakeview Street",
+    "avatar": "https://static.vecteezy.com/system/resources/thumbnails/005/050/781/small/italian-restaurant-logo-you-can-edit-the-color-according-to-the-color-of-your-country-s-flag-free-vector.jpg",
+    "promotion": "We are in love with pasta, we always make sure that it is of the highest quality.",
+    "deliveryCost": 10,
+    "type": "Italian",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Arancini",
+        "productPrice": 35.99,
+        "sectionID": "62c45d48f483560bf5e0af2b",
+        "_id": "62a9c8cef12e5b44bc0e1adc"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Spaghetti with asparagus",
+        "productPrice": 26.99,
+        "sectionID": "62c45d48f483560bf5e0af2b",
+        "_id": "62a9c8def12e5b44bc0e1c6f"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Caponata",
+        "productPrice": 29.99,
+        "sectionID": "62c45d48f483560bf5e0af2b",
+        "_id": "62a9c8e9f12e5b44bc0e1d7c"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 92.97,
+        "message": "none",
+        "date": "20.07.2022 21:07",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Arancini",
+            "productPrice": 35.99,
+            "_id": "62d85264da46af03c4062b79"
+          },
+          {
+            "productName": "Spaghetti with asparagus",
+            "productPrice": 26.99,
+            "_id": "62d85264da46af03c4062b7a"
+          },
+          {
+            "productName": "Caponata",
+            "productPrice": 29.99,
+            "_id": "62d85264da46af03c4062b7b"
+          }
+        ],
+        "active": true,
+        "_id": "62d85264da46af03c4062b78"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 62.98,
+        "message": "none",
+        "date": "27.08.2022 20:010",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Spaghetti with asparagus",
+            "productPrice": 26.99,
+            "_id": "630a7a265d7cd8a83428ddaf"
+          },
+          {
+            "productName": "Arancini",
+            "productPrice": 35.99,
+            "_id": "630a7a265d7cd8a83428ddb0"
+          }
+        ],
+        "active": true,
+        "_id": "630a7a265d7cd8a83428ddae"
+      },
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 29.99,
+        "message": "none",
+        "date": "27.08.2022 20:11",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Caponata",
+            "productPrice": 29.99,
+            "_id": "630a7a5c5d7cd8a83428ddfa"
+          }
+        ],
+        "active": true,
+        "_id": "630a7a5c5d7cd8a83428ddf9"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45d48f483560bf5e0af2b"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9c0cdf12e5b44bc0da534",
+    "mail": "dolce.ristorante@example.com",
+    "password": "lazytaste",
+    "name": "Dolce Ristorante",
+    "NIP": "8769878765",
+    "phone": "567642345",
+    "adress": "2295 Spring Street 1",
+    "avatar": "https://i.pinimg.com/originals/8b/f3/0f/8bf30fb1c97587cee359f52cb4e5e008.jpg",
+    "promotion": "None",
+    "deliveryCost": 10,
+    "type": "Italian",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Ragù in Bologna style",
+        "productPrice": 19.99,
+        "sectionID": "62c45d64f483560bf5e0aff4",
+        "_id": "62a9c951f12e5b44bc0e24d2"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tagliatelle with kale pesto",
+        "productPrice": 31.81,
+        "sectionID": "62c45d64f483560bf5e0aff4",
+        "_id": "62a9c967f12e5b44bc0e26d6"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 51.8,
+        "message": "none",
+        "date": "20.07.2022 21:27",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Tagliatelle with kale pesto",
+            "productPrice": 31.81,
+            "_id": "62d8573bef0c68ffcedc6500"
+          },
+          {
+            "productName": "Ragù in Bologna style",
+            "productPrice": 19.99,
+            "_id": "62d8573bef0c68ffcedc6501"
+          }
+        ],
+        "active": true,
+        "_id": "62d8573bef0c68ffcedc64ff"
+      },
+      {
+        "customerName": "Rafał",
+        "customerLastname": "Tak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 19.99,
+        "message": "none",
+        "date": "26.08.2022 18:58",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Ragù in Bologna style",
+            "productPrice": 19.99,
+            "_id": "630917c35eeac186d93715ce"
+          }
+        ],
+        "active": true,
+        "_id": "630917c35eeac186d93715cd"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45d64f483560bf5e0aff4"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9c132f12e5b44bc0da53e",
+    "mail": "platzki@example.com",
+    "password": "lazytaste",
+    "name": "Platzki",
+    "NIP": "1233214908",
+    "phone": "546765345",
+    "adress": "2564 Westheimer Roads",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5rpJtr3il4aF6j6ZoQt4guJzGn29FVSr5KqI-V6mubtTbW7Dnlbqda-25lLI2W7oBYDo&usqp=CAU",
+    "promotion": "Best polish restaurant in town!",
+    "deliveryCost": 10,
+    "type": "Polish",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Potato pancakes",
+        "productPrice": 29.99,
+        "sectionID": "62c45d92f483560bf5e0b0ec",
+        "_id": "62a9c9a9f12e5b44bc0e2b16"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Pork chop with potatoes",
+        "productPrice": 38.99,
+        "sectionID": "62c45d92f483560bf5e0b0ec",
+        "_id": "62a9c9caf12e5b44bc0e2e4c"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 68.98,
+        "message": "none",
+        "date": "20.07.2022 21:27",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Pork chop with potatoes",
+            "productPrice": 38.99,
+            "_id": "62d85731ef0c68ffcedc6488"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62d85731ef0c68ffcedc6489"
+          }
+        ],
+        "active": true,
+        "_id": "62d85731ef0c68ffcedc6487"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 395.88,
+        "message": "none",
+        "date": "28.07.2022 23:12",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Pork chop with potatoes",
+            "productPrice": 38.99,
+            "_id": "62e2fba752f80d566d0fbe31"
+          },
+          {
+            "productName": "Pork chop with potatoes",
+            "productPrice": 38.99,
+            "_id": "62e2fba752f80d566d0fbe32"
+          },
+          {
+            "productName": "Pork chop with potatoes",
+            "productPrice": 38.99,
+            "_id": "62e2fba752f80d566d0fbe33"
+          },
+          {
+            "productName": "Pork chop with potatoes",
+            "productPrice": 38.99,
+            "_id": "62e2fba752f80d566d0fbe34"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe35"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe36"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe37"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe38"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe39"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe3a"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe3b"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "62e2fba752f80d566d0fbe3c"
+          }
+        ],
+        "active": true,
+        "_id": "62e2fba752f80d566d0fbe30"
+      },
+      {
+        "customerName": "Dana",
+        "customerLastname": "Jacobs",
+        "customerAvatar": "https://fakedetail.com/userface_image/female/female20171026045591217.png",
+        "customerAdress": "Pickup",
+        "paid": 59.98,
+        "message": "Szanowny Panie jadłopodawco poproszę te placuszki. XOXO :*",
+        "date": "26.08.2022 18:38",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "6309133809ab65101fed0349"
+          },
+          {
+            "productName": "Potato pancakes",
+            "productPrice": 29.99,
+            "_id": "6309133809ab65101fed034a"
+          }
+        ],
+        "active": true,
+        "_id": "6309133809ab65101fed0348"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45d92f483560bf5e0b0ec"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9c1f3f12e5b44bc0dafcd",
+    "mail": "swojskie.jadlo@example.com",
+    "password": "lazytaste",
+    "name": "Swojskie Jadło",
+    "NIP": "0987987652",
+    "phone": "873456111",
+    "adress": "8333 Mockingbird Line",
+    "avatar": "https://linktopoland.com/en/files/2013/08/linktopoland_swojskie-jadlo-logo-489x325.jpg",
+    "promotion": "None",
+    "deliveryCost": 10,
+    "type": "Polish",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Pea soup",
+        "productPrice": 14.99,
+        "sectionID": "62c45da8f483560bf5e0b196",
+        "_id": "62a9ca1af12e5b44bc0e3385"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chicken soup",
+        "productPrice": 15.99,
+        "sectionID": "62c45da8f483560bf5e0b196",
+        "_id": "62a9ca2af12e5b44bc0e3503"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Doves",
+        "productPrice": 19.99,
+        "sectionID": "62c45da8f483560bf5e0b196",
+        "_id": "62a9ca41f12e5b44bc0e36f8"
+      }
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45da8f483560bf5e0b196"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9c259f12e5b44bc0dafd7",
+    "mail": "fresh.meat@example.com",
+    "password": "lazytaste",
+    "name": "Fresh Meat Kebab",
+    "NIP": "1458374573",
+    "phone": "546734567",
+    "adress": "530 Oak Ridge Line 199",
+    "avatar": "https://t4.ftcdn.net/jpg/03/12/53/11/360_F_312531183_KfRukPyRMe2d8tW2wUucbTYgDW3AVoNg.jpg",
+    "promotion": "Tortilla Kebab is today in lower price!",
+    "deliveryCost": 9.99,
+    "type": "Kebab",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tortilla Kebab",
+        "productPrice": 24.99,
+        "sectionID": "62c45dbbf483560bf5e0b220",
+        "_id": "62a9c354f12e5b44bc0db13a"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tortilla Kebab XL",
+        "productPrice": 29.99,
+        "sectionID": "62c45dbbf483560bf5e0b220",
+        "_id": "62a9c360f12e5b44bc0db254"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Standard Kebab",
+        "productPrice": 19.99,
+        "sectionID": "62c45dbbf483560bf5e0b220",
+        "_id": "62a9c36af12e5b44bc0db34c"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Kebab with Fries",
+        "productPrice": 22.49,
+        "sectionID": "62c45dbbf483560bf5e0b220",
+        "_id": "62a9c37cf12e5b44bc0db508"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 22.49,
+        "message": "none",
+        "date": "27.08.2022 20:29",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Kebab with Fries",
+            "productPrice": 22.49,
+            "_id": "630a7eb45d7cd8a83428dee1"
+          }
+        ],
+        "active": true,
+        "_id": "630a7eb45d7cd8a83428dee0"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45dbbf483560bf5e0b220"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9cb59f12e5b44bc0e375e",
+    "mail": "soi.siam@example.com",
+    "password": "lazytaste",
+    "name": "Soi Siam",
+    "NIP": "9123453424",
+    "phone": "764367341",
+    "adress": "8692 Dogwood Avenue 2",
+    "avatar": "https://designcontest.nyc3.digitaloceanspaces.com/data/contests/230494/entries/big_1953ac781fafd073.png",
+    "promotion": "Carefully selected ingredients + great cook = Soi Siam",
+    "deliveryCost": 10,
+    "type": "Thai",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Pad thai with chicken",
+        "productPrice": 49.99,
+        "sectionID": "62c45dd2f483560bf5e0b2f6",
+        "_id": "62a9cb94f12e5b44bc0e3a7a"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Thai Chicken",
+        "productPrice": 38.99,
+        "sectionID": "62c45dd2f483560bf5e0b2f6",
+        "_id": "62a9cba7f12e5b44bc0e3c3f"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 38.99,
+        "message": "none",
+        "date": "20.07.2022 21:08",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Thai Chicken",
+            "productPrice": 38.99,
+            "_id": "62d852c1da46af03c4062c2e"
+          }
+        ],
+        "active": true,
+        "_id": "62d852c1da46af03c4062c2d"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45dd2f483560bf5e0b2f6"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9ccf5f12e5b44bc0e3fca",
+    "mail": "thai.food@example.com",
+    "password": "lazytaste",
+    "name": "Thai Food Restaurant",
+    "NIP": "2345151128",
+    "phone": "093467234",
+    "adress": "6950 Homestead Roads",
+    "avatar": "https://d1wnwqwep8qkqc.cloudfront.net/uploads/stage/stage_image/19536/optimized_large_thumb_stage.jpg",
+    "promotion": "None",
+    "deliveryCost": 19.99,
+    "type": "Thai",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Pad thai",
+        "productPrice": 28.99,
+        "sectionID": "62c45de8f483560bf5e0b352",
+        "_id": "62a9cd20f12e5b44bc0e417e"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Sweet-sour chicken",
+        "productPrice": 29.99,
+        "sectionID": "62c45de8f483560bf5e0b352",
+        "_id": "62a9cd3bf12e5b44bc0e4406"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 58.98,
+        "message": "none",
+        "date": "20.07.2022 21:14",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Sweet-sour chicken",
+            "productPrice": 29.99,
+            "_id": "62d85430da46af03c4062f38"
+          },
+          {
+            "productName": "Pad thai",
+            "productPrice": 28.99,
+            "_id": "62d85430da46af03c4062f39"
+          }
+        ],
+        "active": true,
+        "_id": "62d85430da46af03c4062f37"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 116.96,
+        "message": "none",
+        "date": "20.07.2022 21:15",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Pad thai",
+            "productPrice": 28.99,
+            "_id": "62d85466da46af03c4062f66"
+          },
+          {
+            "productName": "Pad thai",
+            "productPrice": 28.99,
+            "_id": "62d85466da46af03c4062f67"
+          },
+          {
+            "productName": "Pad thai",
+            "productPrice": 28.99,
+            "_id": "62d85466da46af03c4062f68"
+          },
+          {
+            "productName": "Sweet-sour chicken",
+            "productPrice": 29.99,
+            "_id": "62d85466da46af03c4062f69"
+          }
+        ],
+        "active": true,
+        "_id": "62d85466da46af03c4062f65"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45de8f483560bf5e0b352"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9cda7f12e5b44bc0e451a",
+    "mail": "kebab@example.com",
+    "password": "lazytaste",
+    "name": "Kebab",
+    "NIP": "5345673456",
+    "phone": "654234643",
+    "adress": "5793 Dane Street 228",
+    "avatar": "https://thumbs.dreamstime.com/b/projekt-logo-kebab-wektor-%C5%BCywno%C5%9Bci-burrito-wector-food-idealne-dla-restauracji-kafejek-itp-194045820.jpg",
+    "promotion": "None",
+    "deliveryCost": 5,
+    "type": "Kebab",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Standard Kebab",
+        "productPrice": 19.99,
+        "sectionID": "62c45dfff483560bf5e0b3f0",
+        "_id": "62a9cdcef12e5b44bc0e4675"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chicken Kebab",
+        "productPrice": 21.99,
+        "sectionID": "62c45dfff483560bf5e0b3f0",
+        "_id": "62a9cddef12e5b44bc0e47ee"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Creative Kebab",
+        "productPrice": 24.99,
+        "sectionID": "62c45dfff483560bf5e0b3f0",
+        "_id": "62a9cdecf12e5b44bc0e494a"
+      }
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Kebab",
+        "_id": "62c45dfff483560bf5e0b3f0"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9cea5f12e5b44bc0e4a44",
+    "mail": "doner.kebab@example.com",
+    "password": "lazytaste",
+    "name": "Doner Kebab",
+    "NIP": "8346756789",
+    "phone": "845754678",
+    "adress": "5253 Woodland Street",
+    "avatar": "https://t4.ftcdn.net/jpg/03/07/24/25/360_F_307242532_E3KlEUTmrcQL9xcM13afwytrBqX0QShV.jpg",
+    "promotion": "None",
+    "deliveryCost": 10,
+    "type": "Kebab",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tortilla XL",
+        "productPrice": 29.99,
+        "sectionID": "62c45e1ff483560bf5e0b4cf",
+        "_id": "62a9ced3f12e5b44bc0e4be4"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tortilla",
+        "productPrice": 24.99,
+        "sectionID": "62c45e1ff483560bf5e0b4cf",
+        "_id": "62a9cedaf12e5b44bc0e4c8c"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Doner kebab",
+        "productPrice": 21.91,
+        "sectionID": "62c45e1ff483560bf5e0b4cf",
+        "_id": "62a9cef1f12e5b44bc0e4ea5"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Doner XXL",
+        "productPrice": 39.99,
+        "sectionID": "62c45e1ff483560bf5e0b4cf",
+        "_id": "62a9cf04f12e5b44bc0e5072"
+      }
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Doner",
+        "_id": "62c45e1ff483560bf5e0b4cf"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9d03cf12e5b44bc0e64fb",
+    "mail": "vegenation@example.com",
+    "password": "lazytaste",
+    "name": "Vegenation",
+    "NIP": "3485973649",
+    "phone": "743298032",
+    "adress": "5537 Robinson Road 22",
+    "avatar": "https://tremento.com/wp-content/uploads/2021/08/Vegenation.png",
+    "promotion": "Our restuarant give you pleasure on the palate",
+    "deliveryCost": 10,
+    "type": "Vege",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Falafel",
+        "productPrice": 18.99,
+        "sectionID": "62c45e36f483560bf5e0b533",
+        "_id": "62a9d05ff12e5b44bc0e664b"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Rice with tofu",
+        "productPrice": 19.99,
+        "sectionID": "62c45e36f483560bf5e0b533",
+        "_id": "62a9d071f12e5b44bc0e6802"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 38.98,
+        "message": "none",
+        "date": "20.07.2022 21:33",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Falafel",
+            "productPrice": 18.99,
+            "_id": "62d85896ef0c68ffcedc6600"
+          },
+          {
+            "productName": "Rice with tofu",
+            "productPrice": 19.99,
+            "_id": "62d85896ef0c68ffcedc6601"
+          }
+        ],
+        "active": true,
+        "_id": "62d85896ef0c68ffcedc65ff"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45e36f483560bf5e0b533"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9d0f5f12e5b44bc0e6d2b",
+    "mail": "vegetarian@example.com",
+    "password": "lazytaste",
+    "name": "Vegetarian",
+    "NIP": "6534567234",
+    "phone": "654234567",
+    "adress": "1957 Mockingbird Hill",
+    "avatar": "https://thumbs.dreamstime.com/b/human-healthy-vegetarian-food-logo-vector-icon-illustration-concept-164696866.jpg",
+    "promotion": "None",
+    "deliveryCost": 10,
+    "type": "Vege",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Tagliatelle with green pesto",
+        "productPrice": 22.99,
+        "sectionID": "62c45e4bf483560bf5e0b587",
+        "_id": "62a9d126f12e5b44bc0e7035"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Curry with a Thai twist",
+        "productPrice": 24.99,
+        "sectionID": "62c45e4bf483560bf5e0b587",
+        "_id": "62a9d139f12e5b44bc0e7206"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Chilli with black beans and sweet potatoes",
+        "productPrice": 25.99,
+        "sectionID": "62c45e4bf483560bf5e0b587",
+        "_id": "62a9d14ef12e5b44bc0e740f"
+      }
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45e4bf483560bf5e0b587"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9d199f12e5b44bc0e7484",
+    "mail": "veggie@example.com",
+    "password": "lazytaste",
+    "name": "Veggie",
+    "NIP": "3245678654",
+    "phone": "435765345",
+    "adress": "3099 Cherry Street 29",
+    "avatar": "https://images.creativemarket.com/0.1.0/ps/2505708/1160/772/m1/fpnw/wm0/veggie-cm-black-.jpg?1491433430&s=1d314742f6b15b05c5265c0eee99a521",
+    "promotion": "None",
+    "deliveryCost": 10,
+    "type": "Vege",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Cucumber rolls",
+        "productPrice": 12.99,
+        "sectionID": "62c45e61f483560bf5e0b636",
+        "_id": "62a9d1c0f12e5b44bc0e769e"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Bob with sage",
+        "productPrice": 19.99,
+        "sectionID": "62c45e61f483560bf5e0b636",
+        "_id": "62a9d1d5f12e5b44bc0e78b2"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 19.99,
+        "message": "none",
+        "date": "27.08.2022 20:11",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Bob with sage",
+            "productPrice": 19.99,
+            "_id": "630a7a825d7cd8a83428de5b"
+          }
+        ],
+        "active": true,
+        "_id": "630a7a825d7cd8a83428de5a"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45e61f483560bf5e0b636"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9d27bf12e5b44bc0e7921",
+    "mail": "sushi.bar@example.com",
+    "password": "lazytaste",
+    "name": "Sushi Bar",
+    "NIP": "6547687698",
+    "phone": "435765568",
+    "adress": "285 Edwards Roads 61",
+    "avatar": "https://img.freepik.com/free-vector/sushi-restaurant-logo_8169-12.jpg",
+    "promotion": "You will find all varieties of sushi only with us!",
+    "deliveryCost": 10,
+    "type": "Sushi",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Nigiri",
+        "productPrice": 54.99,
+        "sectionID": "62c45e76f483560bf5e0b69a",
+        "_id": "62a9d2adf12e5b44bc0e7c85"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Maki sushi",
+        "productPrice": 64.99,
+        "sectionID": "",
+        "_id": "62a9d2b7f12e5b44bc0e7d7f"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Hosomaki",
+        "productPrice": 48.74,
+        "sectionID": "62c45e76f483560bf5e0b69a",
+        "_id": "62a9d2c4f12e5b44bc0e7ecb"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Kappa maki",
+        "productPrice": 38.99,
+        "sectionID": "62c45e76f483560bf5e0b69a",
+        "_id": "62a9d2d1f12e5b44bc0e801e"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 142.72,
+        "message": "none",
+        "date": "20.07.2022 21:33",
+        "paymentMethod": "Cash",
+        "deliveryCost": 0,
+        "products": [
+          {
+            "productName": "Hosomaki",
+            "productPrice": 48.74,
+            "_id": "62d858a6ef0c68ffcedc6683"
+          },
+          {
+            "productName": "Nigiri",
+            "productPrice": 54.99,
+            "_id": "62d858a6ef0c68ffcedc6684"
+          },
+          {
+            "productName": "Kappa maki",
+            "productPrice": 38.99,
+            "_id": "62d858a6ef0c68ffcedc6685"
+          }
+        ],
+        "active": true,
+        "_id": "62d858a6ef0c68ffcedc6682"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45e76f483560bf5e0b69a"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 0,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62a9d43af12e5b44bc0e9b27",
+    "mail": "bon.appetit@example.com",
+    "password": "lazytaste",
+    "name": "Bon Appetit",
+    "NIP": "6542346544",
+    "phone": "543765543",
+    "adress": "5248 Parker Road 127",
+    "avatar": "https://ae01.alicdn.com/kf/HTB1.YSYbogQMeJjy0Fiq6xhqXXa9/Zestaw-Appetit-winylu-naklejki-cienne-dla-restauracji-Vinyl-kalkomania-cienna-cytat-francuski-Bon-Appetit-dekoracja-muralowa.jpg",
+    "promotion": "The most unique restaurant in the city!",
+    "deliveryCost": 18.99,
+    "type": "Other",
+    "menu": [
+      {
+        "productDescription": "Lack of information",
+        "productName": "Mushroom crème brûlé",
+        "productPrice": 29.99,
+        "sectionID": "62c45eb4f483560bf5e0b896",
+        "_id": "62a9d462f12e5b44bc0e9d3a"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Asparagus with gribiche dressing",
+        "productPrice": 24.99,
+        "sectionID": "62c45eb4f483560bf5e0b896",
+        "_id": "62a9d472f12e5b44bc0e9edb"
+      },
+      {
+        "productDescription": "Lack of information",
+        "productName": "Quiche lorraine",
+        "productPrice": 19.99,
+        "sectionID": "62c45eb4f483560bf5e0b896",
+        "_id": "62a9d47ef12e5b44bc0ea001"
+      }
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Main Dishes",
+        "_id": "62c45eb4f483560bf5e0b896"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 30,
+      "deliveryActive": true,
+      "orderMinValue": 400,
+      "orderValueToFreeDelivery": 1000
+    },
+    "_id": "62b89991a237d6aa929fb4b6",
+    "mail": "tryitkebab@gmail.com",
+    "password": "lazytaste",
+    "name": "Try It Kebab",
+    "NIP": "0000000000",
+    "phone": "987656789",
+    "adress": "Kopernika 25, Warszawa 01-001",
+    "avatar": "blank",
+    "promotion": "None",
+    "deliveryCost": 10,
+    "type": "Kebab",
+    "menu": [
+      {
+        "productName": "Kebsiwko",
+        "productDescription": "Lack of information",
+        "productPrice": 22.99,
+        "sectionID": "62c416f53dfce5c0a09afb77",
+        "_id": "62bc41bf62558cd9849dc93d"
+      },
+      {
+        "productName": "Kebab",
+        "productDescription": "Medium size of Kebab",
+        "productPrice": 24.99,
+        "sectionID": "62c416f53dfce5c0a09afb77",
+        "_id": "62bc41c362558cd9849dc9b0"
+      },
+      {
+        "productName": "Burger",
+        "productDescription": "Large Burger",
+        "productPrice": 39.29,
+        "sectionID": "62c416f53dfce5c0a09afb77",
+        "_id": "62c19887df5d05b20f93d79c"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 1453.99,
+        "message": "none",
+        "date": "02.07.2022 16:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "kurand",
+            "productPrice": 269,
+            "_id": "62c05a69f244fdc61df5ff3b"
+          },
+          {
+            "productName": "kebsiwo",
+            "productPrice": 24.99,
+            "_id": "62c05a69f244fdc61df5ff3c"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a69f244fdc61df5ff3d"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a69f244fdc61df5ff3e"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a69f244fdc61df5ff3f"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a69f244fdc61df5ff40"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a69f244fdc61df5ff41"
+          }
+        ],
+        "active": false,
+        "_id": "62c05a69f244fdc61df5ff3a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 1258.99,
+        "message": "none",
+        "date": "02.07.2022 16:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "kurand",
+            "productPrice": 269,
+            "_id": "62c05a6ff244fdc61df5ff4c"
+          },
+          {
+            "productName": "kebsiwo",
+            "productPrice": 24.99,
+            "_id": "62c05a6ff244fdc61df5ff4d"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a6ff244fdc61df5ff4e"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a6ff244fdc61df5ff4f"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a6ff244fdc61df5ff50"
+          },
+          {
+            "productName": "kurand",
+            "productPrice": 269,
+            "_id": "62c05a6ff244fdc61df5ff51"
+          }
+        ],
+        "active": false,
+        "_id": "62c05a6ff244fdc61df5ff4b"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 1019.99,
+        "message": "none",
+        "date": "02.07.2022 16:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "kurand",
+            "productPrice": 269,
+            "_id": "62c05a73f244fdc61df5ff5b"
+          },
+          {
+            "productName": "kebsiwo",
+            "productPrice": 24.99,
+            "_id": "62c05a73f244fdc61df5ff5c"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a73f244fdc61df5ff5d"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a73f244fdc61df5ff5e"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a73f244fdc61df5ff5f"
+          }
+        ],
+        "active": false,
+        "_id": "62c05a73f244fdc61df5ff5a"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 787.99,
+        "message": "none",
+        "date": "02.07.2022 16:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "kurand",
+            "productPrice": 269,
+            "_id": "62c05a76f244fdc61df5ff68"
+          },
+          {
+            "productName": "kebsiwo",
+            "productPrice": 24.99,
+            "_id": "62c05a76f244fdc61df5ff69"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a76f244fdc61df5ff6a"
+          },
+          {
+            "productName": "CK Kielce",
+            "productPrice": 232,
+            "_id": "62c05a76f244fdc61df5ff6b"
+          }
+        ],
+        "active": false,
+        "_id": "62c05a76f244fdc61df5ff67"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 117.27,
+        "message": "none",
+        "date": "06.07.2022 21:58",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5e96b1fd67eccd7930e0d"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5e96b1fd67eccd7930e0e"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e96b1fd67eccd7930e0f"
+          }
+        ],
+        "active": true,
+        "_id": "62c5e96b1fd67eccd7930e0c"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 510.17,
+        "message": "none",
+        "date": "06.07.2022 21:58",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5e97a1fd67eccd7930e12"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5e97a1fd67eccd7930e13"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e14"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e15"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e16"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e17"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e18"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e19"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e1a"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e1b"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e1c"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e1d"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97a1fd67eccd7930e1e"
+          }
+        ],
+        "active": true,
+        "_id": "62c5e97a1fd67eccd7930e11"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 510.17,
+        "message": "none",
+        "date": "06.07.2022 21:58",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5e97e1fd67eccd7930e21"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5e97e1fd67eccd7930e22"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e23"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e24"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e25"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e26"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e27"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e28"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e29"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e2a"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e2b"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e2c"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5e97e1fd67eccd7930e2d"
+          }
+        ],
+        "active": true,
+        "_id": "62c5e97e1fd67eccd7930e20"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 544.93,
+        "message": "none",
+        "date": "06.07.2022 22:17",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede27ccbdf823918903c"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede27ccbdf823918903d"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede27ccbdf823918903e"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede27ccbdf823918903f"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede27ccbdf8239189040"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede27ccbdf8239189041"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede27ccbdf8239189042"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede27ccbdf8239189043"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede27ccbdf8239189044"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede27ccbdf8239189045"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf8239189046"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf8239189047"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf8239189048"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf8239189049"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf823918904a"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf823918904b"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede27ccbdf823918904c"
+          }
+        ],
+        "active": true,
+        "_id": "62c5ede27ccbdf823918903b"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Warszawska 157, 01-001 Warszawa",
+        "paid": 544.93,
+        "message": "none",
+        "date": "06.07.2022 22:17",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede77ccbdf823918904f"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede77ccbdf8239189050"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede77ccbdf8239189051"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede77ccbdf8239189052"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede77ccbdf8239189053"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede77ccbdf8239189054"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede77ccbdf8239189055"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede77ccbdf8239189056"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede77ccbdf8239189057"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede77ccbdf8239189058"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf8239189059"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf823918905a"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf823918905b"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf823918905c"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf823918905d"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf823918905e"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede77ccbdf823918905f"
+          }
+        ],
+        "active": true,
+        "_id": "62c5ede77ccbdf823918904e"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 544.93,
+        "message": "none",
+        "date": "06.07.2022 22:17",
+        "paymentMethod": "Cash",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede97ccbdf8239189062"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede97ccbdf8239189063"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede97ccbdf8239189064"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede97ccbdf8239189065"
+          },
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62c5ede97ccbdf8239189066"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede97ccbdf8239189067"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede97ccbdf8239189068"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede97ccbdf8239189069"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede97ccbdf823918906a"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62c5ede97ccbdf823918906b"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf823918906c"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf823918906d"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf823918906e"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf823918906f"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf8239189070"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf8239189071"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62c5ede97ccbdf8239189072"
+          }
+        ],
+        "active": true,
+        "_id": "62c5ede97ccbdf8239189061"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 692.04,
+        "message": "none",
+        "date": "20.07.2022 21:38",
+        "paymentMethod": "Internet Payment",
+        "deliveryCost": 30,
+        "products": [
+          {
+            "productName": "Kebsiwko",
+            "productPrice": 22.99,
+            "_id": "62d8599fef0c68ffcedc69f5"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69f6"
+          },
+          {
+            "productName": "Burger",
+            "productPrice": 39.29,
+            "_id": "62d8599fef0c68ffcedc69f7"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69f8"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69f9"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69fa"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69fb"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69fc"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69fd"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69fe"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc69ff"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a00"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a01"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a02"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a03"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a04"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a05"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a06"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a07"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a08"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a09"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a0a"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a0b"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a0c"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a0d"
+          },
+          {
+            "productName": "Kebab",
+            "productPrice": 24.99,
+            "_id": "62d8599fef0c68ffcedc6a0e"
+          }
+        ],
+        "active": true,
+        "_id": "62d8599fef0c68ffcedc69f4"
+      }
+    ],
+    "__v": 0,
+    "productsSections": [
+      {
+        "sectionName": "Kebab",
+        "_id": "62c416f53dfce5c0a09afb77"
+      },
+      {
+        "sectionName": "Drinks",
+        "sectionNumber": 2,
+        "_id": "62c41a4392a0e0a9beac14fd"
+      }
+    ]
+  },
+  {
+    "delivery": {
+      "deliveryCost": 10,
+      "deliveryActive": false,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62c44e2265c568692ea0e591",
+    "mail": "lazylazy@example.com",
+    "password": "lazytaste",
+    "name": "Lazy Lazy",
+    "NIP": "1111111111",
+    "phone": "234576543",
+    "adress": "Warszawska 145A, 25-350 Kielce",
+    "avatar": "blank",
+    "promotion": "None",
+    "type": "Other",
+    "productsSections": [
+      
+    ],
+    "menu": [
+      
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "delivery": {
+      "deliveryCost": 10,
+      "deliveryActive": true,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62e0f7e28cf5803891fbf691",
+    "mail": "bhc@example.com",
+    "password": "lazytaste",
+    "name": "Burger Hause Craft",
+    "NIP": "0981239833",
+    "phone": "842655002",
+    "adress": "3794 Paddock Way 331",
+    "avatar": "https://freedesignfile.com/upload/2021/08/Burger-logo-vector.jpg",
+    "promotion": "Unique Burgers in town, only here!",
+    "type": "Burgers",
+    "productsSections": [
+      {
+        "sectionName": "Burgers",
+        "_id": "62e0f86f8cf5803891fbf8c2"
+      }
+    ],
+    "menu": [
+      {
+        "sectionID": "62e0f86f8cf5803891fbf8c2",
+        "productName": "Burger Lift",
+        "productDescription": "20 cm height burger",
+        "productPrice": 39.99,
+        "_id": "62e0f8b08cf5803891fbff23"
+      },
+      {
+        "sectionID": "62e0f86f8cf5803891fbf8c2",
+        "productName": "Rust Burger",
+        "productDescription": "Burger with rust color ingredients",
+        "productPrice": 24.99,
+        "_id": "62e0f9018cf5803891fc06f6"
+      },
+      {
+        "sectionID": "62e0f86f8cf5803891fbf8c2",
+        "productName": "Twin Burger",
+        "productDescription": "Double burger",
+        "productPrice": 35.99,
+        "_id": "62e0f9538cf5803891fc0f1a"
+      }
+    ],
+    "orders": [
+      
+    ],
+    "__v": 0
+  },
+  {
+    "delivery": {
+      "deliveryCost": 5,
+      "deliveryActive": true,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62e0fb638cf5803891fc140a",
+    "mail": "p.h.coffe@example.com",
+    "password": "lazytaste",
+    "name": "Coffe Premium Hause",
+    "NIP": "0981231234",
+    "phone": "469591904",
+    "adress": "3878 Dogwood Avenue 1",
+    "avatar": "https://media.istockphoto.com/vectors/coffee-stamp-black-vector-id849418084?b=1&k=20&m=849418084&s=612x612&w=0&h=8N27c10h3bFCWiGN9_tHMd5Sp6_0huhPPVxk1GdJgG8=",
+    "promotion": "None",
+    "type": "Other",
+    "productsSections": [
+      {
+        "sectionName": "Caffe",
+        "_id": "62e0fbd18cf5803891fc1624"
+      },
+      {
+        "sectionName": "Desserts",
+        "_id": "62e0fd2d8cf5803891fc3774"
+      }
+    ],
+    "menu": [
+      {
+        "sectionID": "62e0fbd18cf5803891fc1624",
+        "productName": "Caffe Latte",
+        "productDescription": "Coffee with frothed milk",
+        "productPrice": 9.99,
+        "_id": "62e0fc248cf5803891fc1dfc"
+      },
+      {
+        "sectionID": "62e0fbd18cf5803891fc1624",
+        "productName": "Caffe Mocha",
+        "productDescription": "Coffee with chocolate",
+        "productPrice": 9.99,
+        "_id": "62e0fc478cf5803891fc2166"
+      },
+      {
+        "sectionID": "62e0fbd18cf5803891fc1624",
+        "productName": "Caffe Macchiato",
+        "productDescription": "Coffee with a minimum amount of milk",
+        "productPrice": 9.99,
+        "_id": "62e0fc778cf5803891fc261a"
+      },
+      {
+        "sectionID": "62e0fbd18cf5803891fc1624",
+        "productName": "Black Caffe",
+        "productDescription": "Coffee without milk",
+        "productPrice": 8.99,
+        "_id": "62e0fc958cf5803891fc2919"
+      },
+      {
+        "sectionID": "62e0fd2d8cf5803891fc3774",
+        "productName": "Out Cake",
+        "productDescription": "Cake with oatmeal",
+        "productPrice": 7.89,
+        "_id": "62e0fd5b8cf5803891fc3bf3"
+      },
+      {
+        "sectionID": "62e0fd2d8cf5803891fc3774",
+        "productName": "Brownie",
+        "productDescription": "Strongly chocolate cookie",
+        "productPrice": 6.99,
+        "_id": "62e0fd948cf5803891fc418a"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Leszczyńska 69C/69, 25-326 Kielce",
+        "paid": 64.94,
+        "message": "none",
+        "date": "28.07.2022 23:30",
+        "paymentMethod": "Cash",
+        "deliveryCost": 5,
+        "products": [
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "_id": "62e30010e36b33f68f9ea8e6"
+          },
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "_id": "62e30010e36b33f68f9ea8e7"
+          },
+          {
+            "productName": "Caffe Latte",
+            "productPrice": 9.99,
+            "_id": "62e30010e36b33f68f9ea8e8"
+          },
+          {
+            "productName": "Caffe Latte",
+            "productPrice": 9.99,
+            "_id": "62e30010e36b33f68f9ea8e9"
+          },
+          {
+            "productName": "Caffe Macchiato",
+            "productPrice": 9.99,
+            "_id": "62e30010e36b33f68f9ea8ea"
+          },
+          {
+            "productName": "Caffe Macchiato",
+            "productPrice": 9.99,
+            "_id": "62e30010e36b33f68f9ea8eb"
+          }
+        ],
+        "active": true,
+        "_id": "62e30010e36b33f68f9ea8e5"
+      },
+      {
+        "customerName": "Konrad",
+        "customerLastname": "Nowak",
+        "customerAvatar": "blank",
+        "customerAdress": "Pickup",
+        "paid": 44.96,
+        "message": "none",
+        "date": "28.07.2022 23:33",
+        "paymentMethod": "Cash",
+        "deliveryCost": 5,
+        "products": [
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "_id": "62e300971cfd21618c2110b4"
+          },
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "_id": "62e300971cfd21618c2110b5"
+          },
+          {
+            "productName": "Caffe Mocha",
+            "productPrice": 9.99,
+            "_id": "62e300971cfd21618c2110b6"
+          },
+          {
+            "productName": "Caffe Latte",
+            "productPrice": 9.99,
+            "_id": "62e300971cfd21618c2110b7"
+          }
+        ],
+        "active": true,
+        "_id": "62e300971cfd21618c2110b3"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "delivery": {
+      "deliveryCost": 10,
+      "deliveryActive": true,
+      "orderMinValue": 50,
+      "orderValueToFreeDelivery": 100
+    },
+    "_id": "62e0ff6c8cf5803891fc4271",
+    "mail": "dream.burger@example.com",
+    "password": "lazytaste",
+    "name": "Dream Burger",
+    "NIP": "5621534678",
+    "phone": "621767569",
+    "adress": "8851 Fincher Roads 23",
+    "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/3d712396353691.5eac4c3661766.jpg",
+    "promotion": "None",
+    "type": "Burgers",
+    "productsSections": [
+      {
+        "sectionName": "Burgers",
+        "_id": "62e0ffa08cf5803891fc43ff"
+      }
+    ],
+    "menu": [
+      {
+        "sectionID": "62e0ffa08cf5803891fc43ff",
+        "productName": "Meat Burger ",
+        "productDescription": "Burger with extra meat",
+        "productPrice": 29.99,
+        "_id": "62e0ffb88cf5803891fc4667"
+      },
+      {
+        "sectionID": "62e0ffa08cf5803891fc43ff",
+        "productName": "Casual Burger",
+        "productDescription": "Ordinary burger",
+        "productPrice": 29.99,
+        "_id": "62e0ffd68cf5803891fc495c"
+      },
+      {
+        "sectionID": "62e0ffa08cf5803891fc43ff",
+        "productName": "Vege Burger",
+        "productDescription": "Vegetarian burger",
+        "productPrice": 19.99,
+        "_id": "62e0ffee8cf5803891fc4bc6"
+      }
+    ],
+    "orders": [
+      {
+        "customerName": "Maciek",
+        "customerLastname": "Kowalski",
+        "customerAvatar": "blank",
+        "customerAdress": "Sandomierska 146K, 26-045 Kielce",
+        "paid": 69.98,
+        "message": "none",
+        "date": "27.08.2022 20:47",
+        "paymentMethod": "Cash",
+        "deliveryCost": 10,
+        "products": [
+          {
+            "productName": "Casual Burger",
+            "productPrice": 29.99,
+            "_id": "630a82eb5d7cd8a83428e04e"
+          },
+          {
+            "productName": "Meat Burger ",
+            "productPrice": 29.99,
+            "_id": "630a82eb5d7cd8a83428e04f"
+          }
+        ],
+        "active": true,
+        "_id": "630a82eb5d7cd8a83428e04d"
+      }
+    ],
+    "__v": 0
+  }
+]
