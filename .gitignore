@@ -4,12 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
-client/package-lock.json
-server/package-lock.json
-client/package.json
-server/package.json
+
+.history
+client/.history
+server/.history
+
 client/node_modules/
 server/node_modules/
+
 # testing
 /coverage
 
