@@ -43,8 +43,8 @@ const InfoSection = ({ place }) => {
         }
       </div>
       <div className="account-column__logout">
-        {place === 'home' && <a href="http://localhost:3000">Logout</a>}
-        {place === 'customerView' && <a href="http://localhost:3000">Back</a>}
+        {place === 'home' && <a href='https://zesty-malabi-0aaf06.netlify.app'>Logout</a>}
+        {place === 'customerView' && <a href='https://zesty-malabi-0aaf06.netlify.app'>Back</a>}
       </div>
     </>
   );

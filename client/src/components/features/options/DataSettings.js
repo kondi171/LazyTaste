@@ -138,7 +138,7 @@ const DataSettings = () => {
   const updateData = (field, fieldValue) => {
     infoDiv.classList.remove('error');
     infoDiv.classList.add('success')
-    const URL = `http://localhost:4000/API/${apiSystem}`;
+    const URL = process.env.REACT_APP_DB_CONNECT + `API/${apiSystem}`;
     const body = new URLSearchParams({
       id: loggedUser._id,
       value: fieldValue,

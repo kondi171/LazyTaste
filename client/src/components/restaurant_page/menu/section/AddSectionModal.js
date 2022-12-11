@@ -11,7 +11,7 @@ const AddSectionModal = ({ productItems }) => {
       id: loggedUser._id,
       sectionName: sectionName,
     });
-    fetch(`http://localhost:4000/API/restaurant/menu/add-section`, {
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurant/menu/add-section`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

@@ -17,6 +17,7 @@ const AppProvider = ({ children }) => {
   const [predictedRestaurant, setPredictedRestaurant] = useState({});
   const [currentOrder, setCurrentOrder] = useState({});
   const [sectionID, setSectionID] = useState(null);
+  const [newOrder, setNewOrder] = useState(null);
   return (
     <AppContext.Provider
       value={{
@@ -46,6 +47,8 @@ const AppProvider = ({ children }) => {
         setCurrentOrder,
         sectionID,
         setSectionID,
+        newOrder,
+        setNewOrder,
       }}>
       {children}
     </AppContext.Provider>

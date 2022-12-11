@@ -1,0 +1,255 @@
+// 20220827230108
+// https://lazytaste.herokuapp.com/API/lazy-assistant
+
+[
+  {
+    "_id": "62e300971cfd21618c2110bb",
+    "customerID": "62b898242f0866acee718f28",
+    "name": "Konrad",
+    "lastname": "Nowak",
+    "mail": "wk.k.nowak@gmail.com",
+    "orderedProducts": [
+      {
+        "productName": "Caffe Mocha",
+        "productPrice": 9.99,
+        "productDescription": "Coffee with chocolate",
+        "_id": "62e300971cfd21618c2110bc"
+      },
+      {
+        "productName": "Caffe Mocha",
+        "productPrice": 9.99,
+        "productDescription": "Coffee with chocolate",
+        "_id": "62e300971cfd21618c2110bd"
+      },
+      {
+        "productName": "Caffe Mocha",
+        "productPrice": 9.99,
+        "productDescription": "Coffee with chocolate",
+        "_id": "62e300971cfd21618c2110be"
+      },
+      {
+        "productName": "Caffe Latte",
+        "productPrice": 9.99,
+        "productDescription": "Coffee with frothed milk",
+        "_id": "62e300971cfd21618c2110bf"
+      },
+      {
+        "productName": "King Burger",
+        "productPrice": 39.99,
+        "productDescription": "Lack of information",
+        "_id": "63092ffbe688f8b8ddf83f16"
+      },
+      {
+        "productName": "Family Burger",
+        "productPrice": 49.99,
+        "productDescription": "Lack of information",
+        "_id": "63092ffbe688f8b8ddf83f17"
+      },
+      {
+        "productName": "Main Burger",
+        "productPrice": 24.99,
+        "productDescription": "Lack of information",
+        "_id": "63092ffbe688f8b8ddf83f18"
+      },
+      {
+        "productName": "Family Burger",
+        "productPrice": 49.99,
+        "productDescription": "Lack of information",
+        "_id": "63092ffbe688f8b8ddf83f19"
+      },
+      {
+        "productName": "Kebab with Fries",
+        "productPrice": 22.49,
+        "productDescription": "Lack of information",
+        "_id": "630a7eb45d7cd8a83428dee4"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "6309133909ab65101fed0351",
+    "customerID": "62a7471b0d6ce45c56fda7aa",
+    "name": "Dana",
+    "lastname": "Jacobs",
+    "mail": "dana.jacobs@example.com",
+    "orderedProducts": [
+      {
+        "productName": "Potato pancakes",
+        "productPrice": 29.99,
+        "productDescription": "Lack of information",
+        "_id": "6309133909ab65101fed0352"
+      },
+      {
+        "productName": "Potato pancakes",
+        "productPrice": 29.99,
+        "productDescription": "Lack of information",
+        "_id": "6309133909ab65101fed0353"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "630917c35eeac186d93715d3",
+    "customerID": "6309177b5eeac186d93715c2",
+    "name": "Rafał",
+    "lastname": "Tak",
+    "mail": "helloworld@wp.pl",
+    "orderedProducts": [
+      {
+        "productName": "Ragù in Bologna style",
+        "productPrice": 19.99,
+        "productDescription": "Lack of information",
+        "_id": "630917c35eeac186d93715d4"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "630a789f5d7cd8a83428dd1a",
+    "customerID": "630a78855d7cd8a83428dce6",
+    "name": "Maciek",
+    "lastname": "Kowalski",
+    "mail": "maciek123@example.com",
+    "orderedProducts": [
+      {
+        "productName": "Chinese style chicken with broccoli",
+        "productPrice": 26.99,
+        "productDescription": "Lack of information",
+        "_id": "630a789f5d7cd8a83428dd1b"
+      },
+      {
+        "productName": "Tenderloin with mushrooms and leek",
+        "productPrice": 29,
+        "productDescription": "Lack of information",
+        "_id": "630a789f5d7cd8a83428dd1c"
+      },
+      {
+        "productName": "King Burger",
+        "productPrice": 39.99,
+        "productDescription": "Lack of information",
+        "_id": "630a79165d7cd8a83428dd3c"
+      },
+      {
+        "productName": "Family Burger",
+        "productPrice": 49.99,
+        "productDescription": "Lack of information",
+        "_id": "630a79165d7cd8a83428dd3d"
+      },
+      {
+        "productName": "King Burger",
+        "productPrice": 39.99,
+        "productDescription": "Lack of information",
+        "_id": "630a79b65d7cd8a83428dd5a"
+      },
+      {
+        "productName": "Family Burger",
+        "productPrice": 49.99,
+        "productDescription": "Lack of information",
+        "_id": "630a79b65d7cd8a83428dd5b"
+      },
+      {
+        "productName": "Salami Pizza",
+        "productPrice": 39.39,
+        "productDescription": "Lack of information",
+        "_id": "630a79c35d7cd8a83428dd7b"
+      },
+      {
+        "productName": "Sausage Pizza",
+        "productPrice": 34.99,
+        "productDescription": "Lack of information",
+        "_id": "630a79c35d7cd8a83428dd7c"
+      },
+      {
+        "productName": "Sausage Pizza",
+        "productPrice": 34.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7a005d7cd8a83428dd8b"
+      },
+      {
+        "productName": "Spaghetti with asparagus",
+        "productPrice": 26.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7a275d7cd8a83428ddb7"
+      },
+      {
+        "productName": "Arancini",
+        "productPrice": 35.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7a275d7cd8a83428ddb8"
+      },
+      {
+        "productName": "Caponata",
+        "productPrice": 29.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7a5c5d7cd8a83428de00"
+      },
+      {
+        "productName": "Bob with sage",
+        "productPrice": 19.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7a825d7cd8a83428de5d"
+      },
+      {
+        "productName": "Family Burger",
+        "productPrice": 49.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7ad75d7cd8a83428de7f"
+      },
+      {
+        "productName": "Family Burger",
+        "productPrice": 49.99,
+        "productDescription": "Lack of information",
+        "_id": "630a7ad75d7cd8a83428de80"
+      },
+      {
+        "productName": "Special Pizza",
+        "productPrice": 34.81,
+        "productDescription": "Lack of information",
+        "_id": "630a80fd5d7cd8a83428df8b"
+      },
+      {
+        "productName": "Own Pizza",
+        "productPrice": 28.92,
+        "productDescription": "Lack of information",
+        "_id": "630a81095d7cd8a83428df96"
+      },
+      {
+        "productName": "Chinese style pork with pineapple",
+        "productPrice": 29.49,
+        "productDescription": "Lack of information",
+        "_id": "630a81175d7cd8a83428dfbe"
+      },
+      {
+        "productName": "Chinese style pork with pineapple",
+        "productPrice": 29.49,
+        "productDescription": "Lack of information",
+        "_id": "630a81175d7cd8a83428dfbf"
+      },
+      {
+        "productName": "Chinese pork with mango",
+        "productPrice": 27.99,
+        "productDescription": "Lack of information",
+        "_id": "630a81b75d7cd8a83428dff9"
+      },
+      {
+        "productName": "Main Burger",
+        "productPrice": 24.99,
+        "productDescription": "Lack of information",
+        "_id": "630a82485d7cd8a83428e01a"
+      },
+      {
+        "productName": "Casual Burger",
+        "productPrice": 29.99,
+        "productDescription": "Ordinary burger",
+        "_id": "630a82eb5d7cd8a83428e051"
+      },
+      {
+        "productName": "Meat Burger ",
+        "productPrice": 29.99,
+        "productDescription": "Burger with extra meat",
+        "_id": "630a82eb5d7cd8a83428e052"
+      }
+    ],
+    "__v": 0
+  }
+]

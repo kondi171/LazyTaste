@@ -10,6 +10,17 @@ exports.predictRestaurant = async (req, res) => {
   let lastError = 0;
   let predict = [];
   let accuracy = -1;
+  let svg = null;
+  const svgoptions = {
+    fontSize: "12px",
+    width: 600,
+    height: 400,
+    radius: 6,
+    line: { width: 0.5, color: "rgba(0,0,0,1)" },
+    inputs: { color: "rgba(0,127,0,0.6)", label: [] },
+    hidden: { color: "rgba(255,127,80,0.6)" },
+    outputs: { color: "rgba(100,149,237,0.6)" }
+  }
   const parseRestaurantData = restaurants.map(restaurant => (
     {
       id: restaurant._id,
@@ -66,6 +77,7 @@ exports.predictRestaurant = async (req, res) => {
       });
     const output = network.run(parseCustomerOrders);
     console.log(`Output: ${output}`);
+    svg = brain.utilities.toSVG(network, svgoptions);
     const predictedRestaurant = restaurants.filter(restaurant => restaurant._id === output);
     if (predictedRestaurant.length > 0) predict = predictedRestaurant;
     else {
@@ -79,6 +91,7 @@ exports.predictRestaurant = async (req, res) => {
     avatar: predict[0].avatar,
     name: predict[0].name,
     accuracy: `${(lastError + accuracy).toFixed()}%`,
+    svg: svg,
   }
 
   try {

@@ -14,7 +14,7 @@ const EditSectionModal = ({ sectionName, setSectionName }) => {
       sectionID: sectionID,
       value: inputValue,
     });
-    fetch(`http://localhost:4000/API/restaurant/menu/edit-section`, {
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurant/menu/edit-section`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

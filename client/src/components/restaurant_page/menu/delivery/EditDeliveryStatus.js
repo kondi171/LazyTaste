@@ -8,7 +8,7 @@ const EditDeliveryStatus = () => {
 
   const changeStatus = (status) => {
     setStatus(status)
-    const URL = `http://localhost:4000/API/restaurants`;
+    const URL = process.env.REACT_APP_DB_CONNECT + `API/restaurants`;
     const body = new URLSearchParams({
       id: loggedUser._id,
       value: status,
@@ -43,7 +43,7 @@ const EditDeliveryStatus = () => {
   }, [loggedUser, status]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${loggedUser._id}`)
       .then(res => res.json())
       .then(data => {
         setStatus(data.delivery.deliveryActive);

@@ -19,7 +19,7 @@ const Opinions = () => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:4000/API/opinions')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/opinions')
       .then(res => res.json())
       .then(opinions => setOpinions(opinions))
 

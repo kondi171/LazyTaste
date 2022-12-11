@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.24cf955a.css",
+    "main.js": "/static/js/main.345a393c.js",
+    "static/media/vegetables-set-left-black-slate.jpg": "/static/media/vegetables-set-left-black-slate.f28aca96eef193d9160d.jpg",
+    "static/media/louis-hansel-wVoP_Q2Bg_A-unsplash.jpg": "/static/media/louis-hansel-wVoP_Q2Bg_A-unsplash.bc2d97ad756c1af15673.jpg",
+    "static/media/chad-montano-MqT0asuoIcU-unsplash.jpg": "/static/media/chad-montano-MqT0asuoIcU-unsplash.67f474f0beae80cbdbbf.jpg",
+    "static/media/alex-haney-CAhjZmVk5H4-unsplash.jpg": "/static/media/alex-haney-CAhjZmVk5H4-unsplash.8b39121cb87d9f105525.jpg",
+    "static/media/fabrizio-magoni-boaDpmC-_Xo-unsplash.jpg": "/static/media/fabrizio-magoni-boaDpmC-_Xo-unsplash.1e04b7b17ad73118db67.jpg",
+    "static/media/45degreee_fabric.png": "/static/media/45degreee_fabric.26e6dbe3813500734aa3.png",
+    "static/media/blank.png": "/static/media/blank.6832516fa88cd60daf5b.png",
+    "static/media/LT-logo-transparent.png": "/static/media/LT-logo-transparent.7e0faf020ca135278cf4.png",
+    "index.html": "/index.html",
+    "main.24cf955a.css.map": "/static/css/main.24cf955a.css.map",
+    "main.345a393c.js.map": "/static/js/main.345a393c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24cf955a.css",
+    "static/js/main.345a393c.js"
+  ]
+}

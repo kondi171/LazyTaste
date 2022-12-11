@@ -9,7 +9,7 @@ const Home = () => {
   const [promotions, setPromotions] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/API/restaurants')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
       .then(res => res.json())
       .then(data => {
         const filter = data.filter(promotion => promotion.promotion !== 'None');

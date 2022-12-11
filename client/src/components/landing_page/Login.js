@@ -32,7 +32,7 @@ const Login = ({ name }) => {
   const handleLogin = (e) => {
     if (name === 'Customer') {
       e.preventDefault();
-      const URL = 'http://localhost:4000/API/customers';
+      const URL = process.env.REACT_APP_DB_CONNECT + 'API/customers';
       const body = new URLSearchParams({
         mail: loginData.mail,
         password: loginData.password
@@ -64,7 +64,7 @@ const Login = ({ name }) => {
         .catch(error => console.log(error));
     } else {
       e.preventDefault();
-      const URL = 'http://localhost:4000/API/restaurants';
+      const URL = process.env.REACT_APP_DB_CONNECT + 'API/restaurants';
       const body = new URLSearchParams({
         NIP: loginData.NIP,
         password: loginData.password

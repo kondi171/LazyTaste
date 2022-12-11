@@ -7,7 +7,7 @@ const EditDeliveryValue = () => {
 
   const handleEditOrderMinValue = e => {
     e.preventDefault();
-    const URL = `http://localhost:4000/API/restaurants`;
+    const URL = process.env.REACT_APP_DB_CONNECT + `API/restaurants`;
     const body = new URLSearchParams({
       id: loggedUser._id,
       value: orderMinValue,

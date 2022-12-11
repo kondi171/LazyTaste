@@ -13,7 +13,7 @@ const ChangeProductDescriptionModal = ({ productName, productPrice, productDescr
       value: inputValue,
       type: 'description',
     });
-    fetch(`http://localhost:4000/API/restaurant/menu/${loggedUser._id}/${productID}`, {
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurant/menu/${loggedUser._id}/${productID}`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

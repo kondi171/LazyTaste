@@ -5,7 +5,7 @@ import PaypalCheckoutButton from '../features/PaypalCheckoutButton';
 
 const SummaryModal = ({ setIsOpen, cartContent, cartValue, additionalMessage, setRedirect }) => {
 
-  const { setMessageContent, setMessageType, setMessageVisible, chosenRestaurant, loggedUser } = useContext(AppContext);
+  const { setMessageContent, setMessageType, setMessageVisible, chosenRestaurant, loggedUser, setNewOrder } = useContext(AppContext);
 
   const [adress, setAdress] = useState(null);
   const [deliveryStatus, setDeliveryStatus] = useState('Delivery');
@@ -44,8 +44,20 @@ const SummaryModal = ({ setIsOpen, cartContent, cartValue, additionalMessage, se
 
   const handleAddOrder = paymentMethod => {
     setIsOpen(false);
+    const today = new Date();
+    const date = `${today.getDate() > 10 ? today.getDate() : '0' + today.getDate()}.${today.getMonth() + 1 > 10 ? today.getMonth() + 1 : '0' + (today.getMonth() + 1)}.${today.getFullYear()} ${today.getHours() > 10 ? today.getHours() : '0' + today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0' + today.getMinutes()}`;
+    setNewOrder({
+      restaurantName: chosenRestaurant.name,
+      restaurantAvatar: chosenRestaurant.avatar,
+      message: additionalMessage ? additionalMessage : 'None',
+      paymentMethod: paymentMethod,
+      paid: cartValue,
+      products: cartContent,
+      adress: checkAdress(),
+      date: date,
+    });
     //Add order to user
-    const customerURL = 'http://localhost:4000/API/customer/add-order';
+    const customerURL = process.env.REACT_APP_DB_CONNECT + 'API/customer/add-order';
     const customerBody = new URLSearchParams({
       id: loggedUser._id,
       deliveryCost: chosenRestaurant.delivery.deliveryCost,
@@ -74,7 +86,7 @@ const SummaryModal = ({ setIsOpen, cartContent, cartValue, additionalMessage, se
 
     // Add order to restaurant
 
-    const restaurantURL = 'http://localhost:4000/API/restaurant/add-order';
+    const restaurantURL = process.env.REACT_APP_DB_CONNECT + 'API/restaurant/add-order';
     const restaurantBody = new URLSearchParams({
       id: chosenRestaurant._id,
       deliveryCost: chosenRestaurant.delivery.deliveryCost,
@@ -100,7 +112,7 @@ const SummaryModal = ({ setIsOpen, cartContent, cartValue, additionalMessage, se
       .then(res => res.status)
       .catch(error => console.log(error));
 
-    // Add LazyAssistant 
+    // Add order to LazyAssistant 
 
     const body = new URLSearchParams({
       id: loggedUser._id,
@@ -110,7 +122,7 @@ const SummaryModal = ({ setIsOpen, cartContent, cartValue, additionalMessage, se
       products: JSON.stringify(cartContent),
       restaurant: chosenRestaurant.name,
     });
-    fetch('http://localhost:4000/API/lazy-assistant', {
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/lazy-assistant', {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

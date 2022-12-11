@@ -19,11 +19,11 @@ const LazyAssistant = () => {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:4000/API/restaurants')
+    fetch(process.env.REACT_APP_DB_CONNECT + 'API/restaurants')
       .then(res => res.json())
       .then(data => setRestaurants(data))
       .catch(error => console.log(error));
-    fetch(`http://localhost:4000/API/customers/${loggedUser._id}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/customers/${loggedUser._id}`)
       .then(res => res.json())
       .then(data => setOrders(data.orders))
       .catch(error => console.log(error))
@@ -36,7 +36,7 @@ const LazyAssistant = () => {
 
   const attachLazyAssistant = () => {
     if (Object.keys(predictedRestaurant).length <= 1) {
-      const URL = 'http://localhost:4000/API/lazy-assistant';
+      const URL = process.env.REACT_APP_DB_CONNECT + 'API/lazy-assistant';
       const body = new URLSearchParams({
         id: loggedUser._id,
         customerOrders: JSON.stringify(orders),
@@ -58,7 +58,7 @@ const LazyAssistant = () => {
   }
 
   const handleRedirectToRestaurant = restaurantID => {
-    fetch(`http://localhost:4000/API/restaurants/${restaurantID}`)
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${restaurantID}`)
       .then(res => res.json())
       .then(data => setChosenRestaurant(data));
   }
@@ -82,6 +82,7 @@ const LazyAssistant = () => {
       text.style.transform = 'scale(1)';
     }
   }
+
   // useEffect(() => {
   //   console.log(predictedRestaurant.predictedRestaurant[0]);
   // }, [predictedRestaurant]);
@@ -101,7 +102,6 @@ const LazyAssistant = () => {
             <div className="accuracy">Accuracy: {predictedRestaurant.accuracy}</div>
           </>
           }</> : <div className='predict'>Activate Lazy Assistant</div>}
-
       </div>
 
       {chosenRestaurant !== null && <Routes><Route path='/' exact element={<Navigate to='/customer/offer/restaurant' />} /></Routes>}

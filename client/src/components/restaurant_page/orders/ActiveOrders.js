@@ -11,7 +11,7 @@ const ActiveOrders = () => {
     const body = new URLSearchParams({
       orderID: e.currentTarget.dataset.id,
     })
-    fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`, {
+    fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${loggedUser._id}`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -24,7 +24,7 @@ const ActiveOrders = () => {
 
   const fetchData = async () => {
     let balance = 0;
-    await fetch(`http://localhost:4000/API/restaurants/${loggedUser._id}`)
+    await fetch(process.env.REACT_APP_DB_CONNECT + `API/restaurants/${loggedUser._id}`)
       .then(res => res.json())
       .then(data => {
         const activeOrders = data.orders.filter(order => order.active === true);
