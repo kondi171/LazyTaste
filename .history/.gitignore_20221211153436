@@ -7,8 +7,6 @@
 
 client/node_modules/
 server/node_modules/
-client/.history
-client/.history
 # testing
 /coverage
 
