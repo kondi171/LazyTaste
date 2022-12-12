@@ -34,7 +34,7 @@ const DeleteAccount = () => {
     <div className="delete-account">
       <h3>Are you sure, you want to delete your account?</h3>
       <h4>This operation can not be undone!</h4>
-      <a href="https://zesty-malabi-0aaf06.netlify.app" onClick={handleDeleteAccount}>Delete Account</a>
+      <a href={`${process.env.REACT_APP_CLIENT}`} onClick={handleDeleteAccount}>Delete Account</a>
     </div>
   );
 }
